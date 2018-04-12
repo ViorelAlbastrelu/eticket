@@ -12,4 +12,10 @@
 
 	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+	<style name="EticketTheme" parent="AppTheme" >
+		<!--https://material.io/color/#!/?view.left=0&view.right=0-->
+		<!--Primary: BlueGrey 600
+			Secondary: Red 700-->
+	</style>
+
 </resources>
