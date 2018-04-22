@@ -11,7 +11,6 @@ import android.view.MenuItem;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.common.SectionsPagerAdapter;
-import com.faciee.cti.valbastrelu.eticket.ui.common.i.TransportViewActivity;
 
 public class BusActivity extends AppCompatActivity {
 	private static final String TAG = "BusActivity";
@@ -52,9 +51,9 @@ public class BusActivity extends AppCompatActivity {
 	
 	private void setupViewPager(ViewPager viewPager){
 		SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-		sectionsPagerAdapter.addFragment(new FrgTbBilet(), getApplication().getString(R.string.tab_name_bilete));    //BILETE
-		sectionsPagerAdapter.addFragment(new FrgTbTraseu(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
-		sectionsPagerAdapter.addFragment(new FrgTbIstoric(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC
+		sectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_bilete));    //BILETE
+		sectionsPagerAdapter.addFragment(new FrgTb02Traseu(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
+		sectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC
 		viewPager.setAdapter(sectionsPagerAdapter);
 	}
 	

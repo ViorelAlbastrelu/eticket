@@ -4,8 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.faciee.cti.valbastrelu.eticket.ui.bus.FrgTbBilet;
-
 import java.util.ArrayList;
 import java.util.List;
 
