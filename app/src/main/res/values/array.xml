@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="spinnerItems">
-		<item>item1</item>
-		<item>item2</item>
-		<item>item3</item>
-		<item>item4</item>
-	</string-array>
 	<string-array name="traseeeTramvai">
+		<item>Toate</item>
 		<item>7</item>
 		<item>39</item>
 		<item>41</item>
 		<item>44</item>
 	</string-array>
 	<string-array name="traseeAutobuz">
+		<item>Toate</item>
 		<item>9</item>
 		<item>10</item>
 		<item>11</item>
@@ -41,6 +37,7 @@
 		<item>105</item>
 	</string-array>
 	<string-array name="traseeTroleibuz">
+		<item>Toate</item>
 		<item>102T</item>
 		<item>104T</item>
 	</string-array>
