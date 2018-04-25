@@ -1,8 +1,10 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -47,13 +49,15 @@ public class BusActivity extends AppCompatActivity {
 		TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 		tabLayout.setupWithViewPager(mViewPager);
 		
+//		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//		fab.setOnClickListener(event -> fragmentTransaction());
 	}
 	
 	private void setupViewPager(ViewPager viewPager){
 		SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 		sectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_bilete));    //BILETE
-		sectionsPagerAdapter.addFragment(new FrgTb02Traseu(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
-		sectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC
+		sectionsPagerAdapter.addFragment(new FrgTb02TraseuMain(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
+		sectionsPagerAdapter.addFragment(new FrgTb02TraseuStatii(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC //TODO schimbat inapoi la Frg03Istoric
 		viewPager.setAdapter(sectionsPagerAdapter);
 	}
 	
@@ -79,5 +83,9 @@ public class BusActivity extends AppCompatActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	
+	private void fragmentTransaction(){
+		FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
+		transaction.replace(R.id.container, new FrgTb02TraseuStatii());
+		transaction.commit();
+	}
 }

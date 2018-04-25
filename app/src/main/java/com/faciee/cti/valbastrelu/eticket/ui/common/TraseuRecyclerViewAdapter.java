@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 
@@ -39,7 +40,9 @@ public class TraseuRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
 		ViewHolder viewHolder = (ViewHolder) holder;
 		viewHolder.timeStamp.setText(mTimp.get(position));
 		viewHolder.traseu.setText(mTraseu.get(position));
-		viewHolder.infoBtn.setOnClickListener(v -> Log.d(TAG, mTraseu.get(position)));
+		viewHolder.infoBtn.setOnClickListener(v -> {
+			Toast.makeText(mContext, mTimp.get(position) + " - "+  mTraseu.get(position), Toast.LENGTH_SHORT).show();
+		});
 	}
 	
 	@Override

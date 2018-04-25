@@ -3,6 +3,7 @@ package com.faciee.cti.valbastrelu.eticket.ui.bus;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,8 +20,8 @@ import java.util.ArrayList;
  * Created by valbastrelu on 09-Apr-18.
  */
 
-public class FrgTb02Traseu extends Fragment {
-	private static final String TAG = "FrgTb02Traseu";
+public class FrgTb02TraseuMain extends Fragment {
+	private static final String TAG = "FrgTb02TraseuMain";
 	
 	//lists
 	private ArrayList<String> mTimeStamps = new ArrayList<>();
@@ -32,6 +33,7 @@ public class FrgTb02Traseu extends Fragment {
 		View view = inflater.inflate(R.layout.bus_frag02_traseu, container, false);
 		initList();
 		initRecyclerView(view);
+		//TODO  Pass listener to recyclerView onClick infoBtn to open FrgTb02TraseuStep based on selected.
 		Log.d(TAG, "onCreateView: started.");
 		return view;
 	}
@@ -72,4 +74,5 @@ public class FrgTb02Traseu extends Fragment {
 		recyclerView.setAdapter(adapter);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 	}
+	
 }
