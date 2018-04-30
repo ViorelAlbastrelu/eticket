@@ -16,19 +16,19 @@ import java.util.List;
 
 public class FrgTb02TraseuStatii extends Fragment{
 	
-	private VerticalStepView mSetpview0;
+	VerticalStepView mSetpview0;
 	
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.stepper_traseu, container, false);
 		view.setBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
+		mSetpview0 = view.findViewById(R.id.verticalStepView);
 		initVerticalStepView(view);
 		return view;
 	}
 	
 	private void initVerticalStepView(View view){
-		mSetpview0 = (VerticalStepView) view.findViewById(R.id.verticalStepView);
 		
 		List<String> list0 = new ArrayList<>();
 		list0.add("Micro 19-Cinema Dacia");
@@ -46,7 +46,7 @@ public class FrgTb02TraseuStatii extends Fragment{
 		list0.add("Posta Veche");
 		list0.add("Baia Comunala");
 		list0.add("Piata Centrala");
-		mSetpview0.setStepsViewIndicatorComplectingPosition(list0.size() - 2)//设置完成的步数
+		mSetpview0.setStepsViewIndicatorComplectingPosition(0)//设置完成的步数
 				.reverseDraw(false)//default is true
 				.setStepViewTexts(list0)//总步骤
 				.setLinePaddingProportion(0.40f)//设置indicator线与线间距的比例系数
