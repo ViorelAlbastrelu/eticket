@@ -76,22 +76,22 @@ public class Chatbot extends AppCompatActivity {
 		boolean a = AppUtils.isSDCARDAvailable();
 //receiving the assets from the app directory
 		AssetManager assets = getResources().getAssets();
-		File jayDir = new File(Environment.getExternalStorageDirectory().toString() + "/hari/bots/Hari");
+		File jayDir = new File(Environment.getExternalStorageDirectory().toString() + "/asuka/bots/Asuka");
 		boolean b = jayDir.mkdirs();
 		if (jayDir.exists()) {
 			//Reading the file
 			try {
-				for (String dir : assets.list("Hari")) {
+				for (String dir : assets.list("asuka")) {
 					File subdir = new File(jayDir.getPath() + "/" + dir);
 					boolean subdir_check = subdir.mkdirs();
-					for (String file : assets.list("Hari/" + dir)) {
+					for (String file : assets.list("asuka/" + dir)) {
 						File f = new File(jayDir.getPath() + "/" + dir + "/" + file);
 						if (f.exists()) {
 							continue;
 						}
 						InputStream in = null;
 						OutputStream out = null;
-						in = assets.open("Hari/" + dir + "/" + file);
+						in = assets.open("asuka/" + dir + "/" + file);
 						out = new FileOutputStream(jayDir.getPath() + "/" + dir + "/" + file);
 						//copy file from assets to the mobile's SD card or any secondary memory
 						AppUtils.copyFile(in, out);
@@ -106,12 +106,12 @@ public class Chatbot extends AppCompatActivity {
 				e.printStackTrace();
 			}
 		}
-//get the working directory
-		MagicStrings.root_path = Environment.getExternalStorageDirectory().toString() + "/hari";
+		//get the working directory
+		MagicStrings.root_path = Environment.getExternalStorageDirectory().toString() + "/asuka";
 		System.out.println("Working Directory = " + MagicStrings.root_path);
 		AIMLProcessor.extension =  new PCAIMLProcessorExtension();
-//Assign the AIML files to bot for processing
-		bot = new Bot("Hari", MagicStrings.root_path, "chat");
+		//Assign the AIML files to bot for processing
+		bot = new Bot("Asuka", MagicStrings.root_path, "chat");
 		chat = new Chat(bot);
 		String[] args = null;
 		mainFunction(args);
@@ -120,8 +120,6 @@ public class Chatbot extends AppCompatActivity {
 	private void sendMessage(String message) {
 		ChatMessage chatMessage = new ChatMessage(message, true, false);
 		mAdapter.add(chatMessage);
-		//respond as Helloworld
-//		mimicOtherMessage("HelloWorld");
 	}
 	
 	private void mimicOtherMessage(String message) {
