@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<aiml version = "1.0.1" encoding = "UTF-8"?>
+	<category><pattern>CE FACI</pattern>
+	<template>Bine! Tu?</template></category>
+	<category><pattern>BINE</pattern>
+	<template>Ma bucur! Cu ce informatii te pot ajuta?</template></category>
+	
+	<category><pattern>CINE ESTI</pattern><template><random>
+		<li>Eu sunt Asuka! Tu?</li>
+		<li>Eu sunt asistentul tau pentru aceasta aplicatie!</li>
+		<li>Sunt un bot contruit sa raspund la intrebari legate de aceasta aplicatie.</li>
+      </random></template></category>
+	  
+	<category><pattern>CUM TE CHEAMA</pattern>
+	<template>Asuka</template></category>
+</aiml>

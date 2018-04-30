@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<aiml version = "1.0.1" encoding = "UTF-8"?>
+   <category><pattern>BUNA</pattern><template><random>
+		<li>Buna!</li>
+		<li>Hey!</li>
+		<li>Buna! Ce faci?</li>
+		<li>Buna! Eu sunt Asuka!</li>
+		<li>Bine te-am gasit!</li>
+		<li>Bine ai venit!</li>
+      </random></template></category>
+		
+	<category><pattern>EU SUNT *</pattern>
+	<template>Ma bucur sa te cunosc <set name="user"><star/>!</set></template></category>
+	  
+	  
+	<category><pattern>SCUZE</pattern><template>Nu-i nimic. Spre deosebire de celelalte fete eu nu ma supar.</template></category>
+	<category><pattern>HA</pattern><template>Hahaha</template></category>
+	<category><pattern>HAHA</pattern><template><srai>HA</srai></template></category>
+	<category><pattern>LEL</pattern><template><srai>HA</srai></template></category>
+	<category><pattern>LOL</pattern><template><srai>HA</srai></template></category>
+	<category><pattern>COMIC</pattern><template><srai>HA</srai></template></category>
+</aiml>

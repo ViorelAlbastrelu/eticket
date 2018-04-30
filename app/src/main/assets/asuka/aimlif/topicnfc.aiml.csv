@@ -1,0 +1,25 @@
+0,NFC,*,*,NFC este o tehnologie de transfer de date.<think><set name="topic">nfc</set></think>,topicnfc.aiml
+0,AHA,*,nfc,Ma bucur ca te-am iluminat.,topicnfc.aiml
+0,CUM FUNCTIONEAZA,*,nfc,Folosind unde electro-magnetice pentru a face schimb de date intre doua dispozitive fie active sau pasive.,topicnfc.aiml
+0,CUM FUNCTIONEAZA NFC,*,nfc,<srai>CUM FUNCTIONEAZA</srai>,topicnfc.aiml
+0,IN APLICATIE,*,nfc,In aplicatie este folosit pentru a valida bilete de transport,topicnfc.aiml
+0,SI IN APLICATIE,*,nfc,<srai><star/> IN APLICATIE</srai>,topicnfc.aiml
+0,DAR IN APLICATIE,*,nfc,<srai><star/> IN APLICATIE</srai>,topicnfc.aiml
+0,CUM E FOLOSIT IN APLICATIE,*,nfc,<srai><star/> IN APLICATIE</srai>,topicnfc.aiml
+0,AM NFC,*,nfc,Aplicatia o va detecta automat si va cere permisiuni la lansare.,topicnfc.aiml
+0,DE UNDE STIU DACA AM NFC,*,nfc,<srai>AM NFC</srai>,topicnfc.aiml
+0,CE BILETE POT SA CUMPAR,*,nfc,Poti cumpara bilete de autobuz troleibuz tramvai si chiar parcare auto.,topicnfc.aiml
+0,CUM PLATESC,*,nfc,Aplicatia are propriul ei cont care poate fi incarcat cu orice card.,topicnfc.aiml
+0,CUM SE FACE PLATA,*,nfc,<srai>CUM PLATESC</srai>,topicnfc.aiml
+0,CARD,*,nfc,Da pentru a incarca contul aplicatiei cu credit.,topicnfc.aiml
+0,DATE PERSONALE,*,nfc,Da pentru setarea unui profil personal.,topicnfc.aiml
+0,ESTE SIGUR,*,nfc,Doar in cadrul aplicatiei.,topicnfc.aiml
+0,CAT ESTE VALABIL BILETUL,*,nfc,Biletul este legat de traseul curent si ramane activ doar pentru acesta.,topicnfc.aiml
+0,CE FAC DACA VIN CONTROLORII,*,nfc,<random><li>Cobori prin spate hahaha</li><li>Cobori la prima hahaha</li></random>,topicnfc.aiml
+0,DESPRE CE VORBIM,*,nfc,Despre <get name="topic"></get>,topicnfc.aiml
+0,TOPIC,*,nfc,<get name="topic"></get>,topicnfc.aiml
+0,*,nfc,nfc,<random><li>Baza mea de cunostinte este despre NFC.</li><li>Nu am fost programata sa raspund pentru intrebarea aceasta.</li><li>Spune-i lui Viorel sa-mi adauge si intrebarea asta.</li><li>Te rog sa fii mai explicit.</li><li>Te rog sa verifici intrebarea pentru greseli gramaticale.</li><li>Hmm..ai apasat pe toate butoanele in acelasi timp?</li></random>,topicnfc.aiml
+0,ESTE NEVOIE DE *,*,nfc,<srai><star/></srai>,topicnfc.aiml
+0,AM NEVOIE DE *,*,nfc,<srai><star/></srai>,topicnfc.aiml
+0,CE ESTE *,*,*,<srai><star/></srai>,topicnfc.aiml
+0,CE STII DESPRE *,*,*,<srai><star/></srai>,topicnfc.aiml

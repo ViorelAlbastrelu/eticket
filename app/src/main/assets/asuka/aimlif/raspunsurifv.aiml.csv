@@ -1,0 +1,8 @@
+0,BUNA,*,*,<random><li>Buna!</li><li>Hey!</li><li>Buna! Ce faci?</li><li>Buna! Eu sunt Asuka!</li><li>Bine te-am gasit!</li><li>Bine ai venit!</li></random>,raspunsurifv.aiml
+0,EU SUNT *,*,*,Ma bucur sa te cunosc <set name="user"><star/>!</set>,intrebarifv.aiml
+0,SCUZE,*,*,Nu-i nimic. Spre deosebire de celelalte fete eu nu ma supar.,raspunsurifv.aiml
+0,HA,*,*,Hahaha,raspunsurifv.aiml
+0,HAHA,*,*,<srai>HA</srai>,raspunsurifv.aiml
+0,LEL,*,*,<srai>HA</srai>,raspunsurifv.aiml
+0,LOL,*,*,<srai>HA</srai>,raspunsurifv.aiml
+0,COMIC,*,*,<srai>HA</srai>,raspunsurifv.aiml
