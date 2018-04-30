@@ -5,9 +5,10 @@
 	<string name="tab_name_trasee">Trasee</string>
 	<string name="tab_name_istoric">Istoric</string>
 	<string name="action_settings">Settings</string>
+	<string name="action_chatbot">Chatbot</string>
 	<string name="section_format">Hello World from section: %1$d</string>
 
 	<!-- BUS ACTIVITY -->
-		<!-- Fragment Traseu -->
-		<string name="opt_trasee">Filtreaza trasee:</string>
+	<!-- Fragment Traseu -->
+	<string name="opt_trasee">Filtreaza trasee:</string>
 </resources>

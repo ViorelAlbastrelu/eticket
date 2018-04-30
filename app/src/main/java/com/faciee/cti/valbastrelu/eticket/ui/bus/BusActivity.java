@@ -1,5 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -10,9 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.common.SectionsPagerAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.main.Chatbot;
 
 public class BusActivity extends AppCompatActivity {
 	private static final String TAG = "BusActivity";
@@ -76,6 +79,14 @@ public class BusActivity extends AppCompatActivity {
 		int id = item.getItemId();
 		
 		//noinspection SimplifiableIfStatement
+		switch (id){
+			case R.id.action_settings:
+				Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.action_chatbot:
+				Intent i = new Intent(this, Chatbot.class);
+				startActivity(i);
+		}
 		if (id == R.id.action_settings) {
 			return true;
 		}
