@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.common;
+package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

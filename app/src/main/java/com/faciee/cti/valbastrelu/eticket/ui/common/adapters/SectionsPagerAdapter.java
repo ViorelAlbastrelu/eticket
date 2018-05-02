@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.common;
+package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

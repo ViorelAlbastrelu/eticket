@@ -11,8 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.common.IstoricRVAdapter;
-import com.faciee.cti.valbastrelu.eticket.ui.common.TraseuRecyclerViewAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.IstoricRVAdapter;
 
 import java.util.ArrayList;
 
