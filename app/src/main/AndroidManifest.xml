@@ -4,11 +4,13 @@
 	package="com.faciee.cti.valbastrelu.eticket">
 
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+	<uses-permission
+		android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
 		tools:ignore="ProtectedPermissions" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.NFC" />
-	<!--Firebase project ID eticket-va112-->
+
+	 <!-- Firebase project ID eticket-va112 -->
 	<application
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
@@ -18,7 +20,7 @@
 		android:theme="@style/AppTheme">
 		<activity
 			android:name=".ETicketActivity"
-			android:theme="@style/EticketTheme"></activity>
+			android:theme="@style/EticketTheme" />
 		<activity
 			android:name=".ui.bus.BusActivity"
 			android:label="@string/title_activity_bus"
@@ -29,7 +31,10 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".ui.main.Chatbot"></activity>
+		<activity android:name=".ui.main.Chatbot" />
+		<activity
+			android:name=".ui.login.LoginActivity"
+			android:label="@string/title_activity_login"></activity>
 	</application>
 
 </manifest>
