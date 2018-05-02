@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.common.ChatMessageAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.ChatMessageAdapter;
 import com.faciee.cti.valbastrelu.eticket.util.AppUtils;
 
 import org.alicebot.ab.AIMLProcessor;
