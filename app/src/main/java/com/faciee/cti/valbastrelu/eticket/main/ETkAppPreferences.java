@@ -10,7 +10,7 @@ public class ETkAppPreferences implements IETkAppPreferences {
 	
 	private SharedPreferences sharedPreferences;
 	
-	ETkAppPreferences(SharedPreferences sharedPreferences){
+	public ETkAppPreferences(SharedPreferences sharedPreferences){
 		this.sharedPreferences = sharedPreferences;
 	}
 	
