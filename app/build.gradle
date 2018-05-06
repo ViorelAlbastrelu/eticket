@@ -41,5 +41,7 @@ dependencies {
     implementation 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
     //Firebase
     implementation 'com.google.firebase:firebase-core:15.0.0'
+    //HTML Parser
+    implementation 'org.jsoup:jsoup:1.11.2'
 }
 apply plugin: 'com.google.gms.google-services'
