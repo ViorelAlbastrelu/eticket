@@ -14,10 +14,13 @@ import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.main.Chatbot;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class BusActivity extends AppCompatActivity {
 	private static final String TAG = "BusActivity";
+	private FirebaseAuth mAuth;
 	
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -50,7 +53,7 @@ public class BusActivity extends AppCompatActivity {
 		
 		TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 		tabLayout.setupWithViewPager(mViewPager);
-		
+		mAuth = FirebaseAuth.getInstance();
 //		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //		fab.setOnClickListener(event -> fragmentTransaction());
 	}
@@ -78,18 +81,21 @@ public class BusActivity extends AppCompatActivity {
 		int id = item.getItemId();
 		
 		//noinspection SimplifiableIfStatement
+		Intent intent = null;
 		switch (id){
 			case R.id.action_settings:
 				Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.action_chatbot:
-				Intent i = new Intent(this, Chatbot.class);
-				startActivity(i);
+				intent = new Intent(this, Chatbot.class);
+				startActivity(intent);
+				break;
+			case R.id.action_sign_out:
+				mAuth.signOut();
+				intent = new Intent(this, LoginActivity.class);
+				startActivity(intent);
+				break;
 		}
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		
 		return super.onOptionsItemSelected(item);
 	}
 	

@@ -1,9 +1,9 @@
-package com.faciee.cti.valbastrelu.eticket.ui.common;
+package com.faciee.cti.valbastrelu.eticket.main;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.faciee.cti.valbastrelu.eticket.main.ETkAppPreferences;
+import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractApplication;
 
 public class ETicketApp extends AbstractApplication {
 	private static final String TAG = "ETicketApp";
