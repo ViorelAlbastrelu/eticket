@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 		
 		//TODO setari de test
 		mEmailView.setText("test@email.com");
+		mPasswordView.setText("123456");
 	}
 	
 	@OnClick(R.id.btn_autentificare)
