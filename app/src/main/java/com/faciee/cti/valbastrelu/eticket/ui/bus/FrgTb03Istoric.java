@@ -53,7 +53,7 @@ public class FrgTb03Istoric extends Fragment {
 	private void initRecyclerView(View view){
 		Log.d(TAG, "initRecyclerView: initializing...");
 		RecyclerView recyclerView = view.findViewById(R.id.listaIstoric);
-		IstoricRVAdapter adapter = new IstoricRVAdapter(getContext(), mData, mTipBilete, mSuma);
+		IstoricRVAdapter adapter = new IstoricRVAdapter(mData, mTipBilete, mSuma);
 		recyclerView.setAdapter(adapter);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 	}

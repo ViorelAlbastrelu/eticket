@@ -1,7 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
 import android.content.Context;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -54,14 +53,12 @@ public class TraseuRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
 		TextView timeStamp;
 		TextView traseu;
 		Button infoBtn;
-		ConstraintLayout randTraseu;
 		
 		public ViewHolder(View itemView) {
 			super(itemView);
 			timeStamp = itemView.findViewById(R.id.time_stamp);
 			traseu = itemView.findViewById(R.id.traseu_no);
 			infoBtn = itemView.findViewById(R.id.infoBtn);
-			randTraseu = itemView.findViewById(R.id.traseu_row);
 		}
 	}
 }
