@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentViewI;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.FrgTb02Presenter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 
 import java.util.ArrayList;
@@ -20,19 +22,16 @@ import java.util.ArrayList;
  * Created by valbastrelu on 09-Apr-18.
  */
 
-public class FrgTb02TraseuMain extends Fragment {
+public class FrgTb02TraseuMain extends Fragment implements FragmentViewI {
 	private static final String TAG = "FrgTb02TraseuMain";
-	
-	//lists
-	private ArrayList<String> mTimeStamps = new ArrayList<>();
-	private ArrayList<String> mTrasee = new ArrayList<>();
+	private FrgTb02Presenter frgTb02Presenter;
 	
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag02_traseu, container, false);
-		initList();
-		initRecyclerView(view);
+		frgTb02Presenter = new FrgTb02Presenter(this);
+		frgTb02Presenter.populateRecylerView(view);
 		//TODO  Pass listener to recyclerView onClick infoBtn to open FrgTb02TraseuStep based on selected.
 		Log.d(TAG, "onCreateView: started.");
 		return view;
@@ -42,39 +41,15 @@ public class FrgTb02TraseuMain extends Fragment {
 		Log.d(TAG, "initList: prepare lists.");
 		//TODO add type to traseu (posibly Enum class with icons)
 		//TODO implement filter
-		mTimeStamps.add("10:10");
-		mTrasee.add("7");
-		mTimeStamps.add("10:25");
-		mTrasee.add("9");
-		mTimeStamps.add("10:48");
-		mTrasee.add("11");
-		mTimeStamps.add("11:00");
-		mTrasee.add("7");
-		mTimeStamps.add("11:12");
-		mTrasee.add("9");
-		mTimeStamps.add("11:34");
-		mTrasee.add("11");
-		mTimeStamps.add("11:48");
-		mTrasee.add("9");
-		mTimeStamps.add("12:02");
-		mTrasee.add("11");
-		mTimeStamps.add("12:02");
-		mTrasee.add("11");
-		mTimeStamps.add("12:02");
-		mTrasee.add("11");
-		mTimeStamps.add("12:02");
-		mTrasee.add("11");
-		mTimeStamps.add("12:02");
-		mTrasee.add("11");
 	}
 	
-	private void initRecyclerView(View view){
+	@Override
+	public void buildRecyclerView(View view, ArrayList list) {
 		Log.d(TAG, "initRecyclerView: initializing...");
 		RecyclerView recyclerView = view.findViewById(R.id.listaTraseeBus);
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-		TraseuRVAdapter adapter = new TraseuRVAdapter(getContext(), mTimeStamps, mTrasee);
+		TraseuRVAdapter adapter = new TraseuRVAdapter(getContext(), list);
 		recyclerView.setAdapter(adapter);
 	}
-	
 }

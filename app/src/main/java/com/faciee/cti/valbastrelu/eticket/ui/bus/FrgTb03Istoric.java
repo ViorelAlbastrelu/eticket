@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentViewI;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.FrgTb03Presenter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.IstoricRVAdapter;
 
 import java.util.ArrayList;
@@ -19,8 +21,9 @@ import java.util.ArrayList;
  * Created by valbastrelu on 09-Apr-18.
  */
 
-public class FrgTb03Istoric extends Fragment {
+public class FrgTb03Istoric extends Fragment implements FragmentViewI{
 	private static final String TAG = "FrgTb03Istoric";
+	private FrgTb03Presenter frgTb03Presenter;
 	
 	ArrayList<String> mData = new ArrayList<>();
 	ArrayList<String> mTipBilete = new ArrayList<>();
@@ -32,9 +35,11 @@ public class FrgTb03Istoric extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag03_istoric, container,false);
+		frgTb03Presenter = new FrgTb03Presenter(this);
+		frgTb03Presenter.populateRecylerView(view);
 		Log.d(TAG, "onCreateView: started.");
 		initListe();
-		initRecyclerView(view);
+		
 		return view;
 	}
 	
@@ -52,7 +57,8 @@ public class FrgTb03Istoric extends Fragment {
 	
 	}
 	
-	private void initRecyclerView(View view){
+	@Override
+	public void buildRecyclerView(View view, ArrayList list) {
 		Log.d(TAG, "initRecyclerView: initializing...");
 		RecyclerView recyclerView = view.findViewById(R.id.listaIstoric);
 		IstoricRVAdapter adapter = new IstoricRVAdapter(mData, mTipBilete, mSuma);

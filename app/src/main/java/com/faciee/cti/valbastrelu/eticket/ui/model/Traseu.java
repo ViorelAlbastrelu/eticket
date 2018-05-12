@@ -24,8 +24,8 @@ public class Traseu {
 		this.nrTraseu = nrTraseu;
 	}
 	
-	public Date getOra() {
-		return ora;
+	public String getOra() {
+		return ora.getHours() + ":" + ora.getMinutes();
 	}
 	
 	public void setOra(Date ora) {
