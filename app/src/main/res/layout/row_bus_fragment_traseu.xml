@@ -2,36 +2,35 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/traseu_row"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:id="@+id/traseu_row">
+	tools:layout_editor_absoluteY="25dp">
 
 	<TextView
 		android:id="@+id/time_stamp"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:layout_marginBottom="8dp"
 		android:layout_marginStart="16dp"
-		android:layout_marginTop="16dp"
-		android:text="10:10"
-		android:textSize="18sp"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		android:text="Ora sosire: 10:10"
+		android:textSize="14sp"
+		android:textStyle="italic"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/traseuTypeIcon"
+		app:layout_constraintTop_toBottomOf="@+id/traseu_no" />
 
 	<TextView
 		android:id="@+id/traseu_no"
-		android:layout_width="0dp"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginBottom="8dp"
-		android:layout_marginEnd="8dp"
-		android:layout_marginStart="8dp"
+		android:layout_marginStart="16dp"
 		android:layout_marginTop="8dp"
-		android:background="@android:drawable/dialog_holo_light_frame"
-		android:text="9"
+		android:text="@string/nr_traseu_fmt"
 		android:textAlignment="center"
 		android:textSize="18sp"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toStartOf="@+id/infoBtn"
-		app:layout_constraintStart_toEndOf="@+id/time_stamp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toEndOf="@+id/traseuTypeIcon"
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<Button
@@ -39,10 +38,22 @@
 		style="@android:style/Widget.DeviceDefault.Button.Inset"
 		android:layout_width="36dp"
 		android:layout_height="36dp"
+		android:layout_marginBottom="8dp"
 		android:layout_marginEnd="8dp"
 		android:layout_marginTop="8dp"
-		android:background="@drawable/ic_info_btn"
+		android:background="@drawable/ic_pin_map"
+		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageView
+		android:id="@+id/traseuTypeIcon"
+		android:layout_width="50dp"
+		android:layout_height="52dp"
+		android:layout_marginStart="8dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:srcCompat="@drawable/ic_bus" />
 
 </android.support.constraint.ConstraintLayout>

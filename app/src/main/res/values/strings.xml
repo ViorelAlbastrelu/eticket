@@ -35,4 +35,7 @@
 	<string name="ora_bilet">Ora: %1$d</string>
 	<string name="data_bilet">Data: %1$s</string>
 
+	<!--Traseu layout-->
+	<string name="ora_traseu_fmt">Ora sosire: %1$s</string>
+	<string name="nr_traseu_fmt">Numar traseu: %1$d</string>
 </resources>
