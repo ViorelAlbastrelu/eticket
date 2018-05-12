@@ -25,7 +25,9 @@ public class FrgTb03Istoric extends Fragment {
 	ArrayList<String> mData = new ArrayList<>();
 	ArrayList<String> mTipBilete = new ArrayList<>();
 	ArrayList<String> mSuma = new ArrayList<>();
-	
+	//TODO filtre by date
+	//TODO filtre by transport number
+	//TODO filtre by type
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

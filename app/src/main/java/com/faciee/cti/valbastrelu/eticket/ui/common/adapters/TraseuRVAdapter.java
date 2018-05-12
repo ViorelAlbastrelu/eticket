@@ -1,6 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,32 +12,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.FrgTb02TraseuStatii;
 
 import java.util.ArrayList;
 
-public class TraseuRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class TraseuRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 	private static final String TAG = "TraseuRecyclerViewAdapt";
 	
 	private ArrayList<String> mTimp;
 	private ArrayList<String> mTraseu;
 	Context mContext;
 	
-	public TraseuRecyclerViewAdapter(Context mContext, ArrayList<String> mTimp, ArrayList<String> mTraseu) {
+	public TraseuRVAdapter(Context mContext, ArrayList<String> mTimp, ArrayList<String> mTraseu) {
 		this.mContext = mContext;
 		this.mTimp = mTimp;
 		this.mTraseu = mTraseu;
 	}
 	
 	@Override
-	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+	public TraseuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_bus_fragment_traseu, parent, false);
-		return new ViewHolder(view);
+		return new TraseuViewHolder(view);
 	}
 	
 	@Override
 	public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 		Log.d(TAG, "onBindViewHolder: called.");
-		ViewHolder viewHolder = (ViewHolder) holder;
+		TraseuViewHolder viewHolder = (TraseuViewHolder) holder;
 		viewHolder.timeStamp.setText(mTimp.get(position));
 		viewHolder.traseu.setText(mTraseu.get(position));
 		viewHolder.infoBtn.setOnClickListener(v -> {
@@ -49,12 +52,12 @@ public class TraseuRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
 		return mTraseu.size();
 	}
 	
-	public class ViewHolder extends RecyclerView.ViewHolder{
+	public class TraseuViewHolder extends RecyclerView.ViewHolder{
 		TextView timeStamp;
 		TextView traseu;
 		Button infoBtn;
 		
-		public ViewHolder(View itemView) {
+		public TraseuViewHolder(View itemView) {
 			super(itemView);
 			timeStamp = itemView.findViewById(R.id.time_stamp);
 			traseu = itemView.findViewById(R.id.traseu_no);

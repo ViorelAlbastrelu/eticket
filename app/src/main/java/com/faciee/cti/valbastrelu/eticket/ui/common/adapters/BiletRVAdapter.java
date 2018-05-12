@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.ui.model.Bilet;
 
 import java.util.ArrayList;
@@ -38,7 +39,10 @@ public class BiletRVAdapter extends  RecyclerView.Adapter<BiletRVAdapter.BiletVi
 		holder.mTraseu.setText((String.valueOf(mBilete.get(position).getTraseu())));
 		holder.mStatus.setText(activ ? "Activ" : "Expirat");
 		holder.setColorForStatus(activ);
-		
+		holder.mCalatorii.setText(ETicketApp.getCurrentETicketApp().getString(
+				R.string.nr_calatorii,
+				mBilete.get(position).getCalatorii(),
+				mBilete.get(position).getPret()));
 	}
 	
 	@Override

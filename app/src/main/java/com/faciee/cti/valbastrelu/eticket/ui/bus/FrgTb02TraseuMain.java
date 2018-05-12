@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRecyclerViewAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 
 import java.util.ArrayList;
 
@@ -40,7 +40,8 @@ public class FrgTb02TraseuMain extends Fragment {
 	
 	private void initList(){
 		Log.d(TAG, "initList: prepare lists.");
-		
+		//TODO add type to traseu (posibly Enum class with icons)
+		//TODO implement filter
 		mTimeStamps.add("10:10");
 		mTrasee.add("7");
 		mTimeStamps.add("10:25");
@@ -72,7 +73,7 @@ public class FrgTb02TraseuMain extends Fragment {
 		RecyclerView recyclerView = view.findViewById(R.id.listaTraseeBus);
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-		TraseuRecyclerViewAdapter adapter = new TraseuRecyclerViewAdapter(getContext(), mTimeStamps, mTrasee);
+		TraseuRVAdapter adapter = new TraseuRVAdapter(getContext(), mTimeStamps, mTrasee);
 		recyclerView.setAdapter(adapter);
 	}
 	

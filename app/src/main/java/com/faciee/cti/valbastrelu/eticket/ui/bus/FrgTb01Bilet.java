@@ -25,8 +25,6 @@ import java.util.ArrayList;
 public class FrgTb01Bilet extends Fragment {
 	private static final String TAG = "FrgTb01Bilet";
 	private ArrayList<Bilet> listaBilete = new ArrayList<>();
-	private ArrayList<String> trasee = new ArrayList<>();
-	private ArrayList<String> statusuri = new ArrayList<>();
 	RecyclerView recyclerView;
 	
 	@Nullable
@@ -44,8 +42,6 @@ public class FrgTb01Bilet extends Fragment {
 		listaBilete.add(new Bilet(102, true, 2,2));
 		listaBilete.add(new Bilet(7, false, 2,2));
 		listaBilete.add(new Bilet(44, false, 2,2));
-		trasee.add("102");
-		statusuri.add("activ");
 	}
 	
 	private void initRecyclerView(View view){
