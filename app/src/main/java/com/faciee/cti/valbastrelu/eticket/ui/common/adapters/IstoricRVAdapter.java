@@ -1,5 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -9,20 +11,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.ui.model.Istoric;
 
 import java.util.ArrayList;
 
 public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.IstoricHolder>{
 	private static final String TAG = "IstoricRVAdapter";
 	
-	private ArrayList<String> mData;
-	private ArrayList<String> mTipBilete;
-	private ArrayList<String> mSuma;
+	private ArrayList<Istoric> mIstorice;
+	private Context mContext;
 	
-	public IstoricRVAdapter(ArrayList<String> mData, ArrayList<String> mTipBilete, ArrayList<String> mSuma) {
-		this.mData = mData;
-		this.mTipBilete = mTipBilete;
-		this.mSuma = mSuma;
+	public IstoricRVAdapter(Context context, ArrayList<Istoric> lIstorice) {
+		this.mContext = context;
+		this.mIstorice = lIstorice;
 	}
 	
 	@NonNull
@@ -35,14 +36,23 @@ public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.Ist
 	@Override
 	public void onBindViewHolder(IstoricHolder holder, int position) {
 		Log.d(TAG, "onBindViewHolder: called.");
-		holder.mDataHolder.setText(mData.get(position));
-		holder.mTipBiletHolder.setText(mTipBilete.get(position));
-		holder.mSumaHolder.setText(mSuma.get(position));
+		String[] numeLuni = mContext.getResources().getStringArray(R.array.numeLuni);
+		holder.mDataHolder.setText(
+				mContext.getString(R.string.istoric_data,
+				mIstorice.get(position).getData().getDate(),
+				numeLuni[mIstorice.get(position).getData().getMonth()]));
+		holder.mTipBiletHolder.setText(
+				mContext.getString(R.string.istoric_bilet,
+				mIstorice.get(position).getTransportType().getTypeName()));
+		holder.mSumaHolder.setText(
+				mContext.getString(R.string.istoric_pret,
+				mIstorice.get(position).getPret()));
+		holder.mSumaHolder.setTextColor(mIstorice.get(position).getPret() < 0 ? Color.RED : Color.GREEN);
 	}
 	
 	@Override
 	public int getItemCount() {
-		return mTipBilete.size();
+		return mIstorice.size();
 	}
 	
 	public class IstoricHolder extends RecyclerView.ViewHolder{

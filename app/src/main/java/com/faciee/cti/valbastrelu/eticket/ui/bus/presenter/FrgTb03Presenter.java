@@ -17,6 +17,6 @@ public class FrgTb03Presenter extends AbstractFrgTabPresenter implements Fragmen
 	}
 	
 	public void populateRecylerView(View view) {
-		fragmentViewI.buildRecyclerView(view, busActivityModel.getListaTrasee());
+		fragmentViewI.buildRecyclerView(view, busActivityModel.getListaIstorice());
 	}
 }

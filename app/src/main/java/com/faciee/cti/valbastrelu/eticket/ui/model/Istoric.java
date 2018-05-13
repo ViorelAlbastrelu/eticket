@@ -6,9 +6,9 @@ public class Istoric {
 	private Date data;
 	private TransportType transportType;
 	private int nrTraseu;
-	private int pret;
+	private double pret;
 	
-	public Istoric(Date data, TransportType transportType, int nrTraseu, int pret) {
+	public Istoric(Date data, TransportType transportType, int nrTraseu, double pret) {
 		this.data = data;
 		this.transportType = transportType;
 		this.nrTraseu = nrTraseu;
@@ -17,10 +17,6 @@ public class Istoric {
 	
 	public Date getData() {
 		return data;
-	}
-	
-	public String getDataForIstoricView(){
-		return data.getDay() + " " + data.getMonth();
 	}
 	
 	public void setData(Date data) {
@@ -43,11 +39,11 @@ public class Istoric {
 		this.nrTraseu = nrTraseu;
 	}
 	
-	public int getPret() {
+	public double getPret() {
 		return pret;
 	}
 	
-	public void setPret(int pret) {
+	public void setPret(double pret) {
 		this.pret = pret;
 	}
 }
