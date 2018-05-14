@@ -2,3 +2,7 @@
 0,BINE,*,*,Ma bucur! Cu ce informatii te pot ajuta?,intrebarifv.aiml
 0,CINE ESTI,*,*,<random><li>Eu sunt Asuka! Tu?</li><li>Eu sunt asistentul tau pentru aceasta aplicatie!</li><li>Sunt un bot contruit sa raspund la intrebari legate de aceasta aplicatie.</li></random>,intrebarifv.aiml
 0,CUM TE CHEAMA,*,*,Asuka,intrebarifv.aiml
+0,CUM MA CHEAMA,*,*,Tu esti <get name="user"></get>,intrebarifv.aiml
+0,* CUM MA CHEAMA,*,*,<srai>CUM MA CHEAMA</srai>,intrebarifv.aiml
+0,* CINE SUNT,*,*,<srai>CUM MA CHEAMA</srai>,intrebarifv.aiml
+0,DESPRE CE VORBIM,*,*,Despre <get name="topic"></get>,intrebarifv.aiml

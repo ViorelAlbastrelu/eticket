@@ -5,17 +5,18 @@
    
    <topic name="nfc">
 		<category><pattern>AHA</pattern><template>Ma bucur ca te-am iluminat.</template></category>
-		<category><pattern>CUM FUNCTIONEAZA</pattern><template>Folosind unde electro-magnetice pentru a face schimb de date intre doua dispozitive fie active sau pasive.</template></category>		
-		<category><pattern>CUM FUNCTIONEAZA NFC</pattern><template><srai>CUM FUNCTIONEAZA</srai></template></category>
+		<category><pattern>CUM FUNCTIONEAZA NFC</pattern><template>Folosind unde electro-magnetice pentru a face schimb de date intre doua dispozitive fie active sau pasive.</template></category>		
+		
 		<category><pattern>IN APLICATIE</pattern><template>In aplicatie este folosit pentru a valida bilete de transport</template></category>
-		<category><pattern>SI IN APLICATIE</pattern><template><srai><star/> IN APLICATIE</srai></template></category>
-		<category><pattern>DAR IN APLICATIE</pattern><template><srai><star/> IN APLICATIE</srai></template></category>
-		<category><pattern>CUM E FOLOSIT IN APLICATIE</pattern><template><srai><star/> IN APLICATIE</srai></template></category>
+		<category><pattern>* IN APLICATIE</pattern><template><srai><star/> IN APLICATIE</srai></template></category>
+		
 		<category><pattern>AM NFC</pattern><template>Aplicatia o va detecta automat si va cere permisiuni la lansare.</template></category>
 		<category><pattern>DE UNDE STIU DACA AM NFC</pattern><template><srai>AM NFC</srai></template></category>
+		
 		<!-- Ce bilete pot sa cumpar -->
 		<category><pattern>CE BILETE POT SA CUMPAR</pattern>
 		<template>Poti cumpara bilete de autobuz troleibuz tramvai si chiar parcare auto.</template></category>
+
 		<!-- Cum se face plata -->
 		<category><pattern>CUM PLATESC</pattern>
 		<template>Aplicatia are propriul ei cont care poate fi incarcat cu orice card.</template></category>
@@ -30,23 +31,10 @@
 		<!-- Este sigur? -->
 		<category><pattern>ESTE SIGUR</pattern>
 		<template>Doar in cadrul aplicatiei.</template></category>
-		<!-- Cat e valabil biletul -->
-		<category><pattern>CAT ESTE VALABIL BILETUL</pattern>
-		<template>Biletul este legat de traseul curent si ramane activ doar pentru acesta.</template></category>
+		
 		<!-- Ce fac daca vin controlorii -->
 		<category><pattern>CE FAC DACA VIN CONTROLORII</pattern>
 		<template><random><li>Cobori prin spate hahaha</li><li>Cobori la prima hahaha</li></random></template></category>
-		
-		<category><pattern>DESPRE CE VORBIM</pattern><template>Despre <get name="topic"></get></template></category>
-		<category><pattern>TOPIC</pattern><template><get name="topic"></get></template></category>
-		<category><pattern> * </pattern><template><random>
-			<li>Baza mea de cunostinte este despre NFC.</li>
-			<li>Nu am fost programata sa raspund pentru intrebarea aceasta.</li>
-			<li>Spune-i lui Viorel sa-mi adauge si intrebarea asta.</li>
-			<li>Te rog sa fii mai explicit.</li>
-			<li>Te rog sa verifici intrebarea pentru greseli gramaticale.</li>
-			<li>Hmm..ai apasat pe toate butoanele in acelasi timp?</li>
-		</random></template></category>
 		
 		<!-- COMUNE -->
 		<category><pattern>ESTE NEVOIE DE *</pattern><template><srai><star/></srai></template></category>

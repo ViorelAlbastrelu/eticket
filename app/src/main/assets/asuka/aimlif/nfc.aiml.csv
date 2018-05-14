@@ -1,0 +1,18 @@
+0,NFC,*,*,NFC este o tehnologie de transfer de date.<think><set name="topic">nfc</set></think>,nfc.aiml
+0,AHA,*,nfc,Ma bucur ca te-am iluminat.,nfc.aiml
+0,CUM FUNCTIONEAZA NFC,*,nfc,Folosind unde electro-magnetice pentru a face schimb de date intre doua dispozitive fie active sau pasive.,nfc.aiml
+0,IN APLICATIE,*,nfc,In aplicatie este folosit pentru a valida bilete de transport,nfc.aiml
+0,* IN APLICATIE,*,nfc,<srai><star/> IN APLICATIE</srai>,nfc.aiml
+0,AM NFC,*,nfc,Aplicatia o va detecta automat si va cere permisiuni la lansare.,nfc.aiml
+0,DE UNDE STIU DACA AM NFC,*,nfc,<srai>AM NFC</srai>,nfc.aiml
+0,CE BILETE POT SA CUMPAR,*,nfc,Poti cumpara bilete de autobuz troleibuz tramvai si chiar parcare auto.,nfc.aiml
+0,CUM PLATESC,*,nfc,Aplicatia are propriul ei cont care poate fi incarcat cu orice card.,nfc.aiml
+0,CUM SE FACE PLATA,*,nfc,<srai>CUM PLATESC</srai>,nfc.aiml
+0,CARD,*,nfc,Da pentru a incarca contul aplicatiei cu credit.,nfc.aiml
+0,DATE PERSONALE,*,nfc,Da pentru setarea unui profil personal.,nfc.aiml
+0,ESTE SIGUR,*,nfc,Doar in cadrul aplicatiei.,nfc.aiml
+0,CE FAC DACA VIN CONTROLORII,*,nfc,<random><li>Cobori prin spate hahaha</li><li>Cobori la prima hahaha</li></random>,nfc.aiml
+0,ESTE NEVOIE DE *,*,nfc,<srai><star/></srai>,nfc.aiml
+0,AM NEVOIE DE *,*,nfc,<srai><star/></srai>,nfc.aiml
+0,CE ESTE *,*,*,<srai><star/></srai>,nfc.aiml
+0,CE STII DESPRE *,*,*,<srai><star/></srai>,nfc.aiml

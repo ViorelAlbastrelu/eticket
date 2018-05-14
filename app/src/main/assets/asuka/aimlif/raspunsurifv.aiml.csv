@@ -1,8 +1,13 @@
 0,BUNA,*,*,<random><li>Buna!</li><li>Hey!</li><li>Buna! Ce faci?</li><li>Buna! Eu sunt Asuka!</li><li>Bine te-am gasit!</li><li>Bine ai venit!</li></random>,raspunsurifv.aiml
-0,EU SUNT *,*,*,Ma bucur sa te cunosc <set name="user"><star/>!</set>,intrebarifv.aiml
+0,BUNA ASUKA,*,*,Buna...Cum spuneai ca te cheama?,raspunsurifv.aiml
+0,MA CHEAMA *,Cum spuneai ca te cheama,*,Ok <set name="user"><star/></set>! am sa retin.,raspunsurifv.aiml
+0,EU SUNT *,*,*,<srai>MA CHEAMA <star/></srai>,raspunsurifv.aiml
+0,OK,*,*,Cu ce te mai pot ajuta?,raspunsurifv.aiml
 0,SCUZE,*,*,Nu-i nimic. Spre deosebire de celelalte fete eu nu ma supar.,raspunsurifv.aiml
 0,HA,*,*,Hahaha,raspunsurifv.aiml
 0,HAHA,*,*,<srai>HA</srai>,raspunsurifv.aiml
 0,LEL,*,*,<srai>HA</srai>,raspunsurifv.aiml
 0,LOL,*,*,<srai>HA</srai>,raspunsurifv.aiml
 0,COMIC,*,*,<srai>HA</srai>,raspunsurifv.aiml
+0,TOPIC,*,*,<get name="topic"></get>,raspunsurifv.aiml
+0,*,*,*,<random><li>Baza mea de cunostinte este despre NFC.</li><li>Nu am fost programata sa raspund pentru intrebarea aceasta.</li><li>Spune-i lui Viorel sa-mi adauge si intrebarea asta.</li><li>Te rog sa fii mai explicit.</li><li>Te rog sa verifici intrebarea pentru greseli gramaticale.</li><li>Hmm..ai apasat pe toate butoanele in acelasi timp?</li></random>,raspunsurifv.aiml

@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<aiml version = "1.0.1" encoding = "UTF-8"?>
+   <category><pattern>BILET</pattern>
+   <template>Ce vrei sa stii despre bilete?<think><set name="topic">bilet</set></think></template></category>
+   <category><pattern>POTI SA MA AJUTI CU BILETELE</pattern>
+   <template><srai>BILET</srai></template></category>
+   
+   <topic name="bilet">
+		<category><pattern>CE SE INTAMPLA DACA APAS PE BILET</pattern><template>Nimic</template></category>
+		<category><pattern>CE SE INTAMPLA DACA APAS PE UN BILET</pattern><template><srai>CE SE INTAMPLA DACA APAS PE BILET</srai></template></category>
+		
+		<category><pattern>BILET VERDE</pattern><template>Daca biletul este verde inseamna ca este activ pe durata calatoriei.</template></category>
+		<category><pattern>CE INSEAMNA DACA ESTE VERDE</pattern><template><srai>BILET VERDE</srai></template></category>
+		<category><pattern>CE INSEAMNA DACA BILETUL * VERDE</pattern><template><srai>BILET VERDE</srai></template></category>
+		
+		<category><pattern>BILET ROSU</pattern><template>Daca biletul este rosu inseamna ca a fost folosit.</template></category>
+		<category><pattern>CE INSEAMNA DACA ESTE ROSU</pattern><template><srai>BILET ROSU</srai></template></category>
+		<category><pattern>CE INSEAMNA DACA BILETUL * ROSU</pattern><template><srai>BILET ROSU</srai></template></category>
+		
+		<category><pattern>BILET CUMPAR</pattern><template>Poti cumpara bilete pentru tramvai autobuz troleibuz sau autoturism.</template></category>
+		<category><pattern>CE * BILET POT SA CUMPAR</pattern><template><srai>BILET CUMPAR</srai></template></category>
+		
+		<category><pattern>CUM CUMPAR</pattern><template>Achizitionarea se face folosing butonul FAB.</template></category>
+		<category><pattern>CUM POT SA CUMPAR</pattern><template><srai>CUM CUMPAR</srai></template></category>
+		
+		<category><pattern>VALABILITATE</pattern><template>Biletul este valabil 2 ore de la activarea acestuia.</template></category>
+		<category><pattern>CAT ESTE VALABIL</pattern><template><srai>VALABILITATE</srai></template></category>
+		<category><pattern>CAT ESTE VALABIL BILETUL</pattern><template><srai>VALABILITATE</srai></template></category>
+	</topic>
+</aiml>

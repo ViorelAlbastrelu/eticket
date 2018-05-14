@@ -1,0 +1,17 @@
+0,BILET,*,*,Ce vrei sa stii despre bilete?<think><set name="topic">bilet</set></think>,bilet.aiml
+0,POTI SA MA AJUTI CU BILETELE,*,*,<srai>BILET</srai>,bilet.aiml
+0,CE SE INTAMPLA DACA APAS PE BILET,*,bilet,Nimic,bilet.aiml
+0,CE SE INTAMPLA DACA APAS PE UN BILET,*,bilet,<srai>CE SE INTAMPLA DACA APAS PE BILET</srai>,bilet.aiml
+0,BILET VERDE,*,bilet,Daca biletul este verde inseamna ca este activ pe durata calatoriei.,bilet.aiml
+0,CE INSEAMNA DACA ESTE VERDE,*,bilet,<srai>BILET VERDE</srai>,bilet.aiml
+0,CE INSEAMNA DACA BILETUL * VERDE,*,bilet,<srai>BILET VERDE</srai>,bilet.aiml
+0,BILET ROSU,*,bilet,Daca biletul este rosu inseamna ca a fost folosit.,bilet.aiml
+0,CE INSEAMNA DACA ESTE ROSU,*,bilet,<srai>BILET ROSU</srai>,bilet.aiml
+0,CE INSEAMNA DACA BILETUL * ROSU,*,bilet,<srai>BILET ROSU</srai>,bilet.aiml
+0,BILET CUMPAR,*,bilet,Poti cumpara bilete pentru tramvai autobuz troleibuz sau autoturism.,bilet.aiml
+0,CE * BILET POT SA CUMPAR,*,bilet,<srai>BILET CUMPAR</srai>,bilet.aiml
+0,CUM CUMPAR,*,bilet,Achizitionarea se face folosing butonul FAB.,bilet.aiml
+0,CUM POT SA CUMPAR,*,bilet,<srai>CUM CUMPAR</srai>,bilet.aiml
+0,VALABILITATE,*,bilet,Biletul este valabil 2 ore de la activarea acestuia.,bilet.aiml
+0,CAT ESTE VALABIL,*,bilet,<srai>VALABILITATE</srai>,bilet.aiml
+0,CAT ESTE VALABIL BILETUL,*,bilet,<srai>VALABILITATE</srai>,bilet.aiml

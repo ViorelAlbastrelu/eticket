@@ -8,15 +8,26 @@
 		<li>Bine te-am gasit!</li>
 		<li>Bine ai venit!</li>
       </random></template></category>
-		
-	<category><pattern>EU SUNT *</pattern>
-	<template>Ma bucur sa te cunosc <set name="user"><star/>!</set></template></category>
+	
+	<category><pattern>BUNA ASUKA</pattern><template>Buna...Cum spuneai ca te cheama?</template></category>
+	<category><pattern>MA CHEAMA *</pattern>
+	<that>Cum spuneai ca te cheama?</that><template>Ok <set name="user"><star/></set>! am sa retin.</template></category>
+	<category><pattern>EU SUNT *</pattern><template><srai>MA CHEAMA <star/></srai></template></category>
 	  
-	  
+	<category><pattern>OK</pattern><template>Cu ce te mai pot ajuta?</template></category>
 	<category><pattern>SCUZE</pattern><template>Nu-i nimic. Spre deosebire de celelalte fete eu nu ma supar.</template></category>
 	<category><pattern>HA</pattern><template>Hahaha</template></category>
 	<category><pattern>HAHA</pattern><template><srai>HA</srai></template></category>
 	<category><pattern>LEL</pattern><template><srai>HA</srai></template></category>
 	<category><pattern>LOL</pattern><template><srai>HA</srai></template></category>
 	<category><pattern>COMIC</pattern><template><srai>HA</srai></template></category>
+	<category><pattern>TOPIC</pattern><template><get name="topic"></get></template></category>
+	<category><pattern> * </pattern><template><random>
+		<li>Baza mea de cunostinte este despre NFC.</li>
+		<li>Nu am fost programata sa raspund pentru intrebarea aceasta.</li>
+		<li>Spune-i lui Viorel sa-mi adauge si intrebarea asta.</li>
+		<li>Te rog sa fii mai explicit.</li>
+		<li>Te rog sa verifici intrebarea pentru greseli gramaticale.</li>
+		<li>Hmm..ai apasat pe toate butoanele in acelasi timp?</li></random></template>
+	</category>
 </aiml>

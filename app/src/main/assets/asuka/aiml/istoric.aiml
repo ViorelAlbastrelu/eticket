@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<aiml version = "1.0.1" encoding = "UTF-8"?>
+   <category><pattern>ISTORIC</pattern><template>Ce vrei sa stii despre istoric?<think><set name="topic">istoric</set>
+   </think></template></category>
+   <category><pattern>POTI SA MA AJUTI CU ISTORICUL</pattern><template><srai>ISTORIC</srai></template></category>
+   <category><pattern>POTI SA MA AJUTI CU * ISTORIC</pattern><template><srai>ISTORIC</srai></template></category>
+   <category><pattern>INFORMATII * ISTORIC</pattern><template><srai>ISTORIC</srai></template></category>
+   
+   <topic name="istoric">
+		<category><pattern>CE SE INTAMPLA DACA APAS PE UN ISTORIC</pattern><template>Nimic</template></category>
+	</topic>
+</aiml>

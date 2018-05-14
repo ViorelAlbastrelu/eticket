@@ -1,0 +1,5 @@
+0,ISTORIC,*,*,Ce vrei sa stii despre istoric?<think><set name="topic">istoric</set></think>,istoric.aiml
+0,POTI SA MA AJUTI CU ISTORICUL,*,*,<srai>ISTORIC</srai>,istoric.aiml
+0,POTI SA MA AJUTI CU * ISTORIC,*,*,<srai>ISTORIC</srai>,istoric.aiml
+0,INFORMATII * ISTORIC,*,*,<srai>ISTORIC</srai>,istoric.aiml
+0,CE SE INTAMPLA DACA APAS PE UN ISTORIC,*,istoric,Nimic,istoric.aiml
