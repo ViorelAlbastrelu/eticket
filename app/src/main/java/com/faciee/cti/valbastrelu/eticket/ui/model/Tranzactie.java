@@ -2,17 +2,17 @@ package com.faciee.cti.valbastrelu.eticket.ui.model;
 
 import java.util.Date;
 
-public class Istoric {
+public class Tranzactie {
 	private Date data;
 	private TransportType transportType;
 	private int nrTraseu;
-	private double pret;
+	private double suma;
 	
-	public Istoric(Date data, TransportType transportType, int nrTraseu, double pret) {
+	public Tranzactie(Date data, TransportType transportType, int nrTraseu, double suma) {
 		this.data = data;
 		this.transportType = transportType;
 		this.nrTraseu = nrTraseu;
-		this.pret = pret;
+		this.suma = suma;
 	}
 	
 	public Date getData() {
@@ -39,11 +39,11 @@ public class Istoric {
 		this.nrTraseu = nrTraseu;
 	}
 	
-	public double getPret() {
-		return pret;
+	public double getSuma() {
+		return suma;
 	}
 	
-	public void setPret(double pret) {
-		this.pret = pret;
+	public void setSuma(double suma) {
+		this.suma = suma;
 	}
 }

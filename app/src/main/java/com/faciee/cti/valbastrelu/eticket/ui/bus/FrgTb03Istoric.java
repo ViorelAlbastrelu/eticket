@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentViewI;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.FrgTb03Presenter;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.BusPresenter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.IstoricRVAdapter;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class FrgTb03Istoric extends Fragment implements FragmentViewI{
 	private static final String TAG = "FrgTb03Istoric";
-	private FrgTb03Presenter frgTb03Presenter;
+	private BusPresenter.FrgTb03Presenter frgTb03Presenter;
 	
 	//TODO filtre by date
 	//TODO filtre by transport number
@@ -32,8 +32,8 @@ public class FrgTb03Istoric extends Fragment implements FragmentViewI{
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag03_istoric, container,false);
-		frgTb03Presenter = new FrgTb03Presenter(this);
-		frgTb03Presenter.populateRecylerView(view);
+		frgTb03Presenter = new BusPresenter.FrgTb03Presenter(this);
+		frgTb03Presenter.populateRecyclerView(view);
 		Log.d(TAG, "onCreateView: started.");
 		return view;
 	}

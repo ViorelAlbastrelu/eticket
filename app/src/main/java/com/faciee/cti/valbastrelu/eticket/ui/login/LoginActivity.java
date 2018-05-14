@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	
 	@Override
 	public void goToHomeActivity() {
-		//TODO goToHomeActivity(FirebaseUser user) - add user to intent bundle and send through activity
+		//TODO goToHomeActivity(FirebaseUser user) - add user to intent bundle and send throughout activity
 		Intent goToHome = new Intent(LoginActivity.this, BusActivity.class);
 		this.finish();
 		startActivity(goToHome);

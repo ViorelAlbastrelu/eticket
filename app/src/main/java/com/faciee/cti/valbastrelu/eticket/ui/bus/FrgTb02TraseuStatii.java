@@ -7,15 +7,18 @@ import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.baoyachi.stepview.VerticalStepView;
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentViewI;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.BusPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FrgTb02TraseuStatii extends Fragment{
-	
+public class FrgTb02TraseuStatii extends Fragment implements FragmentViewI{
+	private BusPresenter.FrgTb02StatiiPresenter statiiPresenter;
 	VerticalStepView mSetpview0;
 	
 	@Nullable
@@ -24,38 +27,24 @@ public class FrgTb02TraseuStatii extends Fragment{
 		View view = inflater.inflate(R.layout.stepper_traseu, container, false);
 		view.setBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
 		mSetpview0 = view.findViewById(R.id.verticalStepView);
-		initVerticalStepView(view);
+		statiiPresenter = new BusPresenter.FrgTb02StatiiPresenter(this);
+		statiiPresenter.populateRecyclerView(view);
 		return view;
 	}
 	
-	private void initVerticalStepView(View view){
+	@Override
+	public void buildRecyclerView(View view, ArrayList list) {
 		
-		List<String> list0 = new ArrayList<>();
-		list0.add("Micro 19-Cinema Dacia");
-		list0.add("Otelarilor");
-		list0.add("Bloc D19");
-		list0.add("Sala Sporturilor");
-		list0.add("Flora");
-		list0.add("Stadionul Otelul");
-		list0.add("Ghe. Doja");
-		list0.add("Piata Energiei T");
-		list0.add("Liceul 9");
-		list0.add("Piata Energiei R");
-		list0.add("ICFrimu");
-		list0.add("George Cosbuc");
-		list0.add("Posta Veche");
-		list0.add("Baia Comunala");
-		list0.add("Piata Centrala");
-		mSetpview0.setStepsViewIndicatorComplectingPosition(0)//设置完成的步数
-				.reverseDraw(false)//default is true
-				.setStepViewTexts(list0)//总步骤
-				.setLinePaddingProportion(0.40f)//设置indicator线与线间距的比例系数
-				.setStepsViewIndicatorCompletedLineColor(ContextCompat.getColor(getActivity(), android.R.color.white))//设置StepsViewIndicator完成线的颜色
-				.setStepsViewIndicatorUnCompletedLineColor(ContextCompat.getColor(getActivity(), R.color.uncompleted_text_color))//设置StepsViewIndicator未完成线的颜色
-				.setStepViewComplectedTextColor(ContextCompat.getColor(getActivity(), android.R.color.white))//设置StepsView text完成线的颜色
-				.setStepViewUnComplectedTextColor(ContextCompat.getColor(getActivity(), R.color.uncompleted_text_color))//设置StepsView text未完成线的颜色
-				.setStepsViewIndicatorCompleteIcon(ContextCompat.getDrawable(getActivity(), R.drawable.complted))//设置StepsViewIndicator CompleteIcon
-				.setStepsViewIndicatorDefaultIcon(ContextCompat.getDrawable(getActivity(), R.drawable.default_icon))//设置StepsViewIndicator DefaultIcon
-				.setStepsViewIndicatorAttentionIcon(ContextCompat.getDrawable(getActivity(), R.drawable.attention));//设置StepsViewIndicator AttentionIcon
+		mSetpview0.setStepsViewIndicatorComplectingPosition(-1)
+				.reverseDraw(false)
+				.setStepViewTexts(list)
+				.setLinePaddingProportion(0.40f)//indicator
+				.setStepsViewIndicatorCompletedLineColor(ContextCompat.getColor(getContext(), android.R.color.white))//StepsViewIndicator
+				.setStepsViewIndicatorUnCompletedLineColor(ContextCompat.getColor(getContext(), R.color.uncompleted_text_color))//StepsViewIndicator
+				.setStepViewComplectedTextColor(ContextCompat.getColor(getContext(), android.R.color.white))//StepsView text
+				.setStepViewUnComplectedTextColor(ContextCompat.getColor(getContext(), R.color.uncompleted_text_color))//StepsView text
+				.setStepsViewIndicatorCompleteIcon(ContextCompat.getDrawable(getContext(), R.drawable.complted))//StepsViewIndicator CompleteIcon
+				.setStepsViewIndicatorDefaultIcon(ContextCompat.getDrawable(getContext(), R.drawable.default_icon))//StepsViewIndicator DefaultIcon
+				.setStepsViewIndicatorAttentionIcon(ContextCompat.getDrawable(getContext(), R.drawable.attention));//StepsViewIndicator AttentionIcon
 	}
 }

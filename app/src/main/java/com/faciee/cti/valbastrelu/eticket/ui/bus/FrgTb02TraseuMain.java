@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentViewI;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.FrgTb02Presenter;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.BusPresenter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 
 import java.util.ArrayList;
@@ -24,14 +24,14 @@ import java.util.ArrayList;
 
 public class FrgTb02TraseuMain extends Fragment implements FragmentViewI {
 	private static final String TAG = "FrgTb02TraseuMain";
-	private FrgTb02Presenter frgTb02Presenter;
+	private BusPresenter.FrgTb02MainPresenter frgTb02Presenter;
 	
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag02_traseu, container, false);
-		frgTb02Presenter = new FrgTb02Presenter(this);
-		frgTb02Presenter.populateRecylerView(view);
+		frgTb02Presenter = new BusPresenter.FrgTb02MainPresenter(this);
+		frgTb02Presenter.populateRecyclerView(view);
 		//TODO  Pass listener to recyclerView onClick infoBtn to open FrgTb02TraseuStep based on selected.
 		Log.d(TAG, "onCreateView: started.");
 		return view;
@@ -39,7 +39,6 @@ public class FrgTb02TraseuMain extends Fragment implements FragmentViewI {
 	
 	private void initList(){
 		Log.d(TAG, "initList: prepare lists.");
-		//TODO add type to traseu (posibly Enum class with icons)
 		//TODO implement filter
 	}
 	

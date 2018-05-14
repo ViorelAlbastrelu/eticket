@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentViewI;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.FrgTb01Presenter;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.BusPresenter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletRVAdapter;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class FrgTb01Bilet extends Fragment implements FragmentViewI {
 	private static final String TAG = "FrgTb01Bilet";
-	private FrgTb01Presenter frgTb01Presenter;
+	private BusPresenter.FrgTb01Presenter frgTb01Presenter;
 	RecyclerView recyclerView;
 	
 	@Nullable
@@ -32,8 +32,8 @@ public class FrgTb01Bilet extends Fragment implements FragmentViewI {
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag01_bilet, container, false);
 		recyclerView = view.findViewById(R.id.recyclerViewBilete);
-		frgTb01Presenter = new FrgTb01Presenter(this);
-		frgTb01Presenter.populateRecylerView(view);
+		frgTb01Presenter = new BusPresenter.FrgTb01Presenter(this);
+		frgTb01Presenter.populateRecyclerView(view);
 		Log.d(TAG, "onCreateView: frg01");
 		return view;
 	}

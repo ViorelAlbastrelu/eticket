@@ -8,7 +8,7 @@ public enum TransportType {
 	BUS("Autobuz", R.drawable.ic_bus),
 	TBUS("Troleibuz", R.drawable.ic_tbus),
 	TRAM("Tramvai", R.drawable.ic_tram),
-	CAR("Autoturism", R.drawable.ic_auto),
+	PARKING("Autoturism", R.drawable.ic_auto),
 	NONE("Undefined", R.drawable.default_icon);
 	
 	private final String typeName;

@@ -11,17 +11,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.model.Istoric;
+import com.faciee.cti.valbastrelu.eticket.ui.model.Tranzactie;
 
 import java.util.ArrayList;
 
 public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.IstoricHolder>{
 	private static final String TAG = "IstoricRVAdapter";
 	
-	private ArrayList<Istoric> mIstorice;
+	private ArrayList<Tranzactie> mIstorice;
 	private Context mContext;
 	
-	public IstoricRVAdapter(Context context, ArrayList<Istoric> lIstorice) {
+	public IstoricRVAdapter(Context context, ArrayList<Tranzactie> lIstorice) {
 		this.mContext = context;
 		this.mIstorice = lIstorice;
 	}
@@ -46,8 +46,8 @@ public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.Ist
 				mIstorice.get(position).getTransportType().getTypeName()));
 		holder.mSumaHolder.setText(
 				mContext.getString(R.string.istoric_pret,
-				mIstorice.get(position).getPret()));
-		holder.mSumaHolder.setTextColor(mIstorice.get(position).getPret() < 0 ? Color.RED : Color.GREEN);
+				mIstorice.get(position).getSuma()));
+		holder.mSumaHolder.setTextColor(mIstorice.get(position).getSuma() < 0 ? Color.RED : Color.GREEN);
 	}
 	
 	@Override

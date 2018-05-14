@@ -2,6 +2,7 @@ package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
@@ -18,9 +20,18 @@ import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.main.Chatbot;
 import com.google.firebase.auth.FirebaseAuth;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class BusActivity extends AppCompatActivity {
 	private static final String TAG = "BusActivity";
 	private FirebaseAuth mAuth;
+	
+	@BindView(R.id.toolbar)     Toolbar mToolbar;
+	@BindView(R.id.container)   ViewPager mViewPager;
+	@BindView(R.id.tabs)        TabLayout mTabLayout;
+	
 	
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -30,45 +41,33 @@ public class BusActivity extends AppCompatActivity {
 	 * may be best to switch to a
 	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
 	 */
-	private SectionsPagerAdapter mSectionsPagerAdapter;
-	
-	/**
-	 * The {@link ViewPager} that will host the section contents.
-	 */
-	private ViewPager mViewPager;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_bus);
-		
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
-		// Create the adapter that will return a fragment for each of the three
-		// primary sections of the activity.
-		
-		// Set up the ViewPager with the sections adapter.
-		mViewPager = (ViewPager) findViewById(R.id.container);
+		ButterKnife.bind(this);
+		setSupportActionBar(mToolbar);
 		setupViewPager(mViewPager);
-		
-		TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-		tabLayout.setupWithViewPager(mViewPager);
+		mTabLayout.setupWithViewPager(mViewPager);
 		mAuth = FirebaseAuth.getInstance();
-//		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//		fab.setOnClickListener(event -> fragmentTransaction());
+	}
+	
+	@OnClick(R.id.fab)
+	public void clickOnFab(View view){
+		fragmentTransaction();
 	}
 	
 	private void setupViewPager(ViewPager viewPager){
 		SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 		sectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_bilete));    //BILETE
 		sectionsPagerAdapter.addFragment(new FrgTb02TraseuMain(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
-		sectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC //TODO schimbat inapoi la Frg03Istoric
+		sectionsPagerAdapter.addFragment(new FrgTb02TraseuStatii(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC //TODO schimbat inapoi la Frg03Istoric
 		viewPager.setAdapter(sectionsPagerAdapter);
 	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.menu_bus, menu);
 		return true;
 	}
@@ -102,6 +101,7 @@ public class BusActivity extends AppCompatActivity {
 	private void fragmentTransaction(){
 		FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
 		transaction.replace(R.id.container, new FrgTb02TraseuStatii());
+		transaction.addToBackStack("statii");
 		transaction.commit();
 	}
 }

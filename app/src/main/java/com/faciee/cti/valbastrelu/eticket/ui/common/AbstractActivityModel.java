@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
+package com.faciee.cti.valbastrelu.eticket.ui.common;
 
 public class AbstractActivityModel {
 }

@@ -1,20 +1,23 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
 
+import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.model.Bilet;
-import com.faciee.cti.valbastrelu.eticket.ui.model.Istoric;
+import com.faciee.cti.valbastrelu.eticket.ui.model.Tranzactie;
 import com.faciee.cti.valbastrelu.eticket.ui.model.TransportType;
 import com.faciee.cti.valbastrelu.eticket.ui.model.Traseu;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BusActivityModel extends AbstractActivityModel {
 	
 	private Bilet biletActiv = null;
 	private ArrayList<Bilet> listaBilete;
 	private ArrayList<Traseu> listaTrasee;
-	private ArrayList<Istoric> listaIstorce;
+	private ArrayList<Tranzactie> listaIstorce;
+	private ArrayList<String> listaStatii;
 	private SimpleDateFormat formatterDate = new SimpleDateFormat("dd-MMM-yyyy");
 	private SimpleDateFormat formatterTime = new SimpleDateFormat("HH:mm");
 	
@@ -22,6 +25,7 @@ public class BusActivityModel extends AbstractActivityModel {
 		listaBilete = new ArrayList<>();
 		listaTrasee = new ArrayList<>();
 		listaIstorce = new ArrayList<>();
+		listaStatii = new ArrayList<>();
 	}
 	
 	public void setBiletActiv(Bilet biletActiv) {
@@ -53,20 +57,39 @@ public class BusActivityModel extends AbstractActivityModel {
 		return listaTrasee;
 	}
 	
-	public ArrayList<Istoric> getListaIstorice(){
+	public ArrayList<Tranzactie> getListaIstorice(){
 		try {
-			listaIstorce.add(new Istoric(formatterDate.parse("12-JAN-2018"),TransportType.BUS,34, -2.00));
-			listaIstorce.add(new Istoric(formatterDate.parse("13-JAN-2018"),TransportType.TBUS,102, -2.00));
-			listaIstorce.add(new Istoric(formatterDate.parse("16-JAN-2018"),TransportType.TRAM,7, -2.00));
-			listaIstorce.add(new Istoric(formatterDate.parse("22-JAN-2018"),TransportType.BUS,7, -2.00));
-			listaIstorce.add(new Istoric(formatterDate.parse("23-JAN-2018"),TransportType.CAR,7, -1.00));
-			listaIstorce.add(new Istoric(formatterDate.parse("24-JAN-2018"),TransportType.NONE,0, +15.00));
-			listaIstorce.add(new Istoric(formatterDate.parse("30-JAN-2018"),TransportType.TBUS,104, -2.00));
-			listaIstorce.add(new Istoric(formatterDate.parse("02-FEB-2018"),TransportType.BUS,24, -2.00));
-			listaIstorce.add(new Istoric(formatterDate.parse("10-FEB-2018"),TransportType.CAR,7, -1.00));
+			listaIstorce.add(new Tranzactie(formatterDate.parse("12-JAN-2018"),TransportType.BUS,34, -2.00));
+			listaIstorce.add(new Tranzactie(formatterDate.parse("13-JAN-2018"),TransportType.TBUS,102, -2.00));
+			listaIstorce.add(new Tranzactie(formatterDate.parse("16-JAN-2018"),TransportType.TRAM,7, -2.00));
+			listaIstorce.add(new Tranzactie(formatterDate.parse("22-JAN-2018"),TransportType.BUS,7, -2.00));
+			listaIstorce.add(new Tranzactie(formatterDate.parse("23-JAN-2018"),TransportType.PARKING,7, -1.00));
+			listaIstorce.add(new Tranzactie(formatterDate.parse("24-JAN-2018"),TransportType.NONE,0, +15.00));
+			listaIstorce.add(new Tranzactie(formatterDate.parse("30-JAN-2018"),TransportType.TBUS,104, -2.00));
+			listaIstorce.add(new Tranzactie(formatterDate.parse("02-FEB-2018"),TransportType.BUS,24, -2.00));
+			listaIstorce.add(new Tranzactie(formatterDate.parse("10-FEB-2018"),TransportType.PARKING,7, -1.00));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		return listaIstorce;
+	}
+	
+	public ArrayList getListaStatii(){
+		listaStatii.add("Micro 19-Cinema Dacia");
+		listaStatii.add("Otelarilor");
+		listaStatii.add("Bloc D19");
+		listaStatii.add("Sala Sporturilor");
+		listaStatii.add("Flora");
+		listaStatii.add("Stadionul Otelul");
+		listaStatii.add("Ghe. Doja");
+		listaStatii.add("Piata Energiei T");
+		listaStatii.add("Liceul 9");
+		listaStatii.add("Piata Energiei R");
+		listaStatii.add("ICFrimu");
+		listaStatii.add("George Cosbuc");
+		listaStatii.add("Posta Veche");
+		listaStatii.add("Baia Comunala");
+		listaStatii.add("Piata Centrala");
+		return listaStatii;
 	}
 }
