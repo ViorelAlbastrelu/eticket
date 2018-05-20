@@ -1,10 +1,10 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus.i;
 
-import android.view.View;
-
-import java.util.ArrayList;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.BusPresenter;
 
 public interface FragmentViewI {
 	
-	void buildRecyclerView(View view, ArrayList list);
+	BusActivity getBusActivity();
+	BusPresenter getBusPresenter();
 }

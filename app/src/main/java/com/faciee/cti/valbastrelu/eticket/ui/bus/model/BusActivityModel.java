@@ -1,23 +1,42 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
 
+import android.annotation.SuppressLint;
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
+import android.util.Log;
+
 import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.model.Bilet;
+import com.faciee.cti.valbastrelu.eticket.ui.model.Statie;
 import com.faciee.cti.valbastrelu.eticket.ui.model.Tranzactie;
 import com.faciee.cti.valbastrelu.eticket.ui.model.TransportType;
 import com.faciee.cti.valbastrelu.eticket.ui.model.Traseu;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BusActivityModel extends AbstractActivityModel {
+	private static final String TAG = "BusActivityModel";
+	
+	private static String URL_STATII = "https://transurb-galati.com/statii%s/";
+	
+	private MutableLiveData<List<Bilet>> bilete;
+	private MutableLiveData<List<Traseu>> trasee;
+	private MutableLiveData<List<Statie>> statiiLiveData;
+	private MutableLiveData<List<Tranzactie>> tranzactii;
 	
 	private Bilet biletActiv = null;
 	private ArrayList<Bilet> listaBilete;
 	private ArrayList<Traseu> listaTrasee;
 	private ArrayList<Tranzactie> listaIstorce;
-	private ArrayList<String> listaStatii;
 	private SimpleDateFormat formatterDate = new SimpleDateFormat("dd-MMM-yyyy");
 	private SimpleDateFormat formatterTime = new SimpleDateFormat("HH:mm");
 	
@@ -25,13 +44,60 @@ public class BusActivityModel extends AbstractActivityModel {
 		listaBilete = new ArrayList<>();
 		listaTrasee = new ArrayList<>();
 		listaIstorce = new ArrayList<>();
-		listaStatii = new ArrayList<>();
 	}
 	
 	public void setBiletActiv(Bilet biletActiv) {
 		this.biletActiv = biletActiv;
 	}
 	
+	public LiveData<List<Bilet>> getLiveDataBilete(){
+		if (bilete == null){
+			bilete = new MutableLiveData<>();
+			loadBilete();
+		}
+		return bilete;
+	}
+	
+	private void loadBilete() {
+		
+	}
+	
+	public LiveData<List<Traseu>> getLiveDataTrasee(){
+		if (trasee == null){
+			trasee = new MutableLiveData<>();
+			loadTrasee();
+		}
+		return trasee;
+	}
+	
+	private void loadTrasee() {
+	}
+	
+	public LiveData<List<Statie>> getLiveDataStatii(int nrTraseu){
+		if (statiiLiveData == null){
+			statiiLiveData = new MutableLiveData<>();
+			loadStatii(nrTraseu);
+		}
+		return statiiLiveData;
+	}
+	
+	private void loadStatii(int numarTraseu) {
+		@SuppressLint("DefaultLocale")
+		String url = numarTraseu == 0 ?
+				String.format(URL_STATII, ""):
+				String.format(URL_STATII, "-traseu-" + numarTraseu);
+		List<Statie> statieList = new ArrayList<>();
+		try {
+			Document document = Jsoup.connect(url).get();
+			Elements rows = document.select("td");
+			for (int i = 2; i < rows.size(); i += 2) {
+				statieList.add(new Statie(rows.get(i).text(), rows.get(i + 1).text()));
+			}
+		} catch (IOException e) {
+			Log.e(TAG, "loadStatii: " + e.getMessage(), null);
+		}
+		statiiLiveData.setValue(statieList);
+	}
 	
 	public ArrayList<Bilet> getListaBilete(){
 		//TODO get from web with Jsoup library
@@ -74,22 +140,28 @@ public class BusActivityModel extends AbstractActivityModel {
 		return listaIstorce;
 	}
 	
-	public ArrayList getListaStatii(){
-		listaStatii.add("Micro 19-Cinema Dacia");
-		listaStatii.add("Otelarilor");
-		listaStatii.add("Bloc D19");
-		listaStatii.add("Sala Sporturilor");
-		listaStatii.add("Flora");
-		listaStatii.add("Stadionul Otelul");
-		listaStatii.add("Ghe. Doja");
-		listaStatii.add("Piata Energiei T");
-		listaStatii.add("Liceul 9");
-		listaStatii.add("Piata Energiei R");
-		listaStatii.add("ICFrimu");
-		listaStatii.add("George Cosbuc");
-		listaStatii.add("Posta Veche");
-		listaStatii.add("Baia Comunala");
-		listaStatii.add("Piata Centrala");
-		return listaStatii;
+	@Override
+	protected void onCleared() {
+		super.onCleared();
+		Log.d(TAG, "onCleared: called");
 	}
+	
+	//	public ArrayList getListaStatii(){
+////		listaStatii.add("Micro 19-Cinema Dacia");
+////		listaStatii.add("Otelarilor");
+////		listaStatii.add("Bloc D19");
+////		listaStatii.add("Sala Sporturilor");
+////		listaStatii.add("Flora");
+////		listaStatii.add("Stadionul Otelul");
+////		listaStatii.add("Ghe. Doja");
+////		listaStatii.add("Piata Energiei T");
+////		listaStatii.add("Liceul 9");
+////		listaStatii.add("Piata Energiei R");
+////		listaStatii.add("ICFrimu");
+////		listaStatii.add("George Cosbuc");
+////		listaStatii.add("Posta Veche");
+////		listaStatii.add("Baia Comunala");
+////		listaStatii.add("Piata Centrala");
+////		return listaStatii;
+//	}
 }

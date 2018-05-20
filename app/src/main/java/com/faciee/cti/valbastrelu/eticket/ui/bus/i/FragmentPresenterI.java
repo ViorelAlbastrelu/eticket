@@ -4,6 +4,8 @@ import android.view.View;
 
 public interface FragmentPresenterI {
 	
-	void populateRecyclerView(View view);
+	void populateRecyclerView();
+	
+	void refreshData();
 
 }

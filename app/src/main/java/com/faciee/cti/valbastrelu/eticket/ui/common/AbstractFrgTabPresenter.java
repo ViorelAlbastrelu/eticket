@@ -1,12 +1,12 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common;
 
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentViewI;
 
-public class AbstractFrgTabPresenter<FragmentViewI> {
+public class AbstractFrgTabPresenter<FWI extends FragmentViewI> {
 	
-	protected FragmentViewI fragmentViewI;
+	protected FWI fragmentViewI;
 	
-	protected AbstractFrgTabPresenter(FragmentViewI fragmentViewI) {
+	protected AbstractFrgTabPresenter(FWI fragmentViewI) {
 		this.fragmentViewI = fragmentViewI;
 	}
 }

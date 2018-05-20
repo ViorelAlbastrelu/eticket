@@ -1,4 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common;
 
-public class AbstractActivityModel {
+import android.arch.lifecycle.ViewModel;
+
+public class AbstractActivityModel extends ViewModel{
 }
