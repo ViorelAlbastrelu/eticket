@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.faciee.cti.valbastrelu.eticket.ETicketActivity;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
@@ -110,7 +111,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	@Override
 	public void goToHomeActivity() {
 		//TODO goToHomeActivity(FirebaseUser user) - add user to intent bundle and send throughout activity
-		Intent goToHome = new Intent(LoginActivity.this, BusActivity.class);
+		Intent goToHome = new Intent(LoginActivity.this, ETicketActivity.class);
 		this.finish();
 		startActivity(goToHome);
 	}
