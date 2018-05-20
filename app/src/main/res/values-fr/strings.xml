@@ -1,0 +1,42 @@
+<resources>
+	<string name="app_name">ETicket</string>
+	<string name="title_activity_bus">BusActivity</string>
+	<string name="tab_name_bilete">Billets</string>
+	<string name="tab_name_trasee">Routes</string>
+	<string name="tab_name_istoric">Historique</string>
+	<string name="action_settings">Paramètres</string>
+	<string name="action_chatbot">Chatbot</string>
+	<string name="action_sign_out">Déconnexion</string>
+
+	<!-- BUS ACTIVITY -->
+	<!-- Fragment Traseu -->
+	<string name="opt_trasee">Filtrer les itinéraires</string>
+	<string name="title_activity_login">Connectez-vous à E-Ticket</string>
+
+	<!-- Strings related to login -->
+	<string name="prompt_email">Email</string>
+	<string name="prompt_password">Mot de passe</string>
+	<string name="action_sign">Connectez-vous</string>
+	<string name="action_create_account">Registre</string>
+	<string name="error_invalid_email">Adresse e-mail incorrecte</string>
+	<string name="error_invalid_password">Le mot de passe est trop court</string>
+	<string name="error_incorrect_password">Mot de passe incorrect</string>
+	<string name="error_field_required">Champs requis</string>
+	<string name="emailpassword_status_fmt">Email user: %1$s (vérifié: %2$b)</string>
+
+	<!--Bilet layout-->
+	<string name="nr_traseu">102</string>
+	<string name="status_bilet">Actif</string>
+	<string name="nr_calatorii">Calatorii: %1$d (%2$d RON)</string>
+	<string name="ora_bilet">Ora: %1$d</string>
+	<string name="data_bilet">Data: %1$s</string>
+
+	<!--Traseu layout-->
+	<string name="ora_traseu_fmt">Ora sosire: %1$s</string>
+	<string name="nr_traseu_fmt">Numar traseu: %1$d</string>
+
+	<!--Tranzactie layout-->
+	<string name="istoric_data">%1$d\n%2$s</string>
+	<string name="istoric_bilet">Bilet %1$s</string>
+	<string name="istoric_pret">%1$.2f\nRON</string>
+</resources>

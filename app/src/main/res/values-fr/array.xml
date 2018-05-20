@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="traseeeTramvai">
+		<item>Tout</item>
+		<item>7</item>
+		<item>39</item>
+		<item>41</item>
+		<item>44</item>
+	</string-array>
+	<string-array name="traseeAutobuz">
+		<item>Tout</item>
+		<item>9</item>
+		<item>10</item>
+		<item>11</item>
+		<item>12</item>
+		<item>13</item>
+		<item>14</item>
+		<item>15</item>
+		<item>16</item>
+		<item>17</item>
+		<item>18</item>
+		<item>19</item>
+		<item>20</item>
+		<item>22</item>
+		<item>23</item>
+		<item>24</item>
+		<item>25</item>
+		<item>26</item>
+		<item>27</item>
+		<item>28</item>
+		<item>29</item>
+		<item>30</item>
+		<item>31</item>
+		<item>34</item>
+		<item>35</item>
+		<item>36</item>
+		<item>105</item>
+	</string-array>
+	<string-array name="traseeTroleibuz">
+		<item>Tout</item>
+		<item>102T</item>
+		<item>104T</item>
+	</string-array>
+	<string-array name="numeLuni">
+		<item>JAN</item>
+		<item>FÉV</item>
+		<item>MAR</item>
+		<item>AVR</item>
+		<item>MAI</item>
+		<item>JUN</item>
+		<item>JUL</item>
+		<item>AOÛ</item>
+		<item>SEP</item>
+		<item>OCT</item>
+		<item>NOV</item>
+		<item>DÉC</item>
+	</string-array>
+</resources>

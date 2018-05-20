@@ -17,16 +17,13 @@
 	<!-- Strings related to login -->
 	<string name="prompt_email">Email</string>
 	<string name="prompt_password">Parola</string>
-	<string name="action_sign_in">Sign in or register</string>
-	<string name="action_sign_in_short">Autentificare</string>
+	<string name="action_sign">Autentificare</string>
 	<string name="action_create_account">Inregistrare</string>
 	<string name="error_invalid_email">Adresa de email invalida</string>
 	<string name="error_invalid_password">Parola este prea scurta</string>
-	<string name="error_incorrect_password">Parola incorrecta</string>
+	<string name="error_incorrect_password">Parola incorecta</string>
 	<string name="error_field_required">Camp obligatoriu</string>
-	<string name="permission_rationale">"Contacts permissions are needed for providing email
-		completions."</string>
-	<string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
+	<string name="emailpassword_status_fmt">Email utilizator: %1$s (verificat: %2$b)</string>
 
 	<!--Bilet layout-->
 	<string name="nr_traseu">102</string>
