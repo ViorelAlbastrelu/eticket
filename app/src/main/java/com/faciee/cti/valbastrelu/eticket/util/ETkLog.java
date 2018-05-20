@@ -2,33 +2,34 @@ package com.faciee.cti.valbastrelu.eticket.util;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class ETkLog {
 	private static final String TAG = "ETkLog";
 	private static final String LOG_FILE = "eticket_log.txt";
-	private FileOutputStream stream;
-//	private static String week = String.valueOf(new Date().getDay());
+	private static FileOutputStream stream;
+	private static String time = String.valueOf(Calendar.getInstance().getTime());
 	
-	public ETkLog(Context context) {
+	public static void f(String tag, String message, Context context) {
+		Log.d(TAG, "f: writing to stream to path " + context.getFilesDir());
+		String line = String.format("%s %s : %s \n", time, tag, message);
 		try {
 			stream = context.openFileOutput(LOG_FILE, Context.MODE_APPEND);
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
 		}
-//		File logFile = new File(context.getFilesDir(), LOG_FILE);
-	}
-	
-	public void f(String tag, String message, @Nullable Exception e){
 		try {
-			stream.write(message.getBytes());
+			stream.write(line.getBytes());
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
-		}finally {
-			if (stream!=null) {
+		} finally {
+			if (stream != null) {
 				try {
 					stream.close();
 				} catch (IOException e1) {
