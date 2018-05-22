@@ -3,13 +3,11 @@ package com.faciee.cti.valbastrelu.eticket.ui.bus;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.BusPresenter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
 
 import butterknife.BindView;
@@ -18,8 +16,6 @@ import butterknife.ButterKnife;
 public class BusActivity extends AppCompatActivity {
 	
 	private static final String TAG = "BusActivity";
-	
-	public BusPresenter busPresenter;
 	BusActivityModel busActivityModel;
 	
 	@BindView(R.id.container) ViewPager mViewPager;
@@ -33,7 +29,6 @@ public class BusActivity extends AppCompatActivity {
 		busActivityModel = ViewModelProviders.of(this).get(BusActivityModel.class);
 		setupViewPager(mViewPager);
 		mTabLayout.setupWithViewPager(mViewPager);
-		busPresenter = new BusPresenter();
 	}
 	
 	private void setupViewPager(ViewPager viewPager) {

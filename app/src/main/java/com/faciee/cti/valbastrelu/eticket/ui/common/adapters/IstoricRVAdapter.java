@@ -11,19 +11,20 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.model.Tranzactie;
+import com.faciee.cti.valbastrelu.eticket.util.model.Tranzactie;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.IstoricHolder>{
 	private static final String TAG = "IstoricRVAdapter";
 	
-	private ArrayList<Tranzactie> mIstorice;
+	private List<Tranzactie> mIstorice;
 	private Context mContext;
 	
-	public IstoricRVAdapter(Context context, ArrayList<Tranzactie> lIstorice) {
+	public IstoricRVAdapter(Context context, List<Tranzactie> lIstorice) {
 		this.mContext = context;
-		this.mIstorice = lIstorice;
+		this.mIstorice = new ArrayList<>(lIstorice);
 	}
 	
 	@NonNull

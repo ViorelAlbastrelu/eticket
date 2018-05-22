@@ -1,5 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,49 +13,37 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentViewI;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentWithListI;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.BusPresenter;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletRVAdapter;
-import com.faciee.cti.valbastrelu.eticket.ui.model.Bilet;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by valbastrelu on 09-Apr-18.
  */
 
-public class FrgTb01Bilet extends AbstractBusActivityFragment implements FragmentWithListI{
+public class FrgTb01Bilet extends Fragment{
 	private static final String TAG = "FrgTb01Bilet";
-	private BusPresenter.FrgTb01Presenter frgTb01Presenter;
-	RecyclerView recyclerView;
+	
+	private BusActivityModel sharedBusModel;
+	private RecyclerView recyclerView;
 	
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag01_bilet, container, false);
+		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
+		sharedBusModel.getLiveDataBilete().observe(this, this::buildRecyclerView);
 		recyclerView = view.findViewById(R.id.recyclerViewBilete);
-		//REFACTOR !
-		frgTb01Presenter = getBusPresenter().new FrgTb01Presenter(this);
-		// self.buildViewLayout()
-		// presenter.refreshData();
-//		frgTb01Presenter.populateRecyclerView();
 		Log.d(TAG, "onCreateView: frg01");
 		return view;
 	}
 	
-	@Override
-	public void buildRecyclerView(ArrayList list) {
+	public void buildRecyclerView(List list) {
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 		BiletRVAdapter biletRVAdapter = new BiletRVAdapter(list);
 		recyclerView.addItemDecoration(new BiletRVAdapter.VerticalSpaceItemDecoration(24));
 		recyclerView.setAdapter(biletRVAdapter);
-	}
-	
-	@Override
-	public void showDataInList(List list) {
-	
 	}
 }

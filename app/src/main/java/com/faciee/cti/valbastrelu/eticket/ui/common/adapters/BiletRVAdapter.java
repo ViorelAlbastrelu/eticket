@@ -12,17 +12,18 @@ import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
-import com.faciee.cti.valbastrelu.eticket.ui.model.Bilet;
+import com.faciee.cti.valbastrelu.eticket.util.model.Bilet;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BiletRVAdapter extends  RecyclerView.Adapter<BiletRVAdapter.BiletViewHolder>{
 	private static final String TAG = "IstoricRVAdapter";
 	
-	private ArrayList<Bilet> mBilete;
+	private List<Bilet> mBilete;
 	
-	public BiletRVAdapter(ArrayList<Bilet> mBilete) {
-		this.mBilete = mBilete;
+	public BiletRVAdapter(List<Bilet> mBilete) {
+		this.mBilete = new ArrayList<>(mBilete);
 	}
 	
 	@NonNull

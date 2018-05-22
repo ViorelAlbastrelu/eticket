@@ -14,6 +14,7 @@ import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.FrgTb02TraseuStatii;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.main.Chatbot;
+import com.faciee.cti.valbastrelu.eticket.util.ETkLog;
 import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
@@ -21,6 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ETicketActivity extends AppCompatActivity {
+	private static final String TAG = "ETicketActivity";
 	
 	@BindView(R.id.toolbar) Toolbar mToolbar;
 	private FirebaseAuth mAuth;
@@ -67,7 +69,8 @@ public class ETicketActivity extends AppCompatActivity {
 	
 	@OnClick(R.id.fab)
 	public void clickOnFab(View view){
-		startActivity(new Intent(this, BusActivity.class));
+		ETkLog.f(TAG, "Intent to BusActivity", this);
+		startActivity(new Intent(this, Chatbot.class));
 		Toast.makeText(this, "No implementation", Toast.LENGTH_SHORT).show();
 //		fragmentTransaction();
 	}

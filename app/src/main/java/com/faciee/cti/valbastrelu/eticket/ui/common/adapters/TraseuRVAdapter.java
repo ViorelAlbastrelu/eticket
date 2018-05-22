@@ -1,7 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,21 +12,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.FrgTb02TraseuStatii;
-import com.faciee.cti.valbastrelu.eticket.ui.model.Traseu;
+import com.faciee.cti.valbastrelu.eticket.util.model.Traseu;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TraseuRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 	private static final String TAG = "TraseuRecyclerViewAdapt";
 	
-	private ArrayList<Traseu> mTrasee;
+	private List<Traseu> mTrasee;
 	private Context mContext;
 	
-	public TraseuRVAdapter(Context mContext, ArrayList<Traseu> lTrasee) {
+	public TraseuRVAdapter(Context mContext, List lTrasee) {
 		this.mContext = mContext;
-		this.mTrasee = lTrasee;
+		this.mTrasee = new ArrayList<>(lTrasee);
 	}
 	
 	@Override

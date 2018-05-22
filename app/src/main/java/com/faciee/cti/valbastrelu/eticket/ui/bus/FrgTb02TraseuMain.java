@@ -1,5 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,22 +13,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentViewI;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.i.FragmentWithListI;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.presenter.BusPresenter;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by valbastrelu on 09-Apr-18.
  */
 
-public class FrgTb02TraseuMain extends AbstractBusActivityFragment implements FragmentWithListI{
+public class FrgTb02TraseuMain extends Fragment{
 	private static final String TAG = "FrgTb02TraseuMain";
-	private BusPresenter.FrgTb02MainPresenter frgTb02Presenter;
 	
+	BusActivityModel sharedBusModel;
 	RecyclerView recyclerView;
 	
 	@Nullable
@@ -35,8 +33,10 @@ public class FrgTb02TraseuMain extends AbstractBusActivityFragment implements Fr
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag02_traseu, container, false);
 		recyclerView = view.findViewById(R.id.listaTraseeBus);
-		frgTb02Presenter = getBusPresenter().new FrgTb02MainPresenter(this);
-		frgTb02Presenter.populateRecyclerView();
+		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
+		sharedBusModel.getLiveDataTrasee().observe(this, trasee -> {
+			buildRecyclerView(trasee);
+		});
 		//TODO  Pass listener to recyclerView onClick infoBtn to open FrgTb02TraseuStep based on selected.
 		Log.d(TAG, "onCreateView: started.");
 		return view;
@@ -47,17 +47,11 @@ public class FrgTb02TraseuMain extends AbstractBusActivityFragment implements Fr
 		//TODO implement filter
 	}
 	
-	@Override
-	public void buildRecyclerView(ArrayList list) {
+	public void buildRecyclerView(List list) {
 		Log.d(TAG, "initRecyclerView: initializing...");
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 		TraseuRVAdapter adapter = new TraseuRVAdapter(getContext(), list);
 		recyclerView.setAdapter(adapter);
-	}
-	
-	@Override
-	public void showDataInList(List list) {
-	
 	}
 }
