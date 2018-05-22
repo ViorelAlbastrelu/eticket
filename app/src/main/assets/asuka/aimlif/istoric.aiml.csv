@@ -3,3 +3,15 @@
 0,POTI SA MA AJUTI CU * ISTORIC,*,*,<srai>ISTORIC</srai>,istoric.aiml
 0,INFORMATII * ISTORIC,*,*,<srai>ISTORIC</srai>,istoric.aiml
 0,CE SE INTAMPLA DACA APAS PE UN ISTORIC,*,istoric,Nimic,istoric.aiml
+0,VERDE,*,istoric,Tranzactiile cu pret verde indica adaugare de credit in protofelul aplicatiei.,istoric.aiml
+0,* VERDE PRETUL,*,istoric,<srai>VERDE</srai>,istoric.aiml
+0,* DE CE * VERDE,*,istoric,<srai>VERDE</srai>,istoric.aiml
+0,* PRET VERDE,*,istoric,<srai>VERDE</srai>,istoric.aiml
+0,ROSU,*,istoric,Tranzactiile cu pret rosu indica achizitionarea unui bilet.,istoric.aiml
+0,* ROSU PRETUL,*,istoric,<srai>VERDE</srai>,istoric.aiml
+0,* DE CE * ROSU,*,istoric,<srai>VERDE</srai>,istoric.aiml
+0,* PRET ROSU,*,istoric,<srai>VERDE</srai>,istoric.aiml
+0,STERGERE,*,istoric,Tranzactiile nu pot fi sterse.,istoric.aiml
+0,POT STERGE O TRANZACTIE,*,istoric,<srai>STERGERE</srai>,istoric.aiml
+0,SE POT STERGE,*,istoric,<srai>STERGERE</srai>,istoric.aiml
+0,CUM O STERG,*,istoric,<srai>STERGERE</srai>,istoric.aiml

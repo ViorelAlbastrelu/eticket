@@ -1,0 +1,17 @@
+0,APLICATIE,*,*,Ce vrei sa stii despre aplicatie?<think><set name="topic">aplicatie</set></think>,aplicatie.aiml
+0,POTI SA MA AJUTI CU APLICATIA,*,*,<srai>APLICATIE</srai>,aplicatie.aiml
+0,POTI SA MA AJUTI CU * APLICATIE,*,*,<srai>APLICATIE</srai>,aplicatie.aiml
+0,INFORMATII * APLICATIE,*,*,<srai>APLICATIE</srai>,aplicatie.aiml
+0,* DESPRE APLICATIE,*,*,<srai>APLICATIE</srai>,aplicatie.aiml
+0,ORICE,Ce vrei sa stii despre aplicatie,*,As prefera sa fii specific. Pot sa-ti explic despre bilete trasee istoric sau functionalitati ale aplicatiei in general.,aplicatie.aiml
+0,CE * IN APLICATIE,*,aplicatie,Aplicatia este conceputa pentru a te ajuta in organizarea itinerariului tau in momentele cand ai nevoie de mijloace de trasport comune sau parcari.,aplicatie.aiml
+0,CONT,*,aplicatie,Pentru a folosi aplicatia trebuie sa te inregistrezi cu un email personal si o parola.,aplicatie.aiml
+0,* NEVOIE DE CONT,*,aplicatie,<srai>CONT</srai>,aplicatie.aiml
+0,CREARE,*,aplicatie,Crearea unui cont e simpla. In ecranul de login exista optiunea de inregistrare.,aplicatie.aiml
+0,CUM * CONT,*,aplicatie,<srai>CREARE</srai>,aplicatie.aiml
+0,* INTERNET,In ecranul de login exista optiunea de inregistrare,aplicatie,Este nevoie de internet pentru inregistrarea unui cont nou.,aplicatie.aiml
+0,LOGIN,*,aplicatie,Pentru a te loga ai nevoie de email si parola cu care te-ai inregistrat.,aplicatie.aiml
+0,* LOGHEZ,*,aplicatie,<srai>LOGIN</srai>,aplicatie.aiml
+0,* INTRU IN CONT,*,aplicatie,<srai>LOGIN</srai>,aplicatie.aiml
+0,* INTERNET,Pentru a te loga ai nevoie de email si parola cu care te-ai inregistrat,aplicatie,Nu te poti loga fara internet. In schimb eu functionez fara si pot sa-ti tin companie pana atunci.,aplicatie.aiml
+0,* ALTCEVA,*,aplicatie,Ce vrei sa stii despre aplicatie?,aplicatie.aiml

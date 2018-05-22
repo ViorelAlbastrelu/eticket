@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<aiml version = "1.0.1" encoding = "UTF-8"?>
+   <category><pattern>APLICATIE</pattern><template>Ce vrei sa stii despre aplicatie?<think><set name="topic">aplicatie</set>
+   </think></template></category>
+   <category><pattern>POTI SA MA AJUTI CU APLICATIA</pattern><template><srai>APLICATIE</srai></template></category>
+   <category><pattern>POTI SA MA AJUTI CU * APLICATIE</pattern><template><srai>APLICATIE</srai></template></category>
+   <category><pattern>INFORMATII * APLICATIE</pattern><template><srai>APLICATIE</srai></template></category>
+   <category><pattern>* DESPRE APLICATIE</pattern><template><srai>APLICATIE</srai></template></category>
+   <category><pattern>ORICE</pattern><that>Ce vrei sa stii despre aplicatie</that><template>As prefera sa fii specific. Pot sa-ti explic despre bilete trasee istoric sau functionalitati ale aplicatiei in general.</template></category>
+   
+   <topic name="aplicatie">
+		<category><pattern>CE * IN APLICATIE</pattern><template>Aplicatia este conceputa pentru a te ajuta in organizarea itinerariului tau in momentele cand ai nevoie de mijloace de trasport comune sau parcari.</template></category>
+		
+		<category><pattern>CONT</pattern><template>Pentru a folosi aplicatia trebuie sa te inregistrezi cu un email personal si o parola.</template></category>
+		<category><pattern>* NEVOIE DE CONT</pattern><template><srai>CONT</srai></template></category>
+		
+		<category><pattern>CREARE</pattern><template>Crearea unui cont e simpla. In ecranul de login exista optiunea de inregistrare.</template></category>
+		<category><pattern>CUM * CONT</pattern><template><srai>CREARE</srai></template></category>
+		<category><pattern>* INTERNET</pattern>
+		<that>In ecranul de login exista optiunea de inregistrare</that>
+		<template>Este nevoie de internet pentru inregistrarea unui cont nou.</template></category>
+		
+		<category><pattern>LOGIN</pattern><template>Pentru a te loga ai nevoie de email si parola cu care te-ai inregistrat.</template></category>
+		<category><pattern>* LOGHEZ</pattern><template><srai>LOGIN</srai></template></category>
+		<category><pattern>* INTRU IN CONT</pattern><template><srai>LOGIN</srai></template></category>
+		<category><pattern>* INTERNET</pattern>
+		<that>Pentru a te loga ai nevoie de email si parola cu care te-ai inregistrat</that>
+		<template>Nu te poti loga fara internet. In schimb eu functionez fara si pot sa-ti tin companie pana atunci.</template></category>
+		
+		<category><pattern>* ALTCEVA</pattern><template>Ce vrei sa stii despre aplicatie?</template></category>
+	</topic>
+</aiml>

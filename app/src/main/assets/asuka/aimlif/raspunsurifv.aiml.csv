@@ -3,7 +3,9 @@
 0,MA CHEAMA *,Cum spuneai ca te cheama,*,Ok <set name="user"><star/></set>! am sa retin.,raspunsurifv.aiml
 0,EU SUNT *,*,*,<srai>MA CHEAMA <star/></srai>,raspunsurifv.aiml
 0,OK,*,*,Cu ce te mai pot ajuta?,raspunsurifv.aiml
+0,NIMIC,Cu ce te mai pot ajuta,*,OK sper ca am fost de folos.,raspunsurifv.aiml
 0,SCUZE,*,*,Nu-i nimic. Spre deosebire de celelalte fete eu nu ma supar.,raspunsurifv.aiml
+0,MERSI,*,*,Cu placere.,raspunsurifv.aiml
 0,HA,*,*,Hahaha,raspunsurifv.aiml
 0,HAHA,*,*,<srai>HA</srai>,raspunsurifv.aiml
 0,LEL,*,*,<srai>HA</srai>,raspunsurifv.aiml

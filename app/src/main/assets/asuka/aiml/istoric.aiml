@@ -8,5 +8,21 @@
    
    <topic name="istoric">
 		<category><pattern>CE SE INTAMPLA DACA APAS PE UN ISTORIC</pattern><template>Nimic</template></category>
+		
+		<category><pattern>VERDE</pattern><template>Tranzactiile cu pret verde indica adaugare de credit in protofelul aplicatiei.</template></category>
+		<category><pattern>* VERDE PRETUL</pattern><template><srai>VERDE</srai></template></category>
+		<category><pattern>* DE CE * VERDE</pattern><template><srai>VERDE</srai></template></category>
+		<category><pattern>* PRET VERDE</pattern><template><srai>VERDE</srai></template></category>
+		
+		<category><pattern>ROSU</pattern><template>Tranzactiile cu pret rosu indica achizitionarea unui bilet.</template></category>
+		<category><pattern>* ROSU PRETUL</pattern><template><srai>VERDE</srai></template></category>
+		<category><pattern>* DE CE * ROSU</pattern><template><srai>VERDE</srai></template></category>
+		<category><pattern>* PRET ROSU</pattern><template><srai>VERDE</srai></template></category>
+		
+		<category><pattern>STERGERE</pattern><template>Tranzactiile nu pot fi sterse.</template></category>
+		<category><pattern>POT STERGE O TRANZACTIE</pattern><template><srai>STERGERE</srai></template></category>
+		<category><pattern>SE POT STERGE</pattern><template><srai>STERGERE</srai></template></category>
+		<category><pattern>CUM O STERG</pattern><template><srai>STERGERE</srai></template></category>
+		
 	</topic>
 </aiml>

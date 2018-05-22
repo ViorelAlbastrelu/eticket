@@ -2,8 +2,8 @@
 <aiml version = "1.0.1" encoding = "UTF-8"?>
    <category><pattern>BILET</pattern>
    <template>Ce vrei sa stii despre bilete?<think><set name="topic">bilet</set></think></template></category>
-   <category><pattern>POTI SA MA AJUTI CU BILETELE</pattern>
-   <template><srai>BILET</srai></template></category>
+   <category><pattern>POTI SA MA AJUTI CU BILETELE</pattern><template><srai>BILET</srai></template></category>
+   <category><pattern>* DESPRE BILETE</pattern><template><srai>BILET</srai></template></category>
    
    <topic name="bilet">
 		<category><pattern>CE SE INTAMPLA DACA APAS PE BILET</pattern><template>Nimic</template></category>

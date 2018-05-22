@@ -6,3 +6,5 @@
 0,* CUM MA CHEAMA,*,*,<srai>CUM MA CHEAMA</srai>,intrebarifv.aiml
 0,* CINE SUNT,*,*,<srai>CUM MA CHEAMA</srai>,intrebarifv.aiml
 0,DESPRE CE VORBIM,*,*,Despre <get name="topic"></get>,intrebarifv.aiml
+0,DESPRE CE VORBIM,*,*,<random><li>Despre <get name="topic"></get></li><li>Intrebai ceva despre <get name="topic"></get></li><li>Vorbeam despre <get name="topic"></get></li></random>,intrebarifv.aiml
+0,DESPRE CE VORBEAM,*,*,<srai>DESPRE CE VORBIM</srai>,intrebarifv.aiml

@@ -15,7 +15,9 @@
 	<category><pattern>EU SUNT *</pattern><template><srai>MA CHEAMA <star/></srai></template></category>
 	  
 	<category><pattern>OK</pattern><template>Cu ce te mai pot ajuta?</template></category>
+	<category><pattern>NIMIC,Cu ce te mai pot ajuta</that><template>OK sper ca am fost de folos.</template></category>
 	<category><pattern>SCUZE</pattern><template>Nu-i nimic. Spre deosebire de celelalte fete eu nu ma supar.</template></category>
+	<category><pattern>MERSI</pattern><template>Cu placere.</template></category>
 	<category><pattern>HA</pattern><template>Hahaha</template></category>
 	<category><pattern>HAHA</pattern><template><srai>HA</srai></template></category>
 	<category><pattern>LEL</pattern><template><srai>HA</srai></template></category>

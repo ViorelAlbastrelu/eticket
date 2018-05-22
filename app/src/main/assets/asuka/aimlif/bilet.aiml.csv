@@ -1,5 +1,6 @@
 0,BILET,*,*,Ce vrei sa stii despre bilete?<think><set name="topic">bilet</set></think>,bilet.aiml
 0,POTI SA MA AJUTI CU BILETELE,*,*,<srai>BILET</srai>,bilet.aiml
+0,* DESPRE BILETE,*,*,<srai>BILET</srai>,bilet.aiml
 0,CE SE INTAMPLA DACA APAS PE BILET,*,bilet,Nimic,bilet.aiml
 0,CE SE INTAMPLA DACA APAS PE UN BILET,*,bilet,<srai>CE SE INTAMPLA DACA APAS PE BILET</srai>,bilet.aiml
 0,BILET VERDE,*,bilet,Daca biletul este verde inseamna ca este activ pe durata calatoriei.,bilet.aiml

@@ -16,5 +16,11 @@
 	<category><pattern>* CUM MA CHEAMA</pattern><template><srai>CUM MA CHEAMA</srai></template></category>
 	<category><pattern>* CINE SUNT</pattern><template><srai>CUM MA CHEAMA</srai></template></category>
 	
-	<category><pattern>DESPRE CE VORBIM</pattern><template>Despre <get name="topic"></get></template></category>
+	<category><pattern>DESPRE CE VORBIM</pattern>
+	<template><random>
+		<li>Despre <get name="topic"></get></li>
+		<li>Intrebai ceva despre <get name="topic"></get></li>
+		<li>Vorbeam despre <get name="topic"></get></li>
+	</random></template></category>
+	<category><pattern>DESPRE CE VORBEAM</pattern><template><srai>DESPRE CE VORBIM</srai></template></category>
 </aiml>
