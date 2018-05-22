@@ -35,21 +35,21 @@ public class DBHandler extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		String createTableTraseu = "CREATE TABLE " + TABLE_TRASEU + "(" +
-				COLUMN_IDT + " INTEGER PRIMARY KEY AUTOINCREMENT" +
-				COLUMN_NO + " INTEGER " +
+				COLUMN_IDT + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+				COLUMN_NO + " INTEGER, " +
 				COLUMN_TYPE + " TEXT" + ")";
 		db.execSQL(createTableTraseu);
 		
 		String createTableStatie = "CREATE TABLE " + TABLE_STATIE + "(" +
-				COLUMN_IDS + " INTEGER PRIMARY KEY AUTOINCREMENT" +
-				COLUMN_NAME + " TEXT " +
+				COLUMN_IDS + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+				COLUMN_NAME + " TEXT, " +
 				COLUMN_WAY + " TEXT " +
 				COLUMN_FK_IDT + " INTEGER " + ")";
 		db.execSQL(createTableStatie);
 		
 		String createTableOrar = "CREATE TABLE " + TABLE_TRASEU + "(" +
-				COLUMN_IDT + " INTEGER PRIMARY KEY AUTOINCREMENT" +
-				COLUMN_NO + " INTEGER " +
+				COLUMN_IDT + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+				COLUMN_NO + " INTEGER, " +
 				COLUMN_TYPE + " TEXT" + ")";
 		db.execSQL(createTableOrar);
 	}

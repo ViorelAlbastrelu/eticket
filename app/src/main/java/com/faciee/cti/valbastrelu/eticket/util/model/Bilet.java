@@ -1,6 +1,5 @@
-package com.faciee.cti.valbastrelu.eticket.ui.model;
+package com.faciee.cti.valbastrelu.eticket.util.model;
 
-import java.util.Calendar;
 import java.util.Date;
 
 public class Bilet {

@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.model;
+package com.faciee.cti.valbastrelu.eticket.util.model;
 
 import java.util.Date;
 
