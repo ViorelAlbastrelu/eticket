@@ -27,7 +27,8 @@
 
 	<!--Bilet layout-->
 	<string name="nr_traseu">102</string>
-	<string name="status_bilet">Activ</string>
+	<string name="status_bilet_activ">Activ</string>
+	<string name="status_bilet_expirat">Expirat</string>
 	<string name="nr_calatorii">Calatorii: %1$d (%2$d RON)</string>
 	<string name="ora_bilet">Ora: %1$d</string>
 	<string name="data_bilet">Data: %1$s</string>

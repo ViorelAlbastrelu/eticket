@@ -26,17 +26,18 @@
 
 	<!--Bilet layout-->
 	<string name="nr_traseu">102</string>
-	<string name="status_bilet">Actif</string>
-	<string name="nr_calatorii">Calatorii: %1$d (%2$d RON)</string>
-	<string name="ora_bilet">Ora: %1$d</string>
-	<string name="data_bilet">Data: %1$s</string>
+	<string name="status_bilet_activ">Actif</string>
+	<string name="status_bilet_expirat">Expiré</string>
+	<string name="nr_calatorii">Voyages: %1$d (%2$d RON)</string>
+	<string name="ora_bilet">Heure: %1$d</string>
+	<string name="data_bilet">Date: %1$s</string>
 
 	<!--Traseu layout-->
-	<string name="ora_traseu_fmt">Ora sosire: %1$s</string>
-	<string name="nr_traseu_fmt">Numar traseu: %1$d</string>
+	<string name="ora_traseu_fmt">Heure d\'arrivée: %1$s</string>
+	<string name="nr_traseu_fmt">Numéro de sentier: %1$d</string>
 
 	<!--Tranzactie layout-->
 	<string name="istoric_data">%1$d\n%2$s</string>
-	<string name="istoric_bilet">Bilet %1$s</string>
+	<string name="istoric_bilet">Billet %1$s</string>
 	<string name="istoric_pret">%1$.2f\nRON</string>
 </resources>
