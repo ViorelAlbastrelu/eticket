@@ -14,7 +14,7 @@
 		app:cmv_arrowPosition="left"
 		app:cmv_backgroundColor="#8800bcd4"
 		app:cmv_backgroundColorPressed="#ff00bcd4"
-		app:cmv_cornerRadius="3dp"
+		app:cmv_cornerRadius="4dp"
 		app:cmv_showArrow="true">
 
 		<TextView

@@ -9,7 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.ETicketActivity;
 import com.faciee.cti.valbastrelu.eticket.R;
@@ -35,7 +37,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	// UI references.
 	@BindView(R.id.email) AutoCompleteTextView mEmailView;
 	@BindView(R.id.password) EditText mPasswordView;
-	@BindView(R.id.login_progress) View mProgressView;
+	@BindView(R.id.login_progress) ProgressBar mProgressView;
 	@BindView(R.id.login_form) View mLoginFormView;
 	@BindView(R.id.statusTextView) TextView mStatusTextView;
 	
@@ -59,11 +61,14 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	
 	@OnClick(R.id.btn_autentificare)
 	protected void login() {
+		mLoginFormView.setVisibility(View.GONE);
+		mProgressView.setVisibility(View.VISIBLE);
 		signIn(mEmailView.getText().toString(), mPasswordView.getText().toString());
 	}
 	
 	@OnClick(R.id.btn_inregistrare)
 	protected void contNou() {
+		mProgressView.setVisibility(View.VISIBLE);
 		createAccount(mEmailView.getText().toString(), mPasswordView.getText().toString());
 	}
 	
@@ -77,6 +82,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 						if (task.isSuccessful()){
 							Log.d(TAG, "onComplete: signInWithEmailAndPassword success");
 							FirebaseUser user = mAuth.getCurrentUser();
+							mProgressView.setVisibility(View.GONE);
 							goToHomeActivity();
 						}else {
 							Log.w(TAG, "onComplete: signInWithEmailAndPassword failure", task.getException());
@@ -96,7 +102,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 					public void onComplete(@NonNull Task<AuthResult> task) {
 						if (task.isSuccessful()) {
 							Log.d(TAG, "onComplete: createUserWithEmailAndPassword : success");
+							Toast.makeText(LoginActivity.this, "Cont creat cu succes!", Toast.LENGTH_SHORT).show();
 							FirebaseUser user = mAuth.getCurrentUser();
+							mProgressView.setVisibility(View.GONE);
 							updateUI(user);
 						} else {
 							Log.w(TAG, "onComplete: createUserWithEmailAndPassword : failure", task.getException());

@@ -40,4 +40,7 @@
 	<string name="istoric_data">%1$d\n%2$s</string>
 	<string name="istoric_bilet">Ticket %1$s</string>
 	<string name="istoric_pret">%1$.2f\nRON</string>
+
+	<!--Chatbot-->
+	<string name="chat_trimite">Send</string>
 </resources>

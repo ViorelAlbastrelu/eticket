@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.main.ChatMessage;
+import com.faciee.cti.valbastrelu.eticket.ui.chat.ChatMessage;
 
 import java.util.List;
 
