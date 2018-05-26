@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.FrgTb02TraseuStatii;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
-import com.faciee.cti.valbastrelu.eticket.ui.main.Chatbot;
+import com.faciee.cti.valbastrelu.eticket.ui.chat.Chatbot;
 import com.faciee.cti.valbastrelu.eticket.util.ETkLog;
 import com.google.firebase.auth.FirebaseAuth;
 

@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.main;
+package com.faciee.cti.valbastrelu.eticket.ui.chat;
 
 public class ChatMessage {
 	private boolean isImage, isMine;
