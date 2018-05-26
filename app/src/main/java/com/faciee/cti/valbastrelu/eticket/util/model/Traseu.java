@@ -1,11 +1,18 @@
 package com.faciee.cti.valbastrelu.eticket.util.model;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
+
 import java.util.Date;
 
+@Entity
 public class Traseu {
-	private int nrTraseu;
-	private Date ora;
-	private TransportType transportType;
+	
+	@PrimaryKey private int nrTraseu;
+	@ColumnInfo private Date ora;
+	@TypeConverters(TransportType.class) private TransportType transportType;
 	
 	public Traseu() {
 	}
