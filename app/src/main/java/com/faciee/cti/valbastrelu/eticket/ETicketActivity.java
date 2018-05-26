@@ -24,13 +24,14 @@ import butterknife.OnClick;
 public class ETicketActivity extends AppCompatActivity {
 	private static final String TAG = "ETicketActivity";
 	
-	@BindView(R.id.toolbar) Toolbar mToolbar;
+	Toolbar mToolbar;
 	private FirebaseAuth mAuth;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_eticket);
+		mToolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(mToolbar);
 		ButterKnife.bind(this);
 		mAuth = FirebaseAuth.getInstance();
@@ -69,8 +70,7 @@ public class ETicketActivity extends AppCompatActivity {
 	
 	@OnClick(R.id.fab)
 	public void clickOnFab(View view){
-		ETkLog.f(TAG, "Intent to BusActivity", this);
-		startActivity(new Intent(this, Chatbot.class));
+		ETkLog.f(TAG, "Logging in to a file from FAB", this);
 		Toast.makeText(this, "No implementation", Toast.LENGTH_SHORT).show();
 //		fragmentTransaction();
 	}
