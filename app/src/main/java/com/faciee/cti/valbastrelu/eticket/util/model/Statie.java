@@ -1,9 +1,15 @@
 package com.faciee.cti.valbastrelu.eticket.util.model;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity
 public class Statie {
 	
-	private String numeStatie;
-	private String sens;
+	@PrimaryKey(autoGenerate = true) private int idstatie;
+	@ColumnInfo private String numeStatie;
+	@ColumnInfo private String sens;
 	
 	public Statie(String numeStatie, String sens) {
 		this.numeStatie = numeStatie;

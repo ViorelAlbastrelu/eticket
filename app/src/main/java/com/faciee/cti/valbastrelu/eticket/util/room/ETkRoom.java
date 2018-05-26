@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.util;
+package com.faciee.cti.valbastrelu.eticket.util.room;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
@@ -6,7 +6,6 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
 import com.faciee.cti.valbastrelu.eticket.util.model.Tranzactie;
-import com.faciee.cti.valbastrelu.eticket.util.model.TranzactieDao;
 
 @Database(entities = {Tranzactie.class}, version = 1)
 public abstract class ETkRoom extends RoomDatabase {

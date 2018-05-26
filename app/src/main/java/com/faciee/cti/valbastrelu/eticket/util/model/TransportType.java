@@ -1,5 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.util.model;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
 import android.support.annotation.DrawableRes;
 
 import com.faciee.cti.valbastrelu.eticket.R;
