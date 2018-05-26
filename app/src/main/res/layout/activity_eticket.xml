@@ -4,10 +4,12 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:background="@drawable/backgrndv2"
 	android:fitsSystemWindows="true"
 	tools:context="com.faciee.cti.valbastrelu.eticket.ETicketActivity">
 
-	<include layout="@layout/toolbar"/>
+	<include layout="@layout/toolbar" />
+
 	<android.support.design.widget.FloatingActionButton
 		android:id="@+id/fab"
 		android:layout_width="wrap_content"
