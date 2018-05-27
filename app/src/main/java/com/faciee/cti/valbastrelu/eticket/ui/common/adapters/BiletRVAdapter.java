@@ -36,19 +36,26 @@ public class BiletRVAdapter extends  RecyclerView.Adapter<BiletRVAdapter.BiletVi
 	@Override
 	public void onBindViewHolder(BiletViewHolder holder, int position) {
 		Log.d(TAG, "onBindViewHolder: called.");
-		boolean activ = mBilete.get(position).isActiv();
-		holder.mTraseu.setText((String.valueOf(mBilete.get(position).getTraseu())));
-		holder.mStatus.setText(activ ? "Activ" : "Expirat");
-		holder.setColorForStatus(activ);
-		holder.mCalatorii.setText(ETicketApp.getCurrentETicketApp().getString(
-				R.string.nr_calatorii,
-				mBilete.get(position).getCalatorii(),
-				mBilete.get(position).getPret()));
+		if (mBilete != null){
+			boolean activ = mBilete.get(position).isActiv();
+			holder.mTraseu.setText((String.valueOf(mBilete.get(position).getTraseu())));
+			holder.mStatus.setText(activ ? "Activ" : "Expirat");
+			holder.setColorForStatus(activ);
+			holder.mCalatorii.setText(ETicketApp.getCurrentETicketApp().getString(
+					R.string.nr_calatorii,
+					mBilete.get(position).getCalatorii(),
+					mBilete.get(position).getPret()));
+		}else{
+			holder.mTraseu.setText(0);
+			holder.mStatus.setText("Nu exista nici un bilet");
+			holder.mCalatorii.setText(ETicketApp.getCurrentETicketApp().getString(
+					R.string.nr_calatorii,0,0));
+		}
 	}
 	
 	@Override
 	public int getItemCount() {
-		return mBilete != null ? mBilete.size() : 0;
+		return (mBilete != null ? mBilete.size() : 0);
 	}
 	
 	public class BiletViewHolder extends RecyclerView.ViewHolder{
@@ -73,21 +80,6 @@ public class BiletRVAdapter extends  RecyclerView.Adapter<BiletRVAdapter.BiletVi
 			mOra.setTextColor(status ? Color.GREEN : Color.RED);
 			mData.setTextColor(status ? Color.GREEN : Color.RED);
 			mCalatorii.setTextColor(status ? Color.GREEN : Color.RED);
-		}
-	}
-	
-	public static class VerticalSpaceItemDecoration extends RecyclerView.ItemDecoration {
-		
-		private final int verticalSpaceHeight;
-		
-		public VerticalSpaceItemDecoration(int verticalSpaceHeight) {
-			this.verticalSpaceHeight = verticalSpaceHeight;
-		}
-		
-		@Override
-		public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
-		                           RecyclerView.State state) {
-			outRect.bottom = verticalSpaceHeight;
 		}
 	}
 }

@@ -53,7 +53,7 @@ public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.Ist
 	
 	@Override
 	public int getItemCount() {
-		return mIstorice.size();
+		return (mIstorice != null ? mIstorice.size() : 0);
 	}
 	
 	public class IstoricHolder extends RecyclerView.ViewHolder{

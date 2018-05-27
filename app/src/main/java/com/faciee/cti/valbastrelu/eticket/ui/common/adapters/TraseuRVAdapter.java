@@ -50,7 +50,7 @@ public class TraseuRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 	
 	@Override
 	public int getItemCount() {
-		return mTrasee.size();
+		return (mTrasee != null ? mTrasee.size() : 0);
 	}
 	
 	public class TraseuViewHolder extends RecyclerView.ViewHolder{
