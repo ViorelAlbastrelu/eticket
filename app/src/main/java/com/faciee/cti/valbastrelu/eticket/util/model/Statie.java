@@ -2,14 +2,21 @@ package com.faciee.cti.valbastrelu.eticket.util.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity
+import static android.arch.persistence.room.ForeignKey.CASCADE;
+
+@Entity(foreignKeys = @ForeignKey(entity = Traseu.class,
+									parentColumns = "nrTraseu",
+									childColumns = "nrTraseu",
+									onDelete = CASCADE))
 public class Statie {
 	
-	@PrimaryKey(autoGenerate = true) private int idstatie;
-	@ColumnInfo private String numeStatie;
-	@ColumnInfo private String sens;
+	@PrimaryKey(autoGenerate = true) public int idstatie;
+	private String numeStatie;
+	private String sens;
+	private int nrTraseu;
 	
 	public Statie(String numeStatie, String sens) {
 		this.numeStatie = numeStatie;
@@ -32,11 +39,21 @@ public class Statie {
 		this.sens = sens;
 	}
 	
+	public int getNrTraseu() {
+		return nrTraseu;
+	}
+	
+	public void setNrTraseu(int nrTraseu) {
+		this.nrTraseu = nrTraseu;
+	}
+	
 	@Override
 	public String toString() {
 		return "Statie{" +
-				"numeStatie='" + numeStatie + '\'' +
+				"idstatie=" + idstatie +
+				", numeStatie='" + numeStatie + '\'' +
 				", sens='" + sens + '\'' +
-				"}\n";
+				", nrTraseu=" + nrTraseu +
+				'}';
 	}
 }

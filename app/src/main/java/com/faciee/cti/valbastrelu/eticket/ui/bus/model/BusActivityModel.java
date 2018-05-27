@@ -10,6 +10,7 @@ import com.faciee.cti.valbastrelu.eticket.util.model.Bilet;
 import com.faciee.cti.valbastrelu.eticket.util.model.Tranzactie;
 import com.faciee.cti.valbastrelu.eticket.util.model.TransportType;
 import com.faciee.cti.valbastrelu.eticket.util.model.Traseu;
+import com.faciee.cti.valbastrelu.eticket.util.repo.ETkRepository;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,6 +19,8 @@ import java.util.List;
 
 public class BusActivityModel extends AbstractActivityModel {
 	private static final String TAG = "BusActivityModel";
+	
+	private ETkRepository repository;
 	
 	private Bilet biletActiv = null;
 	
@@ -103,8 +106,6 @@ public class BusActivityModel extends AbstractActivityModel {
 		listaStatii.add("Piata Centrala");
 //		statiiLiveData.setValue(listaStatii);
 	}
-	
-
 	
 	public LiveData<List<Tranzactie>> getLiveDataTranzactii(){
 		if (tranzactiiLiceData == null){
