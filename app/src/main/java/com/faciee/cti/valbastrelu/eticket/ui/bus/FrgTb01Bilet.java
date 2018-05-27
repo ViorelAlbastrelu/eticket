@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletRVAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.VerticalSpaceItemDecoration;
 
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class FrgTb01Bilet extends Fragment{
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 		BiletRVAdapter biletRVAdapter = new BiletRVAdapter(list);
-		recyclerView.addItemDecoration(new BiletRVAdapter.VerticalSpaceItemDecoration(24));
+		recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(24));
 		recyclerView.setAdapter(biletRVAdapter);
 	}
 }
