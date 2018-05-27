@@ -4,6 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import com.faciee.cti.valbastrelu.eticket.util.model.Tranzactie;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Dao
 public interface TranzactieDao {
+	
 	@Query("SELECT * FROM tranzactie")
 	List<Tranzactie> getAllTranzactii();
 	
@@ -21,6 +23,9 @@ public interface TranzactieDao {
 	@Insert
 	void insertTranzactii(Tranzactie... tranzactie);
 	
+	@Update
+	void updateTranzactii(Tranzactie... tranzactie);
+	
 	@Delete
-	void delete(Tranzactie tranzactie);
+	void deleteTranzactii(Tranzactie... tranzactie);
 }
