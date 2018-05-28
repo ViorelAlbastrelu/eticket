@@ -24,15 +24,16 @@ public class FrgTb02TraseuStatii extends Fragment{
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.stepper_traseu, container, false);
 		view.setBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
+		mSetpview0 = view.findViewById(R.id.verticalStepView);
+		
 		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
 		sharedBusModel.getLiveDataStatii(0).observe(this, statii -> {
-			buildRecyclerViewStatii(statii);
+			buildStepViewStatii(statii);
 		});
-		mSetpview0 = view.findViewById(R.id.verticalStepView);
 		return view;
 	}
 	
-	public void buildRecyclerViewStatii(List<String> list) {
+	public void buildStepViewStatii(List<String> list) {
 		mSetpview0.setStepsViewIndicatorComplectingPosition(-1)
 				.reverseDraw(false)
 				.setStepViewTexts(list)

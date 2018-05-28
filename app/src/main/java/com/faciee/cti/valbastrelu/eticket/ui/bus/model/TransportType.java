@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.util.model;
+package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

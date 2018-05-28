@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.util.room;
+package com.faciee.cti.valbastrelu.eticket.room;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
@@ -7,7 +7,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.faciee.cti.valbastrelu.eticket.util.model.Statie;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Statie;
 
 import java.util.List;
 
@@ -16,9 +16,9 @@ public interface StatieDao {
 	
 	@Query("SELECT * FROM statie")
 	LiveData<List<Statie>> getAllStatii();
-
-	@Query("SELECT * FROM statie WHERE nrTraseu = :nrTraseu")
-	LiveData<List<Statie>> getStatiiForTraseu(int nrTraseu);
+	
+	@Query("SELECT numeStatie FROM statie WHERE traseu = :nrTraseu")
+	LiveData<List<String>> getStatiiForTraseu(int nrTraseu);
 	
 	@Insert
 	void insertStatii(Statie... statie);
@@ -28,4 +28,6 @@ public interface StatieDao {
 	
 	@Delete
 	void deleteStatii(Statie... statie);
+	@Query("DELETE FROM statie")
+	void deleteAllStatii();
 }

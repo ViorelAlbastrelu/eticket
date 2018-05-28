@@ -18,6 +18,7 @@ import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletRVAdapter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.VerticalSpaceItemDecoration;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by valbastrelu on 09-Apr-18.
@@ -33,18 +34,21 @@ public class FrgTb01Bilet extends Fragment{
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag01_bilet, container, false);
-		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
-		sharedBusModel.getLiveDataBilete().observe(this, this::buildRecyclerView);
-		recyclerView = view.findViewById(R.id.recyclerViewBilete);
 		Log.d(TAG, "onCreateView: frg01");
+		
+		recyclerView = view.findViewById(R.id.recyclerViewBilete);
+		BiletRVAdapter biletRVAdapter = new BiletRVAdapter();
+		buildRecyclerView(biletRVAdapter);
+		
+		sharedBusModel = ViewModelProviders.of(Objects.requireNonNull(getActivity())).get(BusActivityModel.class);
+		sharedBusModel.getLiveDataBilete().observe(this, list -> biletRVAdapter.setBilete(list));
 		return view;
 	}
 	
-	public void buildRecyclerView(List list) {
+	public void buildRecyclerView(BiletRVAdapter biletRVAdapter) {
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-		BiletRVAdapter biletRVAdapter = new BiletRVAdapter(list);
-		recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(24));
+//		recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(24));
 		recyclerView.setAdapter(biletRVAdapter);
 	}
 }

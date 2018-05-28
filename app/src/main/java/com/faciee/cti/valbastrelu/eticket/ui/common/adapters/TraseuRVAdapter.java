@@ -12,9 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.util.model.Traseu;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TraseuRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -23,9 +22,8 @@ public class TraseuRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 	private List<Traseu> mTrasee;
 	private Context mContext;
 	
-	public TraseuRVAdapter(Context mContext, List lTrasee) {
+	public TraseuRVAdapter(Context mContext) {
 		this.mContext = mContext;
-		this.mTrasee = new ArrayList<>(lTrasee);
 	}
 	
 	@Override
@@ -40,12 +38,17 @@ public class TraseuRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 		TraseuViewHolder viewHolder = (TraseuViewHolder) holder;
 		viewHolder.icon.setImageResource(mTrasee.get(position).getTransportType().getTransportTypeIcon());
 		viewHolder.timeStamp.setText(mContext.getString(R.string.ora_traseu_fmt,
-				mTrasee.get(position).getOra()));
+				mTrasee.get(position).getOraFormat()));
 		viewHolder.traseu.setText(mContext.getString(R.string.nr_traseu_fmt, mTrasee.get(position).getNrTraseu()));
 		viewHolder.infoBtn.setOnClickListener(v -> {
-			Toast.makeText(mContext, mTrasee.get(position).getOra() + " - "
+			Toast.makeText(mContext, mTrasee.get(position).getOraFormat() + " - "
 					+  mTrasee.get(position).getNrTraseu(), Toast.LENGTH_SHORT).show();
 		});
+	}
+	
+	public void setTrasee(List<Traseu> trasee){
+		mTrasee = trasee;
+		notifyDataSetChanged();
 	}
 	
 	@Override
@@ -59,7 +62,7 @@ public class TraseuRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 		TextView traseu;
 		Button infoBtn;
 		
-		public TraseuViewHolder(View itemView) {
+		TraseuViewHolder(View itemView) {
 			super(itemView);
 			icon = itemView.findViewById(R.id.traseuTypeIcon);
 			timeStamp = itemView.findViewById(R.id.time_stamp);

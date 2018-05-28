@@ -32,6 +32,7 @@
 	<string name="nr_calatorii">Calatorii: %1$d (%2$d RON)</string>
 	<string name="ora_bilet">Ora: %1$d</string>
 	<string name="data_bilet">Data: %1$s</string>
+	<string name="zero_bilete">Nu exista nici un bilet in lista</string>
 
 	<!--Traseu layout-->
 	<string name="ora_traseu_fmt">Ora sosire: %1$s</string>
@@ -44,4 +45,5 @@
 
 	<!--Chatbot-->
 	<string name="chat_trimite">Trimite</string>
+	<string name="serie_bilet">Seria: %1d</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.util.room;
+package com.faciee.cti.valbastrelu.eticket.room.converter;
 
 import android.arch.persistence.room.TypeConverter;
 

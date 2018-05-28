@@ -1,7 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
 import android.graphics.Color;
-import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,19 +11,14 @@ import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
-import com.faciee.cti.valbastrelu.eticket.util.model.Bilet;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BiletRVAdapter extends  RecyclerView.Adapter<BiletRVAdapter.BiletViewHolder>{
 	private static final String TAG = "IstoricRVAdapter";
 	
 	private List<Bilet> mBilete;
-	
-	public BiletRVAdapter(List<Bilet> mBilete) {
-		this.mBilete = new ArrayList<>(mBilete);
-	}
 	
 	@NonNull
 	@Override
@@ -37,20 +31,28 @@ public class BiletRVAdapter extends  RecyclerView.Adapter<BiletRVAdapter.BiletVi
 	public void onBindViewHolder(BiletViewHolder holder, int position) {
 		Log.d(TAG, "onBindViewHolder: called.");
 		if (mBilete != null){
-			boolean activ = mBilete.get(position).isActiv();
-			holder.mTraseu.setText((String.valueOf(mBilete.get(position).getTraseu())));
-			holder.mStatus.setText(activ ? "Activ" : "Expirat");
+			Bilet biletCurent = mBilete.get(position);
+			boolean activ = biletCurent.isActiv();
+			holder.mTraseu.setText((String.valueOf(biletCurent.getTraseu())));
+			holder.mStatus.setText(activ ?
+					ETicketApp.getStringResource(R.string.status_bilet_activ) :
+					ETicketApp.getStringResource(R.string.status_bilet_expirat));
 			holder.setColorForStatus(activ);
 			holder.mCalatorii.setText(ETicketApp.getCurrentETicketApp().getString(
-					R.string.nr_calatorii,
-					mBilete.get(position).getCalatorii(),
-					mBilete.get(position).getPret()));
+					R.string.nr_calatorii,biletCurent.getCalatorii(),biletCurent.getPret()));
+			holder.mSeria.setText(ETicketApp.getCurrentETicketApp().getString(
+					R.string.serie_bilet,biletCurent.getIdbilet()));
 		}else{
 			holder.mTraseu.setText(0);
-			holder.mStatus.setText("Nu exista nici un bilet");
+			holder.mStatus.setText(R.string.zero_bilete);
 			holder.mCalatorii.setText(ETicketApp.getCurrentETicketApp().getString(
 					R.string.nr_calatorii,0,0));
 		}
+	}
+	
+	public void setBilete(List<Bilet> bilete){
+		mBilete = bilete;
+		notifyDataSetChanged();
 	}
 	
 	@Override
@@ -58,28 +60,22 @@ public class BiletRVAdapter extends  RecyclerView.Adapter<BiletRVAdapter.BiletVi
 		return (mBilete != null ? mBilete.size() : 0);
 	}
 	
-	public class BiletViewHolder extends RecyclerView.ViewHolder{
-		TextView mTraseu;
-		TextView mStatus;
-		TextView mOra;
-		TextView mData;
-		TextView mCalatorii;
+	class BiletViewHolder extends RecyclerView.ViewHolder{
+		TextView mTraseu, mStatus, mOra, mData, mCalatorii, mSeria;
 		
-		public BiletViewHolder(View itemView) {
+		BiletViewHolder(View itemView) {
 			super(itemView);
 			mTraseu = itemView.findViewById(R.id.traseu_bilet);
 			mStatus = itemView.findViewById(R.id.status_bilet);
 			mOra = itemView.findViewById(R.id.ora_bilet);
 			mData = itemView.findViewById(R.id.data_bilet);
 			mCalatorii = itemView.findViewById(R.id.calatorii_bilet);
+			mSeria = itemView.findViewById(R.id.serie_bilet);
 		}
 		
-		public void setColorForStatus(boolean status){
+		void setColorForStatus(boolean status){
 			mTraseu.setTextColor(status ? Color.GREEN : Color.RED);
 			mStatus.setTextColor(status ? Color.GREEN : Color.RED);
-			mOra.setTextColor(status ? Color.GREEN : Color.RED);
-			mData.setTextColor(status ? Color.GREEN : Color.RED);
-			mCalatorii.setTextColor(status ? Color.GREEN : Color.RED);
 		}
 	}
 }

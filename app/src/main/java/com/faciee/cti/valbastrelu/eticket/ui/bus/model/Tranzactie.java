@@ -1,12 +1,12 @@
-package com.faciee.cti.valbastrelu.eticket.util.model;
+package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
 
-import com.faciee.cti.valbastrelu.eticket.util.room.DateConverter;
-import com.faciee.cti.valbastrelu.eticket.util.room.TrasportTypeConverter;
+import com.faciee.cti.valbastrelu.eticket.room.converter.DateConverter;
+import com.faciee.cti.valbastrelu.eticket.room.converter.TrasportTypeConverter;
 
 import java.util.Date;
 @Entity

@@ -5,13 +5,16 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class BusActivity extends AppCompatActivity {
 	
@@ -37,5 +40,10 @@ public class BusActivity extends AppCompatActivity {
 		sectionsPagerAdapter.addFragment(new FrgTb02TraseuMain(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
 		sectionsPagerAdapter.addFragment(new FrgTb02TraseuStatii(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC //TODO schimbat inapoi la Frg03Istoric
 		viewPager.setAdapter(sectionsPagerAdapter);
+	}
+	
+	@OnClick(R.id.fab)
+	void addBilet(View view){
+		busActivityModel.insertBilet(new Bilet(100, true, 2,2));
 	}
 }

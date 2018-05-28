@@ -72,6 +72,8 @@ public class ETicketActivity extends AppCompatActivity {
 	public void clickOnFab(View view){
 		ETkLog.f(TAG, "Logging in to a file from FAB", this);
 		Toast.makeText(this, "No implementation", Toast.LENGTH_SHORT).show();
+		startActivity(new Intent(this, BusActivity.class));
+		finish();
 //		fragmentTransaction();
 	}
 	

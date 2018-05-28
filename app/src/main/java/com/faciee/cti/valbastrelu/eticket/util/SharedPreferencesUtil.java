@@ -46,25 +46,25 @@ public interface SharedPreferencesUtil {
 	static void putValueInSharedPref(SharedPreferences sharedPreferences, String key, String value) {
 		SharedPreferences.Editor editor = sharedPreferences.edit();
 		editor.putString(key, value);
-		editor.commit();
+		editor.apply();
 	}
 	
 	static void putValueInSharedPref(SharedPreferences sharedPreferences, String key, int value) {
 		SharedPreferences.Editor editor = sharedPreferences.edit();
 		editor.putInt(key, value);
-		editor.commit();
+		editor.apply();
 	}
 	
 	static void putValueInSharedPref(SharedPreferences sharedPreferences, String key, float value) {
 		SharedPreferences.Editor editor = sharedPreferences.edit();
 		editor.putFloat(key, value);
-		editor.commit();
+		editor.apply();
 	}
 	
 	static void putValueInSharedPref(SharedPreferences sharedPreferences, String key, Boolean value) {
 		SharedPreferences.Editor editor = sharedPreferences.edit();
 		editor.putBoolean(key, value);
-		editor.commit();
+		editor.apply();
 	}
 	
 	//clean
@@ -72,12 +72,12 @@ public interface SharedPreferencesUtil {
 		SharedPreferences.Editor editor = sharedPreferences.edit();
 		for (String key : keys)
 			editor.remove(key);
-		editor.commit();
+		editor.apply();
 	}
 	
 	static void clearAll(SharedPreferences sharedPreferences){
 		SharedPreferences.Editor editor = sharedPreferences.edit();
 		editor.clear();
-		editor.commit();
+		editor.apply();
 	}
 }

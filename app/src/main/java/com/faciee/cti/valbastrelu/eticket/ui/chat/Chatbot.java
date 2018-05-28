@@ -1,5 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.ui.chat;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -42,9 +44,10 @@ public class Chatbot extends AppCompatActivity {
 	
 	@BindView(R.id.chatView) ListView mListView;
 	@BindView(R.id.send_message) EditText mEditTextMessage;
+	@BindView(R.id.loadingBot) ProgressBar loadingBot;
 	
 	//chatbot
-	private Chat chat;
+	private static Chat chat;
 	private ChatMessageAdapter mAdapter;
 	
 	@Override
@@ -55,7 +58,7 @@ public class Chatbot extends AppCompatActivity {
 		mEditTextMessage.setImeOptions(EditorInfo.IME_ACTION_DONE);
 		mAdapter = new ChatMessageAdapter(this, new ArrayList<>());
 		mListView.setAdapter(mAdapter);
-		new CongfigureBotTask().execute();
+		new CongfigureBotTask(this).execute();
 	}
 	
 	@OnClick(R.id.btn_send)
@@ -104,7 +107,14 @@ public class Chatbot extends AppCompatActivity {
 //		System.out.println("Robot: " + response);
 //	}
 	
-	private class CongfigureBotTask extends AsyncTask<Void, Void, Bot>{
+	private static class CongfigureBotTask extends AsyncTask<Void, Void, Bot>{
+		
+		@SuppressLint("StaticFieldLeak")
+		Context context;
+		
+		CongfigureBotTask(Context context) {
+			this.context = context;
+		}
 		
 		@Override
 		protected void onPreExecute() {
@@ -114,8 +124,8 @@ public class Chatbot extends AppCompatActivity {
 		@Override
 		protected Bot doInBackground(Void... voids) {
 			//receiving the assets from the app directory
-			AssetManager assets = getResources().getAssets();
-			File jayDir = new File(getFilesDir() + "/asuka/bots/Asuka");
+			AssetManager assets = context.getResources().getAssets();
+			File jayDir = new File(context.getFilesDir() + "/asuka/bots/Asuka");
 			boolean b = jayDir.mkdirs();
 			if (jayDir.exists()) {
 				//Reading the file
@@ -146,7 +156,7 @@ public class Chatbot extends AppCompatActivity {
 				}
 			}
 			//get the working directory
-			MagicStrings.root_path = getFilesDir() + "/asuka";
+			MagicStrings.root_path = context.getFilesDir() + "/asuka";
 			System.out.println("Working Directory = " + MagicStrings.root_path);
 			AIMLProcessor.extension =  new PCAIMLProcessorExtension();
 			//Assign the AIML files to bot for processing
@@ -156,6 +166,7 @@ public class Chatbot extends AppCompatActivity {
 		@Override
 		protected void onPostExecute(Bot bot) {
 			chat = new Chat(bot);
+			if (context != null) context = null;
 			super.onPostExecute(bot);
 		}
 	}

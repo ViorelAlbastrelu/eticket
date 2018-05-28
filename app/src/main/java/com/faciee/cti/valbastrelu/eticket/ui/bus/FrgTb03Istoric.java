@@ -14,9 +14,6 @@ import android.view.ViewGroup;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.IstoricRVAdapter;
-import com.faciee.cti.valbastrelu.eticket.util.model.Tranzactie;
-
-import java.util.List;
 
 /**
  * Created by valbastrelu on 09-Apr-18.
@@ -25,27 +22,30 @@ import java.util.List;
 public class FrgTb03Istoric extends Fragment{
 	private static final String TAG = "FrgTb03Istoric";
 	
+	private RecyclerView listaIstoric;
 	private BusActivityModel sharedBusModel;
-	//TODO filtre by date
-	//TODO filtre by transport number
-	//TODO filtre by type
+	//TODO filter by date
+	//TODO filter by transport number
+	//TODO filter by type
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag03_istoric, container,false);
+		IstoricRVAdapter adapter = new IstoricRVAdapter(getContext());
+		listaIstoric = view.findViewById(R.id.listaIstoric);
+		buildRecyclerView(adapter);
 		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
 		sharedBusModel.getLiveDataTranzactii().observe(this, tranzactii -> {
-			buildRecyclerView(tranzactii);
+			adapter.setIstoric(tranzactii);
 		});
 		Log.d(TAG, "onCreateView: started.");
 		return view;
 	}
 	
-	public void buildRecyclerView(List<Tranzactie> list) {
+	public void buildRecyclerView(IstoricRVAdapter adapter) {
 		Log.d(TAG, "initRecyclerView: initializing...");
-		RecyclerView recyclerView = getView().findViewById(R.id.listaIstoric);
-		IstoricRVAdapter adapter = new IstoricRVAdapter(getContext(), list);
-		recyclerView.setAdapter(adapter);
-		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+		listaIstoric.setHasFixedSize(true);
+		listaIstoric.setAdapter(adapter);
+		listaIstoric.setLayoutManager(new LinearLayoutManager(getContext()));
 	}
 }

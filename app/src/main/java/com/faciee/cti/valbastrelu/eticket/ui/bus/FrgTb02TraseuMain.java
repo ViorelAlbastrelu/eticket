@@ -32,26 +32,25 @@ public class FrgTb02TraseuMain extends Fragment{
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.bus_frag02_traseu, container, false);
+		Log.d(TAG, "onCreateView: started.");
+		//Creating recyclerView and adapter
+		TraseuRVAdapter adapter = new TraseuRVAdapter(getContext());
 		recyclerView = view.findViewById(R.id.listaTraseeBus);
+		buildRecyclerView(adapter);
+		
 		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
 		sharedBusModel.getLiveDataTrasee().observe(this, trasee -> {
-			buildRecyclerView(trasee);
+			adapter.setTrasee(trasee);
 		});
 		//TODO  Pass listener to recyclerView onClick infoBtn to open FrgTb02TraseuStep based on selected.
-		Log.d(TAG, "onCreateView: started.");
+		//TODO implement filter
 		return view;
 	}
 	
-	private void initList(){
-		Log.d(TAG, "initList: prepare lists.");
-		//TODO implement filter
-	}
-	
-	public void buildRecyclerView(List list) {
+	public void buildRecyclerView(TraseuRVAdapter adapter) {
 		Log.d(TAG, "initRecyclerView: initializing...");
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-		TraseuRVAdapter adapter = new TraseuRVAdapter(getContext(), list);
 		recyclerView.setAdapter(adapter);
 	}
 }

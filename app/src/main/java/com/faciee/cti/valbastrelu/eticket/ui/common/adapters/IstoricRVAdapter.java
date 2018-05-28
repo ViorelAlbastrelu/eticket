@@ -11,9 +11,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.util.model.Tranzactie;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Tranzactie;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.IstoricHolder>{
@@ -22,9 +21,8 @@ public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.Ist
 	private List<Tranzactie> mIstorice;
 	private Context mContext;
 	
-	public IstoricRVAdapter(Context context, List<Tranzactie> lIstorice) {
+	public IstoricRVAdapter(Context context) {
 		this.mContext = context;
-		this.mIstorice = new ArrayList<>(lIstorice);
 	}
 	
 	@NonNull
@@ -51,17 +49,22 @@ public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.Ist
 		holder.mSumaHolder.setTextColor(mIstorice.get(position).getSuma() < 0 ? Color.RED : Color.GREEN);
 	}
 	
+	public void setIstoric(List<Tranzactie> tranzactii){
+		mIstorice = tranzactii;
+		notifyDataSetChanged();
+	}
+	
 	@Override
 	public int getItemCount() {
 		return (mIstorice != null ? mIstorice.size() : 0);
 	}
 	
-	public class IstoricHolder extends RecyclerView.ViewHolder{
+	class IstoricHolder extends RecyclerView.ViewHolder{
 		TextView mDataHolder;
 		TextView mTipBiletHolder;
 		TextView mSumaHolder;
 		
-		public IstoricHolder(View itemView) {
+		IstoricHolder(View itemView) {
 			super(itemView);
 			mDataHolder = itemView.findViewById(R.id.istoricData);
 			mTipBiletHolder = itemView.findViewById(R.id.istoricBiletInfo);

@@ -43,4 +43,6 @@
 
 	<!--Chatbot-->
 	<string name="chat_trimite">Send</string>
+	<string name="zero_bilete">No tickets currently in list</string>
+	<string name="serie_bilet">Series: %1d</string>
 </resources>

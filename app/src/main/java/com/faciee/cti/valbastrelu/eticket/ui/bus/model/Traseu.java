@@ -1,9 +1,11 @@
-package com.faciee.cti.valbastrelu.eticket.util.model;
+package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
 
-import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
+
+import com.faciee.cti.valbastrelu.eticket.room.converter.DateConverter;
+import com.faciee.cti.valbastrelu.eticket.room.converter.TrasportTypeConverter;
 
 import java.util.Date;
 
@@ -11,11 +13,8 @@ import java.util.Date;
 public class Traseu {
 	
 	@PrimaryKey private int nrTraseu;
-	@ColumnInfo private Date ora;
-	@TypeConverters(TransportType.class) private TransportType transportType;
-	
-	public Traseu() {
-	}
+	@TypeConverters(DateConverter.class) private Date ora;
+	@TypeConverters(TrasportTypeConverter.class) private TransportType transportType;
 	
 	public Traseu(int nrTraseu, Date ora, TransportType transportType) {
 		this.nrTraseu = nrTraseu;
@@ -31,8 +30,12 @@ public class Traseu {
 		this.nrTraseu = nrTraseu;
 	}
 	
-	public String getOra() {
+	public String getOraFormat() {
 		return ora.getHours() + ":" + ora.getMinutes();
+	}
+	
+	public Date getOra() {
+		return ora;
 	}
 	
 	public void setOra(Date ora) {
