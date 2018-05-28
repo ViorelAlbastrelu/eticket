@@ -11,12 +11,13 @@ import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
+import com.faciee.cti.valbastrelu.eticket.ui.common.i.TransportViewActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class BusActivity extends AppCompatActivity {
+public class BusActivity extends AppCompatActivity implements TransportViewActivity{
 	
 	private static final String TAG = "BusActivity";
 	BusActivityModel busActivityModel;
@@ -45,5 +46,25 @@ public class BusActivity extends AppCompatActivity {
 	@OnClick(R.id.fab)
 	void addBilet(View view){
 		busActivityModel.insertBilet(new Bilet(100, true, 2,2));
+	}
+	
+	@Override
+	public void setActivityTitle(String activityTitle) {
+	
+	}
+	
+	@Override
+	public void setActivityTitle(int activityResId) {
+	
+	}
+	
+	@Override
+	public void setToolbarText(String toolbarText) {
+	
+	}
+	
+	@Override
+	public void setToolbarText(int toolbarResId) {
+	
 	}
 }

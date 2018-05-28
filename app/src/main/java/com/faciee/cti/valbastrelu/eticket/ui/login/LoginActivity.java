@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.ETicketActivity;
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,12 +26,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * A login screen that offers login via email/password.
- */
 public class LoginActivity extends AppCompatActivity implements LoginView{
 	private static final String TAG = "LoginActivity";
-	private FirebaseAuth mAuth;
+	private LoginPresenter loginPresenter;
 	
 	// UI references.
 	@BindView(R.id.email) AutoCompleteTextView mEmailView;
@@ -45,15 +41,14 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+		loginPresenter = new LoginPresenter(this);
 		ButterKnife.bind(this);
-		mAuth = FirebaseAuth.getInstance();
 	}
 	
 	@Override
 	protected void onStart() {
 		super.onStart();
-		FirebaseUser currentUser = mAuth.getCurrentUser();
-		
+		loginPresenter.checkUser();
 		//TODO setari de test
 		mEmailView.setText("test@email.com");
 		mPasswordView.setText("123456");
@@ -61,88 +56,51 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	
 	@OnClick(R.id.btn_autentificare)
 	protected void login() {
-		mLoginFormView.setVisibility(View.GONE);
-		mProgressView.setVisibility(View.VISIBLE);
-		signIn(mEmailView.getText().toString(), mPasswordView.getText().toString());
+		loginPresenter.executeLoginAction(mEmailView.getText().toString(), mPasswordView.getText().toString());
 	}
 	
 	@OnClick(R.id.btn_inregistrare)
 	protected void contNou() {
-		mProgressView.setVisibility(View.VISIBLE);
-		createAccount(mEmailView.getText().toString(), mPasswordView.getText().toString());
+		loginPresenter.executeRegisterAction(mEmailView.getText().toString(), mPasswordView.getText().toString());
 	}
 	
-	private void signIn(String email, String password) {
-		Log.d(TAG, "signIn: " + email);
-		if (validateForm()) return;
-		mAuth.signInWithEmailAndPassword(email, password)
-				.addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-					@Override
-					public void onComplete(@NonNull Task<AuthResult> task) {
-						if (task.isSuccessful()){
-							Log.d(TAG, "onComplete: signInWithEmailAndPassword success");
-							FirebaseUser user = mAuth.getCurrentUser();
-							mProgressView.setVisibility(View.GONE);
-							goToHomeActivity();
-						}else {
-							Log.w(TAG, "onComplete: signInWithEmailAndPassword failure", task.getException());
-							ETicketApp.toastMessageShort("Authentication failed");
-						}
-					}
-				});
+	@Override
+	public void signIn() {
+		Log.d(TAG, "signIn: ");
+		mLoginFormView.setVisibility(View.GONE);
+		goToHomeActivity();
 	}
 	
-	
-	private void createAccount(String email, String password) {
-		Log.d(TAG, "createAccount: " + email);
-		if (validateForm()) return;
-		mAuth.createUserWithEmailAndPassword(email, password)
-				.addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-					@Override
-					public void onComplete(@NonNull Task<AuthResult> task) {
-						if (task.isSuccessful()) {
-							Log.d(TAG, "onComplete: createUserWithEmailAndPassword : success");
-							Toast.makeText(LoginActivity.this, "Cont creat cu succes!", Toast.LENGTH_SHORT).show();
-							FirebaseUser user = mAuth.getCurrentUser();
-							mProgressView.setVisibility(View.GONE);
-							updateUI(user);
-						} else {
-							Log.w(TAG, "onComplete: createUserWithEmailAndPassword : failure", task.getException());
-							ETicketApp.toastMessageShort("Authentication failed");
-							updateUI(null);
-						}
-					}
-				});
+	@Override
+	public void createAccount() {
+		Log.d(TAG, "createAccount: ");
+		ETicketApp.toastMessageShort("Cont creat cu succes!");
+		goToHomeActivity();
 	}
 	
 	
 	@Override
 	public void goToHomeActivity() {
 		//TODO goToHomeActivity(FirebaseUser user) - add user to intent bundle and send throughout activity
+		mProgressView.setVisibility(View.GONE);
 		Intent goToHome = new Intent(LoginActivity.this, ETicketActivity.class);
 		this.finish();
 		startActivity(goToHome);
 	}
 	
-	private boolean validateForm() {
-		boolean invalid = false;
-		String email = mEmailView.getText().toString();
-		if (TextUtils.isEmpty(email) && email.contains("@")) {
-			mEmailView.setError(ETicketApp.getStringResource(R.string.error_invalid_email));
-			invalid = true;
-		} else mEmailView.setError(null);
-		
-		String password = mPasswordView.getText().toString();
-		
-			if (TextUtils.isEmpty(password)) {
-				mPasswordView.setError(ETicketApp.getStringResource(R.string.error_incorrect_password));
-				if (password.length() >= 6)
-					mPasswordView.setError(ETicketApp.getStringResource(R.string.error_invalid_password));
-				invalid = false;
-			} else {
-				mPasswordView.setError(null);
-			}
-		return invalid;
+	@Override
+	public void setEmailViewInvalid(boolean isInvalid) {
+		mEmailView.setError(isInvalid ? ETicketApp.getStringResource(R.string.error_invalid_email) : null);
+	}
+	
+	@Override
+	public void setPasswordViewInvalid(boolean isInvalid) {
+		mPasswordView.setError(isInvalid ? ETicketApp.getStringResource(R.string.error_invalid_password) : null);
+	}
+	
+	@Override
+	public void showToast(String message) {
+		ETicketApp.toastMessageShort(message);
 	}
 	
 	private void updateUI(FirebaseUser user) {
@@ -165,10 +123,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 //			findViewById(R.id.email_password_fields).setVisibility(View.VISIBLE);
 //			findViewById(R.id.signed_in_buttons).setVisibility(View.GONE);
 		}
-	}
-	
-	private void signOut() {
-		mAuth.signOut();
 	}
 }
 

@@ -62,6 +62,7 @@ public class ETicketActivity extends AppCompatActivity {
 			case R.id.action_sign_out:
 				mAuth.signOut();
 				intent = new Intent(this, LoginActivity.class);
+				finish();
 				break;
 		}
 		startActivity(intent);
