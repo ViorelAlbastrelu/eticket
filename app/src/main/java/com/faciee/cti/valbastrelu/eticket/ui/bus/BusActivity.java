@@ -38,8 +38,8 @@ public class BusActivity extends AppCompatActivity implements TransportViewActiv
 	private void setupViewPager(ViewPager viewPager) {
 		SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 		sectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_bilete));    //BILETE
-		sectionsPagerAdapter.addFragment(new FrgTb02TraseuMain(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
-		sectionsPagerAdapter.addFragment(new FrgTb02TraseuStatii(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC //TODO schimbat inapoi la Frg03Istoric
+		sectionsPagerAdapter.addFragment(new FrgTb02Trasee(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
+		sectionsPagerAdapter.addFragment(new FrgTb02Statii(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC //TODO schimbat inapoi la Frg03Istoric
 		viewPager.setAdapter(sectionsPagerAdapter);
 	}
 	

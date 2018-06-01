@@ -28,7 +28,7 @@ public class TraseuRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 	
 	@Override
 	public TraseuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_bus_fragment_traseu, parent, false);
+		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_traseu, parent, false);
 		return new TraseuViewHolder(view);
 	}
 	

@@ -28,9 +28,11 @@
 	<string name="nr_traseu">102</string>
 	<string name="status_bilet_activ">Actif</string>
 	<string name="status_bilet_expirat">Expiré</string>
-	<string name="nr_calatorii">Voyages: %1$d (%2$d RON)</string>
-	<string name="ora_bilet">Heure: %1$d</string>
-	<string name="data_bilet">Date: %1$s</string>
+	<string name="nr_calatorii">Voyages:</string>
+	<string name="ora_bilet">Heure:</string>
+	<string name="data_bilet">Date:</string>
+	<string name="serie_bilet">Série:</string>
+	<string name="zero_bilete">Il n\'y a pas de ticket dans la liste</string>
 
 	<!--Traseu layout-->
 	<string name="ora_traseu_fmt">Heure d\'arrivée: %1$s</string>
@@ -43,6 +45,4 @@
 
 	<!--Chatbot-->
 	<string name="chat_trimite">Envoyer</string>
-	<string name="zero_bilete">Il n\'y a pas de ticket dans la liste</string>
-	<string name="serie_bilet">Série: %1d</string>
 </resources>

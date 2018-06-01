@@ -16,14 +16,12 @@ import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 
-import java.util.List;
-
 /**
  * Created by valbastrelu on 09-Apr-18.
  */
 
-public class FrgTb02TraseuMain extends Fragment{
-	private static final String TAG = "FrgTb02TraseuMain";
+public class FrgTb02Trasee extends Fragment{
+	private static final String TAG = "FrgTb02Trasee";
 	
 	BusActivityModel sharedBusModel;
 	RecyclerView recyclerView;
@@ -31,7 +29,7 @@ public class FrgTb02TraseuMain extends Fragment{
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.bus_frag02_traseu, container, false);
+		View view = inflater.inflate(R.layout.bus_frag02_1_traseu, container, false);
 		Log.d(TAG, "onCreateView: started.");
 		//Creating recyclerView and adapter
 		TraseuRVAdapter adapter = new TraseuRVAdapter(getContext());

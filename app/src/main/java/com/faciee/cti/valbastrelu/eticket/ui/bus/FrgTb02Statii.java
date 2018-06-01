@@ -15,14 +15,14 @@ import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
 
 import java.util.List;
 
-public class FrgTb02TraseuStatii extends Fragment{
+public class FrgTb02Statii extends Fragment{
 	private BusActivityModel sharedBusModel;
 	VerticalStepView mSetpview0;
 	
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.stepper_traseu, container, false);
+		View view = inflater.inflate(R.layout.bus_frag02_2_statii, container, false);
 		view.setBackgroundColor(getResources().getColor(R.color.colorPrimaryLight));
 		mSetpview0 = view.findViewById(R.id.verticalStepView);
 		

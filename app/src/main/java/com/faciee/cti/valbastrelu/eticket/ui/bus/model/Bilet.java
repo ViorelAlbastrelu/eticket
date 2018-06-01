@@ -7,6 +7,7 @@ import android.arch.persistence.room.TypeConverters;
 
 import com.faciee.cti.valbastrelu.eticket.room.converter.DateConverter;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
@@ -72,6 +73,14 @@ public class Bilet {
 	
 	public Date getData() {
 		return data;
+	}
+	
+	public String getHourMinute() {
+		return new SimpleDateFormat("HH:mm").format(data);
+	}
+	
+	public String getDayMonthYear() {
+		return new SimpleDateFormat("dd-MMM-yyyy").format(data);
 	}
 	
 	public void setData(Date data) {

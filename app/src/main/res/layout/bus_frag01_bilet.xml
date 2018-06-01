@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+	xmlns:tools="http://schemas.android.com/tools">
 
-	<ImageView
-		android:id="@+id/imageView"
-		android:layout_width="0dp"
-		android:layout_height="wrap_content"
-		android:layout_marginBottom="64dp"
-		android:layout_marginEnd="32dp"
-		android:layout_marginStart="32dp"
-		android:visibility="gone"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@drawable/add_ticket" />
+	<data>
+		<variable
+			name="isLoading"
+			type="boolean" />
+	</data>
+	<android.support.constraint.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/cardview_light_background">
 
-	<android.support.v7.widget.RecyclerView
-		android:id="@+id/recyclerViewBilete"
-		android:layout_width="367dp"
-		android:layout_height="551dp"
-		android:clipChildren="false"
-		android:clipToPadding="true"
-		android:padding="10dp"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		tools:listitem="@layout/row_bus_fragment_bilet" />
-</android.support.constraint.ConstraintLayout>
+		<ImageView
+			android:id="@+id/imageView"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="64dp"
+			android:layout_marginEnd="32dp"
+			android:layout_marginStart="32dp"
+			android:visibility="gone"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@drawable/add_ticket"
+			app:visibleGone="@{isLoading}" />
+
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/recyclerViewBilete"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:clipChildren="false"
+			android:clipToPadding="true"
+			app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:visibleGone="@{!isLoading}"
+			tools:listitem="@layout/row_bilet" />
+	</android.support.constraint.ConstraintLayout>
+</layout>

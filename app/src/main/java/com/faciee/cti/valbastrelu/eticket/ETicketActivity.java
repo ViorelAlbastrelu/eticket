@@ -11,13 +11,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.FrgTb02TraseuStatii;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.FrgTb02Statii;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.chat.Chatbot;
 import com.faciee.cti.valbastrelu.eticket.util.ETkLog;
 import com.google.firebase.auth.FirebaseAuth;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -80,7 +79,7 @@ public class ETicketActivity extends AppCompatActivity {
 	
 	private void fragmentTransaction(){
 		FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-		transaction.replace(R.id.container, new FrgTb02TraseuStatii());
+		transaction.replace(R.id.container, new FrgTb02Statii());
 		transaction.addToBackStack("statii");
 		transaction.commit();
 	}
