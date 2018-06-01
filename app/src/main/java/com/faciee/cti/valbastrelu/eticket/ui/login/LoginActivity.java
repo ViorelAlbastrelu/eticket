@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		loginPresenter = new LoginPresenter(this);
+		loginPresenter.setFireBaseAuth(new FireBaseWrapper(loginPresenter));
 		ButterKnife.bind(this);
 	}
 	

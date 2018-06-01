@@ -9,8 +9,8 @@ public class LoginPresenter implements LoginPresenterI{
 	
 	public LoginPresenter(LoginView loginView) {
 		this.loginView = loginView;
-		fireBaseAuth = new FireBaseWrapper(this);
 	}
+	
 	
 	public void executeLoginAction(String email, String password) {
 		if (validateForm(email, password)) return;
@@ -22,6 +22,7 @@ public class LoginPresenter implements LoginPresenterI{
 		fireBaseAuth.register(email, password);
 	}
 	
+	@Override
 	public boolean validateForm(String email, String password) {
 		boolean invalid = false;
 		if (TextUtils.isEmpty(email) || !email.contains("@")) {
@@ -53,5 +54,9 @@ public class LoginPresenter implements LoginPresenterI{
 	@Override
 	public void showToast(String message) {
 		loginView.showToast(message);
+	}
+	
+	public void setFireBaseAuth(FireBaseWrapper fireBaseAuth) {
+		this.fireBaseAuth = fireBaseAuth;
 	}
 }
