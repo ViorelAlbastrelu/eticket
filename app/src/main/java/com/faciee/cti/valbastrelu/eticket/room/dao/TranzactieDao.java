@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.room;
+package com.faciee.cti.valbastrelu.eticket.room.dao;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;

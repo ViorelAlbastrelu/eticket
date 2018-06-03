@@ -7,7 +7,7 @@ import android.support.test.runner.AndroidJUnit4;
 
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Statie;
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
-import com.faciee.cti.valbastrelu.eticket.room.StatieDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.StatieDao;
 
 import junit.framework.Assert;
 

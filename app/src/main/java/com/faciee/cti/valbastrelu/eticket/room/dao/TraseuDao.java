@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.room;
+package com.faciee.cti.valbastrelu.eticket.room.dao;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
@@ -12,7 +12,7 @@ import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu;
 import java.util.List;
 
 @Dao
-interface TraseuDao {
+public interface TraseuDao {
 	
 	@Query("SELECT * FROM traseu")
 	LiveData<List<Traseu>> getAllBilete();

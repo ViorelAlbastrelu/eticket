@@ -1,7 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.FrgTb02Statii;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.chat.Chatbot;
 import com.faciee.cti.valbastrelu.eticket.util.ETkLog;
@@ -74,13 +72,5 @@ public class ETicketActivity extends AppCompatActivity {
 		Toast.makeText(this, "No implementation", Toast.LENGTH_SHORT).show();
 		startActivity(new Intent(this, BusActivity.class));
 		finish();
-//		fragmentTransaction();
-	}
-	
-	private void fragmentTransaction(){
-		FragmentTransaction transaction = this.getSupportFragmentManager().beginTransaction();
-		transaction.replace(R.id.container, new FrgTb02Statii());
-		transaction.addToBackStack("statii");
-		transaction.commit();
 	}
 }

@@ -6,7 +6,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
-import com.faciee.cti.valbastrelu.eticket.room.BiletDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.BiletDao;
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
 
 import junit.framework.Assert;
