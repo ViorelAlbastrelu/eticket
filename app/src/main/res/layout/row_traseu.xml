@@ -1,59 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:id="@+id/traseu_row"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	tools:layout_editor_absoluteY="25dp">
+	xmlns:tools="http://schemas.android.com/tools">
 
-	<TextView
-		android:id="@+id/time_stamp"
-		android:layout_width="wrap_content"
+	<data>
+		<variable
+			name="traseu"
+			type="com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu"/>
+		<variable
+			name="callback"
+			type="com.faciee.cti.valbastrelu.eticket.ui.bus.TraseuClickCallback"/>
+	</data>
+
+	<android.support.v7.widget.CardView
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginBottom="8dp"
-		android:layout_marginStart="16dp"
-		android:text="Ora sosire: 10:10"
-		android:textSize="14sp"
-		android:textStyle="italic"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintStart_toEndOf="@+id/traseuTypeIcon"
-		app:layout_constraintTop_toBottomOf="@+id/traseu_no" />
+		android:layout_margin="8dp">
 
-	<TextView
-		android:id="@+id/traseu_no"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="16dp"
-		android:layout_marginTop="8dp"
-		android:text="@string/nr_traseu_fmt"
-		android:textAlignment="center"
-		android:textSize="18sp"
-		android:textStyle="bold"
-		app:layout_constraintStart_toEndOf="@+id/traseuTypeIcon"
-		app:layout_constraintTop_toTopOf="parent" />
+		<android.support.constraint.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="8dp"
+			tools:layout_editor_absoluteY="25dp">
 
-	<Button
-		android:id="@+id/infoBtn"
-		style="@android:style/Widget.DeviceDefault.Button.Inset"
-		android:layout_width="36dp"
-		android:layout_height="36dp"
-		android:layout_marginBottom="8dp"
-		android:layout_marginEnd="8dp"
-		android:layout_marginTop="8dp"
-		android:background="@drawable/ic_pin_map"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+			<ImageView
+				android:id="@+id/traseuTypeIcon"
+				android:layout_width="52dp"
+				android:layout_height="52dp"
+				android:layout_marginStart="8dp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:srcCompat="@drawable/ic_bus"
+				tools:ignore="ContentDescription"
+				app:transportIcon="@{traseu.transportType.getTransportTypeIcon()}"/>
 
-	<ImageView
-		android:id="@+id/traseuTypeIcon"
-		android:layout_width="50dp"
-		android:layout_height="52dp"
-		android:layout_marginStart="8dp"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@drawable/ic_bus" />
+			<TextView
+				android:id="@+id/traseu_no"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="8dp"
+				android:text="@string/nr_traseu_fmt"
+				android:textAlignment="center"
+				android:textSize="20sp"
+				android:textStyle="bold"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/traseuTypeIcon"
+				app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+			<TextView
+				android:id="@+id/traseu_no2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="8dp"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="8dp"
+				android:text="@{String.valueOf(traseu.nrTraseu)}"
+				android:textAlignment="center"
+				android:textSize="20sp"
+				android:textStyle="bold"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/traseu_no"
+				app:layout_constraintTop_toTopOf="parent" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent">
+
+				<Button
+					android:id="@+id/infoBtn"
+					style="@android:style/Widget.DeviceDefault.Button.Inset"
+					android:layout_width="36dp"
+					android:layout_height="36dp"
+					android:layout_gravity="end"
+					android:onClick="@{() -> callback.onClick(traseu)}"
+					android:background="@drawable/ic_pin_map" />
+
+				<TextView
+					android:id="@+id/infoBtnText"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/vezi_detalii"
+					android:textSize="8sp"
+					tools:ignore="SmallSp" />
+			</LinearLayout>
+
+		</android.support.constraint.ConstraintLayout>
+	</android.support.v7.widget.CardView>
+</layout>

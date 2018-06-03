@@ -2,7 +2,9 @@ package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
 import android.databinding.BindingAdapter;
 import android.graphics.Color;
+import android.support.annotation.DrawableRes;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
@@ -22,5 +24,10 @@ public class BindingAdapters {
 	@BindingAdapter("statusBilet")
 	public static void statusBilet(TextView textView, boolean active) {
 		textView.setText(active ? R.string.status_bilet_activ : R.string.status_bilet_expirat);
+	}
+	
+	@BindingAdapter("transportIcon")
+	public static void setTransportIcon(ImageView imageView, @DrawableRes int icon){
+		imageView.setImageResource(icon);
 	}
 }

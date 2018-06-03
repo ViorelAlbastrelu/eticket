@@ -1,6 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,9 +12,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag021TraseuBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 
 /**
@@ -23,32 +27,45 @@ import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 public class FrgTb02Trasee extends Fragment{
 	private static final String TAG = "FrgTb02Trasee";
 	
+	BusFrag021TraseuBinding traseuBinding;
+	TraseuRVAdapter adapter;
 	BusActivityModel sharedBusModel;
-	RecyclerView recyclerView;
 	
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.bus_frag02_1_traseu, container, false);
+		traseuBinding = DataBindingUtil.inflate(inflater, R.layout.bus_frag02_1_traseu, container, false);
 		Log.d(TAG, "onCreateView: started.");
 		//Creating recyclerView and adapter
-		TraseuRVAdapter adapter = new TraseuRVAdapter(getContext());
-		recyclerView = view.findViewById(R.id.listaTraseeBus);
-		buildRecyclerView(adapter);
+		adapter = new TraseuRVAdapter(traseuClickCallback);
+		traseuBinding.listaTraseeBus.setAdapter(adapter);
 		
-		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
-		sharedBusModel.getLiveDataTrasee().observe(this, trasee -> {
-			adapter.setTrasee(trasee);
-		});
 		//TODO  Pass listener to recyclerView onClick infoBtn to open FrgTb02TraseuStep based on selected.
 		//TODO implement filter
-		return view;
+		return traseuBinding.getRoot();
 	}
 	
-	public void buildRecyclerView(TraseuRVAdapter adapter) {
-		Log.d(TAG, "initRecyclerView: initializing...");
-		recyclerView.setHasFixedSize(true);
-		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-		recyclerView.setAdapter(adapter);
+	@Override
+	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		BusActivityModel sharedModel = ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
+		subscribeUI(sharedModel);
 	}
+	
+	private void subscribeUI(BusActivityModel sharedModel) {
+		sharedModel.getLiveDataTrasee().observe(this, trasee -> {
+			if (trasee != null){
+				traseuBinding.setIsLoading(false);
+				adapter.setTrasee(trasee);
+			}else traseuBinding.setIsLoading(true);
+		});
+	}
+	
+	private final TraseuClickCallback traseuClickCallback = new TraseuClickCallback(){
+		@Override
+		public void onClick(Traseu traseu) {
+			Toast.makeText(getContext(), "Traseu clicked : " + traseu.getNrTraseu(), Toast.LENGTH_SHORT).show();
+//			((BusActivity) getActivity()).showStatiiForTraseu(traseu);
+		}
+	};
 }

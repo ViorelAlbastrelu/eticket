@@ -83,18 +83,43 @@ public class ETkRepository {
 	}
 	private void loadTrasee() {
 		List<Traseu> listaTrasee = new ArrayList<>();
-		try {
-			listaTrasee.add(new Traseu(39, formatterTime.parse("11:12"), TransportType.TRAM));
-			listaTrasee.add(new Traseu(10, formatterTime.parse("11:32"), TransportType.BUS));
-			listaTrasee.add(new Traseu(102, formatterTime.parse("11:45"), TransportType.TBUS));
-			listaTrasee.add(new Traseu(7, formatterTime.parse("12:02"), TransportType.TRAM));
-			listaTrasee.add(new Traseu(39, formatterTime.parse("12:12"), TransportType.TRAM));
-			listaTrasee.add(new Traseu(10, formatterTime.parse("12:32"), TransportType.BUS));
-			listaTrasee.add(new Traseu(102, formatterTime.parse("12:45"), TransportType.TBUS));
-			listaTrasee.add(new Traseu(7, formatterTime.parse("13:02"), TransportType.TRAM));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+		listaTrasee.add(new Traseu(9, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(10, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(11, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(12, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(13, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(14, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(15, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(16, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(17, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(18, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(19, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(20, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(22, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(23, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(24, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(25, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(26, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(27, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(28, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(29, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(30, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(31, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(34, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(35, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(36, null, TransportType.BUS));
+		listaTrasee.add(new Traseu(105, null , TransportType.BUS));
+//		try {
+//			listaTrasee.add(new Traseu(39, formatterTime.parse("11:12"), TransportType.TRAM));
+//			listaTrasee.add(new Traseu(102, formatterTime.parse("11:45"), TransportType.TBUS));
+//			listaTrasee.add(new Traseu(7, formatterTime.parse("12:02"), TransportType.TRAM));
+//			listaTrasee.add(new Traseu(39, formatterTime.parse("12:12"), TransportType.TRAM));
+//			listaTrasee.add(new Traseu(10, formatterTime.parse("12:32"), TransportType.BUS));
+//			listaTrasee.add(new Traseu(102, formatterTime.parse("12:45"), TransportType.TBUS));
+//			listaTrasee.add(new Traseu(7, formatterTime.parse("13:02"), TransportType.TRAM));
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//		}
 		traseeLiveData.setValue(listaTrasee);
 	}
 	private void loadIstorice(){

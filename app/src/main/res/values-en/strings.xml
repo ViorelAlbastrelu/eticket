@@ -36,7 +36,7 @@
 
 	<!--Traseu layout-->
 	<string name="ora_traseu_fmt">Arrival: %1$s</string>
-	<string name="nr_traseu_fmt">Route no.: %1$d</string>
+	<string name="nr_traseu_fmt">Route number:</string>
 
 	<!--Tranzactie layout-->
 	<string name="istoric_data">%1$d\n%2$s</string>
@@ -45,4 +45,5 @@
 
 	<!--Chatbot-->
 	<string name="chat_trimite">Send</string>
+	<string name="vezi_detalii">See details</string>
 </resources>

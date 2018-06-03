@@ -36,7 +36,7 @@
 
 	<!--Traseu layout-->
 	<string name="ora_traseu_fmt">Heure d\'arrivée: %1$s</string>
-	<string name="nr_traseu_fmt">Numéro de sentier: %1$d</string>
+	<string name="nr_traseu_fmt">Numéro de sentier:</string>
 
 	<!--Tranzactie layout-->
 	<string name="istoric_data">%1$d\n%2$s</string>
@@ -45,4 +45,5 @@
 
 	<!--Chatbot-->
 	<string name="chat_trimite">Envoyer</string>
+	<string name="vezi_detalii">Voir les détails</string>
 </resources>
