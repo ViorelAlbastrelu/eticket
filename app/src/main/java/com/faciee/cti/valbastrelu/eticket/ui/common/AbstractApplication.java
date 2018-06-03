@@ -4,6 +4,9 @@ import android.app.Application;
 import android.support.annotation.StringRes;
 import android.widget.Toast;
 
+import com.faciee.cti.valbastrelu.eticket.repo.ETkRepository;
+import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
+
 public abstract class AbstractApplication extends Application {
 	
 	protected static AbstractApplication currentApplication;
@@ -24,5 +27,13 @@ public abstract class AbstractApplication extends Application {
 	}
 	public static void toastMessageLong(String message){
 		Toast.makeText(getCurrentApplication(), message, Toast.LENGTH_LONG).show();
+	}
+	
+	public EtkRoomDB getDatabase() {
+		return EtkRoomDB.getDatabase(getCurrentApplication());
+	}
+	
+	public ETkRepository getRepository() {
+		return ETkRepository.getInstance(getDatabase());
 	}
 }

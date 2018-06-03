@@ -1,18 +1,17 @@
 package com.faciee.cti.valbastrelu.eticket.repo;
 
-import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.os.AsyncTask;
 
+import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
 import com.faciee.cti.valbastrelu.eticket.room.dao.BiletDao;
 import com.faciee.cti.valbastrelu.eticket.room.dao.StatieDao;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.StatiiLiveData;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.StatiiLiveData;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.TransportType;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Tranzactie;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu;
-import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,6 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ETkRepository {
+	
+	private static ETkRepository INSTANCE;
+	private final EtkRoomDB db;
 	
 	//Dao
 	private BiletDao biletDao;
@@ -33,19 +35,25 @@ public class ETkRepository {
 	private SimpleDateFormat formatterDate = new SimpleDateFormat("dd-MMM-yyyy");
 	private SimpleDateFormat formatterTime = new SimpleDateFormat("HH:mm");
 	
-	public ETkRepository(Application application) {
-		EtkRoomDB db = EtkRoomDB.getDatabase(application);
+	public static ETkRepository getInstance(final EtkRoomDB database) {
+		if (INSTANCE == null) {
+			synchronized (ETkRepository.class) {
+				if (INSTANCE == null) {
+					INSTANCE = new ETkRepository(database);
+				}
+			}
+		}
+		return INSTANCE;
+	}
+	
+	public ETkRepository(EtkRoomDB roomDB) {
+		this.db = roomDB;
 		biletDao = db.biletDao();
 		statieDao = db.statieDao();
 	}
 	
 	public LiveData<List<Bilet>> getBilete(){
-//		if (bileteLiveData == null){
-//			bileteLiveData = new MutableLiveData<>();
-//			loadBilete();
-//		}
 		return biletDao.getAllBilete();
-//TODO		return biletDao.getAllBilete();
 	}
 	public LiveData<List<Tranzactie>> getLiveDataTranzactii(){
 		if (tranzactiiLiceData == null){

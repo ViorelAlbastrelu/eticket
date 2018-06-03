@@ -4,6 +4,8 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.util.Log;
 
+import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
+import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
 import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityModel;
 import com.faciee.cti.valbastrelu.eticket.repo.ETkRepository;
 
@@ -19,7 +21,7 @@ public class BusActivityModel extends AbstractActivityModel {
 	
 	public BusActivityModel(Application application) {
 		super(application);
-		repository = new ETkRepository(application);
+		repository = ETicketApp.getCurrentApplication().getRepository();
 		bilete = repository.getBilete();
 	}
 	
