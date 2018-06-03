@@ -5,6 +5,8 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+import com.faciee.cti.valbastrelu.eticket.room.dao.BiletDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.StatieDao;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Statie;
 

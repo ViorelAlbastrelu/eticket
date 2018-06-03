@@ -5,8 +5,8 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.os.AsyncTask;
 
-import com.faciee.cti.valbastrelu.eticket.room.BiletDao;
-import com.faciee.cti.valbastrelu.eticket.room.StatieDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.BiletDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.StatieDao;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.StatiiLiveData;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.TransportType;

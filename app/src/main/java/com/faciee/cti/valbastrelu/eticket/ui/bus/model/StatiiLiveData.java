@@ -6,7 +6,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.faciee.cti.valbastrelu.eticket.room.StatieDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.StatieDao;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
