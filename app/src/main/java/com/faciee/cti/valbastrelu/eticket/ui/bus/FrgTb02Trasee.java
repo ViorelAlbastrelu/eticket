@@ -1,11 +1,13 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
+import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -61,11 +63,23 @@ public class FrgTb02Trasee extends Fragment{
 		});
 	}
 	
+	public static FrgTb02Trasee newInstance(int page, String title) {
+		FrgTb02Trasee fragment = new FrgTb02Trasee();
+		Bundle args = new Bundle();
+		args.putInt("page", page);
+		args.putString("title", title);
+		fragment.setArguments(args);
+		return fragment;
+	}
+	
 	private final TraseuClickCallback traseuClickCallback = new TraseuClickCallback(){
 		@Override
 		public void onClick(Traseu traseu) {
-			Toast.makeText(getContext(), "Traseu clicked : " + traseu.getNrTraseu(), Toast.LENGTH_SHORT).show();
-//			((BusActivity) getActivity()).showStatiiForTraseu(traseu);
+			if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)){
+				Toast.makeText(getContext(), "Traseu clicked : " + traseu.getNrTraseu(), Toast.LENGTH_SHORT).show();
+				FrgTb02Statii frgTb02Statii = FrgTb02Statii.statiiPentruTraseu(traseu.getNrTraseu());
+				frgTb02Statii.show(getFragmentManager(), FrgTb02Statii.getTAG());
+			}
 		}
 	};
 }

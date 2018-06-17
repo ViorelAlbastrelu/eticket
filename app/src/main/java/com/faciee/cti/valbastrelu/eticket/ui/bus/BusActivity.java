@@ -5,10 +5,13 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
 import com.faciee.cti.valbastrelu.eticket.ui.common.i.TransportViewActivity;
@@ -24,6 +27,7 @@ public class BusActivity extends AppCompatActivity implements TransportViewActiv
 	
 	@BindView(R.id.container) ViewPager mViewPager;
 	@BindView(R.id.tabs) TabLayout mTabLayout;
+	SectionsPagerAdapter sectionsPagerAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +40,21 @@ public class BusActivity extends AppCompatActivity implements TransportViewActiv
 	}
 	
 	private void setupViewPager(ViewPager viewPager) {
-		SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+		sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 		sectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_bilete));    //BILETE
 		sectionsPagerAdapter.addFragment(new FrgTb02Trasee(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
-		sectionsPagerAdapter.addFragment(new FrgTb02Statii(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC //TODO schimbat inapoi la Frg03Istoric
+		sectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC
 		viewPager.setAdapter(sectionsPagerAdapter);
+	}
+	
+	public void showStatiiForTraseu(Traseu traseu) {
+		FrgTb02Statii frgTb02Statii = FrgTb02Statii.statiiPentruTraseu(traseu.getNrTraseu());
+		Log.d(TAG, "showStatiiForTraseu: Called!");
+		getSupportFragmentManager()
+				.beginTransaction()
+				.addToBackStack("product")
+				.replace(R.id.container,
+						frgTb02Statii, null).commit();
 	}
 	
 	@OnClick(R.id.fab)

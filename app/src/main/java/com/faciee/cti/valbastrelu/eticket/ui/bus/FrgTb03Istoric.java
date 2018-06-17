@@ -48,4 +48,13 @@ public class FrgTb03Istoric extends Fragment{
 		listaIstoric.setAdapter(adapter);
 		listaIstoric.setLayoutManager(new LinearLayoutManager(getContext()));
 	}
+	
+	public static FrgTb03Istoric newInstance(int page, String title) {
+		FrgTb03Istoric fragment = new FrgTb03Istoric();
+		Bundle args = new Bundle();
+		args.putInt("page", page);
+		args.putString("title", title);
+		fragment.setArguments(args);
+		return fragment;
+	}
 }

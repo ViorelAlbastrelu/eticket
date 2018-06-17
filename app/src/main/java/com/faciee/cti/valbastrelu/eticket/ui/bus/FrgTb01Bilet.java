@@ -67,4 +67,13 @@ public class FrgTb01Bilet extends Fragment{
 			frag01BiletBinding.executePendingBindings();
 		});
 	}
+	
+	public static FrgTb01Bilet newInstance(int page, String title) {
+		FrgTb01Bilet fragment = new FrgTb01Bilet();
+		Bundle args = new Bundle();
+		args.putInt("page", page);
+		args.putString("title", title);
+		fragment.setArguments(args);
+		return fragment;
+	}
 }
