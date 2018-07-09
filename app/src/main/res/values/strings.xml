@@ -4,25 +4,25 @@
 	<string name="tab_name_bilete">Bilete</string>
 	<string name="tab_name_trasee">Trasee</string>
 	<string name="tab_name_istoric">Istoric</string>
-	<string name="action_settings">Setari</string>
+	<string name="action_settings">Setări</string>
 	<string name="action_chatbot">Chatbot</string>
-	<string name="action_sign_out">Iesire</string>
+	<string name="action_sign_out">Ieșire</string>
 	<string name="section_format">Hello World from section: %1$d</string>
 
 	<!-- BUS ACTIVITY -->
 	<!-- Fragment Traseu -->
-	<string name="opt_trasee">Filtreaza trasee:</string>
+	<string name="opt_trasee">Filtrează trasee:</string>
 	<string name="title_activity_login">Autentificare in E-Ticket</string>
 
 	<!-- Strings related to login -->
 	<string name="prompt_email">Email</string>
 	<string name="prompt_password">Parola</string>
 	<string name="action_sign">Autentificare</string>
-	<string name="action_create_account">Inregistrare</string>
-	<string name="error_invalid_email">Adresa de email invalida</string>
-	<string name="error_invalid_password">Parola este prea scurta</string>
-	<string name="error_incorrect_password">Parola incorecta</string>
-	<string name="error_field_required">Camp obligatoriu</string>
+	<string name="action_create_account">Înregistrare</string>
+	<string name="error_invalid_email">Adresă de email invalidă</string>
+	<string name="error_invalid_password">Parola este prea scurtă</string>
+	<string name="error_incorrect_password">Parolă incorectă</string>
+	<string name="error_field_required">Câmp obligatoriu</string>
 	<string name="emailpassword_status_fmt">Email utilizator: %1$s (verificat: %2$b)</string>
 
 	<!--Bilet layout-->
@@ -33,11 +33,11 @@
 	<string name="ora_bilet">Ora:</string>
 	<string name="data_bilet">Data:</string>
 	<string name="serie_bilet">Seria:</string>
-	<string name="zero_bilete">Nu exista nici un bilet in lista</string>
+	<string name="zero_bilete">Nu există nici un bilet în listă</string>
 
 	<!--Traseu layout-->
 	<string name="ora_traseu_fmt">Ora sosire: %1$s</string>
-	<string name="nr_traseu_fmt">Numar traseu:</string>
+	<string name="nr_traseu_fmt">Număr traseu:</string>
 
 	<!--Tranzactie layout-->
 	<string name="istoric_data">%1$d\n%2$s</string>
