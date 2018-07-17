@@ -46,4 +46,11 @@
 	<!--Chatbot-->
 	<string name="chat_trimite">Envoyer</string>
 	<string name="vezi_detalii">Voir les détails</string>
+	<string name="menu_bus">Bus</string>
+	<string name="menu_tbus">Trolleybus</string>
+	<string name="menu_tram">Tram</string>
+	<string name="menu_car">Parking</string>
+	<string name="menu_acc_pref_title">Préférences de compte</string>
+	<string name="menu_assistan">Asistent</string>
+	<string name="menu_logout">Déconnexion</string>
 </resources>
