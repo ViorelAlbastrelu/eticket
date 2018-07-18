@@ -2,6 +2,7 @@ package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
@@ -19,7 +20,7 @@ public class BusActivityModel extends AbstractActivityModel {
 	private Bilet biletActiv = null;
 	LiveData<List<Bilet>> bilete;
 	
-	public BusActivityModel(Application application) {
+	public BusActivityModel(@NonNull Application application) {
 		super(application);
 		repository = ETicketApp.getCurrentApplication().getRepository();
 		bilete = repository.getBilete();

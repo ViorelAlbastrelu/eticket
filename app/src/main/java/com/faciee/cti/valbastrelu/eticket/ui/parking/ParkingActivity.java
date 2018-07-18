@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ParkingActivity extends AppCompatActivity implements FrgTb01Bilet.OnFragmentInteractionListener {
+public class ParkingActivity extends AppCompatActivity{
 	
 	@BindView(R.id.container) ViewPager mViewPager;
 	@BindView(R.id.tabs) TabLayout mTabLayout;
@@ -69,11 +69,6 @@ public class ParkingActivity extends AppCompatActivity implements FrgTb01Bilet.O
 		return super.onOptionsItemSelected(item);
 	}
 	
-	@Override
-	public void onFragmentInteraction(Uri uri) {
-		//TODO scot sau nu interfata?
-	}
-	
 	public static class PlaceholderFragment extends Fragment {
 		private static final String ARG_SECTION_NUMBER = "section_number";
 		
@@ -100,8 +95,8 @@ public class ParkingActivity extends AppCompatActivity implements FrgTb01Bilet.O
 	private void setupViewPager(ViewPager viewPager) {
 		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 		mSectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_ticket));    //BILETE
-		mSectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_parking));   //PARCARI
-		mSectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_history)); //ISTORIC
+		mSectionsPagerAdapter.addFragment(new FrgTb02Parcari(), getApplication().getString(R.string.tab_name_parking));   //PARCARI
+		mSectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getApplication().getString(R.string.tab_name_history)); //ISTORIC
 		viewPager.setAdapter(mSectionsPagerAdapter);
 	}
 }
