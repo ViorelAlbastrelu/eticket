@@ -39,6 +39,10 @@
 		<activity
 			android:name=".main.ETicketMain"
 			android:label="@string/title_activity_eticket_main"
+			android:theme="@style/EticketTheme" />
+		<activity
+			android:name=".ui.parking.ParkingActivity"
+			android:label="@string/title_activity_parking"
 			android:theme="@style/EticketTheme"></activity>
 	</application>
 

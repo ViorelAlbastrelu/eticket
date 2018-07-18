@@ -7,4 +7,7 @@ package com.faciee.cti.valbastrelu.eticket.main;
 public interface IETkAppPreferences {
 	
 	void cleanPreferences();
+	
+	String getCurrentEmail();
+	void setCurrentEmail(String email);
 }

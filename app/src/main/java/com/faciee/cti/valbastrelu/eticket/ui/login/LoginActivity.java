@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketMain;
+import com.faciee.cti.valbastrelu.eticket.main.ETkAppPreferences;
 import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
@@ -51,6 +52,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	@OnClick(R.id.btn_autentificare)
 	protected void login() {
 		loginPresenter.executeLoginAction(mEmailView.getText().toString(), mPasswordView.getText().toString());
+		ETkAppPreferences preferences = ETicketApp.getCurrentETicketApp().getAppPreferences();
+		preferences.setCurrentEmail(mEmailView.getText().toString());
 	}
 	
 	@OnClick(R.id.btn_inregistrare)

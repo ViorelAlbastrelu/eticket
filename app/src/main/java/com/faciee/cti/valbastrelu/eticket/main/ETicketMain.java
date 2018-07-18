@@ -12,12 +12,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.chat.Chatbot;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
+import com.faciee.cti.valbastrelu.eticket.ui.parking.ParkingActivity;
 import com.google.firebase.auth.FirebaseAuth;
+
+import org.w3c.dom.Text;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +32,8 @@ public class ETicketMain extends AppCompatActivity
 	
 	FirebaseAuth firebaseAuth;
 	@BindView(R.id.drawer_layout) DrawerLayout drawer;
+	@BindView(R.id.nav_view) NavigationView navigationView;
+	TextView profileName, profileEmail;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,8 @@ public class ETicketMain extends AppCompatActivity
 		ButterKnife.bind(this);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
+		setUserAndEmailToDrawerProfile();
+		
 		firebaseAuth = FirebaseAuth.getInstance();
 		
 		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -97,7 +105,7 @@ public class ETicketMain extends AppCompatActivity
 		} else if (id == R.id.nav_tram) {
 		
 		} else if (id == R.id.nav_car) {
-		
+			intent = new Intent(this, ParkingActivity.class);
 		} else if (id == R.id.nav_chat) {
 			intent = new Intent(this, Chatbot.class);
 		} else if (id == R.id.nav_signout) {
@@ -109,5 +117,17 @@ public class ETicketMain extends AppCompatActivity
 		drawer.closeDrawer(GravityCompat.START);
 		if(intent != null) startActivity(intent);
 		return true;
+	}
+	
+	private void setUserAndEmailToDrawerProfile() {
+		IETkAppPreferences preferences = ETicketApp.getCurrentETicketApp().getAppPreferences();
+		String email = preferences.getCurrentEmail();
+		
+		View header = navigationView.getHeaderView(0);
+		profileName = header.findViewById(R.id.profileName);
+		profileEmail = header.findViewById(R.id.profileEmail);
+		
+		profileName.setText(email.substring(0, email.indexOf("@")));
+		profileEmail.setText(email);
 	}
 }

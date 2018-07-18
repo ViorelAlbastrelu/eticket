@@ -1,9 +1,10 @@
 <resources>
 	<string name="app_name">ETicket</string>
 	<string name="title_activity_bus">BusActivity</string>
-	<string name="tab_name_bilete">Bilete</string>
-	<string name="tab_name_trasee">Trasee</string>
-	<string name="tab_name_istoric">Istoric</string>
+	<string name="tab_name_ticket">Bilete</string>
+	<string name="tab_name_routes">Trasee</string>
+	<string name="tab_name_parking">Parcări</string>
+	<string name="tab_name_history">Istoric</string>
 	<string name="action_settings">Setări</string>
 	<string name="action_chatbot">Chatbot</string>
 	<string name="action_sign_out">Ieșire</string>
@@ -61,5 +62,9 @@
 	<string name="nav_header_title">Android Studio</string>
 	<string name="nav_header_subtitle">android.studio@android.com</string>
 	<string name="nav_header_desc">Navigation header</string>
+	<string name="title_activity_parking">ParkingActivity</string>
+	<string name="section_format">Hello World from section: %1$d</string>
+
+	<string name="parking_alert_message">Alertă la epuizarea timpului?</string>
 
 </resources>

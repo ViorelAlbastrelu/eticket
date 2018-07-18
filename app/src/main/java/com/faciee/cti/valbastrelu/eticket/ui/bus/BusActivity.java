@@ -7,7 +7,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
@@ -41,9 +40,9 @@ public class BusActivity extends AppCompatActivity implements TransportViewActiv
 	
 	private void setupViewPager(ViewPager viewPager) {
 		sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-		sectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_bilete));    //BILETE
-		sectionsPagerAdapter.addFragment(new FrgTb02Trasee(), getApplication().getString(R.string.tab_name_trasee));   //TRASEE
-		sectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getApplication().getString(R.string.tab_name_istoric)); //ISTORIC
+		sectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_ticket));    //BILETE
+		sectionsPagerAdapter.addFragment(new FrgTb02Trasee(), getApplication().getString(R.string.tab_name_routes));   //TRASEE
+		sectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getApplication().getString(R.string.tab_name_history)); //ISTORIC
 		viewPager.setAdapter(sectionsPagerAdapter);
 	}
 	
