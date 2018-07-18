@@ -6,12 +6,19 @@
 	android:layout_height="match_parent"
 	tools:context=".ui.chat.Chatbot">
 
-	<include
-		android:id="@+id/include2"
-		layout="@layout/toolbar"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+	<android.support.v7.widget.Toolbar
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:layout_weight="1"
+		android:background="?attr/colorPrimary"
+		app:layout_scrollFlags="scroll|enterAlways"
+		android:theme="@style/AppTheme.AppBarOverlay"
+		app:title="@string/menu_assistant">
+
+	</android.support.v7.widget.Toolbar>
 
 	<android.support.constraint.ConstraintLayout
 		android:layout_width="match_parent"
@@ -19,7 +26,7 @@
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/include2">
+		app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
 		<ProgressBar
 			android:id="@+id/loadingBot"

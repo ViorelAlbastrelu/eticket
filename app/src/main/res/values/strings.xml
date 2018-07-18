@@ -15,7 +15,7 @@
 	<string name="menu_tram">Tramvai</string>
 	<string name="menu_car">Parcări</string>
 	<string name="menu_acc_pref_title">Preferințe cont</string>
-	<string name="menu_assistan">Asistent</string>
+	<string name="menu_assistant">Asistent</string>
 	<string name="menu_logout">Ieșire din cont</string>
 
 	<!-- BUS ACTIVITY -->

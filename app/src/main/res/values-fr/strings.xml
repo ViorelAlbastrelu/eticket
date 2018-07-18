@@ -14,7 +14,7 @@
 	<string name="menu_tram">Tram</string>
 	<string name="menu_car">Parking</string>
 	<string name="menu_acc_pref_title">Préférences de compte</string>
-	<string name="menu_assistan">Asistent</string>
+	<string name="menu_assistant">Asistent</string>
 	<string name="menu_logout">Déconnexion</string>
 
 	<!-- BUS ACTIVITY -->

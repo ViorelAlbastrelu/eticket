@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -22,11 +23,8 @@ import com.faciee.cti.valbastrelu.eticket.util.AppUtils;
 import org.alicebot.ab.AIMLProcessor;
 import org.alicebot.ab.Bot;
 import org.alicebot.ab.Chat;
-import org.alicebot.ab.Graphmaster;
-import org.alicebot.ab.MagicBooleans;
 import org.alicebot.ab.MagicStrings;
 import org.alicebot.ab.PCAIMLProcessorExtension;
-import org.alicebot.ab.Timer;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -42,9 +40,9 @@ import butterknife.OnEditorAction;
 
 public class Chatbot extends AppCompatActivity {
 	
-	@BindView(R.id.chatView) ListView mListView;
+	@BindView(R.id.chatView)     ListView mListView;
 	@BindView(R.id.send_message) EditText mEditTextMessage;
-	@BindView(R.id.loadingBot) ProgressBar loadingBot;
+	@BindView(R.id.loadingBot)   ProgressBar loadingBot;
 	
 	//chatbot
 	private static Chat chat;
@@ -58,6 +56,7 @@ public class Chatbot extends AppCompatActivity {
 		mEditTextMessage.setImeOptions(EditorInfo.IME_ACTION_DONE);
 		mAdapter = new ChatMessageAdapter(this, new ArrayList<>());
 		mListView.setAdapter(mAdapter);
+//		toolbar.setTitle(R.string.menu_assistant);
 		new CongfigureBotTask(this).execute();
 	}
 	
@@ -77,9 +76,9 @@ public class Chatbot extends AppCompatActivity {
 	}
 	
 	private void sendMessage() {
-		String message = mEditTextMessage.getText().toString();
+		String message = mEditTextMessage.getText().toString().trim();
 		ChatMessage chatMessage = new ChatMessage(message, true, false);
-		String response = chat.multisentenceRespond(mEditTextMessage.getText().toString());
+		String response = chat.multisentenceRespond(message);
 		if (TextUtils.isEmpty(message)) {
 			return;
 		}
