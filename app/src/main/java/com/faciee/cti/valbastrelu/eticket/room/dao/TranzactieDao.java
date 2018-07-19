@@ -1,12 +1,13 @@
 package com.faciee.cti.valbastrelu.eticket.room.dao;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Tranzactie;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
 public interface TranzactieDao {
 	
 	@Query("SELECT * FROM tranzactie")
-	List<Tranzactie> getAllTranzactii();
+	LiveData<List<Tranzactie>> getAllTranzactii();
 	
 //	@Query("SELECT * FROM tranzactie WHERE data = :date")
 //	List<Tranzactie> getTranzactiiStartingAtDate(Date date);

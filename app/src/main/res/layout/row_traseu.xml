@@ -6,7 +6,7 @@
 	<data>
 		<variable
 			name="traseu"
-			type="com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu"/>
+			type="com.faciee.cti.valbastrelu.eticket.room.entities.Traseu"/>
 		<variable
 			name="callback"
 			type="com.faciee.cti.valbastrelu.eticket.ui.bus.TraseuClickCallback"/>

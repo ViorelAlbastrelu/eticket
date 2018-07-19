@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
+package com.faciee.cti.valbastrelu.eticket.room.entities;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;

@@ -7,28 +7,27 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
+import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
 
 import java.util.List;
 
 @Dao
-public interface BiletDao {
-	
-	@Query("SELECT * FROM bilet")
-	LiveData<List<Bilet>> getAllBilete();
+public interface BiletPDao {
+	@Query("SELECT * FROM biletp")
+	LiveData<List<BiletP>> getAllBilete();
 	
 	@Insert
-	void insertOneBilet(Bilet bilet);
+	void insertOneBilet(BiletP bilet);
 	@Insert
-	void insertBilete(Bilet...bilet);
+	void insertBilete(BiletP...bilet);
 	
 	@Update
-	void updateBilete(Bilet...bilet);
-	@Query("UPDATE bilet SET activ = :status")
+	void updateBilete(BiletP...bilet);
+	@Query("UPDATE biletp SET activ = :status")
 	void updateBileteStatus(boolean status);
 	
 	@Delete
-	void deleteBilete(Bilet... bilet);
-	@Query("DELETE FROM bilet")
+	void deleteBilete(BiletP... bilet);
+	@Query("DELETE FROM biletp")
 	void deleteAll();
 }

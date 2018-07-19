@@ -2,7 +2,7 @@ package com.faciee.cti.valbastrelu.eticket.room.converter;
 
 import android.arch.persistence.room.TypeConverter;
 
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.TransportType;
+import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType;
 
 public class TrasportTypeConverter {
 	

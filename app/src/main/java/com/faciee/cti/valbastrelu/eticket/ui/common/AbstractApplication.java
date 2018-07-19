@@ -4,7 +4,8 @@ import android.app.Application;
 import android.support.annotation.StringRes;
 import android.widget.Toast;
 
-import com.faciee.cti.valbastrelu.eticket.repo.ETkRepository;
+import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository;
+import com.faciee.cti.valbastrelu.eticket.repo.EtkParkingRepository;
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
 
 public abstract class AbstractApplication extends Application {
@@ -33,7 +34,11 @@ public abstract class AbstractApplication extends Application {
 		return EtkRoomDB.getDatabase(getCurrentApplication());
 	}
 	
-	public ETkRepository getRepository() {
-		return ETkRepository.getInstance(getDatabase());
+	public ETkBusRepository getBusRepository() {
+		return ETkBusRepository.getInstance(getDatabase());
+	}
+	
+	public EtkParkingRepository getParkingRepository(){
+		return EtkParkingRepository.getInstance(getDatabase());
 	}
 }

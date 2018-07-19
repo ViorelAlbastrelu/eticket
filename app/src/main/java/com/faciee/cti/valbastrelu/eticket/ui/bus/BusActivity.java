@@ -1,7 +1,14 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
+import android.app.PendingIntent;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.nfc.NdefMessage;
+import android.nfc.NfcAdapter;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -9,10 +16,12 @@ import android.util.Log;
 import android.view.View;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
+import com.faciee.cti.valbastrelu.eticket.ui.common.NfcMessageComposer;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
 import com.faciee.cti.valbastrelu.eticket.ui.common.i.TransportViewActivity;
 
 import butterknife.BindView;
@@ -20,9 +29,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class BusActivity extends AppCompatActivity implements TransportViewActivity{
-	
 	private static final String TAG = "BusActivity";
 	BusActivityModel busActivityModel;
+	NfcAdapter nfcAdapter;
 	
 	@BindView(R.id.container) ViewPager mViewPager;
 	@BindView(R.id.tabs) TabLayout mTabLayout;
@@ -34,8 +43,49 @@ public class BusActivity extends AppCompatActivity implements TransportViewActiv
 		setContentView(R.layout.activity_bus);
 		ButterKnife.bind(this);
 		busActivityModel = ViewModelProviders.of(this).get(BusActivityModel.class);
+		nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 		setupViewPager(mViewPager);
 		mTabLayout.setupWithViewPager(mViewPager);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+//		enableForegroundDispatch();
+	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+//		disableForegroundDispatch();
+	}
+	
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		if (intent.hasExtra(NfcAdapter.EXTRA_TAG))
+		{
+			ETicketApp.toastMessageShort("NfcIntent!");
+			Parcelable[] parcelables = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+			if (parcelables != null && parcelables.length > 0){
+				NfcMessageComposer.readTextFromTag((NdefMessage) parcelables[0]);
+			}
+//			Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+//			NdefMessage message = NfcMessageComposer.createNdefMessage("Bilet 100");
+//			NfcMessageComposer.writeNdefMessage(tag, message);
+		}
+		
+	}
+	
+	private void enableForegroundDispatch() {
+		Intent intent = new Intent(this, BusActivity.class).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+		PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+		IntentFilter[] intentFilters = new IntentFilter[]{};
+		nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilters, null);
+	}
+	
+	private void disableForegroundDispatch() {
+		nfcAdapter.disableForegroundDispatch(this);
 	}
 	
 	private void setupViewPager(ViewPager viewPager) {

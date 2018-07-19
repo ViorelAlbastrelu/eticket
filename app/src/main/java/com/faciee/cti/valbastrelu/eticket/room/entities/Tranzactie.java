@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
+package com.faciee.cti.valbastrelu.eticket.room.entities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -7,30 +7,33 @@ import android.arch.persistence.room.TypeConverters;
 
 import com.faciee.cti.valbastrelu.eticket.room.converter.DateConverter;
 import com.faciee.cti.valbastrelu.eticket.room.converter.TrasportTypeConverter;
+import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType;
 
 import java.util.Date;
 @Entity
 public class Tranzactie {
 	
-	@PrimaryKey(autoGenerate = true) private int idtranz;
+	@PrimaryKey private long idtranz;
 	@ColumnInfo private int nrTraseu;
 	@ColumnInfo private double suma;
 	@TypeConverters(TrasportTypeConverter.class) private TransportType transportType;
 	@TypeConverters(DateConverter.class) private Date data;
 	
-	public Tranzactie(Date data, TransportType transportType, int nrTraseu, double suma) {
+	public Tranzactie(long idtranz, Date data, TransportType transportType, int nrTraseu, double suma) {
+		this.idtranz = idtranz;
 		this.data = data;
 		this.transportType = transportType;
 		this.nrTraseu = nrTraseu;
 		this.suma = suma;
 	}
-	public int getIdtranz() {
+	public long getIdtranz() {
 		return idtranz;
 	}
 	
-	public void setIdtranz(int idtranz) {
+	public void setIdtranz(long idtranz) {
 		this.idtranz = idtranz;
 	}
+	
 	public Date getData() {
 		return data;
 	}

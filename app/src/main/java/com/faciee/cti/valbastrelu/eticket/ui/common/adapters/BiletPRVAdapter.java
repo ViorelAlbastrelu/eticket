@@ -14,7 +14,7 @@ import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
 
 import java.util.List;
 
-public class BiletRVAdapter extends  RecyclerView.Adapter<BiletRVAdapter.BiletViewHolder>{
+public class BiletPRVAdapter extends  RecyclerView.Adapter<BiletPRVAdapter.BiletViewHolder>{
 	private static final String TAG = "IstoricRVAdapter";
 	
 	private List<Bilet> mBilete;

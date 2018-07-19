@@ -6,7 +6,7 @@
 	<data>
 		<variable
 			name="bilet"
-			type="com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet" />
+			type="com.faciee.cti.valbastrelu.eticket.room.entities.Bilet" />
 	</data>
 
 	<android.support.v7.widget.CardView

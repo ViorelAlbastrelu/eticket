@@ -2,13 +2,10 @@ package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,12 +15,6 @@ import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag01BiletBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletRVAdapter;
-import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.VerticalSpaceItemDecoration;
-
-import java.util.List;
-import java.util.Objects;
-
-import butterknife.BindView;
 
 /**
  * Created by valbastrelu on 09-Apr-18.
@@ -33,7 +24,7 @@ public class FrgTb01Bilet extends Fragment{
 	private static final String TAG = "FrgTb01Bilet";
 	
 	private BusFrag01BiletBinding frag01BiletBinding;
-//	private BusActivityModel sharedBusModel;
+	private BusActivityModel sharedBusModel;
 	private BiletRVAdapter biletRVAdapter;
 	
 	@Nullable
@@ -53,9 +44,9 @@ public class FrgTb01Bilet extends Fragment{
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		final BusActivityModel model =
+		sharedBusModel =
 				ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
-		subscribeUI(model);
+		subscribeUI(sharedBusModel);
 	}
 	
 	private void subscribeUI(BusActivityModel model) {

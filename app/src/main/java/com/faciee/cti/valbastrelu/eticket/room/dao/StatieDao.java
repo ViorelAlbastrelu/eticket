@@ -7,7 +7,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Statie;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Statie;
 
 import java.util.List;
 

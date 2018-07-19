@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Tranzactie;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
 
 import java.util.List;
 

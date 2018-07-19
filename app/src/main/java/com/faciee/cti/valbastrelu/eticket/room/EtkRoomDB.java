@@ -6,14 +6,20 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
 import com.faciee.cti.valbastrelu.eticket.room.dao.BiletDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.BiletPDao;
 import com.faciee.cti.valbastrelu.eticket.room.dao.StatieDao;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Bilet;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Statie;
+import com.faciee.cti.valbastrelu.eticket.room.dao.TranzactieDao;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
+import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Statie;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
 
-@Database(entities = {Bilet.class, Statie.class}, version = 3, exportSchema = false)
+@Database(entities = {Bilet.class, BiletP.class, Tranzactie.class, Statie.class}, version = 5, exportSchema = false)
 public abstract class EtkRoomDB extends RoomDatabase {
 	
 	public abstract BiletDao biletDao();
+	public abstract BiletPDao biletpDao();
+	public abstract TranzactieDao tranzactieDao();
 	public abstract StatieDao statieDao();
 	private static EtkRoomDB INSTANCE;
 	

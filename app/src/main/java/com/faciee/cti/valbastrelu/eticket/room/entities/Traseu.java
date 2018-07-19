@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
+package com.faciee.cti.valbastrelu.eticket.room.entities;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 
 import com.faciee.cti.valbastrelu.eticket.room.converter.DateConverter;
 import com.faciee.cti.valbastrelu.eticket.room.converter.TrasportTypeConverter;
+import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType;
 
 import java.util.Date;
 import java.util.Objects;

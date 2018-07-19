@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +16,7 @@ import android.widget.Toast;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag021TraseuBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 
 /**

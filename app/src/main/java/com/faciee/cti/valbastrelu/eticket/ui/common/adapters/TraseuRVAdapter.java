@@ -1,22 +1,16 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
-import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.RowTraseuBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.TraseuClickCallback;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Traseu;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
 
 import java.util.List;
 

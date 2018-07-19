@@ -1,6 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.main;
 
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.Statie;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Statie;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

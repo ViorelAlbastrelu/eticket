@@ -1,5 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.ui.parking;
 
+import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.ViewModelProviders;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,13 +19,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.common.i.TransportViewActivity;
+import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ParkingActivity extends AppCompatActivity{
+public class ParkingActivity extends AppCompatActivity implements TransportViewActivity{
+	private static final String TAG = "ParkingActivity";
+	private ParkingActivityModel parkingActivityModel;
 	
 	@BindView(R.id.container) ViewPager mViewPager;
 	@BindView(R.id.tabs) TabLayout mTabLayout;
@@ -40,13 +47,15 @@ public class ParkingActivity extends AppCompatActivity{
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 		setupViewPager(mViewPager);
 		mTabLayout.setupWithViewPager(mViewPager);
+		parkingActivityModel = ViewModelProviders.of(this).get(ParkingActivityModel.class);
 	}
 	
 	@OnClick(R.id.fab)
 	void onClickFab(View view){
 		//TODO implement add ticket with ViewModel or remove?
-				Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+				Snackbar.make(view, "Bilet adaugat", Snackbar.LENGTH_LONG)
 						.setAction("Action", null).show();
+				parkingActivityModel.insertBilet(new BiletP("Mazepa", true, 1.5, false));
 	}
 	
 	
@@ -98,5 +107,26 @@ public class ParkingActivity extends AppCompatActivity{
 		mSectionsPagerAdapter.addFragment(new FrgTb02Parcari(), getApplication().getString(R.string.tab_name_parking));   //PARCARI
 		mSectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getApplication().getString(R.string.tab_name_history)); //ISTORIC
 		viewPager.setAdapter(mSectionsPagerAdapter);
+	}
+	
+	
+	@Override
+	public void setActivityTitle(String activityTitle) {
+	
+	}
+	
+	@Override
+	public void setActivityTitle(int activityResId) {
+	
+	}
+	
+	@Override
+	public void setToolbarText(String toolbarText) {
+	
+	}
+	
+	@Override
+	public void setToolbarText(int toolbarResId) {
+	
 	}
 }

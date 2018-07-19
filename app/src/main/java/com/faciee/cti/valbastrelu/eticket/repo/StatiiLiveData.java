@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
+package com.faciee.cti.valbastrelu.eticket.repo;
 
 import android.annotation.SuppressLint;
 import android.arch.lifecycle.LiveData;
@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.faciee.cti.valbastrelu.eticket.room.dao.StatieDao;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Statie;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
