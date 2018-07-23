@@ -23,8 +23,12 @@ public interface BiletPDao {
 	
 	@Update
 	void updateBilete(BiletP...bilet);
+	
 	@Query("UPDATE biletp SET activ = :status")
 	void updateBileteStatus(boolean status);
+	
+	@Query("UPDATE biletp SET alerta = :alerta WHERE idbiletp = :idbilet")
+	void updateAlertaBilet(boolean alerta, long idbilet);
 	
 	@Delete
 	void deleteBilete(BiletP... bilet);

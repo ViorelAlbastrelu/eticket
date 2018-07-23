@@ -14,7 +14,7 @@ import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Statie;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
 
-@Database(entities = {Bilet.class, BiletP.class, Tranzactie.class, Statie.class}, version = 5, exportSchema = false)
+@Database(entities = {Bilet.class, BiletP.class, Tranzactie.class, Statie.class}, version = 6, exportSchema = false)
 public abstract class EtkRoomDB extends RoomDatabase {
 	
 	public abstract BiletDao biletDao();

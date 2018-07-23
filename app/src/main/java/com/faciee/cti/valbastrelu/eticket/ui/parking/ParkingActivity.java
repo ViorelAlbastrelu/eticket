@@ -1,16 +1,14 @@
 package com.faciee.cti.valbastrelu.eticket.ui.parking;
 
-import android.arch.lifecycle.ViewModel;
+import android.app.Dialog;
 import android.arch.lifecycle.ViewModelProviders;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,21 +17,27 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
-import com.faciee.cti.valbastrelu.eticket.ui.common.i.TransportViewActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityModel;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ParkingActivity extends AppCompatActivity implements TransportViewActivity{
+public class ParkingActivity extends AppCompatActivity {
 	private static final String TAG = "ParkingActivity";
+	private static final int ERROR_DIALOG_REQUEST = 9001;
+	
 	private ParkingActivityModel parkingActivityModel;
 	
-	@BindView(R.id.container) ViewPager mViewPager;
-	@BindView(R.id.tabs) TabLayout mTabLayout;
+	@BindView(R.id.container)
+	ViewPager mViewPager;
+	@BindView(R.id.tabs)
+	TabLayout mTabLayout;
 	
 	private SectionsPagerAdapter mSectionsPagerAdapter;
 	
@@ -43,7 +47,9 @@ public class ParkingActivity extends AppCompatActivity implements TransportViewA
 		setContentView(R.layout.activity_parking);
 		ButterKnife.bind(this);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		toolbar.setTitle(R.string.menu_car);
 		setSupportActionBar(toolbar);
+		isServiceOK();
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 		setupViewPager(mViewPager);
 		mTabLayout.setupWithViewPager(mViewPager);
@@ -51,11 +57,10 @@ public class ParkingActivity extends AppCompatActivity implements TransportViewA
 	}
 	
 	@OnClick(R.id.fab)
-	void onClickFab(View view){
-		//TODO implement add ticket with ViewModel or remove?
-				Snackbar.make(view, "Bilet adaugat", Snackbar.LENGTH_LONG)
-						.setAction("Action", null).show();
-				parkingActivityModel.insertBilet(new BiletP("Mazepa", true, 1.5, false));
+	void onClickFab(View view) {
+//		Snackbar.make(view, "Bilet adaugat", Snackbar.LENGTH_LONG)
+//				.setAction("Action", null).show();
+		parkingActivityModel.insertBilet(new BiletP("Mazepa", true, 1.5, false));
 	}
 	
 	
@@ -78,29 +83,6 @@ public class ParkingActivity extends AppCompatActivity implements TransportViewA
 		return super.onOptionsItemSelected(item);
 	}
 	
-	public static class PlaceholderFragment extends Fragment {
-		private static final String ARG_SECTION_NUMBER = "section_number";
-		
-		public PlaceholderFragment() {
-		}
-		public static PlaceholderFragment newInstance(int sectionNumber) {
-			PlaceholderFragment fragment = new PlaceholderFragment();
-			Bundle args = new Bundle();
-			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-			fragment.setArguments(args);
-			return fragment;
-		}
-		
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-		                         Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_parking, container, false);
-			TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-			textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-			return rootView;
-		}
-	}
-	
 	private void setupViewPager(ViewPager viewPager) {
 		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 		mSectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_ticket));    //BILETE
@@ -109,24 +91,18 @@ public class ParkingActivity extends AppCompatActivity implements TransportViewA
 		viewPager.setAdapter(mSectionsPagerAdapter);
 	}
 	
-	
-	@Override
-	public void setActivityTitle(String activityTitle) {
-	
-	}
-	
-	@Override
-	public void setActivityTitle(int activityResId) {
-	
-	}
-	
-	@Override
-	public void setToolbarText(String toolbarText) {
-	
-	}
-	
-	@Override
-	public void setToolbarText(int toolbarResId) {
-	
+	private boolean isServiceOK() {
+		Log.d(TAG, "isServiceOK: check google services version");
+		int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
+		if (available == ConnectionResult.SUCCESS) {
+			Log.d(TAG, "isServiceOK: Google Play Services working");
+			return true;
+		} else if (GoogleApiAvailability.getInstance().isUserResolvableError(available)) {
+			Log.d(TAG, "isServiceOK: Error can be fixed");
+			Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(this, available, ERROR_DIALOG_REQUEST);
+			dialog.show();
+		} else
+			ETicketApp.toastMessageShort("You can't make map requests");
+		return false;
 	}
 }

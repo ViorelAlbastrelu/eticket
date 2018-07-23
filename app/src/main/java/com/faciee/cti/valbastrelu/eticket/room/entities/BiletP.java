@@ -3,8 +3,13 @@ package com.faciee.cti.valbastrelu.eticket.room.entities;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
 
+import com.faciee.cti.valbastrelu.eticket.room.converter.DateConverter;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -15,6 +20,7 @@ public class BiletP {
 	@ColumnInfo private boolean activ;
 	@ColumnInfo private double pret;
 	@ColumnInfo private boolean alerta;
+	@TypeConverters(DateConverter.class) private Date data;
 	
 	public BiletP(String locatie, boolean activ, double pret, boolean alerta) {
 		this.idbiletp = System.currentTimeMillis();;
@@ -22,6 +28,7 @@ public class BiletP {
 		this.activ = activ;
 		this.pret = pret;
 		this.alerta = alerta;
+		this.data = Calendar.getInstance().getTime();
 	}
 	
 	public long getIdbiletp() {
@@ -64,6 +71,22 @@ public class BiletP {
 		this.alerta = alerta;
 	}
 	
+	public Date getData() {
+		return data;
+	}
+	
+	public void setData(Date data) {
+		this.data = data;
+	}
+	
+	public String getHourMinute() {
+		return new SimpleDateFormat("HH:mm").format(data);
+	}
+	
+	public String getDayMonthYear() {
+		return new SimpleDateFormat("dd-MMM-yyyy").format(data);
+	}
+	
 	@Override
 	public String toString() {
 		return "BiletP{" +
@@ -72,6 +95,7 @@ public class BiletP {
 				", activ=" + activ +
 				", pret=" + pret +
 				", alerta=" + alerta +
+				", data=" + data +
 				'}';
 	}
 	
@@ -82,13 +106,15 @@ public class BiletP {
 		BiletP biletP = (BiletP) o;
 		return idbiletp == biletP.idbiletp &&
 				activ == biletP.activ &&
-				pret == biletP.pret &&
+				Double.compare(biletP.pret, pret) == 0 &&
 				alerta == biletP.alerta &&
-				Objects.equals(locatie, biletP.locatie);
+				Objects.equals(locatie, biletP.locatie) &&
+				Objects.equals(data, biletP.data);
 	}
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(idbiletp, locatie, activ, pret, alerta);
+		
+		return Objects.hash(idbiletp, locatie, activ, pret, alerta, data);
 	}
 }

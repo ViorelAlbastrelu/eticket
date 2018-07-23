@@ -24,6 +24,10 @@ public class ParkingActivityModel extends AbstractActivityModel {
 		biletep = repository.getBileteParcare();
 	}
 	
+	public LiveData<List<BiletP>> getLiveDataBilete(){
+		return repository.getBileteParcare();
+	}
+	
 	public LiveData<List<Tranzactie>> getLiveDataTranzactii(){
 		return repository.getLiveDataTranzactii();
 	}

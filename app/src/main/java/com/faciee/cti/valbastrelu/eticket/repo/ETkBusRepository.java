@@ -167,7 +167,6 @@ public class ETkBusRepository {
 	private static class InsertBiletAsync extends AsyncTask<Bilet, Void, Void>{
 		private BiletDao biletDao;
 		private TranzactieDao tranzactieDao;
-		private SimpleDateFormat formatterDate = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
 		
 		public InsertBiletAsync(BiletDao biletDao, TranzactieDao tranzactieDao) {
 			this.biletDao = biletDao;

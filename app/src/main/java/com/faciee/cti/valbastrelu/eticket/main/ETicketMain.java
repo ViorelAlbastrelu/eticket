@@ -1,9 +1,13 @@
 package com.faciee.cti.valbastrelu.eticket.main;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -22,6 +26,8 @@ import com.faciee.cti.valbastrelu.eticket.ui.parking.ParkingActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import org.w3c.dom.Text;
+
+import java.io.Serializable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -109,9 +115,15 @@ public class ETicketMain extends AppCompatActivity
 		} else if (id == R.id.nav_chat) {
 			intent = new Intent(this, Chatbot.class);
 		} else if (id == R.id.nav_signout) {
-			firebaseAuth.signOut();
-			intent = new Intent(this, LoginActivity.class);
-			finish();
+			new AlertDialog.Builder(this)
+					.setMessage(R.string.signout_message)
+					.setPositiveButton(R.string.afirmativ, (dialog, which) -> {
+						firebaseAuth.signOut();
+						finish();
+					})
+					.setNegativeButton(R.string.negativ, (dialog, which) -> {
+						ETicketApp.toastMessageShort("Canceled");
+					}).show();
 		}
 		
 		drawer.closeDrawer(GravityCompat.START);
@@ -127,7 +139,8 @@ public class ETicketMain extends AppCompatActivity
 		profileName = header.findViewById(R.id.profileName);
 		profileEmail = header.findViewById(R.id.profileEmail);
 		
-		profileName.setText(email.substring(0, email.indexOf("@")));
+		profileName.setText("Viorel");
 		profileEmail.setText(email);
 	}
+
 }

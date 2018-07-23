@@ -9,6 +9,9 @@
 		tools:ignore="ProtectedPermissions" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.NFC" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 	<uses-feature android:name="android.hardware.nfc" />
 
@@ -21,6 +24,11 @@
 		android:roundIcon="@mipmap/ic_launcher"
 		android:supportsRtl="true"
 		android:theme="@style/EticketTheme">
+
+		<meta-data
+			android:name="com.google.android.geo.API_KEY"
+			android:value="AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE"/>
+
 		<activity android:name=".ETicketActivity" />
 		<activity
 			android:name=".ui.bus.BusActivity"
@@ -43,7 +51,7 @@
 		<activity
 			android:name=".ui.parking.ParkingActivity"
 			android:label="@string/title_activity_parking"
-			android:theme="@style/EticketTheme"></activity>
+			android:theme="@style/EticketTheme"/>
 	</application>
 
 </manifest>

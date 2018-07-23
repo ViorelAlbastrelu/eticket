@@ -57,4 +57,7 @@
 	<string name="vezi_detalii">Voir les détails</string>
 	<string name="tab_name_parking">Parking</string>
 	<string name="parking_alert_message">Alerter quand le temps est fini?</string>
+	<string name="signout_message">Êtes-vous sûr de vouloir quitter?</string>
+	<string name="afirmativ">Oui</string>
+	<string name="negativ">Annuler</string>
 </resources>
