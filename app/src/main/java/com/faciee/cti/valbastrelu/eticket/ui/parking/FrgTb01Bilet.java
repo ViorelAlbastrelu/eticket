@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.ParkingFrag01BiletBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletParkingRVAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.common.i.UpdateRecyclerViewCallback;
 import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityModel;
 
 public class FrgTb01Bilet extends Fragment {
@@ -49,4 +50,14 @@ public class FrgTb01Bilet extends Fragment {
 		});
 	}
 	
+	private final UpdateRecyclerViewCallback recyclerViewCallback = new UpdateRecyclerViewCallback() {
+		@Override
+		public void scrollToTop() {
+			binding.recyclerViewBileteP.scrollTo(0, 0);
+		}
+	};
+	
+	public UpdateRecyclerViewCallback getRecycleViewCallback() {
+		return recyclerViewCallback;
+	}
 }

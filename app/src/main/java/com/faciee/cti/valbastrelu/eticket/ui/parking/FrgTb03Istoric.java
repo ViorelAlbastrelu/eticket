@@ -28,7 +28,7 @@ public class FrgTb03Istoric extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		Log.d(TAG, "onCreateView: Parking tab03 started");
-		View view = inflater.inflate(R.layout.fragment_frg_tb03_istoric, container, false);
+		View view = inflater.inflate(R.layout.parking_frg_tb03_istoric, container, false);
 		IstoricRVAdapter adapter = new IstoricRVAdapter(getContext());
 		listaIstoric = view.findViewById(R.id.listaIstoric);
 		buildRecyclerView(adapter);

@@ -28,7 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class BusActivity extends AppCompatActivity implements TransportViewActivity {
+public class BusActivity extends AppCompatActivity{
 	private static final String TAG = "BusActivity";
 	BusActivityModel busActivityModel;
 	NfcAdapter nfcAdapter;
@@ -114,25 +114,5 @@ public class BusActivity extends AppCompatActivity implements TransportViewActiv
 	@OnClick(R.id.fab)
 	void addBilet(View view) {
 		busActivityModel.insertBilet(new Bilet(100, true, 2, 2));
-	}
-	
-	@Override
-	public void setActivityTitle(String activityTitle) {
-	
-	}
-	
-	@Override
-	public void setActivityTitle(int activityResId) {
-	
-	}
-	
-	@Override
-	public void setToolbarText(String toolbarText) {
-	
-	}
-	
-	@Override
-	public void setToolbarText(int toolbarResId) {
-	
 	}
 }

@@ -20,6 +20,7 @@ import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
+import com.faciee.cti.valbastrelu.eticket.ui.common.i.UpdateRecyclerViewCallback;
 import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityModel;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -31,6 +32,7 @@ import butterknife.OnClick;
 public class ParkingActivity extends AppCompatActivity {
 	private static final String TAG = "ParkingActivity";
 	private static final int ERROR_DIALOG_REQUEST = 9001;
+	private UpdateRecyclerViewCallback recyclerViewCallback;
 	
 	private ParkingActivityModel parkingActivityModel;
 	
@@ -49,7 +51,6 @@ public class ParkingActivity extends AppCompatActivity {
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setTitle(R.string.menu_car);
 		setSupportActionBar(toolbar);
-		isServiceOK();
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 		setupViewPager(mViewPager);
 		mTabLayout.setupWithViewPager(mViewPager);
@@ -61,6 +62,7 @@ public class ParkingActivity extends AppCompatActivity {
 //		Snackbar.make(view, "Bilet adaugat", Snackbar.LENGTH_LONG)
 //				.setAction("Action", null).show();
 		parkingActivityModel.insertBilet(new BiletP("Mazepa", true, 1.5, false));
+		recyclerViewCallback.scrollToTop();
 	}
 	
 	
@@ -84,8 +86,10 @@ public class ParkingActivity extends AppCompatActivity {
 	}
 	
 	private void setupViewPager(ViewPager viewPager) {
+		FrgTb01Bilet frgTb01Bilet = new FrgTb01Bilet();
+		recyclerViewCallback = frgTb01Bilet.getRecycleViewCallback();
 		mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-		mSectionsPagerAdapter.addFragment(new FrgTb01Bilet(), getApplication().getString(R.string.tab_name_ticket));    //BILETE
+		mSectionsPagerAdapter.addFragment(frgTb01Bilet, getApplication().getString(R.string.tab_name_ticket));    //BILETE
 		mSectionsPagerAdapter.addFragment(new FrgTb02Parcari(), getApplication().getString(R.string.tab_name_parking));   //PARCARI
 		mSectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getApplication().getString(R.string.tab_name_history)); //ISTORIC
 		viewPager.setAdapter(mSectionsPagerAdapter);
