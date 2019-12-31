@@ -67,9 +67,9 @@
 
 	<string name="parking_alert_message">Alertă la epuizarea timpului?</string>
 
-	<!-- TODO: Remove or change this placeholder text -->
-	<string name="hello_blank_fragment">Hello blank fragment</string>
 	<string name="maps_API_key">AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE</string>
+
+	<!--Signout alert dialog-->
 	<string name="signout_message">Sunteți siguri că doriți să ieșiți din cont?</string>
 	<string name="afirmativ">Da</string>
 	<string name="negativ">Anulează</string>
