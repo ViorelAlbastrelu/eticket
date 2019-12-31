@@ -39,7 +39,6 @@ public class FrgTb02Trasee extends Fragment{
 		adapter = new TraseuRVAdapter(traseuClickCallback);
 		traseuBinding.listaTraseeBus.setAdapter(adapter);
 		
-		//TODO  Pass listener to recyclerView onClick infoBtn to open FrgTb02TraseuStep based on selected.
 		//TODO implement filter
 		return traseuBinding.getRoot();
 	}

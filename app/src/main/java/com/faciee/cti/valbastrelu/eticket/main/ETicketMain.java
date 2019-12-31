@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.chat.Chatbot;
+import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.parking.ParkingActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -43,7 +44,10 @@ public class ETicketMain extends AppCompatActivity
 		setUserAndEmailToDrawerProfile();
 		
 		firebaseAuth = FirebaseAuth.getInstance();
-		
+		if (firebaseAuth.getCurrentUser() == null) {
+			startActivity(new Intent(this, LoginActivity.class));
+			finish();
+		}
 		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
 				this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 		drawer.addDrawerListener(toggle);
@@ -110,6 +114,7 @@ public class ETicketMain extends AppCompatActivity
 					.setMessage(R.string.signout_message)
 					.setPositiveButton(R.string.afirmativ, (dialog, which) -> {
 						firebaseAuth.signOut();
+						startActivity(new Intent(this, LoginActivity.class));
 						finish();
 					})
 					.setNegativeButton(R.string.negativ, (dialog, which) -> {
