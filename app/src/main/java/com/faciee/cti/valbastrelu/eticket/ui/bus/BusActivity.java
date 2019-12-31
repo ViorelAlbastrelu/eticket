@@ -56,13 +56,14 @@ public class BusActivity extends AppCompatActivity{
 	@Override
 	protected void onResume() {
 		super.onResume();
-		enableForegroundDispatch();
+		//TODO enable or disable if on emulator
+//		enableForegroundDispatch();
 	}
 	
 	@Override
 	protected void onPause() {
 		super.onPause();
-		disableForegroundDispatch();
+//		disableForegroundDispatch();
 	}
 	
 	@Override
@@ -113,6 +114,6 @@ public class BusActivity extends AppCompatActivity{
 	
 	@OnClick(R.id.fab)
 	void addBilet(View view) {
-		busActivityModel.insertBilet(new Bilet(100, true, 2, 2));
+		busActivityModel.insertBilet(new Bilet(102, true, 2, 2));
 	}
 }
