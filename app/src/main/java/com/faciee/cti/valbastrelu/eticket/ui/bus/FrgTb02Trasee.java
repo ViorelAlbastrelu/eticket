@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag021TraseuBinding;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityViewModel;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 
@@ -28,7 +28,7 @@ public class FrgTb02Trasee extends Fragment{
 	
 	BusFrag021TraseuBinding traseuBinding;
 	TraseuRVAdapter adapter;
-	BusActivityModel sharedBusModel;
+	BusActivityViewModel sharedBusModel;
 	
 	@Nullable
 	@Override
@@ -46,11 +46,11 @@ public class FrgTb02Trasee extends Fragment{
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		BusActivityModel sharedModel = ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
+		BusActivityViewModel sharedModel = ViewModelProviders.of(getActivity()).get(BusActivityViewModel.class);
 		subscribeUI(sharedModel);
 	}
 	
-	private void subscribeUI(BusActivityModel sharedModel) {
+	private void subscribeUI(BusActivityViewModel sharedModel) {
 		sharedModel.getLiveDataTrasee().observe(getViewLifecycleOwner(), trasee -> {
 			if (trasee != null){
 				traseuBinding.setIsLoading(false);

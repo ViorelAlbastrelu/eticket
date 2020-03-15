@@ -1,53 +1,45 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
 import android.app.PendingIntent;
-import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
-
-import com.google.android.material.tabs.TabLayout;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.viewpager.widget.ViewPager;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.databinding.ActivityBusBinding;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityViewModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
 
 
 public class BusActivity extends AppCompatActivity{
 	private static final String TAG = "BusActivity";
-	BusActivityModel busActivityModel;
+	private ActivityBusBinding busBinding;
+	BusActivityViewModel busActivityModel;
 	NfcAdapter nfcAdapter;
 	
-	ViewPager mViewPager;
-	TabLayout mTabLayout;
-
 	SectionsPagerAdapter sectionsPagerAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_bus);
-		mViewPager = findViewById(R.id.container);
-		mTabLayout = findViewById(R.id.tabs);
-		View fab = findViewById(R.id.fab);
-		fab.setOnClickListener(view -> busActivityModel.insertBilet(new Bilet(102, true, 2, 2)));
-
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		toolbar.setTitle(R.string.menu_bus);
-		setSupportActionBar(toolbar);
-		busActivityModel = ViewModelProviders.of(this).get(BusActivityModel.class);
+		busBinding = ActivityBusBinding.inflate(getLayoutInflater());
+		setContentView(busBinding.getRoot());
+		busBinding.fab.setOnClickListener(view -> busActivityModel.insertBilet(new Bilet(102, true, 2, 2)));
+		busBinding.includeToolbar.toolbar.setTitle(R.string.menu_bus);
+		setSupportActionBar(busBinding.includeToolbar.toolbar);
+		busActivityModel = ViewModelProviders.of(this).get(BusActivityViewModel.class);
 		nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-		setupViewPager(mViewPager);
-		mTabLayout.setupWithViewPager(mViewPager);
+		setupViewPager(busBinding.viewPager);
+		busBinding.tabs.setupWithViewPager(busBinding.viewPager);
 	}
 	
 	@Override
@@ -105,7 +97,7 @@ public class BusActivity extends AppCompatActivity{
 		getSupportFragmentManager()
 				.beginTransaction()
 				.addToBackStack("product")
-				.replace(R.id.container,
+				.replace(R.id.viewPager,
 						frgTb02Statii, null).commit();
 	}
 }

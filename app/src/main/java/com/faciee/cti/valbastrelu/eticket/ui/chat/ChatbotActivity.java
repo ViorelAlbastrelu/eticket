@@ -8,15 +8,14 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.databinding.ActivityChatbotBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.ChatMessageAdapter;
 import com.faciee.cti.valbastrelu.eticket.util.AppUtils;
 
@@ -34,13 +33,13 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 
 
-public class Chatbot extends AppCompatActivity {
+public class ChatbotActivity extends AppCompatActivity {
+
+	private ActivityChatbotBinding chatbotBinding;
 	
-	private ListView mListView;
-	private EditText mEditTextMessage;
-	private ProgressBar loadingBot;
-	private Button sendButton;
-	
+	private ListView chatList;
+	private EditText messageInput;
+
 	//chatbot
 	private static Chat chat;
 	private ChatMessageAdapter mAdapter;
@@ -50,17 +49,14 @@ public class Chatbot extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chatbot);
 		//init views
-		mListView = findViewById(R.id.chatView);
-		mEditTextMessage = findViewById(R.id.send_message);
-		loadingBot = findViewById(R.id.loadingBot);
-		sendButton = findViewById(R.id.btn_send);
+		chatList = chatbotBinding.chatView;
+		messageInput = chatbotBinding.sendMessage;
 
-
-		sendButton.setOnClickListener(view -> sendMessage());
-		mEditTextMessage.setImeOptions(EditorInfo.IME_ACTION_DONE);
-		mEditTextMessage.setOnEditorActionListener(this::sendInEditor);
+		chatbotBinding.btnSend.setOnClickListener(view -> sendMessage());
+		messageInput.setImeOptions(EditorInfo.IME_ACTION_DONE);
+		messageInput.setOnEditorActionListener(this::sendInEditor);
 		mAdapter = new ChatMessageAdapter(this, new ArrayList<>());
-		mListView.setAdapter(mAdapter);
+		chatList.setAdapter(mAdapter);
 //		toolbar.setTitle(R.string.menu_assistant);
 		new CongfigureBotTask(this).execute();
 	}
@@ -75,16 +71,16 @@ public class Chatbot extends AppCompatActivity {
 	}
 	
 	private void sendMessage() {
-		String message = mEditTextMessage.getText().toString().trim();
+		String message = messageInput.getText().toString().trim();
 		ChatMessage chatMessage = new ChatMessage(message, true, false);
 		String response = chat.multisentenceRespond(message);
 		if (TextUtils.isEmpty(message)) {
 			return;
 		}
 		mAdapter.add(chatMessage);
-		mEditTextMessage.setText("");
+		messageInput.setText("");
 		mimicOtherMessage(response);
-		mListView.setSelection(mAdapter.getCount() - 1);
+		chatList.setSelection(mAdapter.getCount() - 1);
 	}
 	
 	private void mimicOtherMessage(String message) {

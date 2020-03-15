@@ -9,12 +9,12 @@ import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
-import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityViewModel;
 import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository;
 
 import java.util.List;
 
-public class BusActivityModel extends AbstractActivityModel {
+public class BusActivityViewModel extends AbstractActivityViewModel {
 	private static final String TAG = "BusActivityModel";
 	
 	private ETkBusRepository repository;
@@ -22,7 +22,7 @@ public class BusActivityModel extends AbstractActivityModel {
 	private Bilet biletActiv = null;
 	LiveData<List<Bilet>> bilete;
 	
-	public BusActivityModel(@NonNull Application application) {
+	public BusActivityViewModel(@NonNull Application application) {
 		super(application);
 		repository = ETicketApp.getCurrentApplication().getBusRepository();
 		bilete = repository.getBilete();

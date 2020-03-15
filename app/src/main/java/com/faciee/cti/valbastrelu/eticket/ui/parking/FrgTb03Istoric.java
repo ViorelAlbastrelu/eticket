@@ -12,30 +12,28 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.databinding.ParkingFrgTb03IstoricBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.IstoricRVAdapter;
-import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityViewModel;
 
 public class FrgTb03Istoric extends Fragment {
 	private static final String TAG = "FrgTb03Istoric";
-	
+	private ParkingFrgTb03IstoricBinding istoricBinding;
 	private RecyclerView listaIstoric;
-	private ParkingActivityModel sharedParkingModel;
-	public FrgTb03Istoric() {
-	}
-	
+	private ParkingActivityViewModel sharedParkingModel;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		Log.d(TAG, "onCreateView: Parking tab03 started");
-		View view = inflater.inflate(R.layout.parking_frg_tb03_istoric, container, false);
+		istoricBinding = ParkingFrgTb03IstoricBinding.inflate(getLayoutInflater(), container, false);
 		IstoricRVAdapter adapter = new IstoricRVAdapter(getContext());
-		listaIstoric = view.findViewById(R.id.listaIstoric);
+		listaIstoric = istoricBinding.listaIstoric;
 		buildRecyclerView(adapter);
-		sharedParkingModel = ViewModelProviders.of(this).get(ParkingActivityModel.class);
-		sharedParkingModel.getLiveDataTranzactii().observe(getViewLifecycleOwner(), tranzactii -> adapter.setIstoric(tranzactii));
+		sharedParkingModel = ViewModelProviders.of(this).get(ParkingActivityViewModel.class);
+		sharedParkingModel.getLiveDataTranzactii().observe(getViewLifecycleOwner(), adapter::setIstoric);
 		
-		return view;
+		return istoricBinding.getRoot();
 	}
 	
 	public void buildRecyclerView(IstoricRVAdapter adapter) {

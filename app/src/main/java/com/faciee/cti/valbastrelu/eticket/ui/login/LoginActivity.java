@@ -2,16 +2,16 @@ package com.faciee.cti.valbastrelu.eticket.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.databinding.ActivityLoginBinding;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketMain;
 import com.faciee.cti.valbastrelu.eticket.main.ETkAppPreferences;
@@ -21,22 +21,21 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity implements LoginView{
 	private static final String TAG = "LoginActivity";
 	private LoginPresenter loginPresenter;
+	private ActivityLoginBinding loginBinding;
 	
 	// UI references.
 	AutoCompleteTextView mEmailView;
 	EditText mPasswordView;
 	ProgressBar mProgressView;
 	View mLoginFormView;
-	TextView mStatusTextView;
-	Button loginButton;
-	Button registerButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
+		loginBinding = ActivityLoginBinding.inflate(getLayoutInflater());
+		setContentView(loginBinding.getRoot());
 		loginPresenter = new LoginPresenter(this);
-		loginPresenter.setFireBaseAuth(new FireBaseWrapper(loginPresenter));
+		loginPresenter.setFireBaseAuth(new FireBaseWrapper(loginPresenter)); //TODO look into this crap
 		initViews();
 	}
 	
@@ -99,25 +98,22 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	}
 
 	private void initViews(){
-		mEmailView = findViewById(R.id.email);
-		mPasswordView = findViewById(R.id.password);
-		mProgressView = findViewById(R.id.login_progress);
-		mLoginFormView = findViewById(R.id.login_form);
-		mStatusTextView = findViewById(R.id.statusTextView);
-		loginButton = findViewById(R.id.btn_autentificare);
-		registerButton = findViewById(R.id.btn_inregistrare);
+		mEmailView = loginBinding.email;
+		mPasswordView = loginBinding.password;
+		mProgressView = loginBinding.loginProgress;
+		mLoginFormView = loginBinding.loginForm;
 
-		loginButton.setOnClickListener(v -> login());
-		registerButton.setOnClickListener(v -> contNou());
+		loginBinding.btnAutentificare.setOnClickListener(v -> login());
+		loginBinding.btnInregistrare.setOnClickListener(v -> contNou());
 	}
 
 	private void updateUI(FirebaseUser user) {
 		mEmailView.setText(user.getEmail());
 		if (user != null) {
-			mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
+			loginBinding.statusTextView.setText(getString(R.string.emailpassword_status_fmt,
 												user.getEmail(),
 												user.isEmailVerified()));
-			mStatusTextView.setVisibility(View.VISIBLE);
+			loginBinding.statusTextView.setVisibility(View.VISIBLE);
 			
 //			mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
 //			findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
