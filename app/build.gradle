@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.faciee.cti.valbastrelu.eticket"
         minSdkVersion 21
@@ -50,15 +50,15 @@ dependencies {
     implementation 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
     implementation files('libs/Ab.jar')
     //Firebase
-    implementation 'com.google.firebase:firebase-auth:16.0.2'
-    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-auth:19.3.0'
+    implementation 'com.google.firebase:firebase-core:17.2.3'
     //HTML Parser
     implementation 'org.jsoup:jsoup:1.11.2'
     //LiveData and ViewModel
     def lifecycle_ver = '2.2.0'
     implementation      "androidx.lifecycle:lifecycle-runtime:$lifecycle_ver"
     implementation      "androidx.lifecycle:lifecycle-extensions:$lifecycle_ver"
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_ver"
+    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:$lifecycle_ver"
     //Room library for local DB
     def room_version = '2.2.4'
     implementation "androidx.room:room-runtime:$room_version"
