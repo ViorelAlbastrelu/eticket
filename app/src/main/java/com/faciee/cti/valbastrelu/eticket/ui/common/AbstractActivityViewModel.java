@@ -4,9 +4,9 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.annotation.NonNull;
 
-public class AbstractActivityModel extends AndroidViewModel{
+public abstract class AbstractActivityViewModel extends AndroidViewModel{
 	
-	public AbstractActivityModel(@NonNull Application application) {
+	public AbstractActivityViewModel(@NonNull Application application) {
 		super(application);
 	}
 }

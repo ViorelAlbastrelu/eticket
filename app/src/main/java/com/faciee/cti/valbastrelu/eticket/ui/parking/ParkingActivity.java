@@ -3,6 +3,8 @@ package com.faciee.cti.valbastrelu.eticket.ui.parking;
 import android.app.Dialog;
 import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+
+import com.faciee.cti.valbastrelu.eticket.databinding.ActivityParkingBinding;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.viewpager.widget.ViewPager;
@@ -18,7 +20,7 @@ import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.i.UpdateRecyclerViewCallback;
-import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityViewModel;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
@@ -28,29 +30,25 @@ public class ParkingActivity extends AppCompatActivity {
 	private static final int ERROR_DIALOG_REQUEST = 9001;
 	private UpdateRecyclerViewCallback recyclerViewCallback;
 	
-	private ParkingActivityModel parkingActivityModel;
-	
-	ViewPager mViewPager;
-	TabLayout mTabLayout;
+	private ParkingActivityViewModel parkingActivityModel;
+	private ActivityParkingBinding parkingBinding;
 	
 	private SectionsPagerAdapter mSectionsPagerAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_parking);
-		mViewPager = findViewById(R.id.container);
-		mTabLayout = findViewById(R.id.tabs);
+		parkingBinding = ActivityParkingBinding.inflate(getLayoutInflater());
+		setContentView(parkingBinding.getRoot());
 
-		findViewById(R.id.fab).setOnClickListener(this::onClickFab);
+		parkingBinding.fab.setOnClickListener(this::onClickFab);
 
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		toolbar.setTitle(R.string.menu_car);
-		setSupportActionBar(toolbar);
-		mViewPager.setAdapter(mSectionsPagerAdapter);
-		setupViewPager(mViewPager);
-		mTabLayout.setupWithViewPager(mViewPager);
-		parkingActivityModel = ViewModelProviders.of(this).get(ParkingActivityModel.class);
+		parkingBinding.includeToolbar.toolbar.setTitle(R.string.menu_car);
+		setSupportActionBar(parkingBinding.includeToolbar.toolbar);
+		parkingBinding.viewPager.setAdapter(mSectionsPagerAdapter);
+		setupViewPager(parkingBinding.viewPager);
+		parkingBinding.tabs.setupWithViewPager(parkingBinding.viewPager);
+		parkingActivityModel = ViewModelProviders.of(this).get(ParkingActivityViewModel.class);
 	}
 	
 	void onClickFab(View view) {

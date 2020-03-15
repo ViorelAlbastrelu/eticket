@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag01BiletBinding;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityViewModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletRVAdapter;
 
 /**
@@ -23,39 +23,39 @@ import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletRVAdapter;
 public class FrgTb01Bilet extends Fragment{
 	private static final String TAG = "FrgTb01Bilet";
 	
-	private BusFrag01BiletBinding frag01BiletBinding;
-	private BusActivityModel sharedBusModel;
+	private BusFrag01BiletBinding biletBinding;
+	private BusActivityViewModel sharedBusModel;
 	private BiletRVAdapter biletRVAdapter;
 	
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		Log.d(TAG, "onCreateView: frg01");
-		frag01BiletBinding = DataBindingUtil.inflate(inflater, R.layout.bus_frag01_bilet, container, false);
+		biletBinding = DataBindingUtil.inflate(inflater, R.layout.bus_frag01_bilet, container, false);
 		
 		biletRVAdapter = new BiletRVAdapter();
-		frag01BiletBinding.recyclerViewBilete.setAdapter(biletRVAdapter);
+		biletBinding.recyclerViewBilete.setAdapter(biletRVAdapter);
 		
 //		sharedBusModel = ViewModelProviders.of(Objects.requireNonNull(getActivity())).get(BusActivityModel.class);
 //		sharedBusModel.getLiveDataBilete().observe(this, list -> biletRVAdapter.setBilete(list));
-		return frag01BiletBinding.getRoot();
+		return biletBinding.getRoot();
 	}
 	
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		sharedBusModel =
-				ViewModelProviders.of(getActivity()).get(BusActivityModel.class);
+				ViewModelProviders.of(getActivity()).get(BusActivityViewModel.class);
 		subscribeUI(sharedBusModel);
 	}
 	
-	private void subscribeUI(BusActivityModel model) {
+	private void subscribeUI(BusActivityViewModel model) {
 		model.getLiveDataBilete().observe(getViewLifecycleOwner(), list -> {
 			if (list != null){
-				frag01BiletBinding.setIsLoading(false);
+				biletBinding.setIsLoading(false);
 				biletRVAdapter.setBilete(list);
-			}else frag01BiletBinding.setIsLoading(true);
-			frag01BiletBinding.executePendingBindings();
+			}else biletBinding.setIsLoading(true);
+			biletBinding.executePendingBindings();
 		});
 	}
 	

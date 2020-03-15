@@ -13,13 +13,13 @@ import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.ParkingFrag01BiletBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletParkingRVAdapter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.i.UpdateRecyclerViewCallback;
-import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityViewModel;
 
 public class FrgTb01Bilet extends Fragment {
 	private static final String TAG = "FrgTb01Bilet";
 	
 	private ParkingFrag01BiletBinding binding;
-	private ParkingActivityModel sharedModel;
+	private ParkingActivityViewModel sharedModel;
 	private BiletParkingRVAdapter rvAdapter;
 	
 	@Override
@@ -34,11 +34,11 @@ public class FrgTb01Bilet extends Fragment {
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		sharedModel = ViewModelProviders.of(getActivity()).get(ParkingActivityModel.class);
+		sharedModel = ViewModelProviders.of(getActivity()).get(ParkingActivityViewModel.class);
 		subscribeUI(sharedModel);
 	}
 	
-	private void subscribeUI(ParkingActivityModel model) {
+	private void subscribeUI(ParkingActivityViewModel model) {
 		model.getLiveDataBilete().observe(getViewLifecycleOwner(), list -> {
 			if (list != null) {
 				binding.setIsLoading(false);

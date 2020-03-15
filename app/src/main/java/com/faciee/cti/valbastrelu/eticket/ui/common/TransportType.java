@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 
+//TODO extract typeName to string res
 public enum TransportType {
 	BUS("Autobuz", R.drawable.ic_bus),
 	TBUS("Troleibuz", R.drawable.ic_tbus),

@@ -1,17 +1,18 @@
 package com.faciee.cti.valbastrelu.eticket;
 
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.faciee.cti.valbastrelu.eticket.databinding.ActivityEticketBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
+import com.faciee.cti.valbastrelu.eticket.ui.chat.ChatbotActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
-import com.faciee.cti.valbastrelu.eticket.ui.chat.Chatbot;
 import com.faciee.cti.valbastrelu.eticket.util.ETkLog;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -19,15 +20,15 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ETicketActivity extends AppCompatActivity {
 	private static final String TAG = "ETicketActivity";
 	
-	Toolbar mToolbar;
 	private FirebaseAuth mAuth;
+	private ActivityEticketBinding activityEticketBinding;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_eticket);
-		mToolbar = findViewById(R.id.toolbar);
-		setSupportActionBar(mToolbar);
+		activityEticketBinding = ActivityEticketBinding.inflate(getLayoutInflater());
+		setContentView(activityEticketBinding.getRoot());
+		setSupportActionBar(activityEticketBinding.includeToolbar.toolbar);
 		findViewById(R.id.fab).setOnClickListener(this::clickOnFab);
 		mAuth = FirebaseAuth.getInstance();
 	}
@@ -52,7 +53,7 @@ public class ETicketActivity extends AppCompatActivity {
 				intent = new Intent(this, BusActivity.class);
 				break;
 			case R.id.action_chatbot:
-				intent = new Intent(this, Chatbot.class);
+				intent = new Intent(this, ChatbotActivity.class);
 				break;
 			case R.id.action_sign_out:
 				mAuth.signOut();

@@ -8,17 +8,17 @@ import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.repo.EtkParkingRepository;
 import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
-import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityViewModel;
 
 import java.util.List;
 
-public class ParkingActivityModel extends AbstractActivityModel {
+public class ParkingActivityViewModel extends AbstractActivityViewModel {
 	private static final String TAG = "ParkingActivityModel";
 	private EtkParkingRepository repository;
 	
 	LiveData<List<BiletP>> biletep;
 	
-	public ParkingActivityModel(@NonNull Application application) {
+	public ParkingActivityViewModel(@NonNull Application application) {
 		super(application);
 		repository = ETicketApp.getCurrentApplication().getParkingRepository();
 		biletep = repository.getBileteParcare();

@@ -3,23 +3,24 @@ package com.faciee.cti.valbastrelu.eticket.main;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.databinding.ActivityEticketMainBinding;
+import com.faciee.cti.valbastrelu.eticket.databinding.NavHeaderEticketMainBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
-import com.faciee.cti.valbastrelu.eticket.ui.chat.Chatbot;
+import com.faciee.cti.valbastrelu.eticket.ui.chat.ChatbotActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.parking.ParkingActivity;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
 
@@ -27,23 +28,18 @@ public class ETicketMain extends AppCompatActivity
 		implements NavigationView.OnNavigationItemSelectedListener {
 
 	FirebaseAuth firebaseAuth;
+	private ActivityEticketMainBinding mainBinding;
 
-	DrawerLayout drawer;
-	NavigationView navigationView;
-	TextView profileName, profileEmail;
+//	DrawerLayout drawer;
+//	NavigationView navigationView;
+//	TextView profileName, profileEmail;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_eticket_main);
-		drawer = findViewById(R.id.drawer_layout);
-		drawer.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				onFabClick(view);
-			}
-		});
-		navigationView = findViewById(R.id.nav_view);
+		mainBinding = ActivityEticketMainBinding.inflate(getLayoutInflater());
+		setContentView(mainBinding.getRoot());
+		mainBinding.drawerLayout.setOnClickListener(this::onFabClick);
 
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
@@ -55,11 +51,11 @@ public class ETicketMain extends AppCompatActivity
 			finish();
 		}
 		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-				this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-		drawer.addDrawerListener(toggle);
+				this, mainBinding.drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+		mainBinding.drawerLayout.addDrawerListener(toggle);
 		toggle.syncState();
 
-		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
 		navigationView.setNavigationItemSelectedListener(this);
 	}
 
@@ -70,8 +66,8 @@ public class ETicketMain extends AppCompatActivity
 
 	@Override
 	public void onBackPressed() {
-		if (drawer.isDrawerOpen(GravityCompat.START)) {
-			drawer.closeDrawer(GravityCompat.START);
+		if (mainBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+			mainBinding.drawerLayout.closeDrawer(GravityCompat.START);
 		} else {
 			super.onBackPressed();
 		}
@@ -112,7 +108,7 @@ public class ETicketMain extends AppCompatActivity
 		} else if (id == R.id.nav_car) {
 			intent = new Intent(this, ParkingActivity.class);
 		} else if (id == R.id.nav_chat) {
-			intent = new Intent(this, Chatbot.class);
+			intent = new Intent(this, ChatbotActivity.class);
 		} else if (id == R.id.nav_signout) {
 			new AlertDialog.Builder(this)
 					.setMessage(R.string.signout_message)
@@ -126,7 +122,7 @@ public class ETicketMain extends AppCompatActivity
 					}).show();
 		}
 
-		drawer.closeDrawer(GravityCompat.START);
+		mainBinding.drawerLayout.closeDrawer(GravityCompat.START);
 		if(intent != null) startActivity(intent);
 		return true;
 	}
@@ -135,12 +131,10 @@ public class ETicketMain extends AppCompatActivity
 		IETkAppPreferences preferences = ETicketApp.getCurrentETicketApp().getAppPreferences();
 		String email = preferences.getCurrentEmail();
 
-		View header = navigationView.getHeaderView(0);
-		profileName = header.findViewById(R.id.profileName);
-		profileEmail = header.findViewById(R.id.profileEmail);
+		NavHeaderEticketMainBinding navHeader = NavHeaderEticketMainBinding.bind(mainBinding.navView.getHeaderView(0));
 
-		profileName.setText("Viorel");
-		profileEmail.setText(email);
+		navHeader.profileName.setText("Viorel");
+		navHeader.profileEmail.setText(email);
 	}
 
 }
