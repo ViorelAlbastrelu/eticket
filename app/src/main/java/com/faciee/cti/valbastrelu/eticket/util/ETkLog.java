@@ -13,10 +13,10 @@ public class ETkLog {
 	private static final String TAG = "ETkLog";
 	private static final String LOG_FILE = "eticket_log.txt";
 	private static FileOutputStream stream;
-	private static String time = String.valueOf(Calendar.getInstance().getTime());
-	
+
 	public static void f(String tag, String message, Context context) {
-		Log.d(TAG, "f: writing to stream to path " + context.getFilesDir());
+		Log.d(TAG, "f: writing stream to path " + context.getFilesDir());
+		String time = String.valueOf(Calendar.getInstance().getTime());
 		String line = String.format("%s %s : %s \n", time, tag, message);
 		try {
 			stream = context.openFileOutput(LOG_FILE, Context.MODE_APPEND);

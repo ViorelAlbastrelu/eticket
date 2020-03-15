@@ -11,13 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestMain {
-	
-	
+
 	public static void main(String[] args){
 		List<Statie> statii = new ArrayList<>();
 		final StringBuilder builder = new StringBuilder();
 		try {
-			Document document = Jsoup.connect("https://transurb-galati.com/statii/").get();
+			Document document = Jsoup.connect("https://transurbgalati.ro/statii/").get();
 			Elements rows = document.select("td");
 			for (int i = 2; i < rows.size(); i+=2) {
 				statii.add(new Statie(0,rows.get(i).text(),rows.get(i+1).text()));

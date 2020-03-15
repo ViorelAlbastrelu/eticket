@@ -44,6 +44,8 @@ dependencies {
     testImplementation "org.mockito:mockito-all:1.10.19"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
     //StepView
     //    implementation 'com.github.baoyachi:StepView:1.9'
     //Chatbot

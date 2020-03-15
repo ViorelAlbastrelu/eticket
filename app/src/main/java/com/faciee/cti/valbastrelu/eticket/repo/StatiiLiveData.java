@@ -17,16 +17,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Deprecated
 public class StatiiLiveData extends LiveData<List<Statie>> {
 	private static final String TAG = "StatiiLiveData";
 	private static String URL_STATII = "https://transurb-galati.com/%s/";
-	private StatieDao statieDao;
 	private List<String> numeStatii = new ArrayList<>();
 	MutableLiveData<List<String>> numeStatiiLiveData = new MutableLiveData<>();
 	
 	
-	public StatiiLiveData(StatieDao statieDao, int numarTraseu) {
-		this.statieDao = statieDao;
+	public StatiiLiveData(int numarTraseu) {
 		loadStatii(numarTraseu);
 	}
 	

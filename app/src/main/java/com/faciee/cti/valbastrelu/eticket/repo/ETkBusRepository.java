@@ -76,7 +76,7 @@ public class ETkBusRepository {
 		return traseeLiveData;
 	}
 	public LiveData<List<String>> getLiveDataStatii(int nrTraseu){
-		statiiLiveData = new StatiiLiveData(statieDao, nrTraseu);
+		statiiLiveData = new StatiiLiveData(nrTraseu);
 		return statiiLiveData.getNumeStatii();
 	}
 	
