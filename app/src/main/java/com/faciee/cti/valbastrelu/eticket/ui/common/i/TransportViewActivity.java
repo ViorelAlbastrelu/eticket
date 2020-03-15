@@ -1,6 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common.i;
 
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 
 /**
  * Created by valbastrelu on 09-Apr-18.

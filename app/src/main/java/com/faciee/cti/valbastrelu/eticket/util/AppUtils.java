@@ -9,7 +9,7 @@ import java.io.OutputStream;
 public class AppUtils {
 	//check SD card availability
 	public static boolean isSDCARDAvailable(){
-		return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)? true :false;
+		return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
 	}
 	//copying the file
 	public static void copyFile(InputStream in, OutputStream out) throws IOException {

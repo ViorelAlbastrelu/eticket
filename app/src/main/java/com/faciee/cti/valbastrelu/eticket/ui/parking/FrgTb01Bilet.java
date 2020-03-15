@@ -1,12 +1,10 @@
 package com.faciee.cti.valbastrelu.eticket.ui.parking;
 
-import android.arch.lifecycle.ViewModelProviders;
-import android.databinding.DataBindingUtil;
-import android.databinding.generated.callback.OnClickListener;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +39,7 @@ public class FrgTb01Bilet extends Fragment {
 	}
 	
 	private void subscribeUI(ParkingActivityModel model) {
-		model.getLiveDataBilete().observe(this, list -> {
+		model.getLiveDataBilete().observe(getViewLifecycleOwner(), list -> {
 			if (list != null) {
 				binding.setIsLoading(false);
 				rvAdapter.setBilete(list);

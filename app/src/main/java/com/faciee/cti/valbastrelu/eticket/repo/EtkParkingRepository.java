@@ -1,6 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.repo;
 
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 import android.os.AsyncTask;
 
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;

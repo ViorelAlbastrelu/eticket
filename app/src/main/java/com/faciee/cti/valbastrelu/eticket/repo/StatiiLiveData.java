@@ -1,8 +1,8 @@
 package com.faciee.cti.valbastrelu.eticket.repo;
 
 import android.annotation.SuppressLint;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import android.os.AsyncTask;
 import android.util.Log;
 

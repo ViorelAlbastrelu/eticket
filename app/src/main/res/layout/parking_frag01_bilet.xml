@@ -14,22 +14,22 @@
 			type="boolean" />
 	</data>
 
-	<android.support.constraint.ConstraintLayout
+	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 
-		<android.support.v7.widget.RecyclerView
+		<androidx.recyclerview.widget.RecyclerView
 			android:id="@+id/recyclerViewBileteP"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
 			android:clipChildren="false"
 			android:clipToPadding="true"
-			app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+			app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent"
 			app:reverseLayout="true"
 			tools:listitem="@layout/row_bilet_p" />
-	</android.support.constraint.ConstraintLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

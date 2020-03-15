@@ -1,20 +1,17 @@
 package com.faciee.cti.valbastrelu.eticket.ui.parking;
 
 import android.app.Dialog;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
@@ -25,9 +22,6 @@ import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingActivityModel;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ParkingActivity extends AppCompatActivity {
 	private static final String TAG = "ParkingActivity";
@@ -36,9 +30,7 @@ public class ParkingActivity extends AppCompatActivity {
 	
 	private ParkingActivityModel parkingActivityModel;
 	
-	@BindView(R.id.container)
 	ViewPager mViewPager;
-	@BindView(R.id.tabs)
 	TabLayout mTabLayout;
 	
 	private SectionsPagerAdapter mSectionsPagerAdapter;
@@ -47,7 +39,11 @@ public class ParkingActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_parking);
-		ButterKnife.bind(this);
+		mViewPager = findViewById(R.id.container);
+		mTabLayout = findViewById(R.id.tabs);
+
+		findViewById(R.id.fab).setOnClickListener(this::onClickFab);
+
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setTitle(R.string.menu_car);
 		setSupportActionBar(toolbar);
@@ -57,7 +53,6 @@ public class ParkingActivity extends AppCompatActivity {
 		parkingActivityModel = ViewModelProviders.of(this).get(ParkingActivityModel.class);
 	}
 	
-	@OnClick(R.id.fab)
 	void onClickFab(View view) {
 //		Snackbar.make(view, "Bilet adaugat", Snackbar.LENGTH_LONG)
 //				.setAction("Action", null).show();

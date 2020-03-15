@@ -1,6 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.login;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -19,15 +19,12 @@ public class FireBaseWrapper {
 	
 	public void signIn(String email, String password) {
 		mAuth.signInWithEmailAndPassword(email, password)
-				.addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-					@Override
-					public void onComplete(@NonNull Task<AuthResult> task) {
-						if (task.isSuccessful()){
-							FirebaseUser user = mAuth.getCurrentUser();
-							presenterI.updateSignInView();
-						}else {
-							presenterI.showToast("Authentication failed");
-						}
+				.addOnCompleteListener(task -> {
+					if (task.isSuccessful()){
+						FirebaseUser user = mAuth.getCurrentUser();
+						presenterI.updateSignInView();
+					}else {
+						presenterI.showToast("Authentication failed");
 					}
 				});
 	}

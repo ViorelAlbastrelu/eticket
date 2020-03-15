@@ -1,7 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.repo;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import android.os.AsyncTask;
 
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
@@ -13,7 +13,6 @@ import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;

@@ -1,8 +1,8 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
-import android.databinding.BindingAdapter;
+import androidx.databinding.BindingAdapter;
 import android.graphics.Color;
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;

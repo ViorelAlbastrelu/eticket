@@ -2,10 +2,11 @@ package com.faciee.cti.valbastrelu.eticket.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -16,28 +17,27 @@ import com.faciee.cti.valbastrelu.eticket.main.ETicketMain;
 import com.faciee.cti.valbastrelu.eticket.main.ETkAppPreferences;
 import com.google.firebase.auth.FirebaseUser;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity implements LoginView{
 	private static final String TAG = "LoginActivity";
 	private LoginPresenter loginPresenter;
 	
 	// UI references.
-	@BindView(R.id.email) AutoCompleteTextView mEmailView;
-	@BindView(R.id.password) EditText mPasswordView;
-	@BindView(R.id.login_progress) ProgressBar mProgressView;
-	@BindView(R.id.login_form) View mLoginFormView;
-	@BindView(R.id.statusTextView) TextView mStatusTextView;
-	
+	AutoCompleteTextView mEmailView;
+	EditText mPasswordView;
+	ProgressBar mProgressView;
+	View mLoginFormView;
+	TextView mStatusTextView;
+	Button loginButton;
+	Button registerButton;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		loginPresenter = new LoginPresenter(this);
 		loginPresenter.setFireBaseAuth(new FireBaseWrapper(loginPresenter));
-		ButterKnife.bind(this);
+		initViews();
 	}
 	
 	@Override
@@ -49,14 +49,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 		mPasswordView.setText("123456");
 	}
 	
-	@OnClick(R.id.btn_autentificare)
 	protected void login() {
 		loginPresenter.executeLoginAction(mEmailView.getText().toString(), mPasswordView.getText().toString());
 		ETkAppPreferences preferences = ETicketApp.getCurrentETicketApp().getAppPreferences();
 		preferences.setCurrentEmail(mEmailView.getText().toString());
 	}
 	
-	@OnClick(R.id.btn_inregistrare)
 	protected void contNou() {
 		loginPresenter.executeRegisterAction(mEmailView.getText().toString(), mPasswordView.getText().toString());
 	}
@@ -99,7 +97,20 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	public void showToast(String message) {
 		ETicketApp.toastMessageShort(message);
 	}
-	
+
+	private void initViews(){
+		mEmailView = findViewById(R.id.email);
+		mPasswordView = findViewById(R.id.password);
+		mProgressView = findViewById(R.id.login_progress);
+		mLoginFormView = findViewById(R.id.login_form);
+		mStatusTextView = findViewById(R.id.statusTextView);
+		loginButton = findViewById(R.id.btn_autentificare);
+		registerButton = findViewById(R.id.btn_inregistrare);
+
+		loginButton.setOnClickListener(v -> login());
+		registerButton.setOnClickListener(v -> contNou());
+	}
+
 	private void updateUI(FirebaseUser user) {
 		mEmailView.setText(user.getEmail());
 		if (user != null) {

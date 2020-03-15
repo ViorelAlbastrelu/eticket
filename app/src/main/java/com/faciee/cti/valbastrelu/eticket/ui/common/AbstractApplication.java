@@ -1,7 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common;
 
 import android.app.Application;
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 import android.widget.Toast;
 
 import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository;

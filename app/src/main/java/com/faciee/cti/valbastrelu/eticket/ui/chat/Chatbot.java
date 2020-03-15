@@ -5,16 +5,16 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.ChatMessageAdapter;
@@ -33,16 +33,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.OnEditorAction;
 
 public class Chatbot extends AppCompatActivity {
 	
-	@BindView(R.id.chatView)     ListView mListView;
-	@BindView(R.id.send_message) EditText mEditTextMessage;
-	@BindView(R.id.loadingBot)   ProgressBar loadingBot;
+	private ListView mListView;
+	private EditText mEditTextMessage;
+	private ProgressBar loadingBot;
+	private Button sendButton;
 	
 	//chatbot
 	private static Chat chat;
@@ -52,20 +49,22 @@ public class Chatbot extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chatbot);
-		ButterKnife.bind(this);
+		//init views
+		mListView = findViewById(R.id.chatView);
+		mEditTextMessage = findViewById(R.id.send_message);
+		loadingBot = findViewById(R.id.loadingBot);
+		sendButton = findViewById(R.id.btn_send);
+
+
+		sendButton.setOnClickListener(view -> sendMessage());
 		mEditTextMessage.setImeOptions(EditorInfo.IME_ACTION_DONE);
+		mEditTextMessage.setOnEditorActionListener(this::sendInEditor);
 		mAdapter = new ChatMessageAdapter(this, new ArrayList<>());
 		mListView.setAdapter(mAdapter);
 //		toolbar.setTitle(R.string.menu_assistant);
 		new CongfigureBotTask(this).execute();
 	}
-	
-	@OnClick(R.id.btn_send)
-	void sendOnButtonTap(){
-		sendMessage();
-	}
-	
-	@OnEditorAction(R.id.send_message)
+
 	boolean sendInEditor(TextView v, int actionId, KeyEvent event){
 		boolean handled = false;
 		if (actionId == EditorInfo.IME_ACTION_DONE) {

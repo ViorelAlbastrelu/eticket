@@ -4,12 +4,12 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 tools:context=".ui.parking.FrgTb03Istoric">
 
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:layout_editor_absoluteY="25dp">
 
-	<android.support.v7.widget.RecyclerView
+	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/listaIstoric"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
@@ -22,5 +22,5 @@ tools:context=".ui.parking.FrgTb03Istoric">
 		app:layout_constraintTop_toTopOf="parent"
 		tools:listitem="@layout/row_istoric" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
