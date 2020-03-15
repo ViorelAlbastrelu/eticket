@@ -1,11 +1,11 @@
 package com.faciee.cti.valbastrelu.eticket.ui.parking;
 
 
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +33,7 @@ public class FrgTb03Istoric extends Fragment {
 		listaIstoric = view.findViewById(R.id.listaIstoric);
 		buildRecyclerView(adapter);
 		sharedParkingModel = ViewModelProviders.of(this).get(ParkingActivityModel.class);
-		sharedParkingModel.getLiveDataTranzactii().observe(this, tranzactii -> adapter.setIstoric(tranzactii));
+		sharedParkingModel.getLiveDataTranzactii().observe(getViewLifecycleOwner(), tranzactii -> adapter.setIstoric(tranzactii));
 		
 		return view;
 	}

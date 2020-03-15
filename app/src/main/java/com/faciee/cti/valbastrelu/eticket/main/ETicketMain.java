@@ -3,13 +3,13 @@ package com.faciee.cti.valbastrelu.eticket.main;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,27 +22,33 @@ import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.parking.ParkingActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ETicketMain extends AppCompatActivity
 		implements NavigationView.OnNavigationItemSelectedListener {
-	
+
 	FirebaseAuth firebaseAuth;
-	@BindView(R.id.drawer_layout) DrawerLayout drawer;
-	@BindView(R.id.nav_view) NavigationView navigationView;
+
+	DrawerLayout drawer;
+	NavigationView navigationView;
 	TextView profileName, profileEmail;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_eticket_main);
-		ButterKnife.bind(this);
+		drawer = findViewById(R.id.drawer_layout);
+		drawer.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				onFabClick(view);
+			}
+		});
+		navigationView = findViewById(R.id.nav_view);
+
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 		setUserAndEmailToDrawerProfile();
-		
+
 		firebaseAuth = FirebaseAuth.getInstance();
 		if (firebaseAuth.getCurrentUser() == null) {
 			startActivity(new Intent(this, LoginActivity.class));
@@ -52,17 +58,16 @@ public class ETicketMain extends AppCompatActivity
 				this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 		drawer.addDrawerListener(toggle);
 		toggle.syncState();
-		
+
 		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 		navigationView.setNavigationItemSelectedListener(this);
 	}
-	
-	@OnClick(R.id.fab)
+
 	void onFabClick(View view){
 		Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 				.setAction("Action", null).show();
 	}
-	
+
 	@Override
 	public void onBackPressed() {
 		if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -71,30 +76,29 @@ public class ETicketMain extends AppCompatActivity
 			super.onBackPressed();
 		}
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.eticket_main, menu);
 		return true;
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		
+
 		//noinspection SimplifiableIfStatement
 		if (id == R.id.action_settings) {
 			return true;
 		}
-		
+
 		return super.onOptionsItemSelected(item);
 	}
-	
-	@SuppressWarnings("StatementWithEmptyBody")
+
 	@Override
 	public boolean onNavigationItemSelected(MenuItem item) {
 		int id = item.getItemId();
@@ -121,20 +125,20 @@ public class ETicketMain extends AppCompatActivity
 //						ETicketApp.toastMessageShort("Canceled");
 					}).show();
 		}
-		
+
 		drawer.closeDrawer(GravityCompat.START);
 		if(intent != null) startActivity(intent);
 		return true;
 	}
-	
+
 	private void setUserAndEmailToDrawerProfile() {
 		IETkAppPreferences preferences = ETicketApp.getCurrentETicketApp().getAppPreferences();
 		String email = preferences.getCurrentEmail();
-		
+
 		View header = navigationView.getHeaderView(0);
 		profileName = header.findViewById(R.id.profileName);
 		profileEmail = header.findViewById(R.id.profileEmail);
-		
+
 		profileName.setText("Viorel");
 		profileEmail.setText(email);
 	}

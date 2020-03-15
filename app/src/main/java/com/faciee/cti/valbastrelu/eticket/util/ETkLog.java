@@ -1,13 +1,12 @@
 package com.faciee.cti.valbastrelu.eticket.util;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class ETkLog {

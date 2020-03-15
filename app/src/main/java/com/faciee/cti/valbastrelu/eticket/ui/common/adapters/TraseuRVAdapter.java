@@ -1,8 +1,8 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common.adapters;
 
-import android.databinding.DataBindingUtil;
-import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.RecyclerView;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;

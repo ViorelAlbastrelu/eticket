@@ -9,7 +9,7 @@
 			type="boolean"/>
 	</data>
 
-	<android.support.constraint.ConstraintLayout
+	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 
@@ -35,12 +35,12 @@
 			app:layout_constraintEnd_toEndOf="@+id/traseu_titlu"
 			app:layout_constraintTop_toTopOf="parent" />
 
-		<android.support.v7.widget.RecyclerView
+		<androidx.recyclerview.widget.RecyclerView
 			android:id="@+id/listaTraseeBus"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
 			android:layout_marginBottom="8dp"
-			app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+			app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="1.0"
@@ -48,5 +48,5 @@
 			app:layout_constraintTop_toBottomOf="@+id/traseu_titlu"
 			tools:listitem="@layout/row_traseu" />
 
-	</android.support.constraint.ConstraintLayout>
+	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

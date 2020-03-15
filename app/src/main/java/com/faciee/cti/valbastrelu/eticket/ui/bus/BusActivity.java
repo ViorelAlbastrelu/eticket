@@ -1,17 +1,16 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
 import android.app.PendingIntent;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
@@ -20,30 +19,28 @@ import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
-import com.faciee.cti.valbastrelu.eticket.ui.common.NfcMessageComposer;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
-import com.faciee.cti.valbastrelu.eticket.ui.common.i.TransportViewActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class BusActivity extends AppCompatActivity{
 	private static final String TAG = "BusActivity";
 	BusActivityModel busActivityModel;
 	NfcAdapter nfcAdapter;
 	
-	@BindView(R.id.container)
 	ViewPager mViewPager;
-	@BindView(R.id.tabs)
 	TabLayout mTabLayout;
+
 	SectionsPagerAdapter sectionsPagerAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_bus);
-		ButterKnife.bind(this);
+		mViewPager = findViewById(R.id.container);
+		mTabLayout = findViewById(R.id.tabs);
+		View fab = findViewById(R.id.fab);
+		fab.setOnClickListener(view -> busActivityModel.insertBilet(new Bilet(102, true, 2, 2)));
+
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setTitle(R.string.menu_bus);
 		setSupportActionBar(toolbar);
@@ -110,10 +107,5 @@ public class BusActivity extends AppCompatActivity{
 				.addToBackStack("product")
 				.replace(R.id.container,
 						frgTb02Statii, null).commit();
-	}
-	
-	@OnClick(R.id.fab)
-	void addBilet(View view) {
-		busActivityModel.insertBilet(new Bilet(102, true, 2, 2));
 	}
 }

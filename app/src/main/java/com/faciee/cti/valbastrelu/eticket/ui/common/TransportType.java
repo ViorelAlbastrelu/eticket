@@ -1,6 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.common;
 
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 
@@ -9,7 +9,7 @@ public enum TransportType {
 	TBUS("Troleibuz", R.drawable.ic_tbus),
 	TRAM("Tramvai", R.drawable.ic_tram),
 	PARKING("Autoturism", R.drawable.ic_auto),
-	NONE("Încarcare credit", R.drawable.default_icon);
+	NONE("Încarcare credit", R.drawable.ic_auto);
 	
 	private final String typeName;
 	private final int transportTypeIcon;

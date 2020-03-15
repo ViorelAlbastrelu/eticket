@@ -1,7 +1,5 @@
 package com.faciee.cti.valbastrelu.eticket;
 
-import android.text.TextUtils;
-
 import com.faciee.cti.valbastrelu.eticket.ui.login.FireBaseWrapper;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginPresenter;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginView;
@@ -16,8 +14,6 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LoginTest {

@@ -1,8 +1,8 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;

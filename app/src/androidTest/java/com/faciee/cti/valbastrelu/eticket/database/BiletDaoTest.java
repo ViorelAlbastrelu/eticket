@@ -1,9 +1,9 @@
 package com.faciee.cti.valbastrelu.eticket.database;
 
-import android.arch.persistence.room.Room;
+import androidx.room.Room;
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
 import com.faciee.cti.valbastrelu.eticket.room.dao.BiletDao;
@@ -26,7 +26,7 @@ public class BiletDaoTest {
 	
 	@Before
 	public void createDb() {
-		Context context = InstrumentationRegistry.getTargetContext();
+		Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
 		eTkRoom = Room.inMemoryDatabaseBuilder(context, EtkRoomDB.class)
 				.allowMainThreadQueries()
 				.build();

@@ -1,9 +1,9 @@
 package com.faciee.cti.valbastrelu.eticket;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,8 +15,6 @@ import com.faciee.cti.valbastrelu.eticket.ui.chat.Chatbot;
 import com.faciee.cti.valbastrelu.eticket.util.ETkLog;
 import com.google.firebase.auth.FirebaseAuth;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ETicketActivity extends AppCompatActivity {
 	private static final String TAG = "ETicketActivity";
@@ -30,7 +28,7 @@ public class ETicketActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_eticket);
 		mToolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(mToolbar);
-		ButterKnife.bind(this);
+		findViewById(R.id.fab).setOnClickListener(this::clickOnFab);
 		mAuth = FirebaseAuth.getInstance();
 	}
 	
@@ -66,7 +64,6 @@ public class ETicketActivity extends AppCompatActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	@OnClick(R.id.fab)
 	public void clickOnFab(View view){
 		ETkLog.f(TAG, "Logging in to a file from FAB", this);
 		Toast.makeText(this, "No implementation", Toast.LENGTH_SHORT).show();
