@@ -10,10 +10,9 @@ import static com.faciee.cti.valbastrelu.eticket.util.SharedPreferencesUtil.remo
 /**
  * Created by valbastrelu on 09-Apr-18.
  */
-
 public class ETkAppPreferences implements IETkAppPreferences {
 	
-	private static final String CURRENT_EMAIL = "EMAIL";
+	private static final String EMAIL_KEY = "EMAIL";
 	
 	private SharedPreferences sharedPreferences;
 	
@@ -27,16 +26,16 @@ public class ETkAppPreferences implements IETkAppPreferences {
 	
 	@Override
 	public void cleanPreferences() {
-		removeKeys(sharedPreferences, CURRENT_EMAIL);
+		removeKeys(sharedPreferences, EMAIL_KEY);
 	}
 	
 	@Override
 	public String getCurrentEmail() {
-		return getString(sharedPreferences, CURRENT_EMAIL);
+		return getString(sharedPreferences, EMAIL_KEY);
 	}
 	
 	@Override
 	public void setCurrentEmail(String email) {
-		putValueInSharedPref(sharedPreferences, CURRENT_EMAIL, email);
+		putValueInSharedPref(sharedPreferences, EMAIL_KEY, email);
 	}
 }
