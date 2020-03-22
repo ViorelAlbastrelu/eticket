@@ -14,7 +14,7 @@ import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository;
 
 import java.util.List;
 
-public class BusActivityViewModel extends AbstractActivityViewModel {
+public class BusViewModel extends AbstractActivityViewModel {
 	private static final String TAG = "BusActivityModel";
 	
 	private ETkBusRepository repository;
@@ -22,7 +22,7 @@ public class BusActivityViewModel extends AbstractActivityViewModel {
 	private Bilet biletActiv = null;
 	LiveData<List<Bilet>> bilete;
 	
-	public BusActivityViewModel(@NonNull Application application) {
+	public BusViewModel(@NonNull Application application) {
 		super(application);
 		repository = ETicketApp.getCurrentApplication().getBusRepository();
 		bilete = repository.getBilete();

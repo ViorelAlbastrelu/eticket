@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag022StatiiBinding;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityViewModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusViewModel;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class FrgTb02Statii extends DialogFragment {
 	private static final String NR_TRASEU = "nr_traseu";
 	
 	private BusFrag022StatiiBinding statiiBinding;
-	private BusActivityViewModel sharedBusModel;
+	private BusViewModel sharedBusModel;
 
 	@Nullable
 	@Override
@@ -29,7 +29,7 @@ public class FrgTb02Statii extends DialogFragment {
 		statiiBinding = DataBindingUtil
 				.inflate(inflater, R.layout.bus_frag02_2_statii, container, false);
 
-		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusActivityViewModel.class);
+		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusViewModel.class);
 		sharedBusModel.getLiveDataStatii(getArguments() != null ? getArguments().getInt(NR_TRASEU) : 0).observe(this, statii -> {
 			buildStepViewStatii(statii);
 		});

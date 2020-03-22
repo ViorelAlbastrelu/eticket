@@ -30,7 +30,7 @@
 			android:value="AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE"/>
 
         <activity
-			android:name=".ui.bus.BusActivity"
+			android:name=".ui.bus.BusMainFragment"
 			android:label="@string/title_activity_bus" />
 		<activity android:name=".ui.chat.ChatbotActivity" />
 		<activity

@@ -15,7 +15,7 @@ import androidx.core.view.GravityCompat;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.ActivityEticketMainBinding;
 import com.faciee.cti.valbastrelu.eticket.databinding.NavHeaderEticketMainBinding;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.BusActivity;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.BusMainFragment;
 import com.faciee.cti.valbastrelu.eticket.ui.chat.ChatbotActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.parking.ParkingActivity;
@@ -100,7 +100,7 @@ public class ETicketMain extends AppCompatActivity
 		int id = item.getItemId();
 		Intent intent = null;
 		if (id == R.id.nav_bus) {
-			intent = new Intent(this, BusActivity.class);
+			intent = new Intent(this, BusMainFragment.class);
 		} else if (id == R.id.nav_tbus) {
 			ETicketApp.toastMessageShort("Trolleybus not implemented yet!");
 		} else if (id == R.id.nav_tram) {

@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag01BiletBinding;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityViewModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusViewModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.BiletRVAdapter;
 
 /**
@@ -24,7 +24,7 @@ public class FrgTb01Bilet extends Fragment{
 	private static final String TAG = "FrgTb01Bilet";
 	
 	private BusFrag01BiletBinding biletBinding;
-	private BusActivityViewModel sharedBusModel;
+	private BusViewModel sharedBusModel;
 	private BiletRVAdapter biletRVAdapter;
 	
 	@Nullable
@@ -45,11 +45,11 @@ public class FrgTb01Bilet extends Fragment{
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		sharedBusModel =
-				ViewModelProviders.of(getActivity()).get(BusActivityViewModel.class);
+				ViewModelProviders.of(getActivity()).get(BusViewModel.class);
 		subscribeUI(sharedBusModel);
 	}
 	
-	private void subscribeUI(BusActivityViewModel model) {
+	private void subscribeUI(BusViewModel model) {
 		model.getLiveDataBilete().observe(getViewLifecycleOwner(), list -> {
 			if (list != null){
 				biletBinding.setIsLoading(false);

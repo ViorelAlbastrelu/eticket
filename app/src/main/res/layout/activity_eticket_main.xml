@@ -9,7 +9,7 @@
 	tools:openDrawer="start">
 
 	<include
-		layout="@layout/app_bar_eticket_main"
+		layout="@layout/eticket_main_containter"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />
 

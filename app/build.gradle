@@ -70,6 +70,8 @@ dependencies {
     def google_map_ver = '17.0.0'
     implementation "com.google.android.gms:play-services-maps:$google_map_ver"
     implementation "com.google.android.gms:play-services-places:$google_map_ver"
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.0.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

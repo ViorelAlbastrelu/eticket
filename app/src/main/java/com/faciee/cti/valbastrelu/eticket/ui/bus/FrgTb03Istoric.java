@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityViewModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusViewModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.IstoricRVAdapter;
 
 /**
@@ -23,7 +23,7 @@ public class FrgTb03Istoric extends Fragment{
 	private static final String TAG = "FrgTb03Istoric";
 	
 	private RecyclerView listaIstoric;
-	private BusActivityViewModel sharedBusModel;
+	private BusViewModel sharedBusModel;
 	//TODO filter by date
 	//TODO filter by transport number
 	//TODO filter by type
@@ -34,7 +34,7 @@ public class FrgTb03Istoric extends Fragment{
 		IstoricRVAdapter adapter = new IstoricRVAdapter(getContext());
 		listaIstoric = view.findViewById(R.id.listaIstoric);
 		buildRecyclerView(adapter);
-		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusActivityViewModel.class);
+		sharedBusModel = ViewModelProviders.of(getActivity()).get(BusViewModel.class);
 		sharedBusModel.getLiveDataTranzactii().observe(getViewLifecycleOwner(), tranzactii -> {
 			adapter.setIstoric(tranzactii);
 		});
