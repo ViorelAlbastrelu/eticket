@@ -50,7 +50,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name=".ui.parking.ParkingActivity"
+			android:name=".ui.parking.FragmentParkingMain"
 			android:label="@string/title_activity_parking"
 			android:theme="@style/EticketTheme"/>
 	</application>

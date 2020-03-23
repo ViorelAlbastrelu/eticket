@@ -47,7 +47,8 @@ public class ChatbotActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_chatbot);
+		chatbotBinding = ActivityChatbotBinding.inflate(getLayoutInflater());
+		setContentView(chatbotBinding.getRoot());
 		//init views
 		chatList = chatbotBinding.chatView;
 		messageInput = chatbotBinding.sendMessage;

@@ -12,13 +12,13 @@ import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityViewModel;
 
 import java.util.List;
 
-public class ParkingActivityViewModel extends AbstractActivityViewModel {
+public class ParkingViewModel extends AbstractActivityViewModel {
 	private static final String TAG = "ParkingActivityModel";
 	private EtkParkingRepository repository;
 	
 	LiveData<List<BiletP>> biletep;
 	
-	public ParkingActivityViewModel(@NonNull Application application) {
+	public ParkingViewModel(@NonNull Application application) {
 		super(application);
 		repository = ETicketApp.getCurrentApplication().getParkingRepository();
 		biletep = repository.getBileteParcare();

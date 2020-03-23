@@ -18,7 +18,7 @@ import com.faciee.cti.valbastrelu.eticket.databinding.NavHeaderEticketMainBindin
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusMainFragment;
 import com.faciee.cti.valbastrelu.eticket.ui.chat.ChatbotActivity;
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity;
-import com.faciee.cti.valbastrelu.eticket.ui.parking.ParkingActivity;
+import com.faciee.cti.valbastrelu.eticket.ui.parking.FragmentParkingMain;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -106,7 +106,7 @@ public class ETicketMain extends AppCompatActivity
 		} else if (id == R.id.nav_tram) {
 			ETicketApp.toastMessageShort("Tramway not implemented yet!");
 		} else if (id == R.id.nav_car) {
-			intent = new Intent(this, ParkingActivity.class);
+			intent = new Intent(this, FragmentParkingMain.class);
 		} else if (id == R.id.nav_chat) {
 			intent = new Intent(this, ChatbotActivity.class);
 		} else if (id == R.id.nav_signout) {

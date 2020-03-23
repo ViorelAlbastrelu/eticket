@@ -1,65 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/main_content"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:fitsSystemWindows="true"
-	tools:context=".ui.parking.ParkingActivity">
+	tools:context=".ui.parking.FragmentParkingMain">
 
-	<com.google.android.material.appbar.AppBarLayout
-		android:id="@+id/appbar"
-		android:layout_width="match_parent"
+	<com.google.android.material.tabs.TabLayout
+		android:id="@+id/tabs"
+		android:layout_width="0dp"
 		android:layout_height="wrap_content"
-		android:paddingTop="@dimen/appbar_padding_top"
-		android:theme="@style/EticketTheme.AppBarOverlay">
+		app:layout_constraintBottom_toTopOf="@+id/viewPager"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
 
-		<Toolbar
-			android:id="@+id/toolbar"
-			android:layout_width="match_parent"
-			android:layout_height="?attr/actionBarSize"
-			android:layout_weight="1"
-			android:background="?attr/colorPrimary"
-			app:layout_scrollFlags="scroll|enterAlways"
-			android:theme="@style/AppTheme.AppBarOverlay"
-			app:title="@string/app_name" />
+		<com.google.android.material.tabs.TabItem
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/tab_name_ticket" />
 
-		<com.google.android.material.tabs.TabLayout
-			android:id="@+id/tabs"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+		<com.google.android.material.tabs.TabItem
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/tab_name_parking" />
 
-			<com.google.android.material.tabs.TabItem
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/tab_name_ticket" />
-
-			<com.google.android.material.tabs.TabItem
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/tab_name_parking" />
-
-			<com.google.android.material.tabs.TabItem
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/tab_name_history" />
-		</com.google.android.material.tabs.TabLayout>
-
-	</com.google.android.material.appbar.AppBarLayout>
+		<com.google.android.material.tabs.TabItem
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/tab_name_history" />
+	</com.google.android.material.tabs.TabLayout>
 
 	<androidx.viewpager.widget.ViewPager
 		android:id="@+id/viewPager"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-	<com.google.android.material.floatingactionbutton.FloatingActionButton
-		android:id="@+id/fab"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="end|bottom"
-		android:layout_margin="@dimen/fab_margin"
-		app:srcCompat="@drawable/ic_fab_nfc" />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/tabs" />
+</androidx.constraintlayout.widget.ConstraintLayout>

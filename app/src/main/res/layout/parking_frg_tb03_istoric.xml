@@ -20,6 +20,7 @@ tools:context=".ui.parking.FrgTb03Istoric">
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 		tools:listitem="@layout/row_istoric" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
