@@ -1,6 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.ui.login;
 
-import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
+import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
 
 public interface LoginView {
 	

@@ -32,7 +32,7 @@ public class BusMainFragment extends BaseFragment<BusViewModel> {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		busBinding = FragmentBusMainBinding.inflate(inflater, container, false);
-		viewModel = new ViewModelProvider(this).get(BusViewModel.class);
+		initViewModel(BusViewModel.class);
 
 		//TODO set toolbar title in parent activity maybe using navigation
 		//		busBinding.fab.setOnClickListener(v -> busActivityModel.insertBilet(new Bilet(102, true, 2, 2)));

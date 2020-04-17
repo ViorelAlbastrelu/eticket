@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.ActivityLoginBinding;
-import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
+import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.main.ETicketMain;
-import com.faciee.cti.valbastrelu.eticket.main.ETkAppPreferences;
+import com.faciee.cti.valbastrelu.eticket.base.ETkAppPreferences;
 import com.google.firebase.auth.FirebaseUser;
 
 
@@ -84,6 +84,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
 	
 	@Override
 	public void setEmailViewInvalid(boolean isInvalid) {
+
+
 		mEmailView.setError(isInvalid ? ETicketApp.getStringResource(R.string.error_invalid_email) : null);
 	}
 	

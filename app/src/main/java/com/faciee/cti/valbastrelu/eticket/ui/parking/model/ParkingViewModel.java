@@ -1,26 +1,26 @@
 package com.faciee.cti.valbastrelu.eticket.ui.parking.model;
 
-import android.app.Application;
 import androidx.lifecycle.LiveData;
-import androidx.annotation.NonNull;
 
-import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
+import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel;
+import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.repo.EtkParkingRepository;
 import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
-import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityViewModel;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class ParkingViewModel extends AbstractActivityViewModel {
+public class ParkingViewModel extends AbstractAndroidViewModel {
 	private static final String TAG = "ParkingActivityModel";
 	private EtkParkingRepository repository;
 	
 	LiveData<List<BiletP>> biletep;
-	
-	public ParkingViewModel(@NonNull Application application) {
+
+	public ParkingViewModel(@NotNull ETicketApp application) {
 		super(application);
-		repository = ETicketApp.getCurrentApplication().getParkingRepository();
+		repository = application.getParkingRepository();
 		biletep = repository.getBileteParcare();
 	}
 	

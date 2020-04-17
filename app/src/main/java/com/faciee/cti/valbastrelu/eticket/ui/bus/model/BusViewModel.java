@@ -1,30 +1,32 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
 
-import android.app.Application;
-import androidx.lifecycle.LiveData;
-import androidx.annotation.NonNull;
 import android.util.Log;
 
-import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
+import androidx.lifecycle.LiveData;
+
+import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel;
+import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
+import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
-import com.faciee.cti.valbastrelu.eticket.ui.common.AbstractActivityViewModel;
-import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class BusViewModel extends AbstractActivityViewModel {
+public class BusViewModel extends AbstractAndroidViewModel {
 	private static final String TAG = "BusActivityModel";
 	
 	private ETkBusRepository repository;
 	
 	private Bilet biletActiv = null;
 	LiveData<List<Bilet>> bilete;
-	
-	public BusViewModel(@NonNull Application application) {
+
+
+	public BusViewModel(@NotNull ETicketApp application) {
 		super(application);
-		repository = ETicketApp.getCurrentApplication().getBusRepository();
+		repository = application.getBusRepository();
 		bilete = repository.getBilete();
 	}
 	

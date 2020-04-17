@@ -15,7 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.base.BaseFragment;
 import com.faciee.cti.valbastrelu.eticket.databinding.FragmentParkingMainBinding;
-import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
+import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.i.UpdateRecyclerViewCallback;
@@ -42,14 +42,14 @@ public class FragmentParkingMain extends BaseFragment<ParkingViewModel> {
 		parkingBinding.viewPager.setAdapter(mSectionsPagerAdapter);
 		setupViewPager(parkingBinding.viewPager);
 		parkingBinding.tabs.setupWithViewPager(parkingBinding.viewPager);
-		viewModel = new ViewModelProvider(this).get(ParkingViewModel.class);
+		initViewModel(ParkingViewModel.class);
 		return parkingBinding.getRoot();
 	}
 
 	void onClickFab(View view) {
 //		Snackbar.make(view, "Bilet adaugat", Snackbar.LENGTH_LONG)
 //				.setAction("Action", null).show();
-		viewModel.insertBilet(new BiletP("Mazepa", true, 1.5, false));
+		getViewModel().insertBilet(new BiletP("Mazepa", true, 1.5, false));
 		recyclerViewCallback.scrollToTop();
 	}
 
