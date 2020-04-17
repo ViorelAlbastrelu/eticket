@@ -7,12 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.base.BaseActivity;
 import com.faciee.cti.valbastrelu.eticket.databinding.ActivityEticketMainBinding;
 import com.faciee.cti.valbastrelu.eticket.databinding.NavHeaderEticketMainBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.BusMainFragment;
@@ -24,15 +22,11 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class ETicketMain extends AppCompatActivity
+public class ETicketMain extends BaseActivity
 		implements NavigationView.OnNavigationItemSelectedListener {
 
 	FirebaseAuth firebaseAuth;
 	private ActivityEticketMainBinding mainBinding;
-
-//	DrawerLayout drawer;
-//	NavigationView navigationView;
-//	TextView profileName, profileEmail;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +35,7 @@ public class ETicketMain extends AppCompatActivity
 		setContentView(mainBinding.getRoot());
 		mainBinding.drawerLayout.setOnClickListener(this::onFabClick);
 
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
+		setActionBar(mainBinding.mainContent.toolbar);
 		setUserAndEmailToDrawerProfile();
 
 		firebaseAuth = FirebaseAuth.getInstance();
@@ -50,16 +43,16 @@ public class ETicketMain extends AppCompatActivity
 			startActivity(new Intent(this, LoginActivity.class));
 			finish();
 		}
-		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-				this, mainBinding.drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-		mainBinding.drawerLayout.addDrawerListener(toggle);
-		toggle.syncState();
 
-		NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
-		navigationView.setNavigationItemSelectedListener(this);
+//		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//				this, mainBinding.drawerLayout, mainBinding.mainContent.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//		mainBinding.drawerLayout.addDrawerListener(toggle);
+//		toggle.syncState();
+
+		mainBinding.navView.setNavigationItemSelectedListener(this);
 	}
 
-	void onFabClick(View view){
+	void onFabClick(View view) {
 		Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 				.setAction("Action", null).show();
 	}
@@ -123,13 +116,12 @@ public class ETicketMain extends AppCompatActivity
 		}
 
 		mainBinding.drawerLayout.closeDrawer(GravityCompat.START);
-		if(intent != null) startActivity(intent);
+		if (intent != null) startActivity(intent);
 		return true;
 	}
 
 	private void setUserAndEmailToDrawerProfile() {
-		IETkAppPreferences preferences = ETicketApp.getCurrentETicketApp().getAppPreferences();
-		String email = preferences.getCurrentEmail();
+		String email = ETicketApp.getCurrentETicketApp().getAppPreferences().getCurrentEmail();
 
 		NavHeaderEticketMainBinding navHeader = NavHeaderEticketMainBinding.bind(mainBinding.navView.getHeaderView(0));
 

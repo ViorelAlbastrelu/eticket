@@ -11,7 +11,7 @@
 		android:layout_height="wrap_content"
 		android:theme="@style/EticketTheme.AppBarOverlay">
 
-		<androidx.appcompat.widget.Toolbar
+		<Toolbar
 			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
 			android:layout_height="?attr/actionBarSize"
@@ -20,7 +20,7 @@
 
 	</com.google.android.material.appbar.AppBarLayout>
 
-	<androidx.fragment.app.FragmentContainerView
+	<fragment
 		app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
 		android:id="@+id/nav_host_fragment"
 		android:name="androidx.navigation.fragment.NavHostFragment"
