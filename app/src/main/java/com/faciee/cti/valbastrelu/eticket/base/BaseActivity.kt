@@ -1,8 +1,8 @@
 package com.faciee.cti.valbastrelu.eticket.base
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 
-abstract class BaseActivity : Activity() {
+abstract class BaseActivity : AppCompatActivity() {
 	val eTicketApp: ETicketApp
 		get() = ETicketApp.currentETicketApp
 }

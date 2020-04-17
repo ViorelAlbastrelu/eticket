@@ -26,7 +26,7 @@ class ETicketMain : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
 
 	private lateinit var mainBinding: ActivityEticketMainBinding
 
-	override fun onCreate(savedInstanceState: Bundle) {
+	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		mainBinding = ActivityEticketMainBinding.inflate(layoutInflater)
 		setContentView(mainBinding.root)
