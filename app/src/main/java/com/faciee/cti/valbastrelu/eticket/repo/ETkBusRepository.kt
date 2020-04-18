@@ -27,7 +27,6 @@ class ETkBusRepository(roomDB: EtkRoomDB) {
 	private val bileteLiveData: MutableLiveData<List<Ticket>>? = null
 	private var traseeLiveData: MutableLiveData<List<Route>>? = null
 	private val tranzactiiLiveData: MutableLiveData<List<Transaction>>? = null
-	private var statiiLiveData: StatiiLiveData? = null
 	val bilete: LiveData<List<Ticket?>?>?
 		get() = ticketDao.allTicketsLiveData
 
@@ -54,8 +53,9 @@ class ETkBusRepository(roomDB: EtkRoomDB) {
 		}
 
 	fun getLiveDataStatii(nrTraseu: Int): LiveData<List<String>> {
-		statiiLiveData = StatiiLiveData(nrTraseu)
-		return statiiLiveData !!.numeStatii
+//		statiiLiveData = StatiiLiveData(nrTraseu)
+//		return statiiLiveData !!.numeStatii
+		return MutableLiveData(listOf())
 	}
 
 	//	LiveData<List<Statie>> getStatieForTraseu(int nrTraseu){

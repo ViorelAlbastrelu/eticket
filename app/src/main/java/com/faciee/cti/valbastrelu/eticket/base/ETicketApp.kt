@@ -7,6 +7,7 @@ import com.faciee.cti.valbastrelu.eticket.extensions.toastMessageShort
 import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository
 import com.faciee.cti.valbastrelu.eticket.repo.EtkParkingRepository
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
@@ -18,13 +19,14 @@ class ETicketApp : Application() {
 	val database: EtkRoomDB?
 		get() = EtkRoomDB.getDatabase(currentETicketApp)
 
-	val busRepository: ETkBusRepository
-		get() = ETkBusRepository.getInstance(database)
+	val busRepository: ETkBusRepository?
+		get() = database?.let { ETkBusRepository.getInstance(it) }
 
-	val parkingRepository: EtkParkingRepository
-		get() = EtkParkingRepository.getInstance(database)
+	val parkingRepository: EtkParkingRepository?
+		get() = database?.let { EtkParkingRepository.getInstance(it) }
 
 	init {
+		FirebaseApp.initializeApp(this)
 		currentETicketApp = this
 		firebaseAuth = FirebaseAuth.getInstance()
 	}
