@@ -15,10 +15,10 @@ import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction
 
 @Database(entities = [Ticket::class, TicketParking::class, Transaction::class, Station::class], version = 0, exportSchema = false)
 abstract class EtkRoomDB : RoomDatabase() {
-	abstract fun biletDao(): TicketDao
-	abstract fun biletpDao(): TicketParkingDao
-	abstract fun tranzactieDao(): TransactionsDao
-	abstract fun statieDao(): StationDao
+	abstract fun ticketDao(): TicketDao
+	abstract fun ticketParkingDao(): TicketParkingDao
+	abstract fun transactionsDao(): TransactionsDao
+	abstract fun stationDao(): StationDao
 
 	companion object {
 		private var INSTANCE: EtkRoomDB? = null

@@ -34,7 +34,7 @@ public class StationDaoTest {
 		etkRoomDB = Room.inMemoryDatabaseBuilder(context, EtkRoomDB.class)
 				.allowMainThreadQueries()
 				.build();
-		stationDao = etkRoomDB.statieDao();
+		stationDao = etkRoomDB.stationDao();
 	}
 
 	@After

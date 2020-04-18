@@ -32,7 +32,7 @@ public class TicketDaoTest {
 		eTkRoom = Room.inMemoryDatabaseBuilder(context, EtkRoomDB.class)
 				.allowMainThreadQueries()
 				.build();
-		ticketDao = eTkRoom.biletDao();
+		ticketDao = eTkRoom.ticketDao();
 	}
 	
 	@After
