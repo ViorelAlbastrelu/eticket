@@ -12,9 +12,9 @@ import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
 class ETicketApp : Application() {
-	var appPreferences: ETkAppPreferences? = null
+	lateinit var appPreferences: ETkAppPreferences
 		private set
-	var firebaseAuth: FirebaseAuth
+	lateinit var firebaseAuth: FirebaseAuth
 		private set
 	val database: EtkRoomDB?
 		get() = EtkRoomDB.getDatabase(currentETicketApp)
@@ -26,15 +26,14 @@ class ETicketApp : Application() {
 		get() = database?.let { EtkParkingRepository.getInstance(it) }
 
 	init {
-		FirebaseApp.initializeApp(this)
 		currentETicketApp = this
-		firebaseAuth = FirebaseAuth.getInstance()
 	}
 
 	override fun onCreate() {
 		super.onCreate()
 		Log.d(TAG, "onCreate: $TAG")
 		appPreferences = ETkAppPreferences(getSharedPreferences(ETK_SHARED_PREF_KEY, Context.MODE_PRIVATE))
+		firebaseAuth = FirebaseAuth.getInstance()
 	}
 
 	companion object {
@@ -43,6 +42,7 @@ class ETicketApp : Application() {
 		fun toastMessageShort(message: String) {
 			currentETicketApp.toastMessageShort(message)
 		}
+
 		@JvmStatic
 		fun getStringResource(resId: Int): String = currentETicketApp.getString(resId)
 

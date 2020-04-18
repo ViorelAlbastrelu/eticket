@@ -1,8 +1,12 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus.model;
 
+import android.app.Application;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel;
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
@@ -10,6 +14,7 @@ import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction;
+import com.google.gson.annotations.Expose;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -60,5 +65,16 @@ public class BusViewModel extends AbstractAndroidViewModel {
 	protected void onCleared() {
 		super.onCleared();
 		Log.d(TAG, "onCleared: called");
+	}
+
+	public static ViewModelProvider.Factory getFactory(ETicketApp app){
+		return new ViewModelProvider.Factory() {
+
+			@NonNull
+			@Override
+			public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
+				return (T) new BusViewModel(app) ;
+			}
+		};
 	}
 }

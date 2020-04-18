@@ -12,10 +12,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.base.BaseFragment;
+import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.databinding.FragmentBusMainBinding;
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusViewModel;
@@ -31,7 +33,7 @@ public class BusMainFragment extends BaseFragment<BusViewModel> {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		busBinding = FragmentBusMainBinding.inflate(inflater, container, false);
-		initViewModel(BusViewModel.class);
+		initViewModel(BusViewModel.class, BusViewModel.getFactory(getETicketApp()));
 
 		//TODO set toolbar title in parent activity maybe using navigation
 		//		busBinding.fab.setOnClickListener(v -> busActivityModel.insertBilet(new Bilet(102, true, 2, 2)));

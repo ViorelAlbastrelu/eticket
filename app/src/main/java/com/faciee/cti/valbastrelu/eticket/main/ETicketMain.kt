@@ -1,5 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.main
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
@@ -23,7 +24,6 @@ import com.google.android.material.snackbar.Snackbar
 
 class ETicketMain : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-
 	private lateinit var mainBinding: ActivityEticketMainBinding
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,7 @@ class ETicketMain : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
 		setActionBar(mainBinding.mainContent.toolbar)
 		setUserAndEmailToDrawerProfile()
 		if (eTicketApp.firebaseAuth.currentUser == null) {
-			startActivity(Intent(this, LoginActivity::class.java))
+			startActivity(LoginActivity.prepareIntent(this))
 			finish()
 		}
 //		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -45,7 +45,7 @@ class ETicketMain : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
 		mainBinding.navView.setNavigationItemSelectedListener(this)
 	}
 
-	fun onFabClick(view: View?) {
+	private fun onFabClick(view: View?) {
 		Snackbar.make(view !!, "Replace with your own action", Snackbar.LENGTH_LONG)
 				.setAction("Action", null).show()
 	}
@@ -91,7 +91,6 @@ class ETicketMain : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
 					.setPositiveButton(R.string.afirmativ) { dialog: DialogInterface?, which: Int ->
 						eTicketApp.firebaseAuth.signOut()
 						startActivity(Intent(this, LoginActivity::class.java))
-						finish()
 					}
 					.setNegativeButton(R.string.negativ) { dialog: DialogInterface?, which: Int -> }.show()
 		}
@@ -101,9 +100,13 @@ class ETicketMain : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
 	}
 
 	private fun setUserAndEmailToDrawerProfile() {
-		val email = ETicketApp.currentETicketApp.appPreferences?.getCurrentEmail()
+		val email = ETicketApp.currentETicketApp.appPreferences.getCurrentEmail()
 		val navHeader = NavHeaderEticketMainBinding.bind(mainBinding.navView.getHeaderView(0))
 		navHeader.profileName.text = "Viorel"
 		navHeader.profileEmail.text = email
+	}
+
+	companion object{
+		fun prepareIntent(activity: Activity) = Intent(activity, ETicketMain::class.java)
 	}
 }

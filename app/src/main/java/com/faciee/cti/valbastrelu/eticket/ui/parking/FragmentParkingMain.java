@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
 import com.faciee.cti.valbastrelu.eticket.R;
+import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel;
 import com.faciee.cti.valbastrelu.eticket.base.BaseFragment;
 import com.faciee.cti.valbastrelu.eticket.databinding.FragmentParkingMainBinding;
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
