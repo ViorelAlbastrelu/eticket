@@ -1,32 +1,34 @@
 package com.faciee.cti.valbastrelu.eticket.repo;
 
 import androidx.lifecycle.LiveData;
+
 import android.os.AsyncTask;
 
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
-import com.faciee.cti.valbastrelu.eticket.room.dao.BiletPDao;
-import com.faciee.cti.valbastrelu.eticket.room.dao.TranzactieDao;
-import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
+import com.faciee.cti.valbastrelu.eticket.room.dao.TicketParkingDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.TransactionsDao;
+import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction;
 import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class EtkParkingRepository {
-	
+
 	private static EtkParkingRepository INSTANCE;
 	private final EtkRoomDB db;
-	
+
 	//Dao
-	private BiletPDao biletPDao;
-	private TranzactieDao tranzactieDao;
-	
+	private TicketParkingDao ticketParkingDao;
+	private TransactionsDao transactionsDao;
+
 	public EtkParkingRepository(EtkRoomDB db) {
 		this.db = db;
-		biletPDao = this.db.biletpDao();
-		tranzactieDao = this.db.tranzactieDao();
+		ticketParkingDao = this.db.biletpDao();
+		transactionsDao = this.db.tranzactieDao();
 	}
-	
+
 	public static EtkParkingRepository getInstance(final EtkRoomDB database) {
 		if (INSTANCE == null) {
 			synchronized (EtkParkingRepository.class) {
@@ -37,34 +39,36 @@ public class EtkParkingRepository {
 		}
 		return INSTANCE;
 	}
-	
-	public LiveData<List<BiletP>> getBileteParcare(){
-		return biletPDao.getAllBilete();
+
+	public LiveData<List<TicketParking>> getBileteParcare() {
+		return ticketParkingDao.getAllTicketsLiveData();
 	}
-	
-	public LiveData<List<Tranzactie>> getLiveDataTranzactii() {
-		return tranzactieDao.getAllTranzactii();
+
+	public LiveData<List<Transaction>> getLiveDataTranzactii() {
+		return transactionsDao.getAllTransactionsLiveData();
 	}
-	
-	public void insertBilet(BiletP bilet) {
-		new InsertBiletAsync(biletPDao, tranzactieDao).execute(bilet);
+
+	public void insertBilet(TicketParking bilet) {
+		new InsertBiletAsync(ticketParkingDao, transactionsDao).execute(bilet);
 	}
-	
-	private static class InsertBiletAsync extends AsyncTask<BiletP, Void, Void> {
-		private BiletPDao biletPDao;
-		private TranzactieDao tranzactieDao;
-		
-		public InsertBiletAsync(BiletPDao biletDao, TranzactieDao tranzactieDao) {
-			this.biletPDao = biletDao;
-			this.tranzactieDao = tranzactieDao;
+
+	private static class InsertBiletAsync extends AsyncTask<TicketParking, Void, Void> {
+		private TicketParkingDao ticketParkingDao;
+		private TransactionsDao transactionsDao;
+
+		public InsertBiletAsync(TicketParkingDao biletDao, TransactionsDao transactionsDao) {
+			this.ticketParkingDao = biletDao;
+			this.transactionsDao = transactionsDao;
 		}
-		
+
 		@Override
-		protected Void doInBackground(BiletP... bilete) {
-			biletPDao.updateBileteStatus(false);
-			biletPDao.insertBilete(bilete);
-			tranzactieDao.insertTranzactii(new Tranzactie(bilete[0].getIdbiletp(), bilete[0].getData(),
-					TransportType.PARKING, 0, bilete[0].getPret() * -1));
+		protected Void doInBackground(TicketParking... bilete) {
+			for (TicketParking parking : bilete) {
+				ticketParkingDao.updateTicketActiveStatus(parking.getId(), false);
+				ticketParkingDao.insertTickets(bilete);
+				transactionsDao.insertTransactions(new Transaction(bilete[0].getId(), bilete[0].getDate(),
+						TransportType.PARKING, 0, bilete[0].getPrice().multiply(new BigDecimal(-1.0))));
+			}
 			return null;
 		}
 	}

@@ -9,19 +9,20 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.base.BaseFragment;
 import com.faciee.cti.valbastrelu.eticket.databinding.FragmentParkingMainBinding;
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
-import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
+import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.i.UpdateRecyclerViewCallback;
 import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingViewModel;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+
+import java.math.BigDecimal;
 
 
 public class FragmentParkingMain extends BaseFragment<ParkingViewModel> {
@@ -49,7 +50,7 @@ public class FragmentParkingMain extends BaseFragment<ParkingViewModel> {
 	void onClickFab(View view) {
 //		Snackbar.make(view, "Bilet adaugat", Snackbar.LENGTH_LONG)
 //				.setAction("Action", null).show();
-		getViewModel().insertBilet(new BiletP("Mazepa", true, 1.5, false));
+		getViewModel().insertBilet(new TicketParking("Mazepa", true, new BigDecimal(1.5), false));
 		recyclerViewCallback.scrollToTop();
 	}
 

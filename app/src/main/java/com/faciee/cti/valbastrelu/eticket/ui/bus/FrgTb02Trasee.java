@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag021TraseuBinding;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusViewModel;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Route;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TraseuRVAdapter;
 
 /**
@@ -70,10 +70,10 @@ public class FrgTb02Trasee extends Fragment{
 	
 	private final TraseuClickCallback traseuClickCallback = new TraseuClickCallback(){
 		@Override
-		public void onClick(Traseu traseu) {
+		public void onClick(Route route) {
 			if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)){
-				Toast.makeText(getContext(), "Traseu clicked : " + traseu.getNrTraseu(), Toast.LENGTH_SHORT).show();
-				FrgTb02Statii frgTb02Statii = FrgTb02Statii.statiiPentruTraseu(traseu.getNrTraseu());
+				Toast.makeText(getContext(), "Traseu clicked : " + route.getNumber(), Toast.LENGTH_SHORT).show();
+				FrgTb02Statii frgTb02Statii = FrgTb02Statii.statiiPentruTraseu(route.getNumber());
 				frgTb02Statii.show(getChildFragmentManager(), FrgTb02Statii.getTAG());
 			}
 		}

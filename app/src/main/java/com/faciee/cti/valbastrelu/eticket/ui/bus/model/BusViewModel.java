@@ -7,9 +7,9 @@ import androidx.lifecycle.LiveData;
 import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel;
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Route;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -20,8 +20,8 @@ public class BusViewModel extends AbstractAndroidViewModel {
 	
 	private ETkBusRepository repository;
 	
-	private Bilet biletActiv = null;
-	LiveData<List<Bilet>> bilete;
+	private Ticket ticketActiv = null;
+	LiveData<List<Ticket>> bilete;
 
 
 	public BusViewModel(@NotNull ETicketApp application) {
@@ -30,15 +30,15 @@ public class BusViewModel extends AbstractAndroidViewModel {
 		bilete = repository.getBilete();
 	}
 	
-	public void setBiletActiv(Bilet biletActiv) {
-		this.biletActiv = biletActiv;
+	public void setTicketActiv(Ticket ticketActiv) {
+		this.ticketActiv = ticketActiv;
 	}
 	
-	public LiveData<List<Bilet>> getLiveDataBilete(){
+	public LiveData<List<Ticket>> getLiveDataBilete(){
 		return bilete;
 	}
 	
-	public LiveData<List<Traseu>> getLiveDataTrasee(){
+	public LiveData<List<Route>> getLiveDataTrasee(){
 		return repository.getLiveDataTrasee();
 	}
 	
@@ -46,14 +46,14 @@ public class BusViewModel extends AbstractAndroidViewModel {
 		return repository.getLiveDataStatii(nrTraseu);
 	}
 	
-	public LiveData<List<Tranzactie>> getLiveDataTranzactii(){
+	public LiveData<List<Transaction>> getLiveDataTranzactii(){
 		return repository.getLiveDataTranzactii();
 	}
 	
 	//INSERTS
-	public void insertBilet(Bilet bilet){
-		setBiletActiv(bilet);
-		repository.insertBilet(bilet);
+	public void insertBilet(Ticket ticket){
+		setTicketActiv(ticket);
+		repository.insertBilet(ticket);
 	}
 	
 	@Override

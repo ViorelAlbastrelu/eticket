@@ -11,14 +11,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.IstoricHolder>{
 	private static final String TAG = "IstoricRVAdapter";
 	
-	private List<Tranzactie> mIstorice;
+	private List<Transaction> mIstorice;
 	private Context mContext;
 	
 	public IstoricRVAdapter(Context context) {
@@ -38,18 +39,18 @@ public class IstoricRVAdapter extends  RecyclerView.Adapter<IstoricRVAdapter.Ist
 		String[] numeLuni = mContext.getResources().getStringArray(R.array.numeLuni);
 		holder.mDataHolder.setText(
 				mContext.getString(R.string.istoric_data,
-				mIstorice.get(position).getData().getDate(),
-				numeLuni[mIstorice.get(position).getData().getMonth()]));
+				mIstorice.get(position).getDate().getDate(),
+				numeLuni[mIstorice.get(position).getDate().getMonth()]));
 		holder.mTipBiletHolder.setText(
 				mContext.getString(R.string.istoric_bilet,
 				mIstorice.get(position).getTransportType().getTypeName()));
 		holder.mSumaHolder.setText(
 				mContext.getString(R.string.istoric_pret,
-				mIstorice.get(position).getSuma()));
-		holder.mSumaHolder.setTextColor(mIstorice.get(position).getSuma() < 0 ? Color.RED : Color.GREEN);
+				mIstorice.get(position).getAmount()));
+		holder.mSumaHolder.setTextColor(mIstorice.get(position).getAmount().compareTo(BigDecimal.ZERO) < 0 ? Color.RED : Color.GREEN);
 	}
 	
-	public void setIstoric(List<Tranzactie> tranzactii){
+	public void setIstoric(List<Transaction> tranzactii){
 		mIstorice = tranzactii;
 		notifyDataSetChanged();
 	}

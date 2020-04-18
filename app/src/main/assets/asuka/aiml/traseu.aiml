@@ -1,14 +1,14 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <aiml version = "1.0.1" encoding = "UTF-8"?>
    <category><pattern>TRASEU</pattern>
-   <template>Ce vrei sa stii despre trasee?<think><set name="topic">traseu</set></think></template></category>
+   <template>Ce vrei sa stii despre trasee?<think><set name="topic">route</set></think></template></category>
    <category><pattern>POTI SA MA AJUTI CU TRASEELE</pattern><template><srai>TRASEU</srai></template></category>
    <category><pattern>* DESPRE TRASEE</pattern><template><srai>TRASEU</srai></template></category>
    
-   <topic name="traseu">
-		<category><pattern>* APAS * TRASEU</pattern><template>Nimic. Dar poti apasa pe butonul din dreapta unui traseu.</template></category>
+   <topic name="route">
+		<category><pattern>* APAS * TRASEU</pattern><template>Nimic. Dar poti apasa pe butonul din dreapta unui route.</template></category>
 		
-		<category><pattern>IMAGINE</pattern><template>Imaginea indica tipul de traseu.</template></category>
+		<category><pattern>IMAGINE</pattern><template>Imaginea indica tipul de route.</template></category>
 		<category><pattern>CE * IMAGINEA</pattern><template><srai>IMAGINE</srai></template></category>
 		<category><pattern> * IMAGINEA DIN DREAPTA</pattern><template><srai>IMAGINE</srai></template></category>
 		
@@ -23,6 +23,6 @@
 		<category><pattern>* FILTRU</pattern><template><srai>FILTRU</srai></template></category>
 		<category><pattern>* FILTRA</pattern><template><srai>FILTRU</srai></template></category>
 		<category><pattern>* FILTREZ</pattern><template><srai>FILTRU</srai></template></category>
-		<category><pattern>* ALTE FILTRE *</pattern><template>Momentan nu se poate filtra decat dupa traseu. Poate adaugam si alte filtre.</template></category>
+		<category><pattern>* ALTE FILTRE *</pattern><template>Momentan nu se poate filtra decat dupa route. Poate adaugam si alte filtre.</template></category>
 	</topic>
 </aiml>

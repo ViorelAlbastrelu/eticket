@@ -9,22 +9,22 @@ import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.RowTraseuBinding;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Route;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.TraseuClickCallback;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
 
 import java.util.List;
 
 public class TraseuRVAdapter extends RecyclerView.Adapter<TraseuRVAdapter.TraseuViewHolder> {
 	private static final String TAG = "TraseuRecyclerViewAdapt";
 	
-	private List<Traseu> mTrasee;
+	private List<Route> mTrasee;
 	private final TraseuClickCallback clickCallback;
 	
 	public TraseuRVAdapter(TraseuClickCallback clickCallback) {
 		this.clickCallback = clickCallback;
 	}
 	
-	public void setTrasee(List<Traseu> trasee) {
+	public void setTrasee(List<Route> trasee) {
 		if (mTrasee == null) {
 			mTrasee = trasee;
 			notifyItemRangeChanged(0, mTrasee.size());
@@ -42,15 +42,15 @@ public class TraseuRVAdapter extends RecyclerView.Adapter<TraseuRVAdapter.Traseu
 				
 				@Override
 				public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-					return mTrasee.get(oldItemPosition).getNrTraseu() ==
-							trasee.get(newItemPosition).getNrTraseu();
+					return mTrasee.get(oldItemPosition).getNumber() ==
+							trasee.get(newItemPosition).getNumber();
 				}
 				
 				@Override
 				public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-					Traseu newTraseu = trasee.get(newItemPosition);
-					Traseu oldTraseu = mTrasee.get(oldItemPosition);
-					return newTraseu.equals(oldTraseu);
+					Route newRoute = trasee.get(newItemPosition);
+					Route oldRoute = mTrasee.get(oldItemPosition);
+					return newRoute.equals(oldRoute);
 				}
 			});
 			mTrasee = trasee;
@@ -69,7 +69,7 @@ public class TraseuRVAdapter extends RecyclerView.Adapter<TraseuRVAdapter.Traseu
 	@Override
 	public void onBindViewHolder(TraseuViewHolder holder, int position) {
 		Log.d(TAG, "onBindViewHolder: called.");
-		holder.rowTraseuBinding.setTraseu(mTrasee.get(position));
+		holder.rowTraseuBinding.setRoute(mTrasee.get(position));
 		holder.rowTraseuBinding.executePendingBindings();
 	}
 	

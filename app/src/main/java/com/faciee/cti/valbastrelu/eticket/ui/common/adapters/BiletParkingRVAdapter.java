@@ -10,16 +10,16 @@ import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.databinding.RowBiletPBinding;
-import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
+import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking;
 
 import java.util.List;
 
 public class BiletParkingRVAdapter extends RecyclerView.Adapter<BiletParkingRVAdapter.BiletParkingViewHolder>{
 	private static final String TAG = "BiletParkingRVAdapter";
 	
-	List<BiletP> bilete;
+	List<TicketParking> bilete;
 	
-	public void setBilete(List<BiletP> biletep){
+	public void setBilete(List<TicketParking> biletep){
 		if (bilete == null){
 			bilete = biletep;
 			notifyItemRangeChanged(0, bilete.size());
@@ -37,14 +37,14 @@ public class BiletParkingRVAdapter extends RecyclerView.Adapter<BiletParkingRVAd
 				
 				@Override
 				public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-					return bilete.get(oldItemPosition).getIdbiletp() ==
-							biletep.get(newItemPosition).getIdbiletp();
+					return bilete.get(oldItemPosition).getId() ==
+							biletep.get(newItemPosition).getId();
 				}
 				
 				@Override
 				public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-					BiletP newBilet = biletep.get(newItemPosition);
-					BiletP oldBilet = bilete.get(oldItemPosition);
+					TicketParking newBilet = biletep.get(newItemPosition);
+					TicketParking oldBilet = bilete.get(oldItemPosition);
 					return newBilet.equals(oldBilet);
 				}
 			});

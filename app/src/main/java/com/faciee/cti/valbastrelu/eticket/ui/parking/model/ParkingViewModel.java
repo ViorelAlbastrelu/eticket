@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData;
 import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel;
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.repo.EtkParkingRepository;
-import com.faciee.cti.valbastrelu.eticket.room.entities.BiletP;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
+import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -16,7 +16,7 @@ public class ParkingViewModel extends AbstractAndroidViewModel {
 	private static final String TAG = "ParkingActivityModel";
 	private EtkParkingRepository repository;
 	
-	LiveData<List<BiletP>> biletep;
+	LiveData<List<TicketParking>> biletep;
 
 	public ParkingViewModel(@NotNull ETicketApp application) {
 		super(application);
@@ -24,15 +24,15 @@ public class ParkingViewModel extends AbstractAndroidViewModel {
 		biletep = repository.getBileteParcare();
 	}
 	
-	public LiveData<List<BiletP>> getLiveDataBilete(){
+	public LiveData<List<TicketParking>> getLiveDataBilete(){
 		return repository.getBileteParcare();
 	}
 	
-	public LiveData<List<Tranzactie>> getLiveDataTranzactii(){
+	public LiveData<List<Transaction>> getLiveDataTranzactii(){
 		return repository.getLiveDataTranzactii();
 	}
 	
-	public void insertBilet(BiletP bilet){
+	public void insertBilet(TicketParking bilet){
 		repository.insertBilet(bilet);
 	}
 	

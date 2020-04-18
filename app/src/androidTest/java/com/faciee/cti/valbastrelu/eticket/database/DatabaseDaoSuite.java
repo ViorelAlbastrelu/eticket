@@ -4,6 +4,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({BiletDaoTest.class, StatieDaoTest.class})
+@Suite.SuiteClasses({TicketDaoTest.class, StationDaoTest.class})
 public class DatabaseDaoSuite {
 }

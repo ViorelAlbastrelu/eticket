@@ -1,29 +1,25 @@
 package com.faciee.cti.valbastrelu.eticket.repo;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.loader.content.AsyncTaskLoader;
 
-import android.content.Context;
 import android.os.AsyncTask;
 
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB;
-import com.faciee.cti.valbastrelu.eticket.room.dao.BiletDao;
-import com.faciee.cti.valbastrelu.eticket.room.dao.StatieDao;
-import com.faciee.cti.valbastrelu.eticket.room.dao.TranzactieDao;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Bilet;
+import com.faciee.cti.valbastrelu.eticket.room.dao.TicketDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.StationDao;
+import com.faciee.cti.valbastrelu.eticket.room.dao.TransactionsDao;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Route;
 import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Tranzactie;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction;
 import com.faciee.cti.valbastrelu.eticket.util.DummyData;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 public class ETkBusRepository {
 	
@@ -31,14 +27,14 @@ public class ETkBusRepository {
 	private final EtkRoomDB db;
 	
 	//Dao
-	private BiletDao biletDao;
-	private StatieDao statieDao;
-	private TranzactieDao tranzactieDao;
+	private TicketDao ticketDao;
+	private StationDao stationDao;
+	private TransactionsDao transactionsDao;
 	
 	//Livedata
-	private MutableLiveData<List<Bilet>> bileteLiveData;
-	private MutableLiveData<List<Traseu>> traseeLiveData;
-	private MutableLiveData<List<Tranzactie>> tranzactiiLiveData;
+	private MutableLiveData<List<Ticket>> bileteLiveData;
+	private MutableLiveData<List<Route>> traseeLiveData;
+	private MutableLiveData<List<Transaction>> tranzactiiLiveData;
 	private StatiiLiveData statiiLiveData;
 	
 	public static ETkBusRepository getInstance(final EtkRoomDB database) {
@@ -54,24 +50,24 @@ public class ETkBusRepository {
 	
 	public ETkBusRepository(EtkRoomDB roomDB) {
 		this.db = roomDB;
-		biletDao = db.biletDao();
-		statieDao = db.statieDao();
-		tranzactieDao = db.tranzactieDao();
+		ticketDao = db.biletDao();
+		stationDao = db.statieDao();
+		transactionsDao = db.tranzactieDao();
 	}
 	
-	public LiveData<List<Bilet>> getBilete(){
-		return biletDao.getAllBilete();
+	public LiveData<List<Ticket>> getBilete(){
+		return ticketDao.getAllTicketsLiveData();
 	}
 	
-	public LiveData<List<Tranzactie>> getLiveDataTranzactii(){
-		return tranzactieDao.getAllTranzactii();
+	public LiveData<List<Transaction>> getLiveDataTranzactii(){
+		return transactionsDao.getAllTransactionsLiveData();
 //		if (tranzactiiLiveData == null){
 //			tranzactiiLiveData = new MutableLiveData<>();
 //			loadIstorice();
 //		}
 //		return tranzactiiLiveData;
 	}
-	public LiveData<List<Traseu>> getLiveDataTrasee(){
+	public LiveData<List<Route>> getLiveDataTrasee(){
 		if (traseeLiveData == null){
 			traseeLiveData = new MutableLiveData<>();
 			traseeLiveData.setValue(DummyData.loadTrasee());
@@ -86,25 +82,28 @@ public class ETkBusRepository {
 //		return statieDao.getStatiiForTraseu(nrTraseu);
 //	}
 
-	public void insertBilet(Bilet bilet){
-		new InsertBiletAsync(biletDao, tranzactieDao).execute(bilet);
+	public void insertBilet(Ticket ticket){
+		new InsertBiletAsync(ticketDao, transactionsDao).execute(ticket);
 	}
 
-	private static class InsertBiletAsync extends AsyncTask<Bilet, Void, Void>{
-		private BiletDao biletDao;
-		private TranzactieDao tranzactieDao;
+	private static class InsertBiletAsync extends AsyncTask<Ticket, Void, Void>{
+		private TicketDao ticketDao;
+		private TransactionsDao transactionsDao;
 		
-		public InsertBiletAsync(BiletDao biletDao, TranzactieDao tranzactieDao) {
-			this.biletDao = biletDao;
-			this.tranzactieDao = tranzactieDao;
+		public InsertBiletAsync(TicketDao ticketDao, TransactionsDao transactionsDao) {
+			this.ticketDao = ticketDao;
+			this.transactionsDao = transactionsDao;
 		}
 
 		@Override
-		protected Void doInBackground(Bilet... bilete) {
-			biletDao.updateBileteStatus(false);
-			biletDao.insertBilete(bilete);
-			tranzactieDao.insertTranzactii(new Tranzactie(bilete[0].getIdbilet(), Calendar.getInstance().getTime(),
-					TransportType.BUS, bilete[0].getTraseu(), bilete[0].getPret()  * -1));
+		protected Void doInBackground(Ticket... bilete) {
+			for (Ticket ticket : bilete) {
+				ticketDao.updateTicketActiveStatus(ticket.getId(), false);
+				ticketDao.insertTickets(bilete);
+				BigDecimal price = bilete[0].getPrice().multiply(BigDecimal.TEN, MathContext.DECIMAL32).setScale(2, RoundingMode.HALF_EVEN);
+				transactionsDao.insertTransactions(new Transaction(bilete[0].getId(), Calendar.getInstance().getTime(),
+						TransportType.BUS, bilete[0].getRouteNumber(), price));
+			}
 			return null;
 		}
 	}

@@ -12,13 +12,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
 import com.faciee.cti.valbastrelu.eticket.R;
 import com.faciee.cti.valbastrelu.eticket.base.BaseFragment;
 import com.faciee.cti.valbastrelu.eticket.databinding.FragmentBusMainBinding;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Route;
 import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusViewModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
 
@@ -90,8 +89,8 @@ public class BusMainFragment extends BaseFragment<BusViewModel> {
 		viewPager.setAdapter(sectionsPagerAdapter);
 	}
 
-	public void showStatiiForTraseu(Traseu traseu) {
-		FrgTb02Statii frgTb02Statii = FrgTb02Statii.statiiPentruTraseu(traseu.getNrTraseu());
+	public void showStatiiForTraseu(Route route) {
+		FrgTb02Statii frgTb02Statii = FrgTb02Statii.statiiPentruTraseu(route.getNumber());
 		Log.d(TAG, "showStatiiForTraseu: Called!");
 		getParentFragmentManager()
 				.beginTransaction()

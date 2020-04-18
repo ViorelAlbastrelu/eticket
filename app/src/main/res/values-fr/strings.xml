@@ -18,7 +18,7 @@
 	<string name="menu_logout">Déconnexion</string>
 
 	<!-- BUS ACTIVITY -->
-	<!-- Fragment Traseu -->
+	<!-- Fragment Route -->
 	<string name="opt_trasee">Filtrer les itinéraires</string>
 	<string name="title_activity_login">Connectez-vous à E-Ticket</string>
 
@@ -43,7 +43,7 @@
 	<string name="serie_bilet">Série:</string>
 	<string name="zero_bilete">Il n\'y a pas de ticket dans la liste</string>
 
-	<!--Traseu layout-->
+	<!--Route layout-->
 	<string name="ora_traseu_fmt">Heure d\'arrivée: %1$s</string>
 	<string name="nr_traseu_fmt">Numéro de sentier:</string>
 

@@ -4,7 +4,7 @@
 
 		<variable
 			name="bilet"
-			type="com.faciee.cti.valbastrelu.eticket.room.entities.Bilet" />
+			type="com.faciee.cti.valbastrelu.eticket.room.entities.Ticket" />
 	</data>
 
 	<androidx.cardview.widget.CardView
@@ -27,11 +27,11 @@
 				android:layout_height="wrap_content"
 				android:layout_marginEnd="8dp"
 				android:layout_marginStart="8dp"
-				android:text="@{String.valueOf(bilet.traseu)}"
+				android:text="@{String.valueOf(bilet.routeNumber)}"
 				android:textAlignment="center"
 				android:textSize="36sp"
 				android:textStyle="bold"
-				app:statusColor="@{bilet.isActiv()}"
+				app:statusColor="@{bilet.active}"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toTopOf="parent" />
@@ -59,8 +59,8 @@
 				android:text="@string/status_bilet_activ"
 				android:textAlignment="center"
 				android:textSize="24sp"
-				app:statusColor="@{bilet.isActiv()}"
-				app:statusBilet="@{bilet.isActiv()}"
+				app:statusColor="@{bilet.active}"
+				app:statusBilet="@{bilet.active}"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -95,7 +95,7 @@
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
 					android:layout_marginTop="8dp"
-					android:text="@{String.valueOf(bilet.calatorii)}"
+					android:text="@{String.valueOf(bilet.trips)}"
 					app:layout_constraintStart_toEndOf="@+id/calatorii_bilet"
 					app:layout_constraintTop_toTopOf="parent" />
 
@@ -152,7 +152,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
-					android:text="@{String.valueOf(bilet.idbilet)}"
+					android:text="@{String.valueOf(bilet.id)}"
 					app:layout_constraintStart_toEndOf="@+id/serie_bilet"
 					app:layout_constraintTop_toBottomOf="@+id/data_bilet" />
 

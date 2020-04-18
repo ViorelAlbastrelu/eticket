@@ -5,8 +5,8 @@
 
 	<data>
 		<variable
-			name="traseu"
-			type="com.faciee.cti.valbastrelu.eticket.room.entities.Traseu"/>
+			name="route"
+			type="com.faciee.cti.valbastrelu.eticket.room.entities.Route"/>
 		<variable
 			name="callback"
 			type="com.faciee.cti.valbastrelu.eticket.ui.bus.TraseuClickCallback"/>
@@ -33,7 +33,7 @@
 				app:layout_constraintTop_toTopOf="parent"
 				app:srcCompat="@drawable/ic_bus"
 				tools:ignore="ContentDescription"
-				app:transportIcon="@{traseu.transportType.getTransportTypeIcon()}"/>
+				app:transportIcon="@{route.transportType.getTransportTypeIcon()}"/>
 
 			<TextView
 				android:id="@+id/traseu_no"
@@ -57,7 +57,7 @@
 				android:layout_marginBottom="8dp"
 				android:layout_marginStart="8dp"
 				android:layout_marginTop="8dp"
-				android:text="@{String.valueOf(traseu.nrTraseu)}"
+				android:text="@{String.valueOf(route.number)}"
 				android:textAlignment="center"
 				android:textSize="20sp"
 				android:textStyle="bold"
@@ -79,7 +79,7 @@
 					android:layout_width="36dp"
 					android:layout_height="36dp"
 					android:layout_gravity="end"
-					android:onClick="@{() -> callback.onClick(traseu)}"
+					android:onClick="@{() -> callback.onClick(route)}"
 					android:background="@drawable/ic_pin_map" />
 
 				<TextView

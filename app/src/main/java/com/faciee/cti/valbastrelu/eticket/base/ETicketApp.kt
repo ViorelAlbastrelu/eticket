@@ -8,13 +8,14 @@ import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository
 import com.faciee.cti.valbastrelu.eticket.repo.EtkParkingRepository
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB
 import com.google.firebase.auth.FirebaseAuth
+import java.util.*
 
 class ETicketApp : Application() {
 	var appPreferences: ETkAppPreferences? = null
 		private set
 	var firebaseAuth: FirebaseAuth
 		private set
-	val database: EtkRoomDB
+	val database: EtkRoomDB?
 		get() = EtkRoomDB.getDatabase(currentETicketApp)
 
 	val busRepository: ETkBusRepository
@@ -42,6 +43,9 @@ class ETicketApp : Application() {
 		}
 		@JvmStatic
 		fun getStringResource(resId: Int): String = currentETicketApp.getString(resId)
+
+		@JvmStatic
+		fun getDefaultLanguage(): String = Locale.getDefault().language
 
 		private const val TAG = "ETicketApp"
 		private const val ETK_SHARED_PREF_KEY = "ETicketApp"

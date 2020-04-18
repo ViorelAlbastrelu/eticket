@@ -1,8 +1,8 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus;
 
-import com.faciee.cti.valbastrelu.eticket.room.entities.Traseu;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Route;
 
 public interface TraseuClickCallback {
-	void onClick(Traseu traseu);
+	void onClick(Route route);
 }
 
