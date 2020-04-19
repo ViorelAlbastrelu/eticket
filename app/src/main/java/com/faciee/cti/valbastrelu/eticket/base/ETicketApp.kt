@@ -7,6 +7,7 @@ import com.faciee.cti.valbastrelu.eticket.extensions.toastMessageShort
 import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository
 import com.faciee.cti.valbastrelu.eticket.repo.EtkParkingRepository
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB
+import com.faciee.cti.valbastrelu.eticket.room.SingletonHolder
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import java.util.*
@@ -16,14 +17,14 @@ class ETicketApp : Application() {
 		private set
 	lateinit var firebaseAuth: FirebaseAuth
 		private set
-	val database: EtkRoomDB?
-		get() = EtkRoomDB.getDatabase(currentETicketApp)
+	lateinit var database: EtkRoomDB
+		private set
 
 	val busRepository: ETkBusRepository?
-		get() = database?.let { ETkBusRepository.getInstance(it) }
+		get() = database.let { ETkBusRepository.getInstance(it) }
 
 	val parkingRepository: EtkParkingRepository?
-		get() = database?.let { EtkParkingRepository.getInstance(it) }
+		get() = database.let { EtkParkingRepository.getInstance(it) }
 
 	init {
 		currentETicketApp = this
@@ -34,6 +35,8 @@ class ETicketApp : Application() {
 		Log.d(TAG, "onCreate: $TAG")
 		appPreferences = ETkAppPreferences(getSharedPreferences(ETK_SHARED_PREF_KEY, Context.MODE_PRIVATE))
 		firebaseAuth = FirebaseAuth.getInstance()
+		database = EtkRoomDB.getInstance(this.applicationContext)
+
 	}
 
 	companion object {

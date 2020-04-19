@@ -36,9 +36,9 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
+		viewModel = ViewModelProvider(this, LoginVM.getFactory(eTicketApp, FireBaseClient(this))).get(LoginVM::class.java)
 		loginBinding = ActivityLoginBinding.inflate(layoutInflater)
 		setContentView(loginBinding.root)
-		viewModel = ViewModelProvider(this, LoginVM.getFactory(eTicketApp, FireBaseClient(this))).get(LoginVM::class.java)
 		initViews()
 	}
 

@@ -23,7 +23,6 @@ data class Ticket(
 
 	val hourMinute: String
 		get() = SimpleDateFormat("HH:mm", Locale(Locale.getDefault().language)).format(date)
-
 	val dayMonthYear: String
 		get() = SimpleDateFormat("dd-MMM-yyyy", Locale(Locale.getDefault().language)).format(date)
 

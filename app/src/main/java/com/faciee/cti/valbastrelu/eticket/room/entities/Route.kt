@@ -1,11 +1,10 @@
 package com.faciee.cti.valbastrelu.eticket.room.entities
 
-import android.annotation.SuppressLint
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.faciee.cti.valbastrelu.eticket.room.converter.DateConverter
-import com.faciee.cti.valbastrelu.eticket.room.converter.TrasportTypeConverter
+import com.faciee.cti.valbastrelu.eticket.room.converter.TransportTypeConverter
 import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType
 import java.text.SimpleDateFormat
 import java.util.*
@@ -14,7 +13,7 @@ import java.util.*
 class Route(
 		@field:PrimaryKey var number: Int,
 		@field:TypeConverters(DateConverter::class) var date: Date?,
-		@field:TypeConverters(TrasportTypeConverter::class) var transportType: TransportType) {
+		@field:TypeConverters(TransportTypeConverter::class) var transportType: TransportType) {
 
 	val timeFormatted: String
 		get() = SimpleDateFormat("HH:mm", Locale(Locale.getDefault().language)).format(date)
