@@ -27,7 +27,7 @@ class ETkBusRepository(roomDB: EtkRoomDB) {
 	private val bileteLiveData: MutableLiveData<List<Ticket>>? = null
 	private var traseeLiveData: MutableLiveData<List<Route>>? = null
 	private val tranzactiiLiveData: MutableLiveData<List<Transaction>>? = null
-	val bilete: LiveData<List<Ticket?>?>?
+	val bilete: LiveData<List<Ticket>>
 		get() = ticketDao.allTicketsLiveData
 
 	//		if (tranzactiiLiveData == null){

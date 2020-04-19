@@ -10,9 +10,8 @@ import androidx.navigation.Navigation
 
 abstract class BaseFragment<VM : ViewModel> : Fragment() {
 
-	var viewModel: VM? = null
-
-	lateinit var eTicketApp: ETicketApp
+	protected lateinit var eTicketApp: ETicketApp
+	protected lateinit var viewModel: VM
 
 	override fun onAttach(context: Context) {
 		super.onAttach(context)
@@ -24,12 +23,7 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
 		if (view != null) Navigation.findNavController(view).navigate(destination, args)
 	}
 
-
-	protected fun initViewModel(viewModelClass: Class<VM>) {
-		initViewModel(viewModelClass, null)
-	}
-
-	protected fun initViewModel(viewModelClass: Class<VM>, factory: ViewModelProvider.Factory?) {
+	protected fun initViewModel(viewModelClass: Class<VM>, factory: ViewModelProvider.Factory? = null) {
 		if (factory != null)
 			viewModel = ViewModelProvider(this, factory).get(viewModelClass)
 		else

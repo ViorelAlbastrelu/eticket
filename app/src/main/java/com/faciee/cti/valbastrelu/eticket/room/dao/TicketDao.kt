@@ -11,7 +11,7 @@ import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
 @Dao
 interface TicketDao {
 	@get:Query("SELECT * FROM ticket")
-	val allTicketsLiveData: LiveData<List<Ticket?>?>?
+	val allTicketsLiveData: LiveData<List<Ticket>>
 
 	@Insert
 	fun insertTicket(ticket: Ticket?)

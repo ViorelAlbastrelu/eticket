@@ -1,6 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket;
 
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusViewModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.vm.BusViewModel;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;

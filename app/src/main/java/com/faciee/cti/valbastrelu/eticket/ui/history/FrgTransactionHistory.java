@@ -1,4 +1,4 @@
-package com.faciee.cti.valbastrelu.eticket.ui.bus;
+package com.faciee.cti.valbastrelu.eticket.ui.history;
 
 import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
@@ -12,14 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.faciee.cti.valbastrelu.eticket.R;
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusViewModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.vm.BusViewModel;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.IstoricRVAdapter;
 
 /**
  * Created by valbastrelu on 09-Apr-18.
  */
 
-public class FrgTb03Istoric extends Fragment{
+public class FrgTransactionHistory extends Fragment{
 	private static final String TAG = "FrgTb03Istoric";
 	
 	private RecyclerView listaIstoric;
@@ -49,8 +49,8 @@ public class FrgTb03Istoric extends Fragment{
 		listaIstoric.setLayoutManager(new LinearLayoutManager(getContext()));
 	}
 	
-	public static FrgTb03Istoric newInstance(int page, String title) {
-		FrgTb03Istoric fragment = new FrgTb03Istoric();
+	public static FrgTransactionHistory newInstance(int page, String title) {
+		FrgTransactionHistory fragment = new FrgTransactionHistory();
 		Bundle args = new Bundle();
 		args.putInt("page", page);
 		args.putString("title", title);

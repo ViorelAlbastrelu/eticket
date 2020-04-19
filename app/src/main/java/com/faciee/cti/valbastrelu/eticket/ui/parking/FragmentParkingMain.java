@@ -45,7 +45,7 @@ public class FragmentParkingMain extends BaseFragment<ParkingViewModel> {
 		parkingBinding.viewPager.setAdapter(mSectionsPagerAdapter);
 		setupViewPager(parkingBinding.viewPager);
 		parkingBinding.tabs.setupWithViewPager(parkingBinding.viewPager);
-		initViewModel(ParkingViewModel.class);
+		initViewModel(ParkingViewModel.class, null);
 		return parkingBinding.getRoot();
 	}
 
