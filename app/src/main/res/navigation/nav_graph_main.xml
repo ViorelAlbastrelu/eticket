@@ -4,16 +4,16 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/nav_graph_main"
-	app:startDestination="@id/busMainFragment">
+	app:startDestination="@id/fragmentBusMain">
 
 	<fragment
-		android:id="@+id/busMainFragment"
+		android:id="@+id/fragmentBusMain"
 		android:name="com.faciee.cti.valbastrelu.eticket.ui.bus.BusMainFragment"
-		android:label="fragment_bus_main"
+		android:label="@string/title_activity_bus"
 		tools:layout="@layout/fragment_bus_main" />
 	<fragment
 		android:id="@+id/fragmentParkingMain"
 		android:name="com.faciee.cti.valbastrelu.eticket.ui.parking.FragmentParkingMain"
-		android:label="fragment_parking_main"
+		android:label="@string/title_activity_parking"
 		tools:layout="@layout/fragment_parking_main" />
 </navigation>

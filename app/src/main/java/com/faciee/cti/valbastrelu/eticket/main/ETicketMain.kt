@@ -1,48 +1,40 @@
 package com.faciee.cti.valbastrelu.eticket.main
 
 import android.app.Activity
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.core.view.GravityCompat
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import com.faciee.cti.valbastrelu.eticket.R
 import com.faciee.cti.valbastrelu.eticket.base.BaseActivity
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp
-import com.faciee.cti.valbastrelu.eticket.extensions.toastMessageShort
-import com.faciee.cti.valbastrelu.eticket.databinding.ActivityEticketMainBinding
+import com.faciee.cti.valbastrelu.eticket.databinding.ActivityMainBinding
 import com.faciee.cti.valbastrelu.eticket.databinding.NavHeaderEticketMainBinding
-import com.faciee.cti.valbastrelu.eticket.ui.bus.BusMainFragment
-import com.faciee.cti.valbastrelu.eticket.ui.chat.ChatbotActivity
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity
-import com.faciee.cti.valbastrelu.eticket.ui.parking.FragmentParkingMain
-import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
-class ETicketMain : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
+class ETicketMain : BaseActivity() {
 
-	private lateinit var mainBinding: ActivityEticketMainBinding
+	private lateinit var mainBinding: ActivityMainBinding
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		mainBinding = ActivityEticketMainBinding.inflate(layoutInflater)
+		mainBinding = ActivityMainBinding.inflate(layoutInflater)
 		setContentView(mainBinding.root)
+		val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
-		mainBinding.drawerLayout.setOnClickListener { view: View? -> onFabClick(view) }
-		setActionBar(mainBinding.mainContent.toolbar)
+		setSupportActionBar(mainBinding.mainContent.toolbar)
 		setUserAndEmailToDrawerProfile()
 		if (eTicketApp.firebaseAuth.currentUser == null) {
 			startActivity(LoginActivity.prepareIntent(this))
 			finish()
 		}
-//		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//		this, mainBinding.drawerLayout, mainBinding.mainContent.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//		mainBinding.drawerLayout.addDrawerListener(toggle);
-//		toggle.syncState();
-		mainBinding.navView.setNavigationItemSelectedListener(this)
+		NavigationUI.setupWithNavController(mainBinding.mainContent.toolbar, navController, mainBinding.drawerLayout)
+		NavigationUI.setupWithNavController(mainBinding.navView, navController)
 	}
 
 	private fun onFabClick(view: View?) {
@@ -72,32 +64,28 @@ class ETicketMain : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
 		} else super.onOptionsItemSelected(item)
 	}
 
-	override fun onNavigationItemSelected(item: MenuItem): Boolean {
-		val id = item.itemId
-		var intent: Intent? = null
-		if (id == R.id.nav_bus) {
-			intent = Intent(this, BusMainFragment::class.java)
-		} else if (id == R.id.nav_tbus) {
-			eTicketApp.toastMessageShort("Trolleybus not implemented yet!")
-		} else if (id == R.id.nav_tram) {
-			eTicketApp.toastMessageShort("Tramway not implemented yet!")
-		} else if (id == R.id.nav_car) {
-			intent = Intent(this, FragmentParkingMain::class.java)
-		} else if (id == R.id.nav_chat) {
-			intent = Intent(this, ChatbotActivity::class.java)
-		} else if (id == R.id.nav_signout) {
-			AlertDialog.Builder(this)
-					.setMessage(R.string.signout_message)
-					.setPositiveButton(R.string.afirmativ) { dialog: DialogInterface?, which: Int ->
-						eTicketApp.firebaseAuth.signOut()
-						startActivity(Intent(this, LoginActivity::class.java))
-					}
-					.setNegativeButton(R.string.negativ) { dialog: DialogInterface?, which: Int -> }.show()
-		}
-		mainBinding.drawerLayout.closeDrawer(GravityCompat.START)
-		intent?.let { startActivity(it) }
-		return true
-	}
+//	override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//		val id = item.itemId
+//		var intent: Intent? = null
+//		if (id == R.id.nav_tbus) {
+//			eTicketApp.toastMessageShort("Trolleybus not implemented yet!")
+//		} else if (id == R.id.nav_tram) {
+//			eTicketApp.toastMessageShort("Tramway not implemented yet!")
+//		} else if (id == R.id.nav_chat) {
+//			intent = Intent(this, ChatbotActivity::class.java)
+//		} else if (id == R.id.nav_signout) {
+//			AlertDialog.Builder(this)
+//					.setMessage(R.string.signout_message)
+//					.setPositiveButton(R.string.afirmativ) { dialog: DialogInterface?, which: Int ->
+//						eTicketApp.firebaseAuth.signOut()
+//						startActivity(Intent(this, LoginActivity::class.java))
+//					}
+//					.setNegativeButton(R.string.negativ) { dialog: DialogInterface?, which: Int -> }.show()
+//		}
+//		mainBinding.drawerLayout.closeDrawer(GravityCompat.START)
+//		intent?.let { startActivity(it) }
+//		return true
+//	}
 
 	private fun setUserAndEmailToDrawerProfile() {
 		val email = ETicketApp.currentETicketApp.appPreferences.getCurrentEmail()
