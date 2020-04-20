@@ -47,16 +47,13 @@ class RoutesAdapter(private val clickCallback: RouteClickListener) : RecyclerVie
 		result.dispatchUpdatesTo(this)
 	}
 
-	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RouteViewHolder {
-		val routeBinding: ItemRouteBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_route, parent, false)
-		routeBinding.callback = clickCallback
-		return RouteViewHolder(routeBinding)
-	}
+	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RouteViewHolder =
+			RouteViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_route, parent, false))
 
 	override fun onBindViewHolder(holder: RouteViewHolder, position: Int) {
 		Log.d(TAG, "onBindViewHolder: called.")
+		holder.routeBinding.callback = clickCallback
 		holder.routeBinding.route = routes[position]
-		holder.routeBinding.executePendingBindings()
 	}
 
 	override fun getItemCount(): Int = routes.size

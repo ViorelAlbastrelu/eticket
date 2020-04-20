@@ -75,7 +75,7 @@ class BusMainFragment : BaseFragment<BusViewModel>() {
 		val sectionsPagerAdapter = SectionsPagerAdapter(childFragmentManager)
 		sectionsPagerAdapter.addFragment(FrgTb01Ticket.newInstance(), getString(R.string.tab_name_ticket)) //BILETE
 		sectionsPagerAdapter.addFragment(FrgTb02Routes.newInstance(), getString(R.string.tab_name_routes)) //TRASEE
-		sectionsPagerAdapter.addFragment(FrgTransactionHistory(), getString(R.string.tab_name_history)) //ISTORIC
+		sectionsPagerAdapter.addFragment(FrgTransactionHistory.newInstance(), getString(R.string.tab_name_history)) //ISTORIC
 		viewPager.adapter = sectionsPagerAdapter
 	}
 

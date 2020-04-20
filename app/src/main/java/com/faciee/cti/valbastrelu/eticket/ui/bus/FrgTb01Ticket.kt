@@ -13,6 +13,7 @@ import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag01TicketBinding
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
 import com.faciee.cti.valbastrelu.eticket.ui.bus.vm.BusViewModel
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TicketsAdapter
+import com.faciee.cti.valbastrelu.eticket.util.DummyData
 
 /**
  * Created by valbastrelu on 09-Apr-18.
@@ -39,6 +40,8 @@ class FrgTb01Ticket : SharingFragment<AndroidViewModel, BusViewModel>() {
 			biletBinding.isLoading = false
 			ticketsAdapter.tickets = list
 		})
+
+		ticketsAdapter.tickets = DummyData.loadBilete()
 	}
 
 	companion object {

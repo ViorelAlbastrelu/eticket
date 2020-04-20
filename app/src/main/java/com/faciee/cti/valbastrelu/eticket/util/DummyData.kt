@@ -72,21 +72,21 @@ object DummyData {
 		return listaTrasee
 	}
 
-	fun loadIstorice(): List<Transaction> {
-		val listaIstorice: MutableList<Transaction> = ArrayList()
+	fun mockTransactionsHistory(): List<Transaction> {
+		val transactions: MutableList<Transaction> = ArrayList()
 		try {
-			listaIstorice.add(Transaction(1L, formatterDate.parse("12-JAN-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
-			listaIstorice.add(Transaction(2L, formatterDate.parse("13-JAN-2018"), TransportType.TBUS, 2, BigDecimal(- 2.00)))
-			listaIstorice.add(Transaction(3L, formatterDate.parse("16-JAN-2018"), TransportType.TRAM, 2, BigDecimal(- 2.00)))
-			listaIstorice.add(Transaction(4L, formatterDate.parse("22-JAN-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
-			listaIstorice.add(Transaction(5L, formatterDate.parse("23-JAN-2018"), TransportType.PARKING, 2, BigDecimal(- 1.00)))
-			listaIstorice.add(Transaction(6L, formatterDate.parse("24-JAN-2018"), TransportType.NONE, 2, BigDecimal(+ 15.00)))
-			listaIstorice.add(Transaction(7L, formatterDate.parse("30-JAN-2018"), TransportType.TBUS, 2, BigDecimal(- 2.00)))
-			listaIstorice.add(Transaction(8L, formatterDate.parse("02-FEB-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
-			listaIstorice.add(Transaction(9L, formatterDate.parse("10-FEB-2018"), TransportType.PARKING, 2, BigDecimal(- 1.00)))
+			transactions.add(Transaction(1L, formatterDate.parse("12-JAN-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(2L, formatterDate.parse("13-JAN-2018"), TransportType.TBUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(3L, formatterDate.parse("16-JAN-2018"), TransportType.TRAM, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(4L, formatterDate.parse("22-JAN-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(5L, formatterDate.parse("23-JAN-2018"), TransportType.PARKING, 2, BigDecimal(- 1.00)))
+			transactions.add(Transaction(6L, formatterDate.parse("24-JAN-2018"), TransportType.NONE, 2, BigDecimal(+ 15.00)))
+			transactions.add(Transaction(7L, formatterDate.parse("30-JAN-2018"), TransportType.TBUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(8L, formatterDate.parse("02-FEB-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(9L, formatterDate.parse("10-FEB-2018"), TransportType.PARKING, 2, BigDecimal(- 1.00)))
 		} catch (e: ParseException) {
 			e.printStackTrace()
 		}
-		return listaIstorice
+		return transactions
 	}
 }

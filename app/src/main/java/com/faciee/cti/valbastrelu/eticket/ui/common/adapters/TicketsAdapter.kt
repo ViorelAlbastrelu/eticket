@@ -14,12 +14,12 @@ import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TicketsAdapter.Tick
 class TicketsAdapter : RecyclerView.Adapter<TicketViewHolder>() {
 
 	var tickets: List<Ticket> = listOf()
-	set(value) {
-		if (value.isNotEmpty()){
-			field = value
-			notifyDataSetChanged()
+		set(value) {
+			if (!value.isNullOrEmpty()) {
+				field = value
+				notifyDataSetChanged()
+			}
 		}
-	}
 
 	fun updateTickets(newTickets: List<Ticket>) {
 		if (newTickets.isNotEmpty()) {
@@ -51,7 +51,6 @@ class TicketsAdapter : RecyclerView.Adapter<TicketViewHolder>() {
 	override fun onBindViewHolder(holder: TicketViewHolder, position: Int) {
 		Log.d(TAG, "onBindViewHolder: called.")
 		holder.itemTicketBinding.bilet = tickets[position]
-		holder.itemTicketBinding.executePendingBindings()
 	}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TicketViewHolder {

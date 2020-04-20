@@ -20,6 +20,7 @@ import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
 import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking;
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter;
 import com.faciee.cti.valbastrelu.eticket.ui.common.i.UpdateRecyclerViewCallback;
+import com.faciee.cti.valbastrelu.eticket.ui.history.FrgTransactionHistory;
 import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingViewModel;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -62,7 +63,7 @@ public class FragmentParkingMain extends BaseFragment<ParkingViewModel> {
 		mSectionsPagerAdapter = new SectionsPagerAdapter(getChildFragmentManager());
 		mSectionsPagerAdapter.addFragment(frgTb01Bilet, getString(R.string.tab_name_ticket));    //BILETE
 		mSectionsPagerAdapter.addFragment(new FrgTb02Parcari(), getString(R.string.tab_name_parking));   //PARCARI
-		mSectionsPagerAdapter.addFragment(new FrgTb03Istoric(), getString(R.string.tab_name_history)); //ISTORIC
+		mSectionsPagerAdapter.addFragment(FrgTransactionHistory.Companion.newInstance(), getString(R.string.tab_name_history)); //ISTORIC
 		viewPager.setAdapter(mSectionsPagerAdapter);
 	}
 	

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+	<data>
+
+		<variable
+			name="transaction"
+			type="com.faciee.cti.valbastrelu.eticket.room.entities.Transaction" />
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="8dp">
+
+		<TextView
+			android:id="@+id/textDate"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:background="@color/colorSecondaryLight"
+			android:gravity="center"
+			android:textColor="@android:color/white"
+			android:textStyle="bold"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/textInfo"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:shortDate="@{transaction.date}"
+			tools:text="23 MAR" />
+
+		<TextView
+			android:id="@+id/textInfo"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:gravity="center_vertical"
+			android:paddingStart="8dp"
+			android:paddingEnd="8dp"
+			android:textSize="20sp"
+			app:layout_constraintBottom_toBottomOf="@+id/textDate"
+			app:layout_constraintEnd_toStartOf="@+id/textPrice"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toEndOf="@+id/textDate"
+			app:layout_constraintTop_toTopOf="@+id/textDate"
+			android:text="@{transaction.transportType.typeName}"
+			tools:text="@string/istoric_bilet" />
+
+		<TextView
+			android:id="@+id/textPrice"
+			android:layout_width="60dp"
+			android:layout_height="0dp"
+			android:gravity="center_vertical|end"
+			android:textAllCaps="false"
+			android:textColor="@color/colorSecondary"
+			app:layout_constraintBottom_toBottomOf="@+id/textInfo"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toEndOf="@+id/textInfo"
+			app:layout_constraintTop_toTopOf="@+id/textInfo"
+			app:priceColor="@{transaction.amount}"
+			android:text="@{String.format(@string/istoric_pret, transaction.amount)}"
+			tools:text="@string/istoric_pret" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
