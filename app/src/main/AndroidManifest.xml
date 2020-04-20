@@ -32,7 +32,7 @@
         <activity
 			android:name=".ui.bus.BusMainFragment"
 			android:label="@string/title_activity_bus" />
-		<activity android:name=".ui.chat.ChatbotActivity" />
+		<activity android:name=".ui.chat.ChatbotFragment" />
 		<activity
 			android:name=".ui.login.LoginActivity"
 			android:label="@string/title_activity_login"

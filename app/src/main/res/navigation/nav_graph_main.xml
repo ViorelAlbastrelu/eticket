@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/nav_graph_main"
@@ -16,4 +15,9 @@
 		android:name="com.faciee.cti.valbastrelu.eticket.ui.parking.FragmentParkingMain"
 		android:label="@string/title_activity_parking"
 		tools:layout="@layout/fragment_parking_main" />
+	<fragment
+		android:id="@+id/fragmentChatBot"
+		android:name="com.faciee.cti.valbastrelu.eticket.ui.chat.ChatbotFragment"
+		android:label="@string/menu_assistant"
+		tools:layout="@layout/fragment_chatbot" />
 </navigation>
