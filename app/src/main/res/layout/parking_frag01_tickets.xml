@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools">
 
 	<data>
@@ -19,7 +19,7 @@
 		android:layout_height="match_parent">
 
 		<androidx.recyclerview.widget.RecyclerView
-			android:id="@+id/recyclerViewBileteP"
+			android:id="@+id/ticketsRecycler"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
 			android:clipChildren="false"
@@ -30,6 +30,6 @@
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent"
 			app:reverseLayout="true"
-			tools:listitem="@layout/row_bilet_p" />
+			tools:listitem="@layout/item_ticket_parking" />
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

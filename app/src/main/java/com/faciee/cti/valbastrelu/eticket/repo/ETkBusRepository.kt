@@ -35,7 +35,7 @@ class ETkBusRepository(roomDB: EtkRoomDB) {
 //			loadIstorice();
 //		}
 //		return tranzactiiLiveData;
-	val liveDataTranzactii: LiveData<List<Transaction?>?>?
+	val liveDataTranzactii: LiveData<List<Transaction>>
 		get() = transactionsDao.allTransactionsLiveData
 	//		if (tranzactiiLiveData == null){
 //			tranzactiiLiveData = new MutableLiveData<>();

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 	<data>
-
 		<variable
-			name="bilet"
+			name="ticket"
 			type="com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking" />
 	</data>
 
@@ -22,16 +21,16 @@
 			android:layout_height="wrap_content">
 
 			<TextView
-				android:id="@+id/traseu_bilet"
+				android:id="@+id/traseu_ticket"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_marginEnd="8dp"
 				android:layout_marginStart="8dp"
-				android:text="@{String.valueOf(bilet.location)}"
+				android:text="@{String.valueOf(ticket.location)}"
 				android:textAlignment="center"
 				android:textSize="36sp"
 				android:textStyle="bold"
-				app:statusColor="@{bilet.active}"
+				app:statusColor="@{ticket.active}"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +42,7 @@
 				android:layout_marginEnd="8dp"
 				android:layout_marginStart="8dp"
 				android:scaleType="fitXY"
-				app:layout_constraintBottom_toTopOf="@+id/status_bilet"
+				app:layout_constraintBottom_toTopOf="@+id/status_ticket"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintHorizontal_bias="0.0"
 				app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +50,7 @@
 				app:srcCompat="@android:drawable/bottom_bar" />
 
 			<TextView
-				android:id="@+id/status_bilet"
+				android:id="@+id/status_ticket"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_marginEnd="8dp"
@@ -59,8 +58,8 @@
 				android:text="@string/status_bilet_activ"
 				android:textAlignment="center"
 				android:textSize="24sp"
-				app:statusColor="@{bilet.active}"
-				app:statusBilet="@{bilet.active}"
+				app:statusColor="@{ticket.active}"
+				app:statusBilet="@{ticket.active}"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -76,11 +75,11 @@
 				app:layout_constraintBottom_toBottomOf="parent"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@+id/status_bilet">
+				app:layout_constraintTop_toBottomOf="@+id/status_ticket">
 
 
 				<TextView
-					android:id="@+id/ora_bilet"
+					android:id="@+id/ora_ticket"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
@@ -96,47 +95,47 @@
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
 					android:layout_marginTop="8dp"
-					android:text="@{bilet.getHourMinute()}"
-					app:layout_constraintStart_toEndOf="@+id/ora_bilet"
+					android:text="@{ticket.getHourMinute()}"
+					app:layout_constraintStart_toEndOf="@+id/ora_ticket"
 					app:layout_constraintTop_toTopOf="parent" />
 
 				<TextView
-					android:id="@+id/data_bilet"
+					android:id="@+id/data_ticket"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
 					android:text="@string/data_bilet"
 					android:textAlignment="textStart"
 					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/ora_bilet" />
+					app:layout_constraintTop_toBottomOf="@+id/ora_ticket" />
 
 				<TextView
 					android:id="@+id/data_value"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
-					android:text="@{bilet.getDayMonthYear()}"
-					app:layout_constraintStart_toEndOf="@+id/data_bilet"
-					app:layout_constraintTop_toBottomOf="@+id/ora_bilet" />
+					android:text="@{ticket.getDayMonthYear()}"
+					app:layout_constraintStart_toEndOf="@+id/data_ticket"
+					app:layout_constraintTop_toBottomOf="@+id/ora_ticket" />
 
 				<TextView
-					android:id="@+id/serie_bilet"
+					android:id="@+id/serie_ticket"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
 					android:text="@string/serie_bilet"
 					android:textAlignment="textStart"
 					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/data_bilet" />
+					app:layout_constraintTop_toBottomOf="@+id/data_ticket" />
 
 				<TextView
 					android:id="@+id/serie_value"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
-					android:text="@{String.valueOf(bilet.id)}"
-					app:layout_constraintStart_toEndOf="@+id/serie_bilet"
-					app:layout_constraintTop_toBottomOf="@+id/data_bilet" />
+					android:text="@{String.valueOf(ticket.id)}"
+					app:layout_constraintStart_toEndOf="@+id/serie_ticket"
+					app:layout_constraintTop_toBottomOf="@+id/data_ticket" />
 
 				<TextView
 					android:id="@+id/mesaj_alerta"
@@ -147,14 +146,14 @@
 					android:text="@string/parking_alert_message"
 					app:layout_constraintBottom_toBottomOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/serie_bilet" />
+					app:layout_constraintTop_toBottomOf="@+id/serie_ticket" />
 
 				<CheckBox
 					android:id="@+id/checkBoxAlerta"
 					android:layout_width="0dp"
 					android:layout_height="wrap_content"
-					android:checked="@{bilet.alertOn}"
-					android:enabled="@{bilet.active}"
+					android:checked="@{ticket.alertOn}"
+					android:enabled="@{ticket.active}"
 					app:layout_constraintBottom_toBottomOf="parent"
 					app:layout_constraintEnd_toEndOf="parent" />
 

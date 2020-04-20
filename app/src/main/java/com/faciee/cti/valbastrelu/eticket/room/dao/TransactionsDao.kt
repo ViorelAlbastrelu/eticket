@@ -12,7 +12,7 @@ import java.util.Date
 @Dao
 interface TransactionsDao {
 	@get:Query("SELECT * FROM `transaction`")
-	val allTransactionsLiveData: LiveData<List<Transaction?>?>?
+	val allTransactionsLiveData: LiveData<List<Transaction>>
 
 	@Query("SELECT * FROM `transaction` WHERE date = :date")
 	fun getTransactionsStartingFrom(date: Date): List<Transaction>

@@ -14,10 +14,10 @@ class EtkParkingRepository(db: EtkRoomDB) {
 	//Dao
 	private val ticketParkingDao: TicketParkingDao = db.ticketParkingDao()
 	private val transactionsDao: TransactionsDao = db.transactionsDao()
-	val bileteParcare: LiveData<List<TicketParking?>?>?
+	val parkingTickets: LiveData<List<TicketParking>>
 		get() = ticketParkingDao.allTicketsLiveData
 
-	val liveDataTranzactii: LiveData<List<Transaction?>?>?
+	val liveDataTranzactii: LiveData<List<Transaction>>
 		get() = transactionsDao.allTransactionsLiveData
 
 	fun insertBilet(bilet: TicketParking?) {

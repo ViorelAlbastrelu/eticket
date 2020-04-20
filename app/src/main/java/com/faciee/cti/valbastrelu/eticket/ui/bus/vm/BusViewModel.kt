@@ -33,7 +33,7 @@ class BusViewModel(application: ETicketApp) : AbstractAndroidViewModel(applicati
 		return repository !!.getLiveDataStatii(nrTraseu)
 	}
 
-	val liveDataTranzactii: LiveData<List<Transaction?>?>?
+	val liveDataTranzactii: LiveData<List<Transaction>>
 		get() = repository !!.liveDataTranzactii
 
 	//INSERTS
