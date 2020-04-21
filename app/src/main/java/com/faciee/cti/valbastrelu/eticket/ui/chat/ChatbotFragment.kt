@@ -25,12 +25,17 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
-import java.util.*
+import kotlin.collections.ArrayList
 
 class ChatbotFragment : Fragment() {
 
 	private lateinit var chatbotBinding: FragmentChatbotBinding
-	private lateinit var mAdapter: ChatMessageAdapter
+	private lateinit var chatMessageAdapter: ChatMessageAdapter
+
+	override fun onAttach(context: Context) {
+		super.onAttach(context)
+		chatMessageAdapter = ChatMessageAdapter(context, ArrayList())
+	}
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		chatbotBinding = FragmentChatbotBinding.inflate(inflater, container, false)
@@ -39,8 +44,7 @@ class ChatbotFragment : Fragment() {
 		chatbotBinding.btnSend.setOnClickListener { view: View? -> sendMessage() }
 		chatbotBinding.sendMessage.imeOptions = EditorInfo.IME_ACTION_DONE
 		chatbotBinding.sendMessage.setOnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? -> sendInEditor(v, actionId, event) }
-		mAdapter = ChatMessageAdapter(context, ArrayList())
-		chatbotBinding.chatView.adapter = mAdapter
+		chatbotBinding.chatView.adapter = chatMessageAdapter
 		CongfigureBotTask(context).execute()
 		return chatbotBinding.root
 	}
@@ -61,15 +65,15 @@ class ChatbotFragment : Fragment() {
 		if (TextUtils.isEmpty(message)) {
 			return
 		}
-		mAdapter.add(chatMessage)
+		chatMessageAdapter.add(chatMessage)
 		chatbotBinding.sendMessage.setText("")
 		mimicOtherMessage(response)
-		chatbotBinding.chatView.setSelection(mAdapter.count - 1)
+		chatbotBinding.chatView.setSelection(chatMessageAdapter.count - 1)
 	}
 
 	private fun mimicOtherMessage(message: String) {
 		val chatMessage = ChatMessage(message, false, false)
-		mAdapter.add(chatMessage)
+		chatMessageAdapter.add(chatMessage)
 	}
 
 	//Request and response of user and the bot
