@@ -11,10 +11,10 @@ import com.faciee.cti.valbastrelu.eticket.room.entities.Station
 @Dao
 interface StationDao {
 	@get:Query("SELECT * FROM station")
-	val allStationsLiveData: LiveData<List<Station?>?>?
+	val allStationsLiveData: LiveData<List<Station>>
 
 	@Query("SELECT name FROM station WHERE routeNumber = :routeNumber")
-	fun getStationsForRoute(routeNumber: Int): LiveData<List<String?>?>?
+	fun getStationsForRoute(routeNumber: Int): LiveData<List<String>>
 
 	@Insert
 	fun insertStations(vararg station: Station?)
