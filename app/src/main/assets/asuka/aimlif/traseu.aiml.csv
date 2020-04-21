@@ -1,17 +1,17 @@
-0,TRASEU,*,*,Ce vrei sa stii despre trasee?<think><set name="topic">route</set></think>,route.aiml
-0,POTI SA MA AJUTI CU TRASEELE,*,*,<srai>TRASEU</srai>,route.aiml
-0,* DESPRE TRASEE,*,*,<srai>TRASEU</srai>,route.aiml
-0,* APAS * TRASEU,*,route,Nimic. Dar poti apasa pe butonul din dreapta unui route.,route.aiml
-0,IMAGINE,*,route,Imaginea indica tipul de route.,route.aiml
-0,CE * IMAGINEA,*,route,<srai>IMAGINE</srai>,route.aiml
-0,* IMAGINEA DIN DREAPTA,*,route,<srai>IMAGINE</srai>,route.aiml
-0,SOSIRE,*,route,Reprezinta urmatorul autovehicul pe acea linie care soseste.,route.aiml
-0,* ORA DE SOSIRE,*,route,<srai>SOSIRE</srai>,route.aiml
-0,STATIE,*,route,Statiile pentru acea linie se pot afla apasand iconita de locatie aflata in dreapta.,route.aiml
-0,* CE STATIE URMEAZA,*,route,<srai>STATIE</srai>,route.aiml
-0,* URMATOAREA STATIE,*,route,<srai>STATIE</srai>,route.aiml
-0,FILTRU,*,route,Filrarea se poate face selectand una din optiunile aflate in dreapta mesajului: Filtreaza trasee.,route.aiml
-0,* FILTRU,*,route,<srai>FILTRU</srai>,route.aiml
-0,* FILTRA,*,route,<srai>FILTRU</srai>,route.aiml
-0,* FILTREZ,*,route,<srai>FILTRU</srai>,route.aiml
-0,* ALTE FILTRE *,*,route,Momentan nu se poate filtra decat dupa route. Poate adaugam si alte filtre.,route.aiml
+0,TRASEU,*,*,Ce vrei sa stii despre trasee?<think><set name="topic">traseu</set></think>,traseu.aiml
+0,POTI SA MA AJUTI CU TRASEELE,*,*,<srai>TRASEU</srai>,traseu.aiml
+0,* DESPRE TRASEE,*,*,<srai>TRASEU</srai>,traseu.aiml
+0,* APAS * TRASEU,*,traseu,Nimic. Dar poti apasa pe butonul din dreapta unui traseu.,traseu.aiml
+0,IMAGINE,*,traseu,Imaginea indica tipul de traseu.,traseu.aiml
+0,CE * IMAGINEA,*,traseu,<srai>IMAGINE</srai>,traseu.aiml
+0,* IMAGINEA DIN DREAPTA,*,traseu,<srai>IMAGINE</srai>,traseu.aiml
+0,SOSIRE,*,traseu,Reprezinta urmatorul autovehicul pe acea linie care soseste.,traseu.aiml
+0,* ORA DE SOSIRE,*,traseu,<srai>SOSIRE</srai>,traseu.aiml
+0,STATIE,*,traseu,Statiile pentru acea linie se pot afla apasand iconita de locatie aflata in dreapta.,traseu.aiml
+0,* CE STATIE URMEAZA,*,traseu,<srai>STATIE</srai>,traseu.aiml
+0,* URMATOAREA STATIE,*,traseu,<srai>STATIE</srai>,traseu.aiml
+0,FILTRU,*,traseu,Filrarea se poate face selectand una din optiunile aflate in dreapta mesajului: Filtreaza trasee.,traseu.aiml
+0,* FILTRU,*,traseu,<srai>FILTRU</srai>,traseu.aiml
+0,* FILTRA,*,traseu,<srai>FILTRU</srai>,traseu.aiml
+0,* FILTREZ,*,traseu,<srai>FILTRU</srai>,traseu.aiml
+0,* ALTE FILTRE *,*,traseu,Momentan nu se poate filtra decat dupa traseu. Poate adaugam si alte filtre.,traseu.aiml
