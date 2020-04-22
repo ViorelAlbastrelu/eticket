@@ -41,7 +41,7 @@
 		<item>102T</item>
 		<item>104T</item>
 	</string-array>
-	<string-array name="numeLuni">
+	<string-array name="month_short">
 		<item>JAN</item>
 		<item>FÉV</item>
 		<item>MAR</item>

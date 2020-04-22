@@ -1,15 +1,18 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.faciee.cti.valbastrelu.eticket"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -21,6 +24,9 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
+    viewBinding {
+        enabled = true
+    }
     dataBinding {
         enabled = true
     }
@@ -30,45 +36,45 @@ android {
 }
 
 dependencies {
-    def support_lib_ver = '27.1.1'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:design:$support_lib_ver"
-    implementation "com.android.support:cardview-v7:$support_lib_ver"
-    implementation "com.android.support:appcompat-v7:$support_lib_ver"
-    implementation "com.android.support:recyclerview-v7:$support_lib_ver"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    implementation "androidx.core:core-ktx:1.1.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
     testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-all:1.10.19"
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    //Butterknife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
     //StepView
-    implementation 'com.github.baoyachi:StepView:1.9'
+    //    implementation 'com.github.baoyachi:StepView:1.9'
     //Chatbot
     implementation 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
     implementation files('libs/Ab.jar')
     //Firebase
-    implementation 'com.google.firebase:firebase-auth:16.0.2'
-    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-auth:19.3.0'
+    implementation 'com.google.firebase:firebase-core:17.2.3'
     //HTML Parser
     implementation 'org.jsoup:jsoup:1.11.2'
     //LiveData and ViewModel
-    def lifecycle_ver = '1.1.1'
-    implementation "android.arch.lifecycle:runtime:$lifecycle_ver"
-    implementation "android.arch.lifecycle:extensions:$lifecycle_ver"
-    annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_ver"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
     //Room library for local DB
-    def room_version = '1.1.1'
-    implementation "android.arch.persistence.room:runtime:$room_version"
-    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
-    androidTestImplementation "android.arch.persistence.room:testing:$room_version"
-    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
     //Maps
-    implementation 'com.google.android.gms:play-services-maps:15.0.1'
-    implementation 'com.google.android.gms:play-services-places:15.0.1'
+    implementation "com.google.android.gms:play-services-maps:$google_map_ver"
+    implementation "com.google.android.gms:play-services-places:$google_map_ver"
 
 }
 apply plugin: 'com.google.gms.google-services'

@@ -1,13 +1,12 @@
 package com.faciee.cti.valbastrelu.eticket.repo;
 
 import android.annotation.SuppressLint;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.faciee.cti.valbastrelu.eticket.room.dao.StatieDao;
-import com.faciee.cti.valbastrelu.eticket.room.entities.Statie;
+import com.faciee.cti.valbastrelu.eticket.room.entities.Station;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,44 +16,44 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatiiLiveData extends LiveData<List<Statie>> {
+@Deprecated
+public class StatiiLiveData extends LiveData<List<Station>> {
 	private static final String TAG = "StatiiLiveData";
 	private static String URL_STATII = "https://transurb-galati.com/%s/";
-	private StatieDao statieDao;
 	private List<String> numeStatii = new ArrayList<>();
 	MutableLiveData<List<String>> numeStatiiLiveData = new MutableLiveData<>();
 	
 	
-	public StatiiLiveData(StatieDao statieDao, int numarTraseu) {
-		this.statieDao = statieDao;
+	public StatiiLiveData(int numarTraseu) {
 		loadStatii(numarTraseu);
 	}
 	
 	@SuppressLint("StaticFieldLeak")
 	private void loadStatii(int numarTraseu) {
-		new AsyncTask<Void,Void,List<Statie>>() {
+		new AsyncTask<Void,Void,List<Station>>() {
 			@Override
-			protected List<Statie> doInBackground(Void... params) {
+			protected List<Station> doInBackground(Void... params) {
 				String url = (numarTraseu == 0 ?
 				String.format(URL_STATII, "statii"):
 				String.format(URL_STATII, "statii-traseu-"+numarTraseu));
-				List<Statie> statieList = new ArrayList<>();
+				List<Station> stationList = new ArrayList<>();
 				try {
 					Document document = Jsoup.connect(url).get();
 					Elements rows = document.select("td");
 					for (int i = 2; i < rows.size(); i += 2) {
-						Statie statie = new Statie(numarTraseu, rows.get(i).text(), rows.get(i + 1).text());
-						statieList.add(statie);
-						numeStatii.add(statie.getNumeStatie());
+						//TODO routeNumber is dummy set to 0
+						Station station = new Station(numarTraseu, rows.get(i).text(), rows.get(i + 1).text(), 0);
+						stationList.add(station);
+						numeStatii.add(station.getName());
 //						statieDao.insertStatii(statie);
 					}
 				} catch (IOException e) {
 					Log.e(TAG, "loadStatii: " + e.getMessage(), null);
 				}
-				return statieList;
+				return stationList;
 			}
 			@Override
-			protected void onPostExecute(List<Statie> data) {
+			protected void onPostExecute(List<Station> data) {
 				setValue(data);
 				numeStatiiLiveData.setValue(numeStatii);
 			}

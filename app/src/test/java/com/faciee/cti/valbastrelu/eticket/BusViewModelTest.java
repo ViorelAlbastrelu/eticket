@@ -1,6 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket;
 
-import com.faciee.cti.valbastrelu.eticket.ui.bus.model.BusActivityModel;
+import com.faciee.cti.valbastrelu.eticket.ui.bus.vm.BusViewModel;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -10,7 +10,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class BusViewModelTest {
 	
-	BusActivityModel busActivityModel;
+	BusViewModel busActivityModel;
 	
 	@Before
 	public void setUp(){
