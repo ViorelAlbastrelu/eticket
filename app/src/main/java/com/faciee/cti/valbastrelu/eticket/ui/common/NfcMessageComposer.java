@@ -5,10 +5,9 @@ import android.nfc.NdefRecord;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.nfc.tech.NdefFormatable;
-import android.os.Parcelable;
 import android.util.Log;
 
-import com.faciee.cti.valbastrelu.eticket.main.ETicketApp;
+import com.faciee.cti.valbastrelu.eticket.base.ETicketApp;
 
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
@@ -21,7 +20,8 @@ public class NfcMessageComposer {
 		try {
 			NdefFormatable ndefFormatable = NdefFormatable.get(tag);
 			if (ndefFormatable == null) {
-				ETicketApp.toastMessageShort("Tag is not ndef formatable!");
+				//TODO toast extension function when converting to kotlin
+//				ETicketApp.getCurrentETicketApp().toastMessageShort("Tag is not ndef formatable!");
 				return;
 			}
 			ndefFormatable.connect();
@@ -35,7 +35,8 @@ public class NfcMessageComposer {
 	public static void writeNdefMessage(Tag tag, NdefMessage ndefMessage) {
 		try {
 			if (tag == null) {
-				ETicketApp.toastMessageShort("Tag object cannot be null!");
+				//TODO toast extension function when converting to kotlin
+//				ETicketApp.getCurrentETicketApp().toastMessageShort("Tag object cannot be null!");
 				return;
 			}
 			Ndef ndef = Ndef.get(tag);
@@ -44,12 +45,14 @@ public class NfcMessageComposer {
 			} else {
 				ndef.connect();
 				if (!ndef.isWritable()) {
-					ETicketApp.toastMessageShort("Tag is not writable!");
+					//TODO toast extension function when converting to kotlin
+//					ETicketApp.toastMessageShort("Tag is not writable!");
 					ndef.close();
 				}
 				ndef.writeNdefMessage(ndefMessage);
 				ndef.close();
-				ETicketApp.toastMessageShort("Tag written!");
+				//TODO toast extension function when converting to kotlin
+//				ETicketApp.toastMessageShort("Tag written!");
 			}
 			
 		} catch (Exception e) {
@@ -90,7 +93,8 @@ public class NfcMessageComposer {
 			NdefRecord record = ndefRecord[0];
 			return getTextFromNdefRecord(record);
 		} else {
-			ETicketApp.toastMessageShort("No NDEF Records found!");
+			//TODO
+//			ETicketApp.toastMessageShort("No NDEF Records found!");
 		}
 		return null;
 	}

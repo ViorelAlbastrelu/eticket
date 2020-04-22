@@ -1,8 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket;
 
-import com.faciee.cti.valbastrelu.eticket.ui.login.FireBaseWrapper;
-import com.faciee.cti.valbastrelu.eticket.ui.login.LoginPresenter;
-import com.faciee.cti.valbastrelu.eticket.ui.login.LoginView;
+import com.faciee.cti.valbastrelu.eticket.ui.login.LoginVM;
+import com.faciee.cti.valbastrelu.eticket.util.firebase.FireBaseClient;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -12,23 +11,18 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LoginTest {
-	@Spy
-	LoginPresenter loginPresenter;
 	@Mock
-	FireBaseWrapper fireBaseWrapperMock;
+	LoginVM loginVM;
 	@Mock
-	LoginView loginViewMock;
-	
+	FireBaseClient fireBaseClientMock;
+
 	@Before
 	public void setUp(){
 		MockitoAnnotations.initMocks(this);
-		loginPresenter = Mockito.spy(LoginPresenter.class);
-		loginPresenter.setFireBaseAuth(fireBaseWrapperMock);
 	}
 	
 	@After
@@ -39,39 +33,39 @@ public class LoginTest {
 	public void testValidCredentials(){
 		String email = "test@email.com";
 		String password = "123456";
-		Mockito.when(loginPresenter.validateForm(email, password)).thenReturn(false);
-		Assert.assertEquals(false, loginPresenter.validateForm(email, password));
+		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormValid(email, password));
 	}
 	
 	@Test
 	public void testWrongEmail(){
 		String email = "testemail.com";
 		String password = "123456";
-		Mockito.when(loginPresenter.validateForm(email, password)).thenReturn(false);
-		Assert.assertEquals(false, loginPresenter.validateForm(email, password));
+		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormValid(email, password));
 	}
 	
 	@Test
 	public void testWrongPassword(){
 		String email = "test@email.com";
 		String password = "12";
-		Mockito.when(loginPresenter.validateForm(email, password)).thenReturn(false);
-		Assert.assertEquals(false, loginPresenter.validateForm(email, password));
+		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormValid(email, password));
 	}
 	@Test
 	public void testEmptyEmail(){
 		String email = "";
 		String password = "123456";
-		Mockito.when(loginPresenter.validateForm(email, password)).thenReturn(false);
-		Assert.assertEquals(false, loginPresenter.validateForm(email, password));
+		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormValid(email, password));
 	}
 	
 	@Test
 	public void testEmptyPassword(){
 		String email = "test@email.com";
 		String password = "";
-		Mockito.when(loginPresenter.validateForm(email, password)).thenReturn(false);
-		Assert.assertEquals(false, loginPresenter.validateForm(email, password));
+		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormValid(email, password));
 	}
 	
 }

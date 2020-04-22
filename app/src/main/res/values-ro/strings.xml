@@ -1,0 +1,72 @@
+<resources>
+	<string name="app_name">ETicket</string>
+	<string name="title_activity_bus">BusActivity</string>
+	<string name="tab_name_ticket">Bilete</string>
+	<string name="tab_name_routes">Trasee</string>
+	<string name="tab_name_parking">Parcări</string>
+	<string name="tab_name_history">Istoric</string>
+	<string name="action_settings">Setări</string>
+	<string name="action_chatbot">Chatbot</string>
+	<string name="action_sign_out">Ieșire</string>
+
+	<!--NAV DRAWER-->
+	<string name="menu_bus">Autobuz</string>
+	<string name="menu_tbus">Troleibuz</string>
+	<string name="menu_tram">Tramvai</string>
+	<string name="menu_car">Parcări</string>
+	<string name="menu_acc_pref_title">Preferințe cont</string>
+	<string name="menu_assistant">Asistent</string>
+	<string name="menu_logout">Ieșire din cont</string>
+
+	<!-- BUS ACTIVITY -->
+	<!-- Fragment Traseu -->
+	<string name="opt_trasee">Filtrează trasee:</string>
+	<string name="title_activity_login">Autentificare in E-Ticket</string>
+
+	<!-- Strings related to login -->
+	<string name="prompt_email">Email</string>
+	<string name="prompt_password">Parola</string>
+	<string name="action_sign">Autentificare</string>
+	<string name="action_create_account">Înregistrare</string>
+	<string name="error_invalid_email">Adresă de email invalidă</string>
+	<string name="error_invalid_password">Parola este prea scurtă</string>
+	<string name="error_incorrect_password">Parolă incorectă</string>
+	<string name="error_field_required">Câmp obligatoriu</string>
+	<string name="emailpassword_status_fmt">Email utilizator: %1$s (verificat: %2$b)</string>
+
+	<!--Bilet layout-->
+	<string name="nr_traseu">102</string>
+	<string name="status_bilet_activ">Activ</string>
+	<string name="status_bilet_expirat">Expirat</string>
+	<string name="nr_calatorii">Calatorii:</string>
+	<string name="ora_bilet">Ora:</string>
+	<string name="data_bilet">Data:</string>
+	<string name="serie_bilet">Seria:</string>
+	<string name="zero_bilete">Nu există nici un bilet în listă</string>
+
+	<!--Traseu layout-->
+	<string name="ora_traseu_fmt">Ora sosire: %1$s</string>
+	<string name="nr_traseu_fmt">Număr traseu:</string>
+
+	<!--Tranzactie layout-->
+	<string name="istoric_data">%1$d\n%2$s</string>
+	<string name="istoric_bilet">Bilet %1$s</string>
+	<string name="istoric_pret">%1$.2f\nRON</string>
+
+	<!--Chatbot-->
+	<string name="chat_trimite">Trimite</string>
+	<string name="vezi_detalii">Vezi detalii</string>
+
+	<!--Signout alert dialog-->
+	<string name="parking_alert_message">Alertă la epuizarea timpului?</string>
+	<string name="signout_message">Sunteți siguri că doriți să ieșiți din cont?</string>
+	<string name="afirmativ">Da</string>
+	<string name="negativ">Anulează</string>
+
+	<!--TransportType-->
+	<string name="transport_type_troleybus">Troleibuz</string>
+	<string name="transport_type_bus">Autobuz</string>
+	<string name="transport_type_tramway">Tramvai</string>
+	<string name="transport_type_parking">Autoturism</string>
+	<string name="transport_type_not_available">Transport indisponibil</string>
+</resources>

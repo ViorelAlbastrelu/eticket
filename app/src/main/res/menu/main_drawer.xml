@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:showIn="navigation_view">
+
+	<group android:checkableBehavior="single">
+		<item
+			android:id="@+id/fragmentBusMain"
+			android:icon="@drawable/ic_menu_bus"
+			android:title="@string/menu_bus" />
+		<item
+			android:id="@+id/nav_tbus"
+			android:icon="@drawable/ic_menu_tbus"
+			android:title="@string/menu_tbus" />
+		<item
+			android:id="@+id/nav_tram"
+			android:icon="@drawable/ic_menu_tram"
+			android:title="@string/menu_tram" />
+		<item
+			android:id="@+id/fragmentParkingMain"
+			android:icon="@drawable/ic_menu_car"
+			android:title="@string/menu_car" />
+	</group>
+
+	<item android:title="@string/menu_acc_pref_title">
+		<menu>
+			<item
+				android:id="@+id/fragmentChatBot"
+				android:icon="@drawable/ic_menu_chat"
+				android:title="@string/menu_assistant" />
+			<item
+				android:id="@+id/nav_signout"
+				android:icon="@drawable/ic_menu_exit"
+				android:title="@string/menu_logout" />
+		</menu>
+	</item>
+
+</menu>

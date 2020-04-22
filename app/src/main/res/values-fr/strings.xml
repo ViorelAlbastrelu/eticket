@@ -3,6 +3,7 @@
 	<string name="title_activity_bus">BusActivity</string>
 	<string name="tab_name_ticket">Billets</string>
 	<string name="tab_name_routes">Routes</string>
+	<string name="tab_name_parking">Parking</string>
 	<string name="tab_name_history">Historique</string>
 	<string name="action_settings">Paramètres</string>
 	<string name="action_chatbot">Chatbot</string>
@@ -18,7 +19,7 @@
 	<string name="menu_logout">Déconnexion</string>
 
 	<!-- BUS ACTIVITY -->
-	<!-- Fragment Traseu -->
+	<!-- Fragment Route -->
 	<string name="opt_trasee">Filtrer les itinéraires</string>
 	<string name="title_activity_login">Connectez-vous à E-Ticket</string>
 
@@ -43,21 +44,29 @@
 	<string name="serie_bilet">Série:</string>
 	<string name="zero_bilete">Il n\'y a pas de ticket dans la liste</string>
 
-	<!--Traseu layout-->
+	<!--Route layout-->
 	<string name="ora_traseu_fmt">Heure d\'arrivée: %1$s</string>
 	<string name="nr_traseu_fmt">Numéro de sentier:</string>
 
 	<!--Tranzactie layout-->
 	<string name="istoric_data">%1$d\n%2$s</string>
 	<string name="istoric_bilet">Billet %1$s</string>
-	<string name="istoric_pret">%1$.2f\nRON</string>
+	<string name="istoric_pret">%1$.2f\nFR</string>
 
 	<!--Chatbot-->
 	<string name="chat_trimite">Envoyer</string>
 	<string name="vezi_detalii">Voir les détails</string>
-	<string name="tab_name_parking">Parking</string>
+
+	<!--Signout alert dialog-->
 	<string name="parking_alert_message">Alerter quand le temps est fini?</string>
 	<string name="signout_message">Êtes-vous sûr de vouloir quitter?</string>
 	<string name="afirmativ">Oui</string>
 	<string name="negativ">Annuler</string>
+
+	<!--TransportType-->
+	<string name="transport_type_troleybus">Trolleybus</string>
+	<string name="transport_type_bus">Bus</string>
+	<string name="transport_type_tramway">Tram</string>
+	<string name="transport_type_parking">Voiture</string>
+	<string name="transport_type_not_available">Transport indisponible</string>
 </resources>

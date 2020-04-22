@@ -56,22 +56,30 @@
 	<!--Chatbot-->
 	<string name="chat_trimite">Trimite</string>
 	<string name="vezi_detalii">Vezi detalii</string>
-	<string name="title_activity_eticket_main">ETicketMain</string>
+
+	<!--Signout alert dialog-->
+	<string name="parking_alert_message">Alertă la epuizarea timpului?</string>
+	<string name="signout_message">Sunteți siguri că doriți să ieșiți din cont?</string>
+	<string name="afirmativ">Da</string>
+	<string name="negativ">Anulează</string>
+
+	<!--TransportType-->
+	<string name="transport_type_troleybus">Troleibuz</string>
+	<string name="transport_type_bus">Autobuz</string>
+	<string name="transport_type_tramway">Tramvai</string>
+	<string name="transport_type_parking">Autoturism</string>
+	<string name="transport_type_not_available">Transport indisponibil</string>
+
+	<!--Navigation-->
 	<string name="navigation_drawer_open">Open navigation drawer</string>
 	<string name="navigation_drawer_close">Close navigation drawer</string>
 	<string name="nav_header_title">Android Studio</string>
 	<string name="nav_header_subtitle">android.studio@android.com</string>
 	<string name="nav_header_desc">Navigation header</string>
+
+
+	<string name="title_activity_eticket_main">ETicketMain</string>
 	<string name="title_activity_parking">ParkingActivity</string>
 	<string name="section_format">Hello World from section: %1$d</string>
-
-	<string name="parking_alert_message">Alertă la epuizarea timpului?</string>
-
 	<string name="maps_API_key">AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE</string>
-
-	<!--Signout alert dialog-->
-	<string name="signout_message">Sunteți siguri că doriți să ieșiți din cont?</string>
-	<string name="afirmativ">Da</string>
-	<string name="negativ">Anulează</string>
-
 </resources>
