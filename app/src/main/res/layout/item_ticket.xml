@@ -3,7 +3,7 @@
 	<data>
 
 		<variable
-			name="bilet"
+			name="ticket"
 			type="com.faciee.cti.valbastrelu.eticket.room.entities.Ticket" />
 	</data>
 
@@ -27,11 +27,11 @@
 				android:layout_height="wrap_content"
 				android:layout_marginEnd="8dp"
 				android:layout_marginStart="8dp"
-				android:text="@{String.valueOf(bilet.routeNumber)}"
+				android:text="@{String.valueOf(ticket.routeNumber)}"
 				android:textAlignment="center"
 				android:textSize="36sp"
 				android:textStyle="bold"
-				app:statusColor="@{bilet.active}"
+				app:statusColor="@{ticket.active}"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toTopOf="parent" />
@@ -59,8 +59,8 @@
 				android:text="@string/status_bilet_activ"
 				android:textAlignment="center"
 				android:textSize="24sp"
-				app:statusColor="@{bilet.active}"
-				app:statusBilet="@{bilet.active}"
+				app:statusColor="@{ticket.active}"
+				app:statusBilet="@{ticket.active}"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -95,7 +95,7 @@
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
 					android:layout_marginTop="8dp"
-					android:text="@{String.valueOf(bilet.trips)}"
+					android:text="@{String.valueOf(ticket.trips)}"
 					app:layout_constraintStart_toEndOf="@+id/calatorii_bilet"
 					app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,7 +114,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
-					android:text="@{bilet.getHourMinute()}"
+					android:text="@{ticket.getHourMinute()}"
 					app:layout_constraintStart_toEndOf="@+id/ora_bilet"
 					app:layout_constraintTop_toBottomOf="@+id/calatorii_bilet" />
 
@@ -133,7 +133,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
-					android:text="@{bilet.getDayMonthYear()}"
+					android:text="@{ticket.getDayMonthYear()}"
 					app:layout_constraintStart_toEndOf="@+id/data_bilet"
 					app:layout_constraintTop_toBottomOf="@+id/ora_bilet" />
 
@@ -152,7 +152,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
-					android:text="@{String.valueOf(bilet.id)}"
+					android:text="@{String.valueOf(ticket.id)}"
 					app:layout_constraintStart_toEndOf="@+id/serie_bilet"
 					app:layout_constraintTop_toBottomOf="@+id/data_bilet" />
 

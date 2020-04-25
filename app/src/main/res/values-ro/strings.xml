@@ -1,15 +1,26 @@
 <resources>
+	<!--GENERAL-->
 	<string name="app_name">ETicket</string>
-	<string name="title_activity_bus">BusActivity</string>
+
+	<!--HEADERS-->
+	<string name="title_login">Autentificare in E-Ticket</string>
+	<string name="title_main">ETicketMain</string>
+	<string name="title_fragment_home">Acasa</string>
+	<string name="title_fragment_bus">Autobuze</string>
+	<string name="title_fragment_parking">Parking</string>
+
 	<string name="tab_name_ticket">Bilete</string>
 	<string name="tab_name_routes">Trasee</string>
 	<string name="tab_name_parking">Parcări</string>
 	<string name="tab_name_history">Istoric</string>
+
+	<!--TOOLBAR MENU ITEMS-->
 	<string name="action_settings">Setări</string>
 	<string name="action_chatbot">Chatbot</string>
 	<string name="action_sign_out">Ieșire</string>
 
 	<!--NAV DRAWER-->
+	<string name="menu_home">Acasa</string>
 	<string name="menu_bus">Autobuz</string>
 	<string name="menu_tbus">Troleibuz</string>
 	<string name="menu_tram">Tramvai</string>
@@ -21,7 +32,6 @@
 	<!-- BUS ACTIVITY -->
 	<!-- Fragment Traseu -->
 	<string name="opt_trasee">Filtrează trasee:</string>
-	<string name="title_activity_login">Autentificare in E-Ticket</string>
 
 	<!-- Strings related to login -->
 	<string name="prompt_email">Email</string>

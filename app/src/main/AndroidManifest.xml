@@ -31,16 +31,16 @@
 
         <activity
 			android:name=".ui.bus.BusMainFragment"
-			android:label="@string/title_activity_bus" />
+			android:label="@string/title_fragment_bus" />
 		<activity
 			android:name=".ui.login.LoginActivity"
-			android:label="@string/title_activity_login"
+			android:label="@string/title_login"
 			android:windowSoftInputMode="stateVisible|adjustPan">
 
 		</activity>
 		<activity
 			android:name=".main.ETicketMain"
-			android:label="@string/title_activity_eticket_main"
+			android:label="@string/title_main"
 			android:theme="@style/EticketTheme">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -50,7 +50,7 @@
 		</activity>
 		<activity
 			android:name=".ui.parking.FragmentParkingMain"
-			android:label="@string/title_activity_parking"
+			android:label="@string/title_fragment_parking"
 			android:theme="@style/EticketTheme"/>
 	</application>
 

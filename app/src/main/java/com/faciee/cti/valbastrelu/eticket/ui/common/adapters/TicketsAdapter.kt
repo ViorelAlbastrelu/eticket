@@ -23,26 +23,7 @@ class TicketsAdapter : RecyclerView.Adapter<TicketViewHolder>() {
 
 	fun updateTickets(newTickets: List<Ticket>) {
 		if (newTickets.isNotEmpty()) {
-			val result = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
-				override fun getOldListSize(): Int {
-					return tickets.size
-				}
-
-				override fun getNewListSize(): Int {
-					return newTickets.size
-				}
-
-				override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-					return tickets[oldItemPosition].id ==
-							newTickets[newItemPosition].id
-				}
-
-				override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-					val newTicket = newTickets[newItemPosition]
-					val oldTicket = tickets[oldItemPosition]
-					return newTicket == oldTicket
-				}
-			})
+			val result = DiffUtil.calculateDiff(TicketDiffUtil(tickets, newTickets))
 			tickets = newTickets
 			result.dispatchUpdatesTo(this)
 		}
@@ -50,7 +31,7 @@ class TicketsAdapter : RecyclerView.Adapter<TicketViewHolder>() {
 
 	override fun onBindViewHolder(holder: TicketViewHolder, position: Int) {
 		Log.d(TAG, "onBindViewHolder: called.")
-		holder.itemTicketBinding.bilet = tickets[position]
+		holder.itemTicketBinding.ticket = tickets[position]
 	}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TicketViewHolder {
