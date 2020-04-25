@@ -1,6 +1,5 @@
 package com.faciee.cti.valbastrelu.eticket.repo
 
-import android.os.AsyncTask
 import androidx.lifecycle.LiveData
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB
 import com.faciee.cti.valbastrelu.eticket.room.dao.TicketParkingDao
@@ -20,24 +19,11 @@ class EtkParkingRepository(db: EtkRoomDB) {
 	val liveDataTranzactii: LiveData<List<Transaction>>
 		get() = transactionsDao.allTransactionsLiveData
 
-	fun insertBilet(bilet: TicketParking?) {
-		InsertBiletAsync(ticketParkingDao, transactionsDao).execute(bilet)
-	}
-
-	private class InsertBiletAsync(private val ticketParkingDao: TicketParkingDao, private val transactionsDao: TransactionsDao) : AsyncTask<TicketParking?, Void?, Void?>() {
-
-		override fun doInBackground(vararg bilete: TicketParking?): Void? {
-			bilete.forEach { ticketParking ->
-				ticketParking?.let {
-					ticketParkingDao.updateTicketActiveStatus(it.id, false)
-					ticketParkingDao.insertTickets(*bilete)
-					transactionsDao.insertTransactions(Transaction(it.id, it.date,
-							TransportType.PARKING, 0, it.price.multiply(BigDecimal(- 1.0))))
-				}
-			}
-			return null
-		}
-
+	suspend fun insertTicketInDatabase(ticket: TicketParking) {
+		ticketParkingDao.updateTicketActiveStatus(ticket.id, false)
+		ticketParkingDao.insertTickets(ticket)
+		transactionsDao.insertTransactions(Transaction(ticket.id, ticket.date,
+				TransportType.PARKING, 0, ticket.price.multiply(BigDecimal(- 1.0))))
 	}
 
 	companion object {

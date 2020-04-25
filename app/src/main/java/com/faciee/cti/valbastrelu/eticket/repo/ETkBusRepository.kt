@@ -61,31 +61,12 @@ class ETkBusRepository(roomDB: EtkRoomDB) {
 	//	LiveData<List<Statie>> getStatieForTraseu(int nrTraseu){
 //		return statieDao.getStatiiForTraseu(nrTraseu);
 //	}
-	fun insertBilet(ticket: Ticket?) {
-		InsertBiletAsync(ticketDao, transactionsDao).execute(ticket)
-	}
-
-	private class InsertBiletAsync(private val ticketDao: TicketDao, private val transactionsDao: TransactionsDao) :
-			AsyncTask<Ticket?, Void?, Void?>() {
-
-		override fun doInBackground(vararg arrayOfTickets: Ticket?): Void? {
-			arrayOfTickets.forEach { ticket ->
-				ticket?.let {
-					ticketDao.updateTicketActiveStatus(it.id, false)
-					ticketDao.insertTickets(it)
-					val price = it.price.multiply(BigDecimal.TEN, MathContext.DECIMAL32).setScale(2, RoundingMode.HALF_EVEN)
-					transactionsDao.insertTransactions(Transaction(it.id, Calendar.getInstance().time,
-							TransportType.BUS, it.routeNumber, price))
-				}
-
-			}
-			return null
-		}
-
-//		protected override fun doInBackground(vararg bilete: Ticket): Void? {
-
-//		}
-
+	suspend fun insertTicketInDatabase(ticket: Ticket) {
+		ticketDao.updateTicketActiveStatus(ticket.id, false) //TODO do I really need this?
+		ticketDao.insertTicket(ticket)
+		val price = ticket.price.multiply(BigDecimal.TEN, MathContext.DECIMAL32).setScale(2, RoundingMode.HALF_EVEN)
+		transactionsDao.insertTransactions(Transaction(ticket.id, Calendar.getInstance().time,
+				TransportType.BUS, ticket.routeNumber, price))
 	}
 
 	companion object {

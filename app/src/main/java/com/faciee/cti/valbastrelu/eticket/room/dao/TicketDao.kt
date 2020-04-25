@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
@@ -13,21 +14,24 @@ interface TicketDao {
 	@get:Query("SELECT * FROM ticket")
 	val allTicketsLiveData: LiveData<List<Ticket>>
 
-	@Insert
-	fun insertTicket(ticket: Ticket?)
+	@get:Query("SELECT * FROM ticket WHERE active = 1 ORDER BY date LIMIT 1")
+	val recentTicket: Ticket
+
+	@Insert(onConflict = OnConflictStrategy.REPLACE)
+	suspend fun insertTicket(ticket: Ticket)
 
 	@Insert
-	fun insertTickets(vararg ticket: Ticket?)
+	suspend fun insertTickets(vararg ticket: Ticket)
 
 	@Update
-	fun updateTickets(vararg ticket: Ticket?)
+	suspend fun updateTickets(vararg ticket: Ticket)
 
 	@Query("UPDATE ticket SET active = :status WHERE id = :id")
-	fun updateTicketActiveStatus(id: Long, status: Boolean)
+	suspend fun updateTicketActiveStatus(id: Long, status: Boolean)
 
 	@Delete
-	fun deleteTickets(vararg arrayOfTickets: Ticket?)
+	suspend fun deleteTickets(vararg arrayOfTickets: Ticket)
 
 	@Query("DELETE FROM ticket")
-	fun deleteAll()
+	suspend fun deleteAll()
 }

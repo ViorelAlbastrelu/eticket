@@ -4,12 +4,14 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp
 import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
 import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction
+import kotlinx.coroutines.launch
 
 class BusViewModel(application: ETicketApp) : AbstractAndroidViewModel(application) {
 	private val repository: ETkBusRepository? = application.busRepository
@@ -37,9 +39,11 @@ class BusViewModel(application: ETicketApp) : AbstractAndroidViewModel(applicati
 		get() = repository !!.liveDataTranzactii
 
 	//INSERTS
-	fun insertBilet(ticket: Ticket?) {
+	fun insertBilet(ticket: Ticket) {
 		setTicketActiv(ticket)
-		repository !!.insertBilet(ticket)
+		viewModelScope.launch {
+			repository?.insertTicketInDatabase(ticket)
+		}
 	}
 
 	override fun onCleared() {

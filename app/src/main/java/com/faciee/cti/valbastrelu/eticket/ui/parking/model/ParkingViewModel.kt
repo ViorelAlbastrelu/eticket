@@ -3,11 +3,13 @@ package com.faciee.cti.valbastrelu.eticket.ui.parking.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp
 import com.faciee.cti.valbastrelu.eticket.repo.EtkParkingRepository
 import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking
 import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction
+import kotlinx.coroutines.launch
 
 class ParkingViewModel(application: ETicketApp) : AbstractAndroidViewModel(application) {
 
@@ -20,7 +22,9 @@ class ParkingViewModel(application: ETicketApp) : AbstractAndroidViewModel(appli
 		get() = repository !!.liveDataTranzactii
 
 	fun insertParkingTicket(ticketParking: TicketParking) {
-		repository !!.insertBilet(ticketParking)
+		viewModelScope.launch {
+			repository?.insertTicketInDatabase(ticketParking)
+		}
 	}
 
 	init {

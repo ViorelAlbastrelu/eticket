@@ -18,7 +18,7 @@ interface TransactionsDao {
 	fun getTransactionsStartingFrom(date: Date): List<Transaction>
 
 	@Insert
-	fun insertTransactions(vararg transaction: Transaction?)
+	suspend fun insertTransactions(vararg transaction: Transaction?)
 
 	@Update
 	fun updateTransactions(vararg transaction: Transaction?)
