@@ -8,15 +8,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.faciee.cti.valbastrelu.eticket.R
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
+import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking
+import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingViewModel
 
 class HomeFeedAdapter : RecyclerView.Adapter<FeedItemViewHolder<*>>() {
 
 	var feedItems = listOf<Any>()
+		set(value) {
+			if (! value.isNullOrEmpty()) {
+				field = value
+				notifyDataSetChanged()
+			}
+		}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedItemViewHolder<*> {
 		return when (viewType) {
 			TICKET_VIEW_TYPE -> {
 				FeedItemViewHolder.TicketFeedHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_ticket, parent, false))
+			}
+			PTICKET_VIEW_TYPE -> {
+				FeedItemViewHolder.ParkingTicketFeedHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_ticket_parking, parent, false))
 			}
 			else -> {
 				FeedItemViewHolder.TicketFeedHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_ticket, parent, false))
@@ -28,6 +39,7 @@ class HomeFeedAdapter : RecyclerView.Adapter<FeedItemViewHolder<*>>() {
 
 	override fun getItemViewType(position: Int) = when (feedItems[position]) {
 		is Ticket -> TICKET_VIEW_TYPE
+		is TicketParking -> PTICKET_VIEW_TYPE
 		is Route -> TRIP_VIEW_TYPE
 		else -> UNKNOWN_VIEW_TYPE
 	}
@@ -35,6 +47,7 @@ class HomeFeedAdapter : RecyclerView.Adapter<FeedItemViewHolder<*>>() {
 	override fun onBindViewHolder(holder: FeedItemViewHolder<*>, position: Int) {
 		when (holder) {
 			is FeedItemViewHolder.TicketFeedHolder -> holder.bind(feedItems[position] as Ticket)
+			is FeedItemViewHolder.ParkingTicketFeedHolder -> holder.bind(feedItems[position] as TicketParking)
 			is FeedItemViewHolder.TripFeedHolder -> TODO()
 		}
 	}
