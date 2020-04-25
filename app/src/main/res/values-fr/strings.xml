@@ -1,15 +1,26 @@
 <resources>
+	<!--GENERAL-->
 	<string name="app_name">ETicket</string>
-	<string name="title_activity_bus">BusActivity</string>
+
+	<!--HEADERS-->
+	<string name="title_login">Connectez-vous à E-Ticket</string>
+	<string name="title_main">ETicketMain</string>
+	<string name="title_fragment_home">Accueil</string>
+	<string name="title_fragment_bus">Bus</string>
+	<string name="title_fragment_parking">Parking</string>
+
 	<string name="tab_name_ticket">Billets</string>
 	<string name="tab_name_routes">Routes</string>
 	<string name="tab_name_parking">Parking</string>
 	<string name="tab_name_history">Historique</string>
+
+	<!--TOOLBAR MENU ITEMS-->
 	<string name="action_settings">Paramètres</string>
 	<string name="action_chatbot">Chatbot</string>
 	<string name="action_sign_out">Déconnexion</string>
 
 	<!--NAV DRAWER-->
+	<string name="menu_home">Accueil</string>
 	<string name="menu_bus">Bus</string>
 	<string name="menu_tbus">Trolleybus</string>
 	<string name="menu_tram">Tram</string>
@@ -21,7 +32,6 @@
 	<!-- BUS ACTIVITY -->
 	<!-- Fragment Route -->
 	<string name="opt_trasee">Filtrer les itinéraires</string>
-	<string name="title_activity_login">Connectez-vous à E-Ticket</string>
 
 	<!-- Strings related to login -->
 	<string name="prompt_email">Email</string>

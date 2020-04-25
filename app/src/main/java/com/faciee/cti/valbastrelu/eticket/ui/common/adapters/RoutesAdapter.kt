@@ -23,26 +23,7 @@ class RoutesAdapter(private val clickCallback: RouteClickListener) : RecyclerVie
 		}
 
 	fun updateRoutes(newRoutes: List<Route>) {
-		val result = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
-			override fun getOldListSize(): Int {
-				return routes.size
-			}
-
-			override fun getNewListSize(): Int {
-				return newRoutes.size
-			}
-
-			override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-				return routes[oldItemPosition].number ==
-						newRoutes[newItemPosition].number
-			}
-
-			override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-				val newRoute = newRoutes[newItemPosition]
-				val oldRoute = routes[oldItemPosition]
-				return newRoute == oldRoute
-			}
-		})
+		val result = DiffUtil.calculateDiff(RouteDiffUtil(routes, newRoutes))
 		routes = newRoutes
 		result.dispatchUpdatesTo(this)
 	}

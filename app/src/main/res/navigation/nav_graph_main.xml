@@ -3,17 +3,22 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/nav_graph_main"
-	app:startDestination="@id/fragmentBusMain">
+	app:startDestination="@id/fragmentHome">
 
+	<fragment
+		android:id="@+id/fragmentHome"
+		android:name="com.faciee.cti.valbastrelu.eticket.ui.home.HomeFragment"
+		android:label="@string/title_fragment_home"
+		tools:layout="@layout/fragment_home" />
 	<fragment
 		android:id="@+id/fragmentBusMain"
 		android:name="com.faciee.cti.valbastrelu.eticket.ui.bus.BusMainFragment"
-		android:label="@string/title_activity_bus"
+		android:label="@string/title_fragment_bus"
 		tools:layout="@layout/fragment_bus_main" />
 	<fragment
 		android:id="@+id/fragmentParkingMain"
 		android:name="com.faciee.cti.valbastrelu.eticket.ui.parking.FragmentParkingMain"
-		android:label="@string/title_activity_parking"
+		android:label="@string/title_fragment_parking"
 		tools:layout="@layout/fragment_parking_main" />
 	<fragment
 		android:id="@+id/fragmentChatBot"
