@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.faciee.cti.valbastrelu.eticket.base.BaseFragment
 import com.faciee.cti.valbastrelu.eticket.databinding.FragmentHomeBinding
+import com.faciee.cti.valbastrelu.eticket.repo.HomeRepository
 import com.faciee.cti.valbastrelu.eticket.util.DummyData
 
 class HomeFragment : BaseFragment<HomeVM>(), SwipeRefreshLayout.OnRefreshListener {
@@ -17,11 +19,19 @@ class HomeFragment : BaseFragment<HomeVM>(), SwipeRefreshLayout.OnRefreshListene
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		homeBinding = FragmentHomeBinding.inflate(inflater, container, false)
 		homeBinding.homeRefreshLayout.setOnRefreshListener(this)
-		homeFeedAdapter = HomeFeedAdapter()
+		initViewModel(HomeVM::class.java, HomeVM.getFactory(eTicketApp, HomeRepository(eTicketApp.database)))
 
+
+		homeFeedAdapter = HomeFeedAdapter()
 		homeBinding.homeFeedRecycler.adapter = homeFeedAdapter
-		homeFeedAdapter.feedItems = DummyData.loadBilete()
 		return homeBinding.root
+	}
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
+		viewModel.feedItems.observe(viewLifecycleOwner, Observer {
+			homeFeedAdapter.feedItems = it
+		})
 	}
 
 	override fun onRefresh() {

@@ -40,7 +40,6 @@
 		</activity>
 		<activity
 			android:name=".main.ETicketMain"
-			android:label="@string/title_main"
 			android:theme="@style/EticketTheme">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />

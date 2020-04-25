@@ -2,6 +2,7 @@ package com.faciee.cti.valbastrelu.eticket.util
 
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
+import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking
 import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction
 import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType
 import java.math.BigDecimal
@@ -35,10 +36,18 @@ object DummyData {
 	private val formatterDate = SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH)
 	fun loadBilete(): List<Ticket> {
 		val listaBilete: MutableList<Ticket> = ArrayList()
-		listaBilete.add(Ticket(102, true, 2, BigDecimal(2)))
-		listaBilete.add(Ticket(7, false, 2, BigDecimal(2)))
-		listaBilete.add(Ticket(44, false, 2, BigDecimal(2)))
+		listaBilete.add(Ticket(1, 102, true, 2, BigDecimal(2)))
+		listaBilete.add(Ticket(2, 7, false, 2, BigDecimal(2)))
+		listaBilete.add(Ticket(3, 44, false, 2, BigDecimal(2)))
 		return listaBilete
+	}
+
+	fun loadParkingTickets(): List<TicketParking> {
+		return arrayListOf<TicketParking>().apply {
+			add(TicketParking(1,"Mazepa", true, BigDecimal.TEN, true))
+			add(TicketParking(2,"Tiglina", false, BigDecimal.TEN, false))
+			add(TicketParking(3,"Centru", false, BigDecimal.TEN, false))
+		}
 	}
 
 	fun loadTrasee(): List<Route> {

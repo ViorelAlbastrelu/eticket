@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking
@@ -13,8 +14,11 @@ interface TicketParkingDao {
 	@get:Query("SELECT * FROM ticketparking")
 	val allTicketsLiveData: LiveData<List<TicketParking>>
 
-	@Insert
-	fun insertTicket(ticket: TicketParking?)
+	@get:Query("SELECT * FROM ticketparking WHERE active = 1 ORDER BY date LIMIT 1")
+	val recentTicket: TicketParking
+
+	@Insert(onConflict = OnConflictStrategy.REPLACE)
+	suspend fun insertTicket(ticket: TicketParking?)
 
 	@Insert
 	fun insertTickets(vararg arrayOfTickets: TicketParking?)
