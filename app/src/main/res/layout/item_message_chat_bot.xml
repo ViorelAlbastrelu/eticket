@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.himanshusoni.chatmessageview.ChatMessageView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/chatMessageView"
+	android:padding="4dp"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	app:cmv_arrowGravity="start"
+	app:cmv_arrowPosition="left"
+	app:cmv_backgroundColor="#FF9891"
+	app:cmv_backgroundColorPressed="#d32f2f"
+	app:cmv_cornerRadius="4dp"
+	app:cmv_showArrow="true">
+
+	<TextView
+		android:id="@+id/text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Helloworld"
+		android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+</me.himanshusoni.chatmessageview.ChatMessageView>

@@ -1,8 +1,9 @@
 package com.faciee.cti.valbastrelu.eticket.repo
 
-import android.os.AsyncTask
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.faciee.cti.valbastrelu.eticket.base.SingletonHolder
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB
 import com.faciee.cti.valbastrelu.eticket.room.dao.StationDao
 import com.faciee.cti.valbastrelu.eticket.room.dao.TicketDao
@@ -17,7 +18,7 @@ import java.math.MathContext
 import java.math.RoundingMode
 import java.util.*
 
-class ETkBusRepository(roomDB: EtkRoomDB) {
+class BusRepository(roomDB: EtkRoomDB) {
 	//Dao
 	private val ticketDao: TicketDao = roomDB.ticketDao()
 	private val stationDao: StationDao = roomDB.stationDao()
@@ -27,21 +28,12 @@ class ETkBusRepository(roomDB: EtkRoomDB) {
 	private val bileteLiveData: MutableLiveData<List<Ticket>>? = null
 	private var traseeLiveData: MutableLiveData<List<Route>>? = null
 	private val tranzactiiLiveData: MutableLiveData<List<Transaction>>? = null
-	val bilete: LiveData<List<Ticket>>
+
+	val ticketsLiveData: LiveData<List<Ticket>>
 		get() = ticketDao.allTicketsLiveData
 
-	//		if (tranzactiiLiveData == null){
-//			tranzactiiLiveData = new MutableLiveData<>();
-//			loadIstorice();
-//		}
-//		return tranzactiiLiveData;
 	val liveDataTranzactii: LiveData<List<Transaction>>
 		get() = transactionsDao.allTransactionsLiveData
-	//		if (tranzactiiLiveData == null){
-//			tranzactiiLiveData = new MutableLiveData<>();
-//			loadIstorice();
-//		}
-//		return tranzactiiLiveData;
 
 	val liveDataTrasee: LiveData<List<Route>>
 		get() {
@@ -69,17 +61,5 @@ class ETkBusRepository(roomDB: EtkRoomDB) {
 				TransportType.BUS, ticket.routeNumber, price))
 	}
 
-	companion object {
-		private var INSTANCE: ETkBusRepository? = null
-		fun getInstance(database: EtkRoomDB): ETkBusRepository? {
-			if (INSTANCE == null) {
-				synchronized(ETkBusRepository::class.java) {
-					if (INSTANCE == null) {
-						INSTANCE = ETkBusRepository(database)
-					}
-				}
-			}
-			return INSTANCE
-		}
-	}
+	companion object : SingletonHolder<BusRepository, EtkRoomDB>({ BusRepository(it) })
 }

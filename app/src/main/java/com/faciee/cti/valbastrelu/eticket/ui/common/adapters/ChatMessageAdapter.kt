@@ -10,7 +10,8 @@ import android.widget.Toast
 import com.faciee.cti.valbastrelu.eticket.R
 import com.faciee.cti.valbastrelu.eticket.ui.chat.ChatMessage
 
-class ChatMessageAdapter(context: Context, data: List<ChatMessage>) : ArrayAdapter<ChatMessage>(context, R.layout.chatbot_item_mine_message, data) {
+@Deprecated("This was used with a listView in the first implementation")
+class ChatMessageAdapter(context: Context, data: List<ChatMessage>) : ArrayAdapter<ChatMessage>(context, R.layout.item_message_chat_me, data) {
 
 	override fun getViewTypeCount(): Int = 4
 
@@ -27,12 +28,12 @@ class ChatMessageAdapter(context: Context, data: List<ChatMessage>) : ArrayAdapt
 		val viewType = getItemViewType(position)
 		when (viewType) {
 			MY_MESSAGE -> {
-				view = LayoutInflater.from(context).inflate(R.layout.chatbot_item_mine_message, parent, false)
+				view = LayoutInflater.from(context).inflate(R.layout.item_message_chat_me, parent, false)
 				val textView = view.findViewById<TextView>(R.id.text)
 				textView.text = getItem(position) !!.content
 			}
 			OTHER_MESSAGE -> {
-				view = LayoutInflater.from(context).inflate(R.layout.chatbot_item_bot_message, parent, false)
+				view = LayoutInflater.from(context).inflate(R.layout.item_message_chat_bot, parent, false)
 				val textView = view.findViewById<TextView>(R.id.text)
 				textView.text = getItem(position) !!.content
 			}

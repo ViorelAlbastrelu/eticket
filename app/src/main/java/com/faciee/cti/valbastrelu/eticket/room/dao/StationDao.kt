@@ -14,17 +14,17 @@ interface StationDao {
 	val allStationsLiveData: LiveData<List<Station>>
 
 	@Query("SELECT name FROM station WHERE routeNumber = :routeNumber")
-	fun getStationsForRoute(routeNumber: Int): LiveData<List<String>>
+	suspend fun getStationsForRoute(routeNumber: Int): List<String>
 
 	@Insert
-	fun insertStations(vararg station: Station?)
+	suspend fun insertStations(vararg station: Station)
 
 	@Update
-	fun updateStations(vararg station: Station?)
+	suspend fun updateStations(vararg station: Station)
 
 	@Delete
-	fun deleteStations(vararg station: Station?)
+	suspend fun deleteStations(vararg station: Station)
 
 	@Query("DELETE FROM station")
-	fun deleteAll()
+	suspend fun deleteAll()
 }

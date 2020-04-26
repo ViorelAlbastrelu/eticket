@@ -15,7 +15,7 @@ interface TicketDao {
 	val allTicketsLiveData: LiveData<List<Ticket>>
 
 	@get:Query("SELECT * FROM ticket WHERE active = 1 ORDER BY date LIMIT 1")
-	val recentTicket: Ticket
+	val recentTicket: Ticket?
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	suspend fun insertTicket(ticket: Ticket)

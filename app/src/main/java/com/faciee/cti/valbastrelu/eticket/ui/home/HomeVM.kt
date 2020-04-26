@@ -1,6 +1,5 @@
 package com.faciee.cti.valbastrelu.eticket.ui.home
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -9,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp
 import com.faciee.cti.valbastrelu.eticket.repo.HomeRepository
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class HomeVM(
@@ -21,8 +21,8 @@ class HomeVM(
 	init {
 		viewModelScope.launch {
 			repository.insertTicketInDatabase()
+			feedItems = feedLiveData()
 		}
-		feedItems = feedLiveData()
 	}
 
 	override fun onCleared() {

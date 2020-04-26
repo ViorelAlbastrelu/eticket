@@ -26,8 +26,6 @@ class BusMainFragment : BaseFragment<BusViewModel>() {
 		busBinding = FragmentBusMainBinding.inflate(inflater, container, false)
 		initViewModel(BusViewModel::class.java, BusViewModel.getFactory(eTicketApp))
 
-		//TODO set toolbar title in parent activity maybe using navigation
-//		busBinding.fab.setOnClickListener(v -> busActivityModel.insertBilet(new Bilet(102, true, 2, 2)));
 		nfcAdapter = NfcAdapter.getDefaultAdapter(context)
 		setupViewPager(busBinding.viewPager)
 		busBinding.tabs.setupWithViewPager(busBinding.viewPager)

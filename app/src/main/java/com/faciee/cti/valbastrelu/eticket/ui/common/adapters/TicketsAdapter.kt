@@ -10,6 +10,7 @@ import com.faciee.cti.valbastrelu.eticket.R
 import com.faciee.cti.valbastrelu.eticket.databinding.ItemTicketBinding
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.TicketsAdapter.TicketViewHolder
+import com.faciee.cti.valbastrelu.eticket.util.TicketDiffUtil
 
 class TicketsAdapter : RecyclerView.Adapter<TicketViewHolder>() {
 

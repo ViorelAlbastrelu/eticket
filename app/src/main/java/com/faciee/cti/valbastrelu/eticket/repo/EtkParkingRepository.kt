@@ -1,6 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.repo
 
 import androidx.lifecycle.LiveData
+import com.faciee.cti.valbastrelu.eticket.base.SingletonHolder
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB
 import com.faciee.cti.valbastrelu.eticket.room.dao.TicketParkingDao
 import com.faciee.cti.valbastrelu.eticket.room.dao.TransactionsDao
@@ -26,17 +27,5 @@ class EtkParkingRepository(db: EtkRoomDB) {
 				TransportType.PARKING, 0, ticket.price.multiply(BigDecimal(- 1.0))))
 	}
 
-	companion object {
-		private var INSTANCE: EtkParkingRepository? = null
-		fun getInstance(database: EtkRoomDB): EtkParkingRepository? {
-			if (INSTANCE == null) {
-				synchronized(EtkParkingRepository::class.java) {
-					if (INSTANCE == null) {
-						INSTANCE = EtkParkingRepository(database)
-					}
-				}
-			}
-			return INSTANCE
-		}
-	}
+	companion object : SingletonHolder<EtkParkingRepository, EtkRoomDB>({ EtkParkingRepository(it) })
 }

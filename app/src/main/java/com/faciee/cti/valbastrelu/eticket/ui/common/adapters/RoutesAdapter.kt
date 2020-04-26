@@ -11,6 +11,7 @@ import com.faciee.cti.valbastrelu.eticket.databinding.ItemRouteBinding
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.ui.bus.RouteClickListener
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.RoutesAdapter.RouteViewHolder
+import com.faciee.cti.valbastrelu.eticket.util.RouteDiffUtil
 
 class RoutesAdapter(private val clickCallback: RouteClickListener) : RecyclerView.Adapter<RouteViewHolder>() {
 
