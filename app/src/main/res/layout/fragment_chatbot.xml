@@ -19,17 +19,17 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
-	<ListView
+	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/chatView"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
-		android:layout_above="@+id/send_message_layout"
-		android:divider="@null"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 		app:layout_constraintBottom_toTopOf="@+id/send_message_layout"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.5"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintTop_toTopOf="parent"
+		tools:listitem="@layout/item_message_chat_bot" />
 	<!--To type and send the message-->
 
 	<LinearLayout

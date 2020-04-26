@@ -11,17 +11,17 @@ import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 @Dao
 interface RoutesDao {
 	@get:Query("SELECT * FROM route")
-	val allRoutesLiveData: LiveData<List<Route?>?>?
+	val allRoutesLiveData: LiveData<List<Route>>
 
 	@Insert
-	fun insertRoutes(vararg route: Route?)
+	suspend fun insertRoutes(vararg route: Route?)
 
 	@Update
-	fun updateRoutes(vararg route: Route?)
+	suspend fun updateRoutes(vararg route: Route?)
 
 	@Delete
-	fun deleteRoutes(vararg route: Route?)
+	suspend fun deleteRoutes(vararg route: Route?)
 
 	@Query("DELETE FROM route")
-	fun deleteAll()
+	suspend fun deleteAll()
 }

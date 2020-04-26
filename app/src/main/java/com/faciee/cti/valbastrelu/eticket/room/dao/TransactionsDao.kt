@@ -21,11 +21,11 @@ interface TransactionsDao {
 	suspend fun insertTransactions(vararg transaction: Transaction?)
 
 	@Update
-	fun updateTransactions(vararg transaction: Transaction?)
+	suspend fun updateTransactions(vararg transaction: Transaction?)
 
 	@Delete
-	fun deleteTransactions(vararg transaction: Transaction?)
+	suspend fun deleteTransactions(vararg transaction: Transaction?)
 
 	@Query("DELETE FROM `transaction`")
-	fun deleteAll()
+	suspend fun deleteAll()
 }

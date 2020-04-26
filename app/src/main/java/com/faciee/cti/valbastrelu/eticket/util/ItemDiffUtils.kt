@@ -1,8 +1,9 @@
-package com.faciee.cti.valbastrelu.eticket.ui.common.adapters
+package com.faciee.cti.valbastrelu.eticket.util
 
 import androidx.recyclerview.widget.DiffUtil
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
+import com.faciee.cti.valbastrelu.eticket.ui.chat.ChatMessage
 
 class TicketDiffUtil(
 		private val tickets: List<Ticket>,
@@ -45,4 +46,21 @@ class RouteDiffUtil(
 		val oldRoute = routes[oldItemPosition]
 		return newRoute == oldRoute
 	}
+}
+
+class ChatMessageDiffUtil(
+		private val messages: List<ChatMessage>,
+		private val newMessages: List<ChatMessage>
+) : DiffUtil.Callback() {
+	override fun getOldListSize(): Int = messages.size
+
+	override fun getNewListSize(): Int = newMessages.size
+
+	override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+		return messages[oldItemPosition] == newMessages[newItemPosition]
+	}
+
+	override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
+			messages[oldItemPosition].content == newMessages[newItemPosition].content
+
 }

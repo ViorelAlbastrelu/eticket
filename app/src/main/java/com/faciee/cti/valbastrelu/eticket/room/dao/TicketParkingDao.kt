@@ -21,20 +21,20 @@ interface TicketParkingDao {
 	suspend fun insertTicket(ticket: TicketParking?)
 
 	@Insert
-	fun insertTickets(vararg arrayOfTickets: TicketParking?)
+	suspend fun insertTickets(vararg arrayOfTickets: TicketParking?)
 
 	@Update
-	fun updateTickets(vararg arrayOfTickets: TicketParking?)
+	suspend fun updateTickets(vararg arrayOfTickets: TicketParking?)
 
 	@Query("UPDATE ticketparking SET active = :status WHERE id = :id")
-	fun updateTicketActiveStatus(id: Long, status: Boolean)
+	suspend fun updateTicketActiveStatus(id: Long, status: Boolean)
 
 	@Query("UPDATE ticketparking SET alertOn = :alert WHERE id = :id")
-	fun updateTicketAlertStatus(id: Long, alert: Boolean)
+	suspend fun updateTicketAlertStatus(id: Long, alert: Boolean)
 
 	@Delete
-	fun deleteTickets(vararg arrayOfTickets: TicketParking?)
+	suspend fun deleteTickets(vararg arrayOfTickets: TicketParking?)
 
 	@Query("DELETE FROM ticketparking")
-	fun deleteAll()
+	suspend fun deleteAll()
 }
