@@ -36,4 +36,6 @@ ext {
     room_version = '2.2.5'
     google_map_ver = '17.0.0'
     coroutines_ver = '1.2.1'
+    firebase_core = '17.4.0'
+    firebase_auth = '19.3.1'
 }
