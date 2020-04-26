@@ -36,12 +36,10 @@ class FrgTb01Ticket : SharingFragment<AndroidViewModel, BusViewModel>() {
 	}
 
 	private fun subscribeToObservers() {
-		sharedViewModel.liveDataBilete.observe(viewLifecycleOwner, Observer { list: List<Ticket> ->
+		sharedViewModel.busTicketsLiveData.observe(viewLifecycleOwner, Observer { list ->
 			biletBinding.isLoading = false
 			ticketsAdapter.tickets = list
 		})
-
-		ticketsAdapter.tickets = DummyData.loadBilete()
 	}
 
 	companion object {

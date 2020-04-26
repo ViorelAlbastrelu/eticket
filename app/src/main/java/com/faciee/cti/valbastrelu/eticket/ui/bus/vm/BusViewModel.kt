@@ -1,48 +1,56 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus.vm
 
 import android.util.Log
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp
-import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository
+import com.faciee.cti.valbastrelu.eticket.repo.BusRepository
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
 import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction
 import kotlinx.coroutines.launch
 
-class BusViewModel(application: ETicketApp) : AbstractAndroidViewModel(application) {
-	private val repository: ETkBusRepository? = application.busRepository
-	private var ticketActiv: Ticket? = null
-	var liveDataBilete: LiveData<List<Ticket>>
+class BusViewModel(
+		application: ETicketApp
+) : AbstractAndroidViewModel(application) {
+
+	@VisibleForTesting
+	constructor(app: ETicketApp, repository: BusRepository) : this(app) {
+		this.repository = repository
+	}
+
+	private var repository: BusRepository
+	private var activeTicket: Ticket? = null
+	var busTicketsLiveData: LiveData<List<Ticket>>
 
 	init {
-		//TODO investigate this
-		liveDataBilete = repository!!.bilete
+		repository = application.busRepository
+		busTicketsLiveData = repository.ticketsLiveData
 	}
 
 
 	fun setTicketActiv(ticketActiv: Ticket?) {
-		this.ticketActiv = ticketActiv
+		this.activeTicket = ticketActiv
 	}
 
 	val liveDataTrasee: LiveData<List<Route>>
-		get() = repository !!.liveDataTrasee
+		get() = repository.liveDataTrasee
 
 	fun getLiveDataStatii(nrTraseu: Int): LiveData<List<String>> {
-		return repository !!.getLiveDataStatii(nrTraseu)
+		return repository.getLiveDataStatii(nrTraseu)
 	}
 
 	val liveDataTranzactii: LiveData<List<Transaction>>
-		get() = repository !!.liveDataTranzactii
+		get() = repository.liveDataTranzactii
 
-	//INSERTS
-	fun insertBilet(ticket: Ticket) {
+	fun saveTicket(ticket: Ticket) {
 		setTicketActiv(ticket)
 		viewModelScope.launch {
-			repository?.insertTicketInDatabase(ticket)
+			repository.insertTicketInDatabase(ticket)
 		}
 	}
 

@@ -1,5 +1,6 @@
 package com.faciee.cti.valbastrelu.eticket.repo
 
+import com.faciee.cti.valbastrelu.eticket.base.SingletonHolder
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB
 import com.faciee.cti.valbastrelu.eticket.room.dao.TicketDao
 import com.faciee.cti.valbastrelu.eticket.room.dao.TicketParkingDao
@@ -26,8 +27,8 @@ class HomeRepository(database: EtkRoomDB) {
 	suspend fun getLatestActiveTickets(): List<Any> {
 		val localList = arrayListOf<Any>()
 		withContext(Dispatchers.IO){
-			localList.add(ticketDao.recentTicket)
-			localList.add(parkingTicketDao.recentTicket)
+			ticketDao.recentTicket?.let { localList.add(it) }
+			parkingTicketDao.recentTicket?.let { localList.add(it) }
 		}
 		return localList
 	}
@@ -35,4 +36,6 @@ class HomeRepository(database: EtkRoomDB) {
 	suspend fun clearDB() {
 		ticketDao.deleteAll()
 	}
+
+	companion object : SingletonHolder<HomeRepository, EtkRoomDB>({HomeRepository(it)})
 }

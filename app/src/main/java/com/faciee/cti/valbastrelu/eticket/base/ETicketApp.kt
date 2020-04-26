@@ -4,11 +4,10 @@ import android.app.Application
 import android.content.Context
 import android.util.Log
 import com.faciee.cti.valbastrelu.eticket.extensions.toastMessageShort
-import com.faciee.cti.valbastrelu.eticket.repo.ETkBusRepository
+import com.faciee.cti.valbastrelu.eticket.repo.BusRepository
 import com.faciee.cti.valbastrelu.eticket.repo.EtkParkingRepository
+import com.faciee.cti.valbastrelu.eticket.repo.HomeRepository
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB
-import com.faciee.cti.valbastrelu.eticket.room.SingletonHolder
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
@@ -20,10 +19,13 @@ class ETicketApp : Application() {
 	lateinit var database: EtkRoomDB
 		private set
 
-	val busRepository: ETkBusRepository?
-		get() = database.let { ETkBusRepository.getInstance(it) }
+	val homeRepository: HomeRepository
+		get() = database.let { HomeRepository.getInstance(it) }
 
-	val parkingRepository: EtkParkingRepository?
+	val busRepository: BusRepository
+		get() = database.let { BusRepository.getInstance(it) }
+
+	val parkingRepository: EtkParkingRepository
 		get() = database.let { EtkParkingRepository.getInstance(it) }
 
 	init {
