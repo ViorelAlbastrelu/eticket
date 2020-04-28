@@ -1,0 +1,6038 @@
+{
+	"bus": [
+		{
+			"routeNumber": 7,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 45,
+			"weekend": 90,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor",
+						"Stadionului",
+						"Frunzei",
+						"Ghe.Asachi",
+						"Siderurgistilor",
+						"Basarabiei-Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian",
+						"Basarabiei",
+						"Siderurgistilor",
+						"Ghe.Asachi",
+						"Frunzei",
+						"Stadionului-Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 19-Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Otelarilor",
+						"offset": 2
+					},
+					{
+						"name": "Bloc D19",
+						"offset": 4
+					},
+					{
+						"name": "Sala Sporturilor",
+						"offset": 6
+					},
+					{
+						"name": "PRIVILEGE",
+						"offset": 8
+					},
+					{
+						"name": "KAUFLAND",
+						"offset": 11
+					},
+					{
+						"name": "Flora",
+						"offset": 14
+					},
+					{
+						"name": "Stadionul Otelul",
+						"offset": 16
+					},
+					{
+						"name": "IREG",
+						"offset": 19
+					},
+					{
+						"name": "Piata Energiei R",
+						"offset": 22
+					},
+					{
+						"name": "LICEUL NR 9",
+						"offset": 24
+					},
+					{
+						"name": "Piata Energiei T",
+						"offset": 27
+					},
+					{
+						"name": "ECOSAL",
+						"offset": 28
+					},
+					{
+						"name": "ICFrimu",
+						"offset": 29
+					},
+					{
+						"name": "George Cosbuc",
+						"offset": 32
+					},
+					{
+						"name": "Posta Veche",
+						"offset": 35
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 38
+					},
+					{
+						"name": "Piata Centrala",
+						"offset": 45
+					}
+				],
+				"retur": [
+					{
+						"name": "Piata Centrala",
+						"offset": 45
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 47
+					},
+					{
+						"name": "Posta Veche",
+						"offset": 50
+					},
+					{
+						"name": "George Cosbuc",
+						"offset": 53
+					},
+					{
+						"name": "ICFrimu",
+						"offset": 56
+					},
+					{
+						"name": "PIATA ENERGIEI T",
+						"offset": 58
+					},
+					{
+						"name": "LICEUL NR. 9",
+						"offset": 60
+					},
+					{
+						"name": "Piata Energiei R",
+						"offset": 63
+					},
+					{
+						"name": "IREG",
+						"offset": 66
+					},
+					{
+						"name": "Spitalul de copii",
+						"offset": 68
+					},
+					{
+						"name": "BISERICA SF. VASILE",
+						"offset": 69
+					},
+					{
+						"name": "FLORA",
+						"offset": 70
+					},
+					{
+						"name": "KAUFLAND",
+						"offset": 73
+					},
+					{
+						"name": "PRIVILEGE",
+						"offset": 76
+					},
+					{
+						"name": "SALA SPORTURILOR",
+						"offset": 79
+					},
+					{
+						"name": "Bloc O",
+						"offset": 80
+					},
+					{
+						"name": "Str Otelarilor",
+						"offset": 82
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 9,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 36,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Prelungirea Brailei",
+						"Regiment 11 Siret",
+						"Prelungirea Cosbuc ",
+						"Brailei",
+						"Domneasca",
+						"Garii"
+					]
+				},
+				{
+					"retur": [
+						"Garii",
+						"N.Balcescu",
+						"Brailei",
+						"Prelungirea Cosbuc",
+						"Regiment 11 Siret ",
+						"Prelungirea Brailei"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Sf. Lazar",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina III",
+						"offset": 0
+					},
+					{
+						"name": "Minion",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul Copiilor",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Bloc E6",
+						"offset": 0
+					},
+					{
+						"name": "Centrul de Recoltare ",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom ",
+						"offset": 0
+					},
+					{
+						"name": "MazepaPotcoava de Aur ",
+						"offset": 0
+					},
+					{
+						"name": "Galeria de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Universitate",
+						"offset": 0
+					},
+					{
+						"name": "Parfumul Teilor",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Str.Garii",
+						"offset": 0
+					},
+					{
+						"name": "FSEA",
+						"offset": 0
+					},
+					{
+						"name": "CNVA",
+						"offset": 0
+					},
+					{
+						"name": "Albatros",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Tribunal",
+						"offset": 0
+					},
+					{
+						"name": "Bloc E6",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul Copiilor ",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Minion",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina III",
+						"offset": 0
+					},
+					{
+						"name": "Sf. Lazar",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 10,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 48,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Galati",
+						"Dunarea",
+						"Incubatorului",
+						"Otelarilor",
+						"Stadionului",
+						"Brailei",
+						"Navelor",
+						"Portului ",
+						"Gara 8",
+						"Alexandru Moruzzi ",
+						"Marinei"
+					]
+				},
+				{
+					"retur": [
+						"Marinei",
+						"Alexandru Moruzzi",
+						"Gara 8",
+						"Portului",
+						"Navelor",
+						"Domnească",
+						"Aleea Mavramol ",
+						"N.Balcescu",
+						"Brailei",
+						"Stadionului",
+						"Otelarilor ",
+						"Galati"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "D.Cantemir",
+						"offset": 0
+					},
+					{
+						"name": "Bl.S13 ",
+						"offset": 0
+					},
+					{
+						"name": "Danubius",
+						"offset": 0
+					},
+					{
+						"name": "Bd.Dunarea ",
+						"offset": 0
+					},
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Bl.D19 ",
+						"offset": 0
+					},
+					{
+						"name": "Sala Sporturilor",
+						"offset": 0
+					},
+					{
+						"name": "Privilege ",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I ",
+						"offset": 0
+					},
+					{
+						"name": "RomtelecomMazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Marina",
+						"offset": 0
+					},
+					{
+						"name": "INTFOR",
+						"offset": 0
+					},
+					{
+						"name": "str. Lemnari ",
+						"offset": 0
+					},
+					{
+						"name": "Damen",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Damen",
+						"offset": 0
+					},
+					{
+						"name": "str. Lemnari",
+						"offset": 0
+					},
+					{
+						"name": "INTFOR",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Marina",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "C.E.C.",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Sala Sporturilor",
+						"offset": 0
+					},
+					{
+						"name": "Bl.O",
+						"offset": 0
+					},
+					{
+						"name": "Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Bd.Galati",
+						"offset": 0
+					},
+					{
+						"name": "Danubius",
+						"offset": 0
+					},
+					{
+						"name": "Bl.S13",
+						"offset": 0
+					},
+					{
+						"name": "Cantemir",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 11,
+			"start": "5:06",
+			"end": "23:00",
+			"weekdays": 13,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"I.Fernic",
+						"Viilor ",
+						"T. Vuia",
+						"Milcov",
+						"1.Dec.1918 ",
+						"Siderurgistilor",
+						"Brailei",
+						"Domnească",
+						"Garii",
+						"N.Balcescu",
+						"Eroilor ",
+						"Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian",
+						"Eroilor",
+						"N.Balcescu",
+						"Brailei",
+						"Siderurgistilor ",
+						"1.Dec.1918 ",
+						"Milcov"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 13",
+						"offset": 0
+					},
+					{
+						"name": "Complex Ionescu",
+						"offset": 0
+					},
+					{
+						"name": "Ionel Fernic",
+						"offset": 0
+					},
+					{
+						"name": "Traian Vuia ",
+						"offset": 0
+					},
+					{
+						"name": "Pta. Micro 39 ",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Liceul 3 ",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina IRomtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Galeria de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Universitate",
+						"offset": 0
+					},
+					{
+						"name": "Parfumul Teilor",
+						"offset": 0
+					},
+					{
+						"name": "Garii",
+						"offset": 0
+					},
+					{
+						"name": "FSEA",
+						"offset": 0
+					},
+					{
+						"name": "CNVA",
+						"offset": 0
+					},
+					{
+						"name": "Pta. Centrala",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Pta. Centrala",
+						"offset": 0
+					},
+					{
+						"name": "Albatros",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "C.E.C.",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Aurel VlaicuMicro 40",
+						"offset": 0
+					},
+					{
+						"name": "Micro 13",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 12,
+			"start": "5:17",
+			"end": "23:00",
+			"weekdays": 25,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Traian",
+						"Brailei",
+						"G.Cosbuc",
+						"A.Macelaru ",
+						"Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian ",
+						"A.Macelaru",
+						"G.Cosbuc",
+						"Brailei ",
+						"Traian"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Pta.Centrala ",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R. ",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Sofin",
+						"offset": 0
+					},
+					{
+						"name": "Str.M.Kogalniceanu",
+						"offset": 0
+					},
+					{
+						"name": "Str.Tecuci",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Eternitatea ",
+						"offset": 0
+					},
+					{
+						"name": "Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Trefo ",
+						"offset": 0
+					},
+					{
+						"name": "PatinoarGalmopan",
+						"offset": 0
+					},
+					{
+						"name": "Bariera Traian",
+						"offset": 0
+					},
+					{
+						"name": "Cart.Nou",
+						"offset": 0
+					},
+					{
+						"name": "Automecanica",
+						"offset": 0
+					},
+					{
+						"name": "Fitosanitar",
+						"offset": 0
+					},
+					{
+						"name": "Metro",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Metro",
+						"offset": 0
+					},
+					{
+						"name": "Fitosanitar",
+						"offset": 0
+					},
+					{
+						"name": "Automecanica",
+						"offset": 0
+					},
+					{
+						"name": "Cart.Nou",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul3",
+						"offset": 0
+					},
+					{
+						"name": "Galmopan",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Trefo",
+						"offset": 0
+					},
+					{
+						"name": "Lic.C.F.R. ",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Eternitatea",
+						"offset": 0
+					},
+					{
+						"name": "Str.Tecuci ",
+						"offset": 0
+					},
+					{
+						"name": "Str.Crizantemelor",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom ",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 13,
+			"start": "6:30",
+			"end": "23:00",
+			"weekdays": 30,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Traian",
+						"Basarabiei ",
+						"Calea Prutului"
+					]
+				},
+				{
+					"retur": [
+						"Calea Prutului",
+						"Basarabiei ",
+						"Traian"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					},
+					{
+						"name": "Farm.Tinc",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Str.Domneasca",
+						"offset": 0
+					},
+					{
+						"name": "Calea Prutului",
+						"offset": 0
+					},
+					{
+						"name": "Menarom",
+						"offset": 0
+					},
+					{
+						"name": "Elnav",
+						"offset": 0
+					},
+					{
+						"name": "Damen",
+						"offset": 0
+					},
+					{
+						"name": "Biserica Sf.Dumitru",
+						"offset": 0
+					},
+					{
+						"name": "Bazinul Nou",
+						"offset": 0
+					},
+					{
+						"name": "Agrogal",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Agrogal",
+						"offset": 0
+					},
+					{
+						"name": "Bazinul Nou",
+						"offset": 0
+					},
+					{
+						"name": "Biserica Sf. Dumitru",
+						"offset": 0
+					},
+					{
+						"name": "Damen",
+						"offset": 0
+					},
+					{
+						"name": "Elnav",
+						"offset": 0
+					},
+					{
+						"name": "Menarom",
+						"offset": 0
+					},
+					{
+						"name": "Calea Prutului",
+						"offset": 0
+					},
+					{
+						"name": "Str.Domneasca",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 15,
+			"start": "5:20",
+			"end": "23:00",
+			"weekdays": 25,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Traian",
+						"Brailei",
+						"Navelor",
+						"Portului",
+						"Garii Nr. 8 ",
+						"Al. Moruzzi",
+						"Dogariei"
+					]
+				},
+				{
+					"retur": [
+						"Dogariei ",
+						"George Enescu",
+						"Portului",
+						"Navelor",
+						"Domnească",
+						"Eroilor ",
+						"Traian"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Marina",
+						"offset": 0
+					},
+					{
+						"name": "Intfor",
+						"offset": 0
+					},
+					{
+						"name": "Str. Garii. Nr. 8",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul C.F.R. ",
+						"offset": 0
+					},
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Gara C.F.R. ",
+						"offset": 0
+					},
+					{
+						"name": "Str. Dogariei ",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Galeria de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Universitate",
+						"offset": 0
+					},
+					{
+						"name": "Policlinica",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 16,
+			"start": "6:20",
+			"end": "23:00",
+			"weekdays": 30,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Bld.Marii Uniri",
+						"Saturn",
+						"Brailei ",
+						"Regiment 11 Siret ",
+						"Prelungirea Cosbuc",
+						"Brailei ",
+						"Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian",
+						"Eroilor",
+						"Balcescu ",
+						"Brailei ",
+						"Prelungirea Cosbuc ",
+						"Regiment 11 Siret",
+						"Brailei ",
+						"Saturn ",
+						"Bld.Marii Uniri"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Trecere Bac",
+						"offset": 0
+					},
+					{
+						"name": "Gamacris",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul copiilor",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Centrul de Recoltare",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					},
+					{
+						"name": "Albatros",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Tribunal",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul Copiilor",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Gamacris",
+						"offset": 0
+					},
+					{
+						"name": "Trecere Bac",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 17,
+			"start": "5:22",
+			"end": "23:00",
+			"weekdays": 50,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Galati",
+						"Otelarilor",
+						"Brailei",
+						"Siderurgistilor ",
+						"1 Dec. 1918",
+						"H.Coanda ",
+						"G. Cosbuc",
+						"A.Macelaru ",
+						"Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian ",
+						"A.Macelaru ",
+						"G.Cosbuc ",
+						"H.Coanda ",
+						"1 Dec.1918",
+						"Siderurgistilor",
+						"Brailei",
+						"Otelarilor ",
+						"Galati"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "D.Cantemir",
+						"offset": 0
+					},
+					{
+						"name": "Bl.S13",
+						"offset": 0
+					},
+					{
+						"name": "Danubius",
+						"offset": 0
+					},
+					{
+						"name": "Cozamin",
+						"offset": 0
+					},
+					{
+						"name": "Micro19",
+						"offset": 0
+					},
+					{
+						"name": "Neacsu",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Judetean",
+						"offset": 0
+					},
+					{
+						"name": "Privilege ",
+						"offset": 0
+					},
+					{
+						"name": "Casa Roșie",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "9MaiAurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Dep.Farmaceutic",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Galmopan",
+						"offset": 0
+					},
+					{
+						"name": "Bariera Traian",
+						"offset": 0
+					},
+					{
+						"name": "Cart.Nou",
+						"offset": 0
+					},
+					{
+						"name": "Automecanica",
+						"offset": 0
+					},
+					{
+						"name": "Fitosanitar",
+						"offset": 0
+					},
+					{
+						"name": "Metro",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Metro",
+						"offset": 0
+					},
+					{
+						"name": "Fitosanitar",
+						"offset": 0
+					},
+					{
+						"name": "Automecanica",
+						"offset": 0
+					},
+					{
+						"name": "Cart.Nou",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul3",
+						"offset": 0
+					},
+					{
+						"name": "Galmopan",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Galgross",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Pta.EnergieiIREG",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Hygeia",
+						"offset": 0
+					},
+					{
+						"name": "Service Vechi",
+						"offset": 0
+					},
+					{
+						"name": "Micro 19",
+						"offset": 0
+					},
+					{
+						"name": "Bld.Galati",
+						"offset": 0
+					},
+					{
+						"name": "Danubius",
+						"offset": 0
+					},
+					{
+						"name": "Bl.S13",
+						"offset": 0
+					},
+					{
+						"name": "D.Cantemir",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 18,
+			"start": "5:03",
+			"end": "23:00",
+			"weekdays": 24,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"I.Fernic",
+						"Viilor",
+						"T.Vuia",
+						"1Dec.1918",
+						"SiderurgistilorBrailei",
+						"Domneasca",
+						"Prundului ",
+						"Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian",
+						"Prundului ",
+						"Domneasca",
+						"Garii",
+						"N.Balcescu",
+						"Brailei",
+						"Siderurgistilor",
+						"1Dec.1918 ",
+						"Milcov"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 13 ",
+						"offset": 0
+					},
+					{
+						"name": "Complex Ionescu ",
+						"offset": 0
+					},
+					{
+						"name": "Ionel Fernic ",
+						"offset": 0
+					},
+					{
+						"name": "Traian Vuia ",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L ",
+						"offset": 0
+					},
+					{
+						"name": "Liceul 3 ",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "TiglinaI",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Galeria de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Universitate",
+						"offset": 0
+					},
+					{
+						"name": "Parfumul Teilor",
+						"offset": 0
+					},
+					{
+						"name": "Directia Agricola",
+						"offset": 0
+					},
+					{
+						"name": "Bl.Ialomita",
+						"offset": 0
+					},
+					{
+						"name": "Caminele StudentestiCaminul de Bătrâni ",
+						"offset": 0
+					},
+					{
+						"name": "Parc C.F.R. ",
+						"offset": 0
+					},
+					{
+						"name": "Prundului",
+						"offset": 0
+					},
+					{
+						"name": "Bariera Traian",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Bariera Traian ",
+						"offset": 0
+					},
+					{
+						"name": "Prundului",
+						"offset": 0
+					},
+					{
+						"name": "Parc C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Radu Negru",
+						"offset": 0
+					},
+					{
+						"name": "AJOFM",
+						"offset": 0
+					},
+					{
+						"name": "Caminele Studentesti",
+						"offset": 0
+					},
+					{
+						"name": "Muzeul de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Vultur",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Garii",
+						"offset": 0
+					},
+					{
+						"name": "FEAA",
+						"offset": 0
+					},
+					{
+						"name": "CNVAAlbatros",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "C.E.C.",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40",
+						"offset": 0
+					},
+					{
+						"name": "Micro 13",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 19,
+			"start": "5:15",
+			"end": "23:00",
+			"weekdays": 36,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Lebedei",
+						"Ghe.Asachi",
+						"Siderurgistilor",
+						"Brailei ",
+						"Regiment 11 Siret ",
+						"Prelungirea Cosbuc",
+						"Brailei ",
+						"Domneasca"
+					]
+				},
+				{
+					"retur": [
+						"Domneasca",
+						"Garii",
+						"N.Balcescu",
+						"Brailei ",
+						"Prelungirea Cosbuc ",
+						"Regiment 11 Siret",
+						"Brailei ",
+						"Siderurgistilor",
+						"Ghe.DojaBrandusei"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Complex Siret",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul Copiilor",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Centrul de Recoltare",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Universitate",
+						"offset": 0
+					},
+					{
+						"name": "Parfumul Teilor",
+						"offset": 0
+					},
+					{
+						"name": "Directia Agricola",
+						"offset": 0
+					},
+					{
+						"name": "Bl.Ialomita",
+						"offset": 0
+					},
+					{
+						"name": "Gradina Publica",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Gradina Publica",
+						"offset": 0
+					},
+					{
+						"name": "Muzeul de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Vultur",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Garii",
+						"offset": 0
+					},
+					{
+						"name": "FSEA",
+						"offset": 0
+					},
+					{
+						"name": "CNVA",
+						"offset": 0
+					},
+					{
+						"name": "Albatros",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Tribunal",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul Copiilor",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "Str.Gh.Doja",
+						"offset": 0
+					},
+					{
+						"name": "Sc.10",
+						"offset": 0
+					},
+					{
+						"name": "Complex Siret",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 20,
+			"start": "5:05",
+			"end": "23:00",
+			"weekdays": 36,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Lebedei ",
+						"Gh.Asachi",
+						"Siderurgistilor",
+						"Brailei",
+						"Traian",
+						"Basarabiei",
+						"M. Bravu ",
+						"Garii"
+					]
+				},
+				{
+					"retur": [
+						"Garii ",
+						"M. Bravu ",
+						"Basarabie ",
+						"Traian",
+						"Brailei",
+						"Siderurgistilor",
+						"Ghe.Doja ",
+						"Brandusei"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Complex Siret",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Piața Centrală",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunală",
+						"offset": 0
+					},
+					{
+						"name": "Domnească (t)",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Domneasca(r) Garii",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunală",
+						"offset": 0
+					},
+					{
+						"name": "Piața Centrală",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "C.E.C. ",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II ",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "Gh.Doja",
+						"offset": 0
+					},
+					{
+						"name": "Sc.10",
+						"offset": 0
+					},
+					{
+						"name": "Complex Siret",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 22,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 40,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Milcov",
+						"I.Fernic ",
+						"Viilor",
+						"T.Vuia",
+						"Milcov",
+						"1.Dec.1918",
+						"Siderurgistilor",
+						"Brailei",
+						"Regiment 11 Siret",
+						"Prelungirea Cosbuc",
+						"Brailei",
+						"Domnească ",
+						"Garii"
+					]
+				},
+				{
+					"retur": [
+						"Garii ",
+						"N. Balcescu",
+						"Brailei ",
+						"Prelungirea Cosbuc ",
+						"Regiment 11 Siret",
+						"Brailei ",
+						"Siderurgistilor",
+						"1.Dec.1918"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 40",
+						"offset": 0
+					},
+					{
+						"name": "Micro 13",
+						"offset": 0
+					},
+					{
+						"name": "Complex Ionescu",
+						"offset": 0
+					},
+					{
+						"name": "Ionel Fernic",
+						"offset": 0
+					},
+					{
+						"name": "Traian Vuia",
+						"offset": 0
+					},
+					{
+						"name": "Pta. Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Casa RosieTiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul Copiilor",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Centrul de Recoltare",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Galeria de Arta",
+						"offset": 0
+					},
+					{
+						"name": "UniversitateParfumul Teilor",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Gara C.F.R ",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Garii",
+						"offset": 0
+					},
+					{
+						"name": "FEAA",
+						"offset": 0
+					},
+					{
+						"name": "CNVA",
+						"offset": 0
+					},
+					{
+						"name": "Albatros ",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Tribunal",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Complex FranceziOraselul Copiilor",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Casa Rosie",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 23,
+			"start": "5:18",
+			"end": "23:00",
+			"weekdays": 40,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Galati",
+						"Otelarilor",
+						"Brailei",
+						"G.Cosbuc"
+					]
+				},
+				{
+					"retur": [
+						"G.Cosbuc",
+						"Brailei ",
+						"Otelarilor ",
+						"Galati"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Auchan",
+						"offset": 0
+					},
+					{
+						"name": "Danubius",
+						"offset": 0
+					},
+					{
+						"name": "Cozamin",
+						"offset": 0
+					},
+					{
+						"name": "Micro19",
+						"offset": 0
+					},
+					{
+						"name": "Neacsu ",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Judetean",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Sofin",
+						"offset": 0
+					},
+					{
+						"name": "Str.Mihail Kogalniceanu",
+						"offset": 0
+					},
+					{
+						"name": "Str.TecuciCim.Eternitatea",
+						"offset": 0
+					},
+					{
+						"name": "Str.Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Trefo",
+						"offset": 0
+					},
+					{
+						"name": "Carrefour",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Carrefour",
+						"offset": 0
+					},
+					{
+						"name": "Lic.C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Eternitatea ",
+						"offset": 0
+					},
+					{
+						"name": "Str.Tecuci",
+						"offset": 0
+					},
+					{
+						"name": "Str.Crizantemelor",
+						"offset": 0
+					},
+					{
+						"name": "C.E.C.",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Hygeia ",
+						"offset": 0
+					},
+					{
+						"name": "Service Vechi ",
+						"offset": 0
+					},
+					{
+						"name": "Micro 19",
+						"offset": 0
+					},
+					{
+						"name": "Bld.Galati",
+						"offset": 0
+					},
+					{
+						"name": "Selgros ",
+						"offset": 0
+					},
+					{
+						"name": "Danubius",
+						"offset": 0
+					},
+					{
+						"name": "Delfinul ",
+						"offset": 0
+					},
+					{
+						"name": "Auchan",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 24,
+			"start": "5:12",
+			"end": "23:00",
+			"weekdays": 48,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"G.Cosbuc",
+						"H.Coanda",
+						"T.Vuia ",
+						"Milcov",
+						"1 Dec.1918",
+						"Nae Leonard",
+						"Ghe.Doja ",
+						"Crizantemelor",
+						"G.Cosbuc",
+						"Brailei",
+						"NavelorPortului",
+						"A.Moruzzi ",
+						"Marinei"
+					]
+				},
+				{
+					"retur": [
+						"Marinei",
+						"A.Moruzzi",
+						"Portului",
+						"Navelor ",
+						"DomneascaMavromol",
+						"N.Balcescu",
+						"Brailei ",
+						"G.Cosbuc ",
+						"CrizantemelorGhe.Doja ",
+						"Nae Leonard",
+						"A.Vlaicu",
+						"1Dec.1918",
+						"Milcov",
+						"T.VuiaH.Coanda"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Carrefour",
+						"offset": 0
+					},
+					{
+						"name": "Galgross ",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L ",
+						"offset": 0
+					},
+					{
+						"name": "Str.Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Bl.U10 ",
+						"offset": 0
+					},
+					{
+						"name": "Cin Cin",
+						"offset": 0
+					},
+					{
+						"name": "Bl.R3",
+						"offset": 0
+					},
+					{
+						"name": "Lidl",
+						"offset": 0
+					},
+					{
+						"name": "Bl.C5A",
+						"offset": 0
+					},
+					{
+						"name": "Str.Doja",
+						"offset": 0
+					},
+					{
+						"name": "Lic.Sf.Maria ",
+						"offset": 0
+					},
+					{
+						"name": "ApatermRomtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Complex Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Marina",
+						"offset": 0
+					},
+					{
+						"name": "INTFOR",
+						"offset": 0
+					},
+					{
+						"name": "str. Lemnari ",
+						"offset": 0
+					},
+					{
+						"name": "Damen",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Damen",
+						"offset": 0
+					},
+					{
+						"name": "str. Lemnari",
+						"offset": 0
+					},
+					{
+						"name": "INTFOR",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Marina",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Complex Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Sofin",
+						"offset": 0
+					},
+					{
+						"name": "Lic.Sf.Maria",
+						"offset": 0
+					},
+					{
+						"name": "Str.DojaBl.C8A",
+						"offset": 0
+					},
+					{
+						"name": "Lidl",
+						"offset": 0
+					},
+					{
+						"name": "Bl.S1",
+						"offset": 0
+					},
+					{
+						"name": "Cin Cin",
+						"offset": 0
+					},
+					{
+						"name": "Bl.U10 ",
+						"offset": 0
+					},
+					{
+						"name": "Str.Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Kaufland",
+						"offset": 0
+					},
+					{
+						"name": "Dep. Farmaceutic",
+						"offset": 0
+					},
+					{
+						"name": "Carrefour",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 25,
+			"start": "5:30",
+			"end": "23:00",
+			"weekdays": 30,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Smardan",
+						"N.Mantu",
+						"9Mai1945",
+						"Feroviarilor",
+						"MilcovT. Vuia ",
+						"H. Coanda"
+					]
+				},
+				{
+					"retur": [
+						"H.Coanda",
+						"T.Vuia",
+						"Milcov",
+						"Feroviarilor",
+						"9Mai1945 ",
+						"N.Mantu",
+						"Smardan"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Pista Betonata ",
+						"offset": 0
+					},
+					{
+						"name": "Tastrom 2",
+						"offset": 0
+					},
+					{
+						"name": "Filesti",
+						"offset": 0
+					},
+					{
+						"name": "Statia de Betoane",
+						"offset": 0
+					},
+					{
+						"name": "Feroviarilor",
+						"offset": 0
+					},
+					{
+						"name": "Micro 13",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40 ",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Dep.Farmaceutic",
+						"offset": 0
+					},
+					{
+						"name": "Carrefour",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Carrefour",
+						"offset": 0
+					},
+					{
+						"name": "Galgross ",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L ",
+						"offset": 0
+					},
+					{
+						"name": "Micro 13",
+						"offset": 0
+					},
+					{
+						"name": "Feroviarilor ",
+						"offset": 0
+					},
+					{
+						"name": "Statia de Betoane",
+						"offset": 0
+					},
+					{
+						"name": "Filesti ",
+						"offset": 0
+					},
+					{
+						"name": "Tastrom 2",
+						"offset": 0
+					},
+					{
+						"name": "Pista Betonata",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 26,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 35,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"I.Fernic",
+						"Centura",
+						"T.Vuia",
+						"H.Coanda",
+						"G.Cosbuc",
+						"Al.Macelaru",
+						"Traian",
+						"Prundului",
+						"Domnească ",
+						"Garii"
+					]
+				},
+				{
+					"retur": [
+						"Garii",
+						"Domnească",
+						"Prundului",
+						"Traian ",
+						"Al.MacelaruG.Cosbuc",
+						"H.Coanda",
+						"T. Vuia",
+						"Milcov"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 13",
+						"offset": 0
+					},
+					{
+						"name": "Complex Ionescu",
+						"offset": 0
+					},
+					{
+						"name": "Ionel Fernic",
+						"offset": 0
+					},
+					{
+						"name": "Traian Vuia",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Dep. Farmaceutic",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Galmopan",
+						"offset": 0
+					},
+					{
+						"name": "Bariera Traian",
+						"offset": 0
+					},
+					{
+						"name": "Prundului",
+						"offset": 0
+					},
+					{
+						"name": "Parc C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Radu Negru",
+						"offset": 0
+					},
+					{
+						"name": "AJOFM",
+						"offset": 0
+					},
+					{
+						"name": "Caminele Studentesti",
+						"offset": 0
+					},
+					{
+						"name": "Muzeul de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Vultur",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Autogara ",
+						"offset": 0
+					},
+					{
+						"name": "Directia Agricola",
+						"offset": 0
+					},
+					{
+						"name": "Bl.Ialomita ",
+						"offset": 0
+					},
+					{
+						"name": "Caminele Studentesti",
+						"offset": 0
+					},
+					{
+						"name": "Caminul de Bătrâni ",
+						"offset": 0
+					},
+					{
+						"name": "Parc C.F.R. ",
+						"offset": 0
+					},
+					{
+						"name": "Prundului ",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul 3 ",
+						"offset": 0
+					},
+					{
+						"name": "Galmopan",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Galgross",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Micro 13",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 27,
+			"start": "5:14",
+			"end": "23:00",
+			"weekdays": 50,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Galati",
+						"Otelarilor",
+						"Stadionului",
+						"Brailei",
+						"Domnească ",
+						"Garii",
+						"N. Balcescu."
+					]
+				},
+				{
+					"retur": [
+						"N.Balcescu",
+						"Brailei",
+						"Stadionului",
+						"Otelarilor ",
+						"Galati"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Cantemir",
+						"offset": 0
+					},
+					{
+						"name": "Bl.S13",
+						"offset": 0
+					},
+					{
+						"name": "Danubius",
+						"offset": 0
+					},
+					{
+						"name": "Cozamin",
+						"offset": 0
+					},
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Bl.D19",
+						"offset": 0
+					},
+					{
+						"name": "Sala Sporturilor",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Galeria de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Universitate",
+						"offset": 0
+					},
+					{
+						"name": "Parfumul Teilor",
+						"offset": 0
+					},
+					{
+						"name": "Garii",
+						"offset": 0
+					},
+					{
+						"name": "FEEA",
+						"offset": 0
+					},
+					{
+						"name": "CNVA",
+						"offset": 0
+					},
+					{
+						"name": "Albatros",
+						"offset": 0
+					},
+					{
+						"name": "Centru.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Sala Sporturilor",
+						"offset": 0
+					},
+					{
+						"name": "Bl.O",
+						"offset": 0
+					},
+					{
+						"name": "Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Bld.Galati",
+						"offset": 0
+					},
+					{
+						"name": "Danubius",
+						"offset": 0
+					},
+					{
+						"name": "Bl.S13",
+						"offset": 0
+					},
+					{
+						"name": "Cantemir",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 28,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 12,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor",
+						"Brailei",
+						"Centura",
+						"Oltului",
+						"G.Asachi",
+						"A.Saligny",
+						"Ghe.Doja ",
+						"Siderurgistilor",
+						"1Dec.1918",
+						"Milcov",
+						"T.Vuia",
+						"H.Coanda",
+						"G.Cosbuc",
+						"A.Macelaru ",
+						"Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian ",
+						"A.Macelaru",
+						"G.Cosbuc",
+						"H.Coanda",
+						"T.Vuia",
+						"Milcov",
+						"1Dec.1918",
+						"Siderurgistilor",
+						"Ghe.Doja ",
+						"A.SalignyGhe.Asachi",
+						"Oltului",
+						"Centura",
+						"Brailei",
+						"Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 19",
+						"offset": 0
+					},
+					{
+						"name": "IATSA",
+						"offset": 0
+					},
+					{
+						"name": "Lidl",
+						"offset": 0
+					},
+					{
+						"name": "Sc.40",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 17",
+						"offset": 0
+					},
+					{
+						"name": "Lic.Dunarea ",
+						"offset": 0
+					},
+					{
+						"name": "Casa Minion",
+						"offset": 0
+					},
+					{
+						"name": "Oltului",
+						"offset": 0
+					},
+					{
+						"name": "Minion",
+						"offset": 0
+					},
+					{
+						"name": "Flora",
+						"offset": 0
+					},
+					{
+						"name": "Biserica Sf.Vasile",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Dep.Farmaceutic",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar ",
+						"offset": 0
+					},
+					{
+						"name": "Str. Razboieni",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Militar ",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cezar",
+						"offset": 0
+					},
+					{
+						"name": "Str.Radu Negru",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Municipal",
+						"offset": 0
+					},
+					{
+						"name": "Str.Prundului",
+						"offset": 0
+					},
+					{
+						"name": "Bariera Traian",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Bariera Traian ",
+						"offset": 0
+					},
+					{
+						"name": "Str.Prundului",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Municipal",
+						"offset": 0
+					},
+					{
+						"name": "Radu Negru",
+						"offset": 0
+					},
+					{
+						"name": "Cezar",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Militar",
+						"offset": 0
+					},
+					{
+						"name": "Str. Razboieni ",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Galgross",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz ",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Doja",
+						"offset": 0
+					},
+					{
+						"name": "Flora",
+						"offset": 0
+					},
+					{
+						"name": "Oltului",
+						"offset": 0
+					},
+					{
+						"name": "Casa Minion",
+						"offset": 0
+					},
+					{
+						"name": "Lic.Dunarea",
+						"offset": 0
+					},
+					{
+						"name": "Pta. Micro 17",
+						"offset": 0
+					},
+					{
+						"name": "Sc.40",
+						"offset": 0
+					},
+					{
+						"name": "Lidl",
+						"offset": 0
+					},
+					{
+						"name": "Gradinita Prichindel",
+						"offset": 0
+					},
+					{
+						"name": "Micro 19",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 29,
+			"start": "4:56",
+			"end": "23:00",
+			"weekdays": 45,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor",
+						"Bld.Galati",
+						"Bld.Dunarea",
+						"Brailei ",
+						"Regiment 11 Siret",
+						"Brailei ",
+						"Navelor",
+						"Dogariei",
+						"A.Moruzzi",
+						"Ana Ipatescu"
+					]
+				},
+				{
+					"retur": [
+						"Ana Ipatescu",
+						"A.Moruzzi",
+						"Dogariei",
+						"Navelor ",
+						"Domneasca",
+						"Mavromol",
+						"N.Balcescu",
+						"Brailei",
+						"Regiment 11 SiretBrailei",
+						"Bld.Dunarea",
+						"Bld.Galati",
+						"Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 19",
+						"offset": 0
+					},
+					{
+						"name": "Bld.Galati",
+						"offset": 0
+					},
+					{
+						"name": "Zenner",
+						"offset": 0
+					},
+					{
+						"name": "Bl.A8 ",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Catusa",
+						"offset": 0
+					},
+					{
+						"name": "Gradinita Prichindel",
+						"offset": 0
+					},
+					{
+						"name": "Neacsu",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Judetean",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I ",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul Copiilor ",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Centru de Recoltare",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Complex Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Str.Dogariei",
+						"offset": 0
+					},
+					{
+						"name": "SpitalulC.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Str.Dogariei",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Complex Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Tribunal",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul Copiilor",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Hygeia",
+						"offset": 0
+					},
+					{
+						"name": "Service Vechi",
+						"offset": 0
+					},
+					{
+						"name": "IATSA",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Catusa",
+						"offset": 0
+					},
+					{
+						"name": "Bl.B3",
+						"offset": 0
+					},
+					{
+						"name": "Zenner",
+						"offset": 0
+					},
+					{
+						"name": "Cozamin",
+						"offset": 0
+					},
+					{
+						"name": "Micro 19",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 30,
+			"start": "6:30",
+			"end": "18:30",
+			"weekdays": 60,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor ",
+						"Brailei"
+					]
+				},
+				{
+					"retur": [
+						"Brailei ",
+						"Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 19",
+						"offset": 0
+					},
+					{
+						"name": "IATSA ",
+						"offset": 0
+					},
+					{
+						"name": "Tirighina",
+						"offset": 0
+					},
+					{
+						"name": "Brailei ",
+						"offset": 0
+					},
+					{
+						"name": "Borcan",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Borcan",
+						"offset": 0
+					},
+					{
+						"name": "Brailei",
+						"offset": 0
+					},
+					{
+						"name": "Tirighina ",
+						"offset": 0
+					},
+					{
+						"name": "Gradinita Prichindel ",
+						"offset": 0
+					},
+					{
+						"name": "Micro 19",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 31,
+			"start": "5:00",
+			"end": "22:00",
+			"weekdays": 30,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor",
+						"Brailei",
+						"Lunca Siretului"
+					]
+				},
+				{
+					"retur": [
+						"Lunca Siretului",
+						"Brailei",
+						"Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 19",
+						"offset": 0
+					},
+					{
+						"name": "IATSA",
+						"offset": 0
+					},
+					{
+						"name": "Poligon",
+						"offset": 0
+					},
+					{
+						"name": "Releu",
+						"offset": 0
+					},
+					{
+						"name": "Gara Barbosi",
+						"offset": 0
+					},
+					{
+						"name": "Barbosi",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Barbosi",
+						"offset": 0
+					},
+					{
+						"name": "Gara Barbosi",
+						"offset": 0
+					},
+					{
+						"name": "Releu",
+						"offset": 0
+					},
+					{
+						"name": "Poligon",
+						"offset": 0
+					},
+					{
+						"name": "Gradinita Prichindel",
+						"offset": 0
+					},
+					{
+						"name": "Micro 19",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 34,
+			"start": "5:00",
+			"end": "22:30",
+			"weekdays": 35,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"I.Fernic",
+						"Viilor",
+						"T.Vuia",
+						"H.Coanda",
+						"G.Cosbuc ",
+						"BraileiNavelor ",
+						"Portului"
+					]
+				},
+				{
+					"retur": [
+						"Portului",
+						"Navelor",
+						"Domneasca",
+						"Mavromol",
+						"N.BalcescuBrailei",
+						"G.Cosbuc",
+						"H.Coanda",
+						"T.Vuia",
+						"Milcov"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 13",
+						"offset": 0
+					},
+					{
+						"name": "Complex Ionescu",
+						"offset": 0
+					},
+					{
+						"name": "Ionel Fernic",
+						"offset": 0
+					},
+					{
+						"name": "Traian Vuia",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Dep.Farmaceutic",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Trefo",
+						"offset": 0
+					},
+					{
+						"name": "Lic.C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Eternitatea",
+						"offset": 0
+					},
+					{
+						"name": "Str.TecuciStr.Crizantemelor",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Complex Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Marina",
+						"offset": 0
+					},
+					{
+						"name": "Intfor.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Intfor",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Marina",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Complex Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Sofin",
+						"offset": 0
+					},
+					{
+						"name": "Str. Kogalniceanu",
+						"offset": 0
+					},
+					{
+						"name": "Str.Tecuci",
+						"offset": 0
+					},
+					{
+						"name": "Cim.EternitateaStr.Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Trefo",
+						"offset": 0
+					},
+					{
+						"name": "Galgross",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39 ",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L ",
+						"offset": 0
+					},
+					{
+						"name": "Micro 13",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 35,
+			"start": "5:15",
+			"end": "22:15",
+			"weekdays": 30,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					},
+					{
+						"name": "Farm.Tinc",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Vultur",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Militar",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cezar",
+						"offset": 0
+					},
+					{
+						"name": "Str.Radu Negru",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Municipal",
+						"offset": 0
+					},
+					{
+						"name": "Str.Prundului",
+						"offset": 0
+					},
+					{
+						"name": "Bariera TraianCartierul Nou",
+						"offset": 0
+					},
+					{
+						"name": "Automecanica",
+						"offset": 0
+					},
+					{
+						"name": "Fitosanitar",
+						"offset": 0
+					},
+					{
+						"name": "Metro",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Metro",
+						"offset": 0
+					},
+					{
+						"name": "Fitosanitar",
+						"offset": 0
+					},
+					{
+						"name": "Automecanica",
+						"offset": 0
+					},
+					{
+						"name": "Cartierul Nou",
+						"offset": 0
+					},
+					{
+						"name": "Bariera Traian",
+						"offset": 0
+					},
+					{
+						"name": "Str.Prundului",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Municipal",
+						"offset": 0
+					},
+					{
+						"name": "Radu Negru",
+						"offset": 0
+					},
+					{
+						"name": "Cezar",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Militar ",
+						"offset": 0
+					},
+					{
+						"name": "Vultur",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 36,
+			"start": "5:16",
+			"end": "22:20",
+			"weekdays": 32,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"H.Coanda",
+						"T.Vuia",
+						"Milcov",
+						"1Dec.1918",
+						"Basarabiei",
+						"Mihai Bravu",
+						"Garii",
+						"Dogariei",
+						"A.Moruzzi",
+						"Ana Ipatescu",
+						"Garii"
+					]
+				},
+				{
+					"retur": [
+						"Garii",
+						"Ana Ipatescu",
+						"A.Moruzzi ",
+						"Dogariei ",
+						"Garii",
+						"Mihai Bravu",
+						"Basarabiei",
+						"1Dec.1918",
+						"Milcov",
+						"T.Vuia",
+						"H.Coanda"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Comat",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "I.C.Frimu",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cosbuc",
+						"offset": 0
+					},
+					{
+						"name": "Str.Posta Veche",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Str.Domneasca",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Autogara",
+						"offset": 0
+					},
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Gara C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Autogara ",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul C.F.R. ",
+						"offset": 0
+					},
+					{
+						"name": "Str.Domneasca",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Str.Posta Veche",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cosbuc",
+						"offset": 0
+					},
+					{
+						"name": "I.C.Frimu",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "MasnitzStr.Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Comat",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 37,
+			"start": "5:00",
+			"end": "21:40",
+			"weekdays": 20,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Constantin Levaditti, Prelungirea Brăilei, Brăilei, Țiglina I/II"
+					]
+				},
+				{
+					"retur": [
+						"Brăilei, Prelungirea Brăilei, Constantin Levaditti"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Levaditti",
+						"offset": 0
+					},
+					{
+						"name": "Bl. Bujor/Nufăr",
+						"offset": 0
+					},
+					{
+						"name": "Cimitir Sf. Lazăr",
+						"offset": 0
+					},
+					{
+						"name": "Țiglina III",
+						"offset": 0
+					},
+					{
+						"name": "Minion",
+						"offset": 0
+					},
+					{
+						"name": "Kaufland",
+						"offset": 0
+					},
+					{
+						"name": "Țiglina I",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Țiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Kaufland",
+						"offset": 0
+					},
+					{
+						"name": "Minion",
+						"offset": 0
+					},
+					{
+						"name": "Țiglina III",
+						"offset": 0
+					},
+					{
+						"name": "Cimitir Sf. Lazăr",
+						"offset": 0
+					},
+					{
+						"name": "Levaditti",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 39,
+			"start": "5:00",
+			"end": "22:15",
+			"weekdays": 23,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor",
+						"Stadionului",
+						"Frunzei",
+						"Saligny",
+						"Siderurgistilor",
+						"1Dec.1918",
+						"Milcov",
+						"T.Vuia",
+						"H.Coanda",
+						"G.CosbucStefan cel Mare"
+					]
+				},
+				{
+					"retur": [
+						"Stefan cel Mare",
+						"G.Cosbuc",
+						"H.Coanda",
+						"T.Vuia",
+						"Milcov1Dec.1918",
+						"Siderurgistilor",
+						"A.Saligny",
+						"Frunzei",
+						"Stadionului",
+						"Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Str.Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Bl.D19",
+						"offset": 0
+					},
+					{
+						"name": "Sala Sporturilor",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Kaufland",
+						"offset": 0
+					},
+					{
+						"name": "Flora",
+						"offset": 0
+					},
+					{
+						"name": "Stadion Otelul",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "P-ta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40",
+						"offset": 0
+					},
+					{
+						"name": "P-ta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Dep.Farmaceutic",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar (str.George Cosbuc)",
+						"offset": 0
+					},
+					{
+						"name": "Galmopan",
+						"offset": 0
+					},
+					{
+						"name": "Depou",
+						"offset": 0
+					},
+					{
+						"name": "Str.Arcasilor",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Israelit",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Cim.Israelit",
+						"offset": 0
+					},
+					{
+						"name": "Str.Arcasilor",
+						"offset": 0
+					},
+					{
+						"name": "Depou",
+						"offset": 0
+					},
+					{
+						"name": "Galmopan",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Galgross",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Piata Energiei",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul de Copii",
+						"offset": 0
+					},
+					{
+						"name": "Bingo",
+						"offset": 0
+					},
+					{
+						"name": "Flora",
+						"offset": 0
+					},
+					{
+						"name": "Kaufland",
+						"offset": 0
+					},
+					{
+						"name": "Privillege",
+						"offset": 0
+					},
+					{
+						"name": "Sala sporturilor",
+						"offset": 0
+					},
+					{
+						"name": "Bl.O",
+						"offset": 0
+					},
+					{
+						"name": "Str.Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 44,
+			"start": "5:00",
+			"end": "22:30",
+			"weekdays": 70,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"H.Coanda",
+						"T.Vuia",
+						"Milcov",
+						"1Dec.1918",
+						"Siderurgistilor",
+						"Basarabiei-Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian",
+						"Basarabiei",
+						"Siderurgistilor",
+						"1Dec.1918",
+						"Milcov",
+						"T.Vuia",
+						"H.Coanda"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Comat",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "P-ta Energiei (blocM4B)",
+						"offset": 0
+					},
+					{
+						"name": "Lic.9",
+						"offset": 0
+					},
+					{
+						"name": "Viaduct",
+						"offset": 0
+					},
+					{
+						"name": "P-ta Energiei (in sensul giratoriu)",
+						"offset": 0
+					},
+					{
+						"name": "A. Saligny",
+						"offset": 0
+					},
+					{
+						"name": "I.C.Frimu",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cosbuc",
+						"offset": 0
+					},
+					{
+						"name": "Posta Veche",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "P-ta.Centrala",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Posta Veche",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cosbuc",
+						"offset": 0
+					},
+					{
+						"name": "I.C.Frimu",
+						"offset": 0
+					},
+					{
+						"name": "Biserica Sf.Mina",
+						"offset": 0
+					},
+					{
+						"name": "P-ta Energiei (str. Basarabiei)",
+						"offset": 0
+					},
+					{
+						"name": "Piata Energiei(blocM4B)",
+						"offset": 0
+					},
+					{
+						"name": "Lic.9",
+						"offset": 0
+					},
+					{
+						"name": "Viaduct",
+						"offset": 0
+					},
+					{
+						"name": "P-ta Energiei (in sensul giratoriu)",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "9 Mai",
+						"offset": 0
+					},
+					{
+						"name": "Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Comat",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 105,
+			"start": "5:03",
+			"end": "22:23",
+			"weekdays": 13,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor",
+						"Bld.Galati",
+						"Bld.Dunarea ",
+						"Brailei",
+						"Domneasca"
+					]
+				},
+				{
+					"retur": [
+						"Domneasca",
+						"Garii ",
+						"N.Balcescu",
+						"Brailei",
+						"Bld.DunareaBld.Galati",
+						"Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 19",
+						"offset": 0
+					},
+					{
+						"name": "Bld.Galati",
+						"offset": 0
+					},
+					{
+						"name": "Zenner",
+						"offset": 0
+					},
+					{
+						"name": "Bl.A8",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Catusa",
+						"offset": 0
+					},
+					{
+						"name": "Gradinita Prichindel",
+						"offset": 0
+					},
+					{
+						"name": "Neacsu",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Judetean",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "MazepaPotcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Universitate",
+						"offset": 0
+					},
+					{
+						"name": "Parfumul Teilor",
+						"offset": 0
+					},
+					{
+						"name": "Directia Agricola",
+						"offset": 0
+					},
+					{
+						"name": "Bl.Ialomita",
+						"offset": 0
+					},
+					{
+						"name": "Gradina Publica",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Gradina Publica",
+						"offset": 0
+					},
+					{
+						"name": "Muzeul de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Vultur",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Garii",
+						"offset": 0
+					},
+					{
+						"name": "FEAA",
+						"offset": 0
+					},
+					{
+						"name": "CNVA",
+						"offset": 0
+					},
+					{
+						"name": "Albatros",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "PrivilegeHygeia",
+						"offset": 0
+					},
+					{
+						"name": "Service Vechi",
+						"offset": 0
+					},
+					{
+						"name": "IATSA",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Catusa",
+						"offset": 0
+					},
+					{
+						"name": "Bl.B3",
+						"offset": 0
+					},
+					{
+						"name": "Zenner",
+						"offset": 0
+					},
+					{
+						"name": "Cozamin",
+						"offset": 0
+					},
+					{
+						"name": "Micro 19",
+						"offset": 0
+					}
+				]
+			}
+		}
+	],
+	"tbus": [
+		{
+			"routeNumber": 102,
+			"start": "5:06",
+			"end": "22:26",
+			"weekdays": 10,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor",
+						"Brailei",
+						"Domneasca"
+					]
+				},
+				{
+					"retur": [
+						"Domnească",
+						"Mavromol",
+						"N.Balcescu",
+						"Brailei ",
+						"Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Micro 19",
+						"offset": 0
+					},
+					{
+						"name": "Neacsu ",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul Judetean",
+						"offset": 0
+					},
+					{
+						"name": "Privilege ",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom ",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Galeria de Arta",
+						"offset": 0
+					},
+					{
+						"name": "UniversitateParfumul Teilor",
+						"offset": 0
+					},
+					{
+						"name": "Directia Agricola",
+						"offset": 0
+					},
+					{
+						"name": "Bl.Ialomita",
+						"offset": 0
+					},
+					{
+						"name": "Caminele Studentesti",
+						"offset": 0
+					},
+					{
+						"name": "Caminul de Batrani",
+						"offset": 0
+					},
+					{
+						"name": "Parc C.F.R.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Parc C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Radu Negru",
+						"offset": 0
+					},
+					{
+						"name": "AJOFM ",
+						"offset": 0
+					},
+					{
+						"name": "Caminele Studentesti ",
+						"offset": 0
+					},
+					{
+						"name": "Muzeul de Arta ",
+						"offset": 0
+					},
+					{
+						"name": "Vultur",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Teatrul Dramatic",
+						"offset": 0
+					},
+					{
+						"name": "Parc Eminescu",
+						"offset": 0
+					},
+					{
+						"name": "CentruAgentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "C.E.C.",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Privilege",
+						"offset": 0
+					},
+					{
+						"name": "Hygeia",
+						"offset": 0
+					},
+					{
+						"name": "Service Vechi",
+						"offset": 0
+					},
+					{
+						"name": "Micro 19",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 104,
+			"start": "5:18",
+			"end": "22:06",
+			"weekdays": 24,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Prelungirea Brailei",
+						"Brailei ",
+						"Domneasca"
+					]
+				},
+				{
+					"retur": [
+						"Domneasca",
+						"Mavromol",
+						"N.Balcescu ",
+						"BraileiPrelungirea Brailei"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Cim.Sf.Lazar",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina III",
+						"offset": 0
+					},
+					{
+						"name": "Minion",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "Mazepa",
+						"offset": 0
+					},
+					{
+						"name": "Potcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Galeria de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Universitate",
+						"offset": 0
+					},
+					{
+						"name": "Parfumul Teilor",
+						"offset": 0
+					},
+					{
+						"name": "Directia Agricola",
+						"offset": 0
+					},
+					{
+						"name": "Bl.Ialomita",
+						"offset": 0
+					},
+					{
+						"name": "Caminele Studentesti",
+						"offset": 0
+					},
+					{
+						"name": "Caminul de Batrani",
+						"offset": 0
+					},
+					{
+						"name": "Parc C.F.R.",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Parc C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Radu Negru",
+						"offset": 0
+					},
+					{
+						"name": "AJOFM",
+						"offset": 0
+					},
+					{
+						"name": "Caminele Studentesti",
+						"offset": 0
+					},
+					{
+						"name": "Muzeul de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Vultur",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Arta",
+						"offset": 0
+					},
+					{
+						"name": "Teatrul Dramatic",
+						"offset": 0
+					},
+					{
+						"name": "Parc Eminescu",
+						"offset": 0
+					},
+					{
+						"name": "CentruAgentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "C.E.C.",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina II",
+						"offset": 0
+					},
+					{
+						"name": "Minion",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina III",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Sf.Lazar",
+						"offset": 0
+					}
+				]
+			}
+		}
+	],
+	"tram": [
+		{
+			"routeNumber": 7,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 0,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor",
+						"Stadionului",
+						"Frunzei",
+						"Ghe.Asachi",
+						"Siderurgistilor ",
+						"Basarabiei",
+						"Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian",
+						"Basarabiei",
+						"Siderurgistilor",
+						"Ghe.Asachi",
+						"Frunzei ",
+						"Stadionului",
+						"Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Str.Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Bl.D19",
+						"offset": 0
+					},
+					{
+						"name": "Sala Sporturilor",
+						"offset": 0
+					},
+					{
+						"name": "Flora",
+						"offset": 0
+					},
+					{
+						"name": "Stadion Otelul",
+						"offset": 0
+					},
+					{
+						"name": "str.Doja",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Lic.9 ",
+						"offset": 0
+					},
+					{
+						"name": "P",
+						"offset": 0
+					},
+					{
+						"name": "ta Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Str.A.SalignyI.C.Frimu",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cosbuc",
+						"offset": 0
+					},
+					{
+						"name": "Posta Veche",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Pta.Centrala ",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala ",
+						"offset": 0
+					},
+					{
+						"name": "Posta Veche",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cosbuc",
+						"offset": 0
+					},
+					{
+						"name": "I.C.Frimu",
+						"offset": 0
+					},
+					{
+						"name": "Biserica Sf. Mina",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Lic.9 ",
+						"offset": 0
+					},
+					{
+						"name": "P",
+						"offset": 0
+					},
+					{
+						"name": "ta Energiei ",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul de Copii",
+						"offset": 0
+					},
+					{
+						"name": "Str.Prelungirea Brailei",
+						"offset": 0
+					},
+					{
+						"name": "Str.Frunzei",
+						"offset": 0
+					},
+					{
+						"name": "Bl.O",
+						"offset": 0
+					},
+					{
+						"name": "Str.Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 39,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 0,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Otelarilor",
+						"Stadionului",
+						"Frunzei",
+						"Saligny ",
+						"Siderurgistilor1Dec.1918",
+						"Milcov",
+						"T.Vuia",
+						"H.Coanda",
+						"G.Cosbuc",
+						"Stefan cel Mare"
+					]
+				},
+				{
+					"retur": [
+						"Stefan cel Mare",
+						"G.Cosbuc",
+						"H.Coanda",
+						"T.Vuia",
+						"Milcov1Dec.1918",
+						"Siderurgistilor ",
+						"A.Saligny ",
+						"Frunzei",
+						"Stadionului ",
+						"Otelarilor"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Str.Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Bl.D19 ",
+						"offset": 0
+					},
+					{
+						"name": "Sala Sporturilor",
+						"offset": 0
+					},
+					{
+						"name": "Flora ",
+						"offset": 0
+					},
+					{
+						"name": "Stadion Otelul",
+						"offset": 0
+					},
+					{
+						"name": "Str.Doja",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Dep.Farmaceutic",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Galmopan",
+						"offset": 0
+					},
+					{
+						"name": "Depou Traian",
+						"offset": 0
+					},
+					{
+						"name": "Str.Arcasilor",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Israelit",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Cim.Israelit",
+						"offset": 0
+					},
+					{
+						"name": "Str.Arcasilor",
+						"offset": 0
+					},
+					{
+						"name": "Depou Traian",
+						"offset": 0
+					},
+					{
+						"name": "Galmopan",
+						"offset": 0
+					},
+					{
+						"name": "Patinoar",
+						"offset": 0
+					},
+					{
+						"name": "Galgross",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Spitalul de CopiiStr.Prelungirea Brailei",
+						"offset": 0
+					},
+					{
+						"name": "Str.Frunzei",
+						"offset": 0
+					},
+					{
+						"name": "Bl.O",
+						"offset": 0
+					},
+					{
+						"name": "Str.Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 44,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 0,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"H.Coanda",
+						"T.Vuia",
+						"Milcov",
+						"1Dec.1918",
+						"Siderurgistilor ",
+						"Basarabiei",
+						"Traian"
+					]
+				},
+				{
+					"retur": [
+						"Traian",
+						"Basarabiei",
+						"Siderurgistilor",
+						"1Dec.1918",
+						"MilcovT.Vuia",
+						"H.Coanda"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Comat",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz ",
+						"offset": 0
+					},
+					{
+						"name": "P",
+						"offset": 0
+					},
+					{
+						"name": "ta Energiei ",
+						"offset": 0
+					},
+					{
+						"name": "Lic.9 ",
+						"offset": 0
+					},
+					{
+						"name": "P",
+						"offset": 0
+					},
+					{
+						"name": "ta Energiei",
+						"offset": 0
+					},
+					{
+						"name": "str. A. Saligny ",
+						"offset": 0
+					},
+					{
+						"name": "I.C.Frimu",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cosbuc",
+						"offset": 0
+					},
+					{
+						"name": "Posta Veche",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Pta.Centrala",
+						"offset": 0
+					},
+					{
+						"name": "Baia Comunala",
+						"offset": 0
+					},
+					{
+						"name": "Posta Veche",
+						"offset": 0
+					},
+					{
+						"name": "Str.Cosbuc",
+						"offset": 0
+					},
+					{
+						"name": "I.C.Frimu",
+						"offset": 0
+					},
+					{
+						"name": "Biserica Sf.Mina",
+						"offset": 0
+					},
+					{
+						"name": "P",
+						"offset": 0
+					},
+					{
+						"name": "ta Energiei ",
+						"offset": 0
+					},
+					{
+						"name": "Lic.9 ",
+						"offset": 0
+					},
+					{
+						"name": "P",
+						"offset": 0
+					},
+					{
+						"name": "ta Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "Bl.LPta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Comat",
+						"offset": 0
+					}
+				]
+			}
+		}
+	],
+	"estbus": [
+		{
+			"routeNumber": 32,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 0,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"H.Coanda",
+						"T.Vuia",
+						"Milcov",
+						"1Dec.1918",
+						"Siderurgistilor",
+						"Ghe. Doja",
+						"Brandusei ",
+						"Lebedei",
+						"Ghe. Asachi",
+						"Prelungirea Brailei",
+						"Oltului",
+						"Drumul de Centura",
+						"Dunarea",
+						"Galati",
+						"Otelarilor",
+						"Stadionului ",
+						"Dunarea"
+					]
+				},
+				{
+					"retur": [
+						"Dunarea",
+						"Stadionului",
+						"Otelarilor",
+						"Galati",
+						"Dunarea",
+						"Drumul de Centura",
+						"Oltului",
+						"Prelungirea Brailei",
+						"Ghe. Asachi",
+						"Lebedei",
+						"Brandusei",
+						"Ghe. Doja ",
+						"Siderurgistilor",
+						"1Dec.1918",
+						"Milcov",
+						"T.Vuia",
+						"H.Coanda"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "Comat",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro39",
+						"offset": 0
+					},
+					{
+						"name": "Bl.L",
+						"offset": 0
+					},
+					{
+						"name": "Lic.3",
+						"offset": 0
+					},
+					{
+						"name": "9Mai",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "IREG",
+						"offset": 0
+					},
+					{
+						"name": "Gh.Doja",
+						"offset": 0
+					},
+					{
+						"name": "Sc.10",
+						"offset": 0
+					},
+					{
+						"name": "Complex Siret ",
+						"offset": 0
+					},
+					{
+						"name": "Flora",
+						"offset": 0
+					},
+					{
+						"name": "Oltului",
+						"offset": 0
+					},
+					{
+						"name": "Casa Minion",
+						"offset": 0
+					},
+					{
+						"name": "Lic.Dunarea ",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 17",
+						"offset": 0
+					},
+					{
+						"name": "Sc.40",
+						"offset": 0
+					},
+					{
+						"name": "Lidl",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Catusa",
+						"offset": 0
+					},
+					{
+						"name": "Bl.B3",
+						"offset": 0
+					},
+					{
+						"name": "Zenner",
+						"offset": 0
+					},
+					{
+						"name": "Cozamin",
+						"offset": 0
+					},
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Bl.D19",
+						"offset": 0
+					},
+					{
+						"name": "Liceul Sportiv ",
+						"offset": 0
+					},
+					{
+						"name": "Plaja Dunarea",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Plaja Dunarea",
+						"offset": 0
+					},
+					{
+						"name": "Liceul Sportiv ",
+						"offset": 0
+					},
+					{
+						"name": "Bloc O ",
+						"offset": 0
+					},
+					{
+						"name": "Otelarilor",
+						"offset": 0
+					},
+					{
+						"name": "Cinema Dacia",
+						"offset": 0
+					},
+					{
+						"name": "Bld.Galati—Zenner",
+						"offset": 0
+					},
+					{
+						"name": "Bl.A8",
+						"offset": 0
+					},
+					{
+						"name": "Cim.Catusa",
+						"offset": 0
+					},
+					{
+						"name": "",
+						"offset": 0
+					},
+					{
+						"name": "Lidl",
+						"offset": 0
+					},
+					{
+						"name": "Sc.40",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 17",
+						"offset": 0
+					},
+					{
+						"name": "Lic.Dunarea ",
+						"offset": 0
+					},
+					{
+						"name": "Casa Minion",
+						"offset": 0
+					},
+					{
+						"name": "Oltului",
+						"offset": 0
+					},
+					{
+						"name": "Minion",
+						"offset": 0
+					},
+					{
+						"name": "Flora ",
+						"offset": 0
+					},
+					{
+						"name": "Complex Siretul ",
+						"offset": 0
+					},
+					{
+						"name": "Școala 10",
+						"offset": 0
+					},
+					{
+						"name": "Ghe. Doja",
+						"offset": 0
+					},
+					{
+						"name": "IREG ",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Energiei",
+						"offset": 0
+					},
+					{
+						"name": "Masnitz",
+						"offset": 0
+					},
+					{
+						"name": "Str.Aurel Vlaicu",
+						"offset": 0
+					},
+					{
+						"name": "Micro 40",
+						"offset": 0
+					},
+					{
+						"name": "Pta.Micro 39",
+						"offset": 0
+					},
+					{
+						"name": "Comat",
+						"offset": 0
+					}
+				]
+			}
+		},
+		{
+			"routeNumber": 33,
+			"start": "5:00",
+			"end": "23:00",
+			"weekdays": 0,
+			"weekend": 0,
+			"streets": [
+				{
+					"tur": [
+						"Portului",
+						"Navelor",
+						"Domnească",
+						"Mavramol",
+						"N. Balcescu",
+						"Brailei",
+						"Regiment 11 Siret",
+						"Brailei",
+						"Closca ",
+						"Dunarea"
+					]
+				},
+				{
+					"retur": [
+						"Dunarea",
+						"Closca",
+						"Brailei",
+						"Regiment 11 Siret",
+						"Brailei",
+						"Domnească",
+						"Navelor ",
+						"Portului"
+					]
+				}
+			],
+			"stations": {
+				"tur": [
+					{
+						"name": "INTFOR",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Marina",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Complex Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Centru",
+						"offset": 0
+					},
+					{
+						"name": "Agentia C.F.R.",
+						"offset": 0
+					},
+					{
+						"name": "Parcare Banci",
+						"offset": 0
+					},
+					{
+						"name": "Tribunal",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul CopiilorTiglina I",
+						"offset": 0
+					},
+					{
+						"name": "Stadion Siderurgistul",
+						"offset": 0
+					},
+					{
+						"name": "Plaja Dunarea",
+						"offset": 0
+					}
+				],
+				"retur": [
+					{
+						"name": "Plaja Dunarea",
+						"offset": 0
+					},
+					{
+						"name": "Stadion Siderurgistul ",
+						"offset": 0
+					},
+					{
+						"name": "Tiglina I ",
+						"offset": 0
+					},
+					{
+						"name": "Oraselul copiilor",
+						"offset": 0
+					},
+					{
+						"name": "Complex Francezi",
+						"offset": 0
+					},
+					{
+						"name": "Bl.E6",
+						"offset": 0
+					},
+					{
+						"name": "Centrul de Recoltare",
+						"offset": 0
+					},
+					{
+						"name": "Romtelecom",
+						"offset": 0
+					},
+					{
+						"name": "MazepaPotcoava de Aur",
+						"offset": 0
+					},
+					{
+						"name": "Spicul",
+						"offset": 0
+					},
+					{
+						"name": "Navrom",
+						"offset": 0
+					},
+					{
+						"name": "Lic.de Marina",
+						"offset": 0
+					},
+					{
+						"name": "Intfor",
+						"offset": 0
+					}
+				]
+			}
+		}
+	]
+}

@@ -5,14 +5,19 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
+import com.faciee.cti.valbastrelu.eticket.api.Schedule
 import com.faciee.cti.valbastrelu.eticket.base.AbstractAndroidViewModel
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp
 import com.faciee.cti.valbastrelu.eticket.repo.HomeRepository
+import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
+import com.faciee.cti.valbastrelu.eticket.util.AppUtils
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class HomeVM(
-		app: ETicketApp,
+		private val app: ETicketApp,
 		private val repository: HomeRepository
 ) : AbstractAndroidViewModel(app) {
 
@@ -21,7 +26,15 @@ class HomeVM(
 	init {
 		viewModelScope.launch {
 			repository.insertTicketInDatabase()
-			feedItems = feedLiveData()
+			feedItems.value = repository.getLatestActiveTickets()
+		}
+
+		CoroutineScope(IO).launch {
+			val loadJSONFromAsset = AppUtils.loadJSONFromAsset(app.assets, "transurb_schedule.json")
+			if (! loadJSONFromAsset.isNullOrBlank()) {
+				val objectFromJSON = AppUtils.getObjectFromJSON(loadJSONFromAsset, Schedule::class.java)
+				objectFromJSON.bus
+			}
 		}
 	}
 
@@ -33,13 +46,10 @@ class HomeVM(
 	}
 
 	fun refreshItems() {
-		feedItems = feedLiveData()
+		viewModelScope.launch {
+			feedItems.value = repository.getLatestActiveTickets()
+		}
 	}
-
-	private fun feedLiveData(): MutableLiveData<List<Any>> = liveData {
-		val latestActiveTickets = repository.getLatestActiveTickets()
-		emit(latestActiveTickets)
-	} as MutableLiveData
 
 	companion object {
 		private const val TAG = "BusActivityModel"

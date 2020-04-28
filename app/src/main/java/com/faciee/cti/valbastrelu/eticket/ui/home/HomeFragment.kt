@@ -30,6 +30,9 @@ class HomeFragment : BaseFragment<HomeVM>(), SwipeRefreshLayout.OnRefreshListene
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 		viewModel.feedItems.observe(viewLifecycleOwner, Observer {
+			if (homeBinding.homeRefreshLayout.isRefreshing) {
+				homeBinding.homeRefreshLayout.isRefreshing = false
+			}
 			homeFeedAdapter.feedItems = it
 		})
 	}
