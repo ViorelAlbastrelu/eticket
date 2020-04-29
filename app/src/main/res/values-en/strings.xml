@@ -55,6 +55,8 @@
 	<string name="zero_bilete">No tickets currently in list</string>
 
 	<!--Route layout-->
+	<string name="route_name_fmt">Station: %s</string>
+	<string name="route_time_fmt">Arrival: %s</string>
 	<string name="ora_traseu_fmt">Arrival: %1$s</string>
 	<string name="nr_traseu_fmt">Route number:</string>
 

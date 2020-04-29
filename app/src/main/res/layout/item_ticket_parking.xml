@@ -13,10 +13,9 @@
 	<androidx.cardview.widget.CardView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_margin="10dp"
+		android:layout_margin="@dimen/feeditem_outside_margin"
 		app:cardCornerRadius="6dp"
-		app:cardElevation="6dp"
-		app:contentPadding="10dp">
+		app:contentPadding="@dimen/feeditem_inside_padding">
 
 		<androidx.constraintlayout.widget.ConstraintLayout
 			android:layout_width="match_parent"

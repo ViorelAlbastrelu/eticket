@@ -6,4 +6,8 @@
 	<dimen name="appbar_padding_top">8dp</dimen>
 	<dimen name="nav_header_vertical_spacing">8dp</dimen>
 	<dimen name="nav_header_height">176dp</dimen>
+
+	<!--FeedItems-->
+	<dimen name="feeditem_outside_margin">8dp</dimen>
+	<dimen name="feeditem_inside_padding">8dp</dimen>
 </resources>
