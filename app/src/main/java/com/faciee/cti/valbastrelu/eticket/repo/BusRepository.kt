@@ -1,6 +1,5 @@
 package com.faciee.cti.valbastrelu.eticket.repo
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.faciee.cti.valbastrelu.eticket.base.SingletonHolder

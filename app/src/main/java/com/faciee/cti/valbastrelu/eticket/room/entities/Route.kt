@@ -1,5 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.room.entities
 
+import androidx.room.ColumnInfo
+import androidx.room.ColumnInfo.INTEGER
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
@@ -11,12 +13,18 @@ import java.util.*
 
 @Entity
 class Route(
-		@field:PrimaryKey var number: Int,
-		@field:TypeConverters(DateConverter::class) var date: Date?,
-		@field:TypeConverters(TransportTypeConverter::class) var transportType: TransportType) {
+		@field:PrimaryKey val number: Int,
+		@field:ColumnInfo(index = true) val name: String,
+		@field:TypeConverters(DateConverter::class) val startTime: Date?,
+		@field:TypeConverters(DateConverter::class) val endTime: Date?,
+		@field:ColumnInfo(typeAffinity = INTEGER, defaultValue = "0") val weekOffset: Int,
+		@field:ColumnInfo(typeAffinity = INTEGER, defaultValue = "0") val weekendOffset: Int,
+		@field:ColumnInfo val streets: List<String>,
+		@field:ColumnInfo val stationsIds: List<Int>?,
+		@field:TypeConverters(TransportTypeConverter::class) val transportType: TransportType) {
 
 	val timeFormatted: String
-		get() = SimpleDateFormat("HH:mm", Locale(Locale.getDefault().language)).format(date)
+		get() = SimpleDateFormat("HH:mm", Locale(Locale.getDefault().language)).format(startTime)
 
 	override fun equals(other: Any?): Boolean {
 		if (this === other) return true

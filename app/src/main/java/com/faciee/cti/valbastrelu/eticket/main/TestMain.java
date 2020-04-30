@@ -20,7 +20,7 @@ public class TestMain {
 			Elements rows = document.select("td");
 			for (int i = 2; i < rows.size(); i+=2) {
 				//TODO change dummy route number
-				statii.add(new Station(rows.get(i).text(),rows.get(i+1).text(), 0));
+//				statii.add(new Station(rows.get(i).text(),rows.get(i+1).text(), 0));
 			}
 		}catch (IOException e){
 			builder.append("Error: ").append(e.getMessage()).append("\n"); }

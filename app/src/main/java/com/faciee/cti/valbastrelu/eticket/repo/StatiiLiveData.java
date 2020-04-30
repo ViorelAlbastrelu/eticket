@@ -42,7 +42,8 @@ public class StatiiLiveData extends LiveData<List<Station>> {
 					Elements rows = document.select("td");
 					for (int i = 2; i < rows.size(); i += 2) {
 						//TODO routeNumber is dummy set to 0
-						Station station = new Station(numarTraseu, rows.get(i).text(), rows.get(i + 1).text(), 0);
+						Station station = new Station(numarTraseu, rows.get(i).text(), 0, 0);
+//						Station station = new Station(numarTraseu, rows.get(i).text(), rows.get(i + 1).text(), 0);
 						stationList.add(station);
 						numeStatii.add(station.getName());
 //						statieDao.insertStatii(statie);
