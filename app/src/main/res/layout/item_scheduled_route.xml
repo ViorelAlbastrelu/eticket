@@ -31,9 +31,10 @@
 			android:id="@+id/labelRouteName"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="8dp"
+			android:layout_marginStart="16dp"
 			android:layout_marginEnd="8dp"
-			android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+			android:text="@{route.transportType.typeName}"
+			android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 			app:layout_constraintBottom_toTopOf="@+id/labelRouteTime"
 			app:layout_constraintEnd_toStartOf="@+id/labelRouteNumber"
 			app:layout_constraintHorizontal_bias="0.5"
@@ -41,7 +42,6 @@
 			app:layout_constraintTop_toTopOf="parent"
 			app:layout_constraintVertical_bias="0.0"
 			app:layout_constraintVertical_chainStyle="packed"
-			android:text="@{@string/route_name_fmt(route.transportType.typeName)}"
 			tools:text="Statie: Micro 19-Cinema Dacia" />
 
 		<TextView
@@ -65,7 +65,7 @@
 			app:layout_constraintHorizontal_bias="0.5"
 			app:layout_constraintStart_toStartOf="@+id/labelRouteName"
 			app:layout_constraintTop_toBottomOf="@+id/labelRouteName"
-			android:text="@{@string/route_time_fmt(route.startTime)}"
+			app:time="@{route.startTime}"
 			tools:text="Sosire: 17:25" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>

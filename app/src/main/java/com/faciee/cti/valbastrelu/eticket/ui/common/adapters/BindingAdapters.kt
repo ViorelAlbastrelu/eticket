@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.databinding.BindingAdapter
 import com.faciee.cti.valbastrelu.eticket.R
+import com.faciee.cti.valbastrelu.eticket.util.DateUtils
+import kotlinx.android.synthetic.main.parking_frg_tb02_map.view.*
 import java.math.BigDecimal
 import java.util.*
 
@@ -20,8 +22,14 @@ object BindingAdapters {
 	}
 
 	@JvmStatic
+	@BindingAdapter("time")
+	fun setTime(view: TextView, date: Date) {
+		view.text = view.context.getString(R.string.route_time_fmt, DateUtils.formattedTime(date))
+	}
+
+	@JvmStatic
 	@BindingAdapter("priceColor")
-	fun setPriceColor(view: TextView, amount: BigDecimal){
+	fun setPriceColor(view: TextView, amount: BigDecimal) {
 		view.setTextColor(if (amount < BigDecimal.ZERO) Color.RED else Color.GREEN)
 	}
 
