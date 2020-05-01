@@ -88,7 +88,7 @@ class ETicketMain : BaseActivity() {
 //	}
 
 	private fun setUserAndEmailToDrawerProfile() {
-		val email = ETicketApp.currentETicketApp.appPreferences.getCurrentEmail()
+		val email = ETicketApp.currentETicketApp.appPreferences.currentEmail
 		val navHeader = NavHeaderEticketMainBinding.bind(mainBinding.navView.getHeaderView(0))
 		navHeader.profileName.text = "Viorel"
 		navHeader.profileEmail.text = email

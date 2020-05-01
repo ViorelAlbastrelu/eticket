@@ -7,20 +7,24 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
+import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType
 
 @Dao
 interface RoutesDao {
 	@get:Query("SELECT * FROM route")
 	val allRoutesLiveData: LiveData<List<Route>>
 
+	@Query("SELECT * FROM route WHERE transportType = :type")
+	suspend fun getRoutesForType(type: TransportType): List<Route>
+
 	@Insert
-	suspend fun insertRoutes(vararg route: Route?)
+	suspend fun insertRoutes(vararg route: Route)
 
 	@Update
-	suspend fun updateRoutes(vararg route: Route?)
+	suspend fun updateRoutes(vararg route: Route)
 
 	@Delete
-	suspend fun deleteRoutes(vararg route: Route?)
+	suspend fun deleteRoutes(vararg route: Route)
 
 	@Query("DELETE FROM route")
 	suspend fun deleteAll()

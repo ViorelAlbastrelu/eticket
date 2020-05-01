@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.faciee.cti.valbastrelu.eticket.base.BaseActivity
 import com.faciee.cti.valbastrelu.eticket.databinding.ActivitySplashBinding
 import com.faciee.cti.valbastrelu.eticket.main.ETicketMain
+import com.faciee.cti.valbastrelu.eticket.repo.SplashRepository
 
 class SplashActivity : BaseActivity() {
 
@@ -18,7 +19,7 @@ class SplashActivity : BaseActivity() {
 		splashBinding = ActivitySplashBinding.inflate(layoutInflater)
 		setContentView(splashBinding.root)
 
-		splashVM = ViewModelProvider(this, SplashVM.getFactory(eTicketApp)).get(SplashVM::class.java)
+		splashVM = ViewModelProvider(this, SplashVM.getFactory(eTicketApp, SplashRepository(eTicketApp.database))).get(SplashVM::class.java)
 
 		splashVM.isLoading.observe(this, Observer { isLoading ->
 			if (! isLoading) {
