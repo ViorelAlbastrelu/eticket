@@ -3,6 +3,7 @@ package com.faciee.cti.valbastrelu.eticket.ui.bus.vm
 import android.util.Log
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -12,6 +13,7 @@ import com.faciee.cti.valbastrelu.eticket.repo.BusRepository
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
 import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction
+import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType
 import kotlinx.coroutines.launch
 
 class BusViewModel(
@@ -27,18 +29,21 @@ class BusViewModel(
 	private var activeTicket: Ticket? = null
 	var busTicketsLiveData: LiveData<List<Ticket>>
 
+	val liveDataTrasee: MutableLiveData<List<Route>> = MutableLiveData()
+
+
 	init {
 		repository = application.busRepository
 		busTicketsLiveData = repository.ticketsLiveData
-	}
 
+		viewModelScope.launch {
+			liveDataTrasee.value = repository.getRoutes(TransportType.BUS)
+		}
+	}
 
 	fun setTicketActiv(ticketActiv: Ticket?) {
 		this.activeTicket = ticketActiv
 	}
-
-	val liveDataTrasee: LiveData<List<Route>>
-		get() = repository.liveDataTrasee
 
 	fun getLiveDataStatii(nrTraseu: Int): LiveData<List<String>> {
 		return repository.getLiveDataStatii(nrTraseu)

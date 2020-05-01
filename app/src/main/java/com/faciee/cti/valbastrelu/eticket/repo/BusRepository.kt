@@ -1,10 +1,10 @@
 package com.faciee.cti.valbastrelu.eticket.repo
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.faciee.cti.valbastrelu.eticket.base.SingletonHolder
 import com.faciee.cti.valbastrelu.eticket.room.EtkRoomDB
+import com.faciee.cti.valbastrelu.eticket.room.dao.RoutesDao
 import com.faciee.cti.valbastrelu.eticket.room.dao.StationDao
 import com.faciee.cti.valbastrelu.eticket.room.dao.TicketDao
 import com.faciee.cti.valbastrelu.eticket.room.dao.TransactionsDao
@@ -22,11 +22,11 @@ class BusRepository(roomDB: EtkRoomDB) {
 	//Dao
 	private val ticketDao: TicketDao = roomDB.ticketDao()
 	private val stationDao: StationDao = roomDB.stationDao()
+	private val routesDao: RoutesDao = roomDB.routesDao()
 	private val transactionsDao: TransactionsDao = roomDB.transactionsDao()
 
 	//Livedata
 	private val bileteLiveData: MutableLiveData<List<Ticket>>? = null
-	private var traseeLiveData: MutableLiveData<List<Route>>? = null
 	private val tranzactiiLiveData: MutableLiveData<List<Transaction>>? = null
 
 	val ticketsLiveData: LiveData<List<Ticket>>
@@ -35,14 +35,9 @@ class BusRepository(roomDB: EtkRoomDB) {
 	val liveDataTranzactii: LiveData<List<Transaction>>
 		get() = transactionsDao.allTransactionsLiveData
 
-	val liveDataTrasee: LiveData<List<Route>>
-		get() {
-			if (traseeLiveData == null) {
-				traseeLiveData = MutableLiveData()
-				traseeLiveData !!.value = DummyData.loadTrasee()
-			}
-			return traseeLiveData !!
-		}
+	suspend fun getRoutes(type: TransportType): List<Route> {
+		return routesDao.getRoutesForType(type)
+	}
 
 	fun getLiveDataStatii(nrTraseu: Int): LiveData<List<String>> {
 //		statiiLiveData = StatiiLiveData(nrTraseu)

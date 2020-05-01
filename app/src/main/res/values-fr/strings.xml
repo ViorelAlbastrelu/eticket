@@ -55,6 +55,8 @@
 	<string name="zero_bilete">Il n\'y a pas de ticket dans la liste</string>
 
 	<!--Route layout-->
+	<string name="route_name_fmt">Station: %s</string>
+	<string name="route_time_fmt">Arrivée: %s</string>
 	<string name="ora_traseu_fmt">Heure d\'arrivée: %1$s</string>
 	<string name="nr_traseu_fmt">Numéro de sentier:</string>
 

@@ -24,9 +24,9 @@ object AppUtils {
 		}
 	}
 
-	// filename = "transurb_itinerar.json"
-	fun loadJSONFromAsset(assets: AssetManager, fileName: String?): String? {
-		var json: String? = null
+	// filename = "transurb_schedule.json"
+	fun loadJSONFromAsset(assets: AssetManager, fileName: String): String? {
+		val json: String?
 		json = try {
 			val stream = assets.open(fileName)
 			val size = stream.available()
@@ -41,7 +41,7 @@ object AppUtils {
 		return json
 	}
 
-	fun <C> getObjectFromJSON(json: String?, type: Class<C>?): C {
+	fun <C> getObjectFromJSON(json: String, type: Class<C>): C {
 		return Gson().fromJson(json, type)
 	}
 }

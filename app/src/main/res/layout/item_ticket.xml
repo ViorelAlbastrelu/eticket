@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
 	<data>
 
 		<variable
@@ -8,75 +10,26 @@
 	</data>
 
 	<androidx.cardview.widget.CardView
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:app="http://schemas.android.com/apk/res-auto"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_margin="10dp"
+		android:layout_margin="@dimen/feeditem_outside_margin"
 		app:cardCornerRadius="6dp"
-		app:cardElevation="6dp"
-		app:contentPadding="10dp">
+		app:contentPadding="@dimen/feeditem_inside_padding">
 
 		<androidx.constraintlayout.widget.ConstraintLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content">
 
-			<TextView
-				android:id="@+id/traseu_bilet"
-				android:layout_width="0dp"
-				android:layout_height="wrap_content"
-				android:layout_marginEnd="8dp"
-				android:layout_marginStart="8dp"
-				android:text="@{String.valueOf(ticket.routeNumber)}"
-				android:textAlignment="center"
-				android:textSize="36sp"
-				android:textStyle="bold"
-				app:statusColor="@{ticket.active}"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="parent" />
-
-			<ImageView
-				android:id="@+id/divider"
-				android:layout_width="0dp"
-				android:layout_height="1dp"
-				android:layout_marginEnd="8dp"
-				android:layout_marginStart="8dp"
-				android:scaleType="fitXY"
-				app:layout_constraintBottom_toTopOf="@+id/status_bilet"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintHorizontal_bias="0.0"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@+id/traseu_bilet"
-				app:srcCompat="@android:drawable/bottom_bar" />
-
-			<TextView
-				android:id="@+id/status_bilet"
-				android:layout_width="0dp"
-				android:layout_height="wrap_content"
-				android:layout_marginEnd="8dp"
-				android:layout_marginStart="8dp"
-				android:text="@string/status_bilet_activ"
-				android:textAlignment="center"
-				android:textSize="24sp"
-				app:statusColor="@{ticket.active}"
-				app:statusBilet="@{ticket.active}"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@+id/divider" />
-
 			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/ticketDetails"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="8dp"
-				android:layout_marginEnd="8dp"
-				android:layout_marginStart="8dp"
-				android:layout_marginTop="8dp"
 				android:orientation="horizontal"
 				app:layout_constraintBottom_toBottomOf="parent"
-				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintEnd_toStartOf="@+id/dottedLine"
+				app:layout_constraintHorizontal_bias="0.5"
 				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@+id/status_bilet">
+				app:layout_constraintTop_toTopOf="parent">
 
 				<TextView
 					android:id="@+id/calatorii_bilet"
@@ -97,7 +50,8 @@
 					android:layout_marginTop="8dp"
 					android:text="@{String.valueOf(ticket.trips)}"
 					app:layout_constraintStart_toEndOf="@+id/calatorii_bilet"
-					app:layout_constraintTop_toTopOf="parent" />
+					app:layout_constraintTop_toTopOf="parent"
+					tools:text="test" />
 
 				<TextView
 					android:id="@+id/ora_bilet"
@@ -114,9 +68,9 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
-					android:text="@{ticket.getHourMinute()}"
 					app:layout_constraintStart_toEndOf="@+id/ora_bilet"
-					app:layout_constraintTop_toBottomOf="@+id/calatorii_bilet" />
+					app:layout_constraintTop_toBottomOf="@+id/calatorii_bilet"
+					tools:text="test" />
 
 				<TextView
 					android:id="@+id/data_bilet"
@@ -135,15 +89,18 @@
 					android:layout_marginStart="8dp"
 					android:text="@{ticket.getDayMonthYear()}"
 					app:layout_constraintStart_toEndOf="@+id/data_bilet"
-					app:layout_constraintTop_toBottomOf="@+id/ora_bilet" />
+					app:layout_constraintTop_toBottomOf="@+id/ora_bilet"
+					tools:text="test" />
 
 				<TextView
 					android:id="@+id/serie_bilet"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
+					android:layout_marginBottom="8dp"
 					android:text="@string/serie_bilet"
 					android:textAlignment="textStart"
+					app:layout_constraintBottom_toBottomOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
 					app:layout_constraintTop_toBottomOf="@+id/data_bilet" />
 
@@ -154,10 +111,61 @@
 					android:layout_marginStart="8dp"
 					android:text="@{String.valueOf(ticket.id)}"
 					app:layout_constraintStart_toEndOf="@+id/serie_bilet"
-					app:layout_constraintTop_toBottomOf="@+id/data_bilet" />
+					app:layout_constraintTop_toBottomOf="@+id/data_bilet"
+					tools:text="test" />
 
 			</androidx.constraintlayout.widget.ConstraintLayout>
 
+			<ImageView
+				android:id="@+id/dottedLine"
+				android:layout_width="1dp"
+				android:layout_height="0dp"
+				app:layout_constraintBottom_toBottomOf="@id/ticketDetails"
+				app:layout_constraintEnd_toStartOf="@+id/guidelineDottedLine"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toEndOf="@+id/ticketDetails"
+				app:layout_constraintTop_toTopOf="@id/ticketDetails"
+				app:srcCompat="@drawable/ticket_dotted_line" />
+
+			<androidx.constraintlayout.widget.Guideline
+				android:id="@+id/guidelineDottedLine"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				app:layout_constraintEnd_toStartOf="@+id/traseu_bilet"
+				app:layout_constraintGuide_begin="315dp"
+				app:layout_constraintStart_toEndOf="@+id/dottedLine" />
+
+			<TextView
+				android:id="@+id/traseu_bilet"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="@{String.valueOf(ticket.routeNumber)}"
+				android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+				android:textStyle="bold"
+				app:layout_constraintBottom_toTopOf="@+id/status_bilet"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toEndOf="@+id/guidelineDottedLine"
+				app:layout_constraintTop_toTopOf="parent"
+				app:statusColor="@{ticket.active}"
+				tools:text="102" />
+
+			<TextView
+				android:id="@+id/status_bilet"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="@string/status_bilet_activ"
+				android:textAlignment="center"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toEndOf="@+id/ticketDetails"
+				app:statusBilet="@{ticket.active}"
+				app:statusColor="@{ticket.active}" />
+
 		</androidx.constraintlayout.widget.ConstraintLayout>
+
 	</androidx.cardview.widget.CardView>
 </layout>

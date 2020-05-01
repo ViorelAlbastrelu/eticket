@@ -2,7 +2,9 @@ package com.faciee.cti.valbastrelu.eticket.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.faciee.cti.valbastrelu.eticket.R
@@ -10,6 +12,7 @@ import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
 import com.faciee.cti.valbastrelu.eticket.room.entities.TicketParking
 import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingViewModel
+import com.google.firebase.auth.FederatedAuthProvider
 
 class HomeFeedAdapter : RecyclerView.Adapter<FeedItemViewHolder<*>>() {
 
@@ -24,13 +27,16 @@ class HomeFeedAdapter : RecyclerView.Adapter<FeedItemViewHolder<*>>() {
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedItemViewHolder<*> {
 		return when (viewType) {
 			TICKET_VIEW_TYPE -> {
-				FeedItemViewHolder.TicketFeedHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_ticket, parent, false))
+				FeedItemViewHolder.TicketFeedHolder(inflateDataBinding(parent, R.layout.item_ticket))
 			}
 			PTICKET_VIEW_TYPE -> {
-				FeedItemViewHolder.ParkingTicketFeedHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_ticket_parking, parent, false))
+				FeedItemViewHolder.ParkingTicketFeedHolder(inflateDataBinding(parent, R.layout.item_ticket_parking))
+			}
+			ROUTE_VIEW_TYPE -> {
+				FeedItemViewHolder.RouteFeedHolder(inflateDataBinding(parent, R.layout.item_scheduled_route))
 			}
 			else -> {
-				FeedItemViewHolder.TicketFeedHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_ticket, parent, false))
+				FeedItemViewHolder.TicketFeedHolder(inflateDataBinding(parent, R.layout.item_ticket))
 			}
 		}
 	}
@@ -40,7 +46,7 @@ class HomeFeedAdapter : RecyclerView.Adapter<FeedItemViewHolder<*>>() {
 	override fun getItemViewType(position: Int) = when (feedItems[position]) {
 		is Ticket -> TICKET_VIEW_TYPE
 		is TicketParking -> PTICKET_VIEW_TYPE
-		is Route -> TRIP_VIEW_TYPE
+		is Route -> ROUTE_VIEW_TYPE
 		else -> UNKNOWN_VIEW_TYPE
 	}
 
@@ -48,8 +54,13 @@ class HomeFeedAdapter : RecyclerView.Adapter<FeedItemViewHolder<*>>() {
 		when (holder) {
 			is FeedItemViewHolder.TicketFeedHolder -> holder.bind(feedItems[position] as Ticket)
 			is FeedItemViewHolder.ParkingTicketFeedHolder -> holder.bind(feedItems[position] as TicketParking)
+			is FeedItemViewHolder.RouteFeedHolder -> holder.bind(feedItems[position] as Route)
 			is FeedItemViewHolder.TripFeedHolder -> TODO()
 		}
+	}
+
+	private fun <VDB : ViewDataBinding> inflateDataBinding(parent: ViewGroup, @LayoutRes layout: Int): VDB {
+		return DataBindingUtil.inflate(LayoutInflater.from(parent.context), layout, parent, false)
 	}
 
 	fun <T> updateFeed(newFeedItems: List<T>) {

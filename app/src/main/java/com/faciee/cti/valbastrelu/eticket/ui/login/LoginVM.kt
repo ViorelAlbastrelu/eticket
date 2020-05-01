@@ -35,7 +35,7 @@ class LoginVM(
 	}
 
 	fun saveUserInSession(){
-		email?.let { eTicketApp.appPreferences.setCurrentEmail(it) }
+		email?.let { eTicketApp.appPreferences.currentEmail = it }
 	}
 
 	fun isFormValid(email: String, password: String): Boolean {

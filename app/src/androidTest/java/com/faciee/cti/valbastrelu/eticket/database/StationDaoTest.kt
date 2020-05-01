@@ -126,9 +126,9 @@ class StationDaoTest {
 
 	private fun generateMockStations(): List<Station> {
 		val localList: MutableList<Station> = ArrayList()
-		localList.add(Station(0, "Statie1", "Tur", 7))
-		localList.add(Station(1, "Statie2", "Tur", 7))
-		localList.add(Station(2, "Statie3", "Tur", 7))
+		localList.add(Station(0, "Statie1", 0, 7))
+		localList.add(Station(1, "Statie2", 0, 7))
+		localList.add(Station(2, "Statie3", 0, 7))
 		return localList
 	}
 }

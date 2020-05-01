@@ -54,7 +54,9 @@
 	<string name="serie_bilet">Seria:</string>
 	<string name="zero_bilete">Nu există nici un bilet în listă</string>
 
-	<!--Traseu layout-->
+	<!--Route layout-->
+	<string name="route_name_fmt">Stație: %s</string>
+	<string name="route_time_fmt">Sosire: %s</string>
 	<string name="ora_traseu_fmt">Ora sosire: %1$s</string>
 	<string name="nr_traseu_fmt">Număr traseu:</string>
 

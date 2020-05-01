@@ -17,13 +17,14 @@
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:padding="8dp">
+		android:background="@drawable/background_white_rouned_corners"
+		android:layout_margin="@dimen/feeditem_outside_margin"
+		android:padding="@dimen/feeditem_inside_padding">
 
 		<ImageView
 			android:id="@+id/traseuTypeIcon"
 			android:layout_width="52dp"
 			android:layout_height="52dp"
-			android:layout_marginStart="8dp"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent"
@@ -33,15 +34,13 @@
 
 		<TextView
 			android:id="@+id/traseu_no"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginStart="16dp"
 			android:layout_marginTop="8dp"
 			android:layout_marginBottom="8dp"
 			android:text="@string/nr_traseu_fmt"
-			android:textAlignment="center"
-			android:textSize="20sp"
-			android:textStyle="bold"
+			android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintStart_toEndOf="@+id/traseuTypeIcon"
 			app:layout_constraintTop_toTopOf="parent" />
@@ -59,9 +58,11 @@
 			android:textStyle="bold"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintStart_toEndOf="@+id/traseu_no"
-			app:layout_constraintTop_toTopOf="parent" />
+			app:layout_constraintTop_toTopOf="parent"
+			tools:text="39" />
 
 		<LinearLayout
+			android:id="@+id/linearLayout"
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:orientation="vertical"
