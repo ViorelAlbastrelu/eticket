@@ -28,14 +28,6 @@ class HomeVM(
 			repository.insertTicketInDatabase()
 			feedItems.value = repository.getLatestActiveTickets()
 		}
-
-		CoroutineScope(IO).launch {
-			val loadJSONFromAsset = AppUtils.loadJSONFromAsset(app.assets, "transurb_schedule.json")
-			if (! loadJSONFromAsset.isNullOrBlank()) {
-				val objectFromJSON = AppUtils.getObjectFromJSON(loadJSONFromAsset, Schedule::class.java)
-				objectFromJSON.bus
-			}
-		}
 	}
 
 	override fun onCleared() {
@@ -52,7 +44,7 @@ class HomeVM(
 	}
 
 	companion object {
-		private const val TAG = "BusActivityModel"
+		private const val TAG = "HomeVM"
 
 		fun getFactory(app: ETicketApp, repository: HomeRepository): ViewModelProvider.Factory {
 			return object : ViewModelProvider.Factory {

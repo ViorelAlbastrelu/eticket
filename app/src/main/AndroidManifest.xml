@@ -9,13 +9,12 @@
 		tools:ignore="ProtectedPermissions" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.NFC" />
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 	<uses-feature android:name="android.hardware.nfc" />
 
-	<!-- Firebase project ID eticket-va112 -->
 	<application
 		android:name=".base.ETicketApp"
 		android:allowBackup="true"
@@ -24,33 +23,32 @@
 		android:roundIcon="@mipmap/ic_launcher"
 		android:supportsRtl="true"
 		android:theme="@style/EticketTheme">
-
-		<meta-data
-			android:name="com.google.android.geo.API_KEY"
-			android:value="AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE"/>
-
-        <activity
-			android:name=".ui.bus.BusMainFragment"
-			android:label="@string/title_fragment_bus" />
-		<activity
-			android:name=".ui.login.LoginActivity"
-			android:label="@string/title_login"
-			android:windowSoftInputMode="stateVisible|adjustPan">
-
-		</activity>
-		<activity
-			android:name=".main.ETicketMain"
-			android:theme="@style/EticketTheme">
+		<activity android:name=".ui.splash.SplashActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+
+		<meta-data
+			android:name="com.google.android.geo.API_KEY"
+			android:value="AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE" />
+
+		<activity
+			android:name=".ui.bus.BusMainFragment"
+			android:label="@string/title_fragment_bus" />
+		<activity
+			android:name=".ui.login.LoginActivity"
+			android:label="@string/title_login"
+			android:windowSoftInputMode="stateVisible|adjustPan" />
+		<activity
+			android:name=".main.ETicketMain"
+			android:theme="@style/EticketTheme"/>
 		<activity
 			android:name=".ui.parking.FragmentParkingMain"
 			android:label="@string/title_fragment_parking"
-			android:theme="@style/EticketTheme"/>
+			android:theme="@style/EticketTheme" />
 	</application>
 
 </manifest>
