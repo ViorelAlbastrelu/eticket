@@ -17,6 +17,12 @@ interface RoutesDao {
 	@Query("SELECT * FROM route WHERE transportType = :type")
 	suspend fun getRoutesForType(type: TransportType): List<Route>
 
+	@Query("SELECT * FROM route WHERE transportType = :type ORDER BY startTime LIMIT 1")
+	suspend fun getLatestRoute(type: TransportType): Route
+
+	@Query("SELECT number, weekOffset, weekendOffset, MIN(startTime) as startTime, endTime, transportType FROM route GROUP BY transportType")
+	suspend fun getLatestRoutes(): List<Route>
+
 	@Insert
 	suspend fun insertRoutes(vararg route: Route)
 

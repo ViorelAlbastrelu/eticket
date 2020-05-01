@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
 	<data>
+
 		<variable
 			name="route"
 			type="com.faciee.cti.valbastrelu.eticket.room.entities.Route" />
 	</data>
-	<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:app="http://schemas.android.com/apk/res-auto"
-		xmlns:tools="http://schemas.android.com/tools"
+
+	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="@dimen/feeditem_outside_margin"
@@ -21,6 +24,7 @@
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent"
+			app:transportIcon="@{route.transportType.getTransportTypeIcon()}"
 			app:srcCompat="@drawable/ic_bus" />
 
 		<TextView
@@ -37,12 +41,14 @@
 			app:layout_constraintTop_toTopOf="parent"
 			app:layout_constraintVertical_bias="0.0"
 			app:layout_constraintVertical_chainStyle="packed"
+			android:text="@{@string/route_name_fmt(route.transportType.typeName)}"
 			tools:text="Statie: Micro 19-Cinema Dacia" />
 
 		<TextView
 			android:id="@+id/labelRouteNumber"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:text="@{String.valueOf(route.number)}"
 			android:textAppearance="@style/TextAppearance.AppCompat.Display1"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +65,7 @@
 			app:layout_constraintHorizontal_bias="0.5"
 			app:layout_constraintStart_toStartOf="@+id/labelRouteName"
 			app:layout_constraintTop_toBottomOf="@+id/labelRouteName"
+			android:text="@{@string/route_time_fmt(route.startTime)}"
 			tools:text="Sosire: 17:25" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.faciee.cti.valbastrelu.eticket.R
 import com.faciee.cti.valbastrelu.eticket.databinding.ItemRouteBinding
+import com.faciee.cti.valbastrelu.eticket.databinding.ItemScheduledRouteBinding
 import com.faciee.cti.valbastrelu.eticket.databinding.ItemTicketBinding
 import com.faciee.cti.valbastrelu.eticket.databinding.ItemTicketParkingBinding
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
@@ -35,7 +36,7 @@ sealed class FeedItemViewHolder<ITEM>(binding: ViewDataBinding) : RecyclerView.V
 		}
 	}
 
-	class RouteFeedHolder(val routeBinding: ItemRouteBinding) : FeedItemViewHolder<Route>(routeBinding) {
+	class RouteFeedHolder(val routeBinding: ItemScheduledRouteBinding) : FeedItemViewHolder<Route>(routeBinding) {
 		override fun bind(item: Route) {
 			routeBinding.route = item
 		}
