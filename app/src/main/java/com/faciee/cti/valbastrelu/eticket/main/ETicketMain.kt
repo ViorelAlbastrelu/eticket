@@ -60,6 +60,8 @@ class ETicketMain : BaseActivity() {
 // as you specify a parent activity in AndroidManifest.xml.
 		val id = item.itemId
 		return if (id == R.id.action_settings) {
+			eTicketApp.firebaseAuth.signOut()
+			finish()
 			true
 		} else super.onOptionsItemSelected(item)
 	}

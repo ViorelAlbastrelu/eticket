@@ -23,13 +23,13 @@ class LoginVM(
 	}
 
 	fun loginWithCredentials(email: String, password: String) {
-		if (!isFormValid(email, password)) return
+		if (isFormInvalid(email, password)) return
 		this.email = email
 		fireBaseClient.signIn(email, password)
 	}
 
 	fun registerNewUser(email: String, password: String) {
-		if (!isFormValid(email, password)) return
+		if (!isFormInvalid(email, password)) return
 		this.email = email
 		fireBaseClient.register(email, password)
 	}
@@ -38,9 +38,9 @@ class LoginVM(
 		email?.let { eTicketApp.appPreferences.currentEmail = it }
 	}
 
-	fun isFormValid(email: String, password: String): Boolean {
+	fun isFormInvalid(email: String, password: String): Boolean {
 		var invalid = false
-		if (TextUtils.isEmpty(email) || android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+		if (TextUtils.isEmpty(email) || ! android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
 			emailValidation.value = INVALID_EMAIL
 			invalid = INVALID_EMAIL
 		}
