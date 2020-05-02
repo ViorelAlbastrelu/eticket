@@ -33,39 +33,39 @@ public class LoginTest {
 	public void testValidCredentials(){
 		String email = "test@email.com";
 		String password = "123456";
-		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
-		Assert.assertFalse(loginVM.isFormValid(email, password));
+		Mockito.when(loginVM.isFormInvalid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormInvalid(email, password));
 	}
 	
 	@Test
 	public void testWrongEmail(){
 		String email = "testemail.com";
 		String password = "123456";
-		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
-		Assert.assertFalse(loginVM.isFormValid(email, password));
+		Mockito.when(loginVM.isFormInvalid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormInvalid(email, password));
 	}
 	
 	@Test
 	public void testWrongPassword(){
 		String email = "test@email.com";
 		String password = "12";
-		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
-		Assert.assertFalse(loginVM.isFormValid(email, password));
+		Mockito.when(loginVM.isFormInvalid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormInvalid(email, password));
 	}
 	@Test
 	public void testEmptyEmail(){
 		String email = "";
 		String password = "123456";
-		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
-		Assert.assertFalse(loginVM.isFormValid(email, password));
+		Mockito.when(loginVM.isFormInvalid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormInvalid(email, password));
 	}
 	
 	@Test
 	public void testEmptyPassword(){
 		String email = "test@email.com";
 		String password = "";
-		Mockito.when(loginVM.isFormValid(email, password)).thenReturn(false);
-		Assert.assertFalse(loginVM.isFormValid(email, password));
+		Mockito.when(loginVM.isFormInvalid(email, password)).thenReturn(false);
+		Assert.assertFalse(loginVM.isFormInvalid(email, password));
 	}
 	
 }

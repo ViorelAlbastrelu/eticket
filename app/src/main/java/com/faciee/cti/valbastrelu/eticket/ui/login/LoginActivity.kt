@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.AutoCompleteTextView
 import android.widget.EditText
 import android.widget.ProgressBar
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.faciee.cti.valbastrelu.eticket.BuildConfig
@@ -18,6 +19,7 @@ import com.faciee.cti.valbastrelu.eticket.base.BaseActivity
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp.Companion.getStringResource
 import com.faciee.cti.valbastrelu.eticket.base.ETicketApp.Companion.toastMessageShort
 import com.faciee.cti.valbastrelu.eticket.databinding.ActivityLoginBinding
+import com.faciee.cti.valbastrelu.eticket.main.ETicketMain
 import com.faciee.cti.valbastrelu.eticket.util.firebase.FireBaseCallback
 import com.faciee.cti.valbastrelu.eticket.util.firebase.FireBaseClient
 import com.google.firebase.auth.FirebaseUser
@@ -30,7 +32,6 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 	// UI references.
 	private var mEmailView: AutoCompleteTextView? = null
 	private var mPasswordView: EditText? = null
-	private var mProgressView: ProgressBar? = null
 	private var mLoginFormView: View? = null
 
 
@@ -64,7 +65,8 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 
 	private fun goToHomeActivity() {
 		//TODO goToHomeActivity(FirebaseUser user) - add user to intent bundle and send throughout activity
-		mProgressView !!.visibility = View.GONE
+		startActivity(Intent(this, ETicketMain::class.java))
+		loginBinding.loginProgress.isVisible = false
 		finish()
 	}
 
@@ -84,9 +86,9 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 	private fun initViews() {
 		mEmailView = loginBinding.email
 		mPasswordView = loginBinding.password
-		mProgressView = loginBinding.loginProgress
 		mLoginFormView = loginBinding.loginForm
 		loginBinding.btnAutentificare.setOnClickListener {
+			loginBinding.loginProgress.isVisible = true
 			viewModel.loginWithCredentials(loginBinding.email.text.toString(), loginBinding.password.text.toString())
 		}
 		loginBinding.btnInregistrare.setOnClickListener {
@@ -112,10 +114,6 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 //			findViewById(R.id.email_password_fields).setVisibility(View.VISIBLE);
 //			findViewById(R.id.signed_in_buttons).setVisibility(View.GONE);
 		}
-	}
-
-	private fun login() {
-
 	}
 
 	companion object {
