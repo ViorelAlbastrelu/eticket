@@ -25,4 +25,8 @@
 		android:name="com.faciee.cti.valbastrelu.eticket.ui.chat.ChatbotFragment"
 		android:label="@string/menu_assistant"
 		tools:layout="@layout/fragment_chatbot" />
+	<fragment
+		android:id="@+id/fragmentSettings"
+		android:name="com.faciee.cti.valbastrelu.eticket.ui.settings.SettingsFragment"
+		android:label="@string/title_fragment_settings"/>
 </navigation>
