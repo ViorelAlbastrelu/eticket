@@ -27,7 +27,7 @@
 	<string name="menu_car">Parcări</string>
 	<string name="menu_acc_pref_title">Preferințe cont</string>
 	<string name="menu_assistant">Asistent</string>
-	<string name="menu_logout">Ieșire din cont</string>
+	<string name="menu_settings">Setări</string>
 
 	<!-- BUS ACTIVITY -->
 	<!-- Fragment Traseu -->

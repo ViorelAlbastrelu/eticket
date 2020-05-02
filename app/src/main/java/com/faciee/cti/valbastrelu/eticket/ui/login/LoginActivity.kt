@@ -65,7 +65,7 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 
 	private fun goToHomeActivity() {
 		//TODO goToHomeActivity(FirebaseUser user) - add user to intent bundle and send throughout activity
-		startActivity(Intent(this, ETicketMain::class.java))
+		startActivity(ETicketMain.prepareIntent(this))
 		loginBinding.loginProgress.isVisible = false
 		finish()
 	}

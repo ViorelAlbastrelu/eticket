@@ -27,7 +27,7 @@
 	<string name="menu_car">Parking</string>
 	<string name="menu_acc_pref_title">Account preferences</string>
 	<string name="menu_assistant">Asistant</string>
-	<string name="menu_logout">Sign out</string>
+	<string name="menu_settings">Settings</string>
 
 	<!-- BUS ACTIVITY -->
 	<!-- Fragment Route -->

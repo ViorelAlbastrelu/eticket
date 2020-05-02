@@ -1,11 +1,13 @@
 package com.faciee.cti.valbastrelu.eticket.main
 
 import android.app.Activity
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
@@ -15,6 +17,7 @@ import com.faciee.cti.valbastrelu.eticket.base.ETicketApp
 import com.faciee.cti.valbastrelu.eticket.databinding.ActivityMainBinding
 import com.faciee.cti.valbastrelu.eticket.databinding.NavHeaderEticketMainBinding
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
 class ETicketMain : BaseActivity() {
@@ -60,34 +63,19 @@ class ETicketMain : BaseActivity() {
 // as you specify a parent activity in AndroidManifest.xml.
 		val id = item.itemId
 		return if (id == R.id.action_settings) {
-			eTicketApp.firebaseAuth.signOut()
-			finish()
+			var alertDialog: AlertDialog? = null
+			alertDialog = AlertDialog.Builder(this)
+					.setMessage(R.string.signout_message)
+					.setPositiveButton(R.string.afirmativ) { dialog: DialogInterface?, which: Int ->
+						eTicketApp.firebaseAuth.signOut()
+						startActivity(LoginActivity.prepareIntent(this))
+						//TODO keep main app in background and add flag in LoginActivity to intent SINGLE_TOP
+						finish()
+					}
+					.setNegativeButton(R.string.negativ) { dialog: DialogInterface?, which: Int -> alertDialog?.dismiss() }.show()
 			true
 		} else super.onOptionsItemSelected(item)
 	}
-
-//	override fun onNavigationItemSelected(item: MenuItem): Boolean {
-//		val id = item.itemId
-//		var intent: Intent? = null
-//		if (id == R.id.nav_tbus) {
-//			eTicketApp.toastMessageShort("Trolleybus not implemented yet!")
-//		} else if (id == R.id.nav_tram) {
-//			eTicketApp.toastMessageShort("Tramway not implemented yet!")
-//		} else if (id == R.id.nav_chat) {
-//			intent = Intent(this, ChatbotActivity::class.java)
-//		} else if (id == R.id.nav_signout) {
-//			AlertDialog.Builder(this)
-//					.setMessage(R.string.signout_message)
-//					.setPositiveButton(R.string.afirmativ) { dialog: DialogInterface?, which: Int ->
-//						eTicketApp.firebaseAuth.signOut()
-//						startActivity(Intent(this, LoginActivity::class.java))
-//					}
-//					.setNegativeButton(R.string.negativ) { dialog: DialogInterface?, which: Int -> }.show()
-//		}
-//		mainBinding.drawerLayout.closeDrawer(GravityCompat.START)
-//		intent?.let { startActivity(it) }
-//		return true
-//	}
 
 	private fun setUserAndEmailToDrawerProfile() {
 		val email = ETicketApp.currentETicketApp.appPreferences.currentEmail
@@ -96,7 +84,7 @@ class ETicketMain : BaseActivity() {
 		navHeader.profileEmail.text = email
 	}
 
-	companion object{
+	companion object {
 		fun prepareIntent(activity: Activity) = Intent(activity, ETicketMain::class.java)
 	}
 }
