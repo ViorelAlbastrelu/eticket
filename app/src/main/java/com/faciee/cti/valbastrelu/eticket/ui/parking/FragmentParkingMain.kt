@@ -44,6 +44,7 @@ class FragmentParkingMain : BaseFragment<ParkingViewModel>() {
 		mSectionsPagerAdapter !!.addFragment(FrgTb02Map(), getString(R.string.tab_name_parking)) //PARCARI
 		mSectionsPagerAdapter !!.addFragment(newInstance(), getString(R.string.tab_name_history)) //ISTORIC
 		viewPager.adapter = mSectionsPagerAdapter
+		
 	}
 
 	private val isServiceOK: Boolean
