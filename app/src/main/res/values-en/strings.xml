@@ -27,7 +27,7 @@
 	<string name="menu_car">Parking</string>
 	<string name="menu_acc_pref_title">Account preferences</string>
 	<string name="menu_assistant">Asistant</string>
-	<string name="menu_settings">Settings</string>
+	<string name="menu_settings">\@string/title_fragment_settings</string>
 
 	<!-- BUS ACTIVITY -->
 	<!-- Fragment Route -->
@@ -51,7 +51,7 @@
 	<string name="nr_calatorii">Trips:</string>
 	<string name="ora_bilet">Hour:</string>
 	<string name="data_bilet">Date:</string>
-	<string name="serie_bilet">Series:</string>
+	<string name="serie_bilet">Serial no.:</string>
 	<string name="zero_bilete">No tickets currently in list</string>
 
 	<!--Route layout-->
@@ -81,4 +81,5 @@
 	<string name="transport_type_tramway">Tram</string>
 	<string name="transport_type_parking">Car</string>
 	<string name="transport_type_not_available">Transportation unavailable</string>
+	<string name="title_fragment_settings">Settings</string>
 </resources>

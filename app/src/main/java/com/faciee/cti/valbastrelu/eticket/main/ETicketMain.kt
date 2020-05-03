@@ -58,27 +58,18 @@ class ETicketMain : BaseActivity() {
 		return true
 	}
 
-	override fun onOptionsItemSelected(item: MenuItem): Boolean { // Handle action bar item clicks here. The action bar will
+	override fun onOptionsItemSelected(item: MenuItem): Boolean {
+// Handle action bar item clicks here. The action bar will
 // automatically handle clicks on the Home/Up button, so long
 // as you specify a parent activity in AndroidManifest.xml.
 		val id = item.itemId
 		return if (id == R.id.action_settings) {
-			var alertDialog: AlertDialog? = null
-			alertDialog = AlertDialog.Builder(this)
-					.setMessage(R.string.signout_message)
-					.setPositiveButton(R.string.afirmativ) { dialog: DialogInterface?, which: Int ->
-						eTicketApp.firebaseAuth.signOut()
-						startActivity(LoginActivity.prepareIntent(this))
-						//TODO keep main app in background and add flag in LoginActivity to intent SINGLE_TOP
-						finish()
-					}
-					.setNegativeButton(R.string.negativ) { dialog: DialogInterface?, which: Int -> alertDialog?.dismiss() }.show()
 			true
 		} else super.onOptionsItemSelected(item)
 	}
 
 	private fun setUserAndEmailToDrawerProfile() {
-		val email = ETicketApp.currentETicketApp.appPreferences.currentEmail
+		val email = eTicketApp.appPreferences.currentEmail
 		val navHeader = NavHeaderEticketMainBinding.bind(mainBinding.navView.getHeaderView(0))
 		navHeader.profileName.text = "Viorel"
 		navHeader.profileEmail.text = email

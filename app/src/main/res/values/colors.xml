@@ -8,4 +8,6 @@
 	<color name="colorSecondaryLight">#ff6659</color>
 	<color name="colorAccent">#9a0007</color>
 
+<!--	Ticket-->
+	<color name="ticket_background">#fbfcd9</color>
 </resources>

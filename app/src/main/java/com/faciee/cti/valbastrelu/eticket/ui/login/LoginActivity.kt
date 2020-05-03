@@ -29,12 +29,6 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 	private lateinit var viewModel: LoginVM
 	private lateinit var loginBinding: ActivityLoginBinding
 
-	// UI references.
-	private var mEmailView: AutoCompleteTextView? = null
-	private var mPasswordView: EditText? = null
-	private var mLoginFormView: View? = null
-
-
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		viewModel = ViewModelProvider(this, LoginVM.getFactory(eTicketApp, FireBaseClient(this))).get(LoginVM::class.java)
@@ -45,10 +39,10 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 
 	override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
 		val view = super.onCreateView(name, context, attrs)
-		viewModel.emailValidation.observe(this, Observer {invalid ->
+		viewModel.emailValidation.observe(this, Observer { invalid ->
 			loginBinding.email.error = if (invalid) getStringResource(R.string.error_invalid_email) else null
 		})
-		viewModel.passwordValidation.observe(this, Observer {invalid ->
+		viewModel.passwordValidation.observe(this, Observer { invalid ->
 			loginBinding.password.error = if (invalid) getStringResource(R.string.error_invalid_password) else null
 		})
 		return view
@@ -57,7 +51,7 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 	override fun onStart() {
 		super.onStart()
 		viewModel.checkUser()
-		if (BuildConfig.DEBUG){
+		if (BuildConfig.DEBUG) {
 			loginBinding.email.setText("test@email.com")
 			loginBinding.password.setText("123456")
 		}
@@ -71,6 +65,7 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 	}
 
 	override fun signInSuccessfully() {
+		viewModel.storeLoginDetails()
 		goToHomeActivity()
 	}
 
@@ -84,9 +79,6 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 
 
 	private fun initViews() {
-		mEmailView = loginBinding.email
-		mPasswordView = loginBinding.password
-		mLoginFormView = loginBinding.loginForm
 		loginBinding.btnAutentificare.setOnClickListener {
 			loginBinding.loginProgress.isVisible = true
 			viewModel.loginWithCredentials(loginBinding.email.text.toString(), loginBinding.password.text.toString())
@@ -97,23 +89,11 @@ class LoginActivity : BaseActivity(), FireBaseCallback {
 	}
 
 	private fun updateUI(user: FirebaseUser?) {
-		mEmailView !!.setText(user !!.email)
-		if (user != null) {
-			loginBinding.statusTextView.text = getString(R.string.emailpassword_status_fmt,
-					user.email,
-					user.isEmailVerified)
-			loginBinding.statusTextView.visibility = View.VISIBLE
-			//			mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
-//			findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
-//			findViewById(R.id.email_password_fields).setVisibility(View.GONE);
-//			findViewById(R.id.verify_email_button).setEnabled(!user.isEmailVerified());
-		} else { //			mStatusTextView.setText(R.string.signed_out);
-//			mDetailTextView.setText(null);
-//
-//			findViewById(R.id.email_password_buttons).setVisibility(View.VISIBLE);
-//			findViewById(R.id.email_password_fields).setVisibility(View.VISIBLE);
-//			findViewById(R.id.signed_in_buttons).setVisibility(View.GONE);
-		}
+		loginBinding.email.setText(user !!.email)
+		loginBinding.statusTextView.text = getString(R.string.emailpassword_status_fmt,
+				user.email,
+				user.isEmailVerified)
+		loginBinding.statusTextView.visibility = View.VISIBLE
 	}
 
 	companion object {

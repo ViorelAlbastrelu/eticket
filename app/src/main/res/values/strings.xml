@@ -52,7 +52,7 @@
 	<string name="nr_calatorii">Calatorii:</string>
 	<string name="ora_bilet">Ora:</string>
 	<string name="data_bilet">Data:</string>
-	<string name="serie_bilet">Seria:</string>
+	<string name="serie_bilet">Serie:</string>
 	<string name="zero_bilete">Nu există nici un bilet în listă</string>
 
 	<!--Route layout-->
@@ -94,6 +94,7 @@
 	<string name="maps_API_key">AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE</string>
 
 	<!--Settings-->
+	<string name="settings_pref_key_signout" translatable="false">signout</string>
 
 	<!-- Preference Titles -->
 	<string name="messages_header">Messages</string>

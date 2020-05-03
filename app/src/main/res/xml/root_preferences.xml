@@ -36,7 +36,7 @@
 
 		<Preference
 			app:icon="@drawable/ic_menu_exit"
-			app:key="signout"
+			app:key="@string/settings_pref_key_signout"
 			app:title="Sign out" />
 
 	</PreferenceCategory>
