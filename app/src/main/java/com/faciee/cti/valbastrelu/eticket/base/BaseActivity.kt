@@ -9,8 +9,8 @@ abstract class BaseActivity : AppCompatActivity() {
 
 	fun signout(){
 		eTicketApp.firebaseAuth.signOut()
+		eTicketApp.appPreferences.clearUserPreferences()
 		startActivity(LoginActivity.prepareIntent(this))
-		//TODO keep main app in background and add flag in LoginActivity to intent SINGLE_TOP
 		finish()
 	}
 }

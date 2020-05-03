@@ -15,7 +15,7 @@ class ETkAppPreferences(private val sharedPreferences: SharedPreferences) {
 		sharedPreferences.clearAll()
 	}
 
-	fun cleanPreferences() {
+	fun clearUserPreferences() {
 		sharedPreferences.removeKeys(EMAIL_KEY)
 	}
 
