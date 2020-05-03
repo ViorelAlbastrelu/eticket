@@ -10,12 +10,16 @@
 			type="com.faciee.cti.valbastrelu.eticket.room.entities.Route" />
 	</data>
 
-	<androidx.constraintlayout.widget.ConstraintLayout
+	<androidx.cardview.widget.CardView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="@dimen/feeditem_outside_margin"
-		android:background="@drawable/background_white_rouned_corners"
-		android:padding="@dimen/feeditem_inside_padding">
+		app:cardCornerRadius="6dp"
+		app:contentPadding="@dimen/feeditem_inside_padding">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
 
 		<ImageView
 			android:id="@+id/iconRouteType"
@@ -34,7 +38,7 @@
 			android:layout_marginStart="16dp"
 			android:layout_marginEnd="8dp"
 			android:text="@{route.transportType.typeName}"
-			android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+			android:textAppearance="@style/TextAppearance.AppCompat.Large"
 			app:layout_constraintBottom_toTopOf="@+id/labelRouteTime"
 			app:layout_constraintEnd_toStartOf="@+id/labelRouteNumber"
 			app:layout_constraintHorizontal_bias="0.5"
@@ -50,6 +54,7 @@
 			android:layout_height="wrap_content"
 			android:text="@{String.valueOf(route.number)}"
 			android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+			android:textStyle="bold"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintTop_toTopOf="parent"
@@ -69,4 +74,6 @@
 			tools:text="Sosire: 17:25" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
 </layout>

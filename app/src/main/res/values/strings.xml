@@ -8,6 +8,7 @@
 	<string name="title_fragment_home">Acasa</string>
 	<string name="title_fragment_bus">Autobuze</string>
 	<string name="title_fragment_parking">Parking</string>
+	<string name="title_fragment_settings">Setări</string>
 
 	<string name="tab_name_ticket">Bilete</string>
 	<string name="tab_name_routes">Trasee</string>
@@ -27,7 +28,7 @@
 	<string name="menu_car">Parcări</string>
 	<string name="menu_acc_pref_title">Preferințe cont</string>
 	<string name="menu_assistant">Asistent</string>
-	<string name="menu_logout">Ieșire din cont</string>
+	<string name="menu_settings">@string/title_fragment_settings</string>
 
 	<!-- BUS ACTIVITY -->
 	<!-- Fragment Traseu -->
@@ -51,7 +52,7 @@
 	<string name="nr_calatorii">Calatorii:</string>
 	<string name="ora_bilet">Ora:</string>
 	<string name="data_bilet">Data:</string>
-	<string name="serie_bilet">Seria:</string>
+	<string name="serie_bilet">Serie:</string>
 	<string name="zero_bilete">Nu există nici un bilet în listă</string>
 
 	<!--Route layout-->
@@ -91,4 +92,21 @@
 
 	<string name="section_format">Hello World from section: %1$d</string>
 	<string name="maps_API_key">AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE</string>
+
+	<!--Settings-->
+	<string name="settings_pref_key_signout" translatable="false">signout</string>
+
+	<!-- Preference Titles -->
+	<string name="messages_header">Messages</string>
+	<string name="sync_header">Sync</string>
+
+	<!-- Messages Preferences -->
+	<string name="signature_title">Your signature</string>
+	<string name="reply_title">Default reply action</string>
+
+	<!-- Sync Preferences -->
+	<string name="sync_title">Sync email periodically</string>
+	<string name="attachment_title">Download incoming attachments</string>
+	<string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
+	<string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

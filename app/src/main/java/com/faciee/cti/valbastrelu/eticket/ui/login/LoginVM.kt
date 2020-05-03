@@ -34,10 +34,6 @@ class LoginVM(
 		fireBaseClient.register(email, password)
 	}
 
-	fun saveUserInSession(){
-		email?.let { eTicketApp.appPreferences.currentEmail = it }
-	}
-
 	fun isFormInvalid(email: String, password: String): Boolean {
 		var invalid = false
 		if (TextUtils.isEmpty(email) || ! android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -49,6 +45,10 @@ class LoginVM(
 			invalid = INVALID_PASSWORD
 		}
 		return invalid
+	}
+
+	fun storeLoginDetails() {
+		email?.let { eTicketApp.appPreferences.currentEmail = it }
 	}
 
 	companion object {

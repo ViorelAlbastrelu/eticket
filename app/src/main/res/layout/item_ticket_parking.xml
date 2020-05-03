@@ -21,6 +21,15 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content">
 
+			<ImageView
+				android:id="@+id/traseuTypeIcon"
+				android:layout_width="52dp"
+				android:layout_height="52dp"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:srcCompat="@drawable/ic_auto"
+				tools:ignore="ContentDescription" />
+
 			<TextView
 				android:id="@+id/traseu_ticket"
 				android:layout_width="0dp"
@@ -30,7 +39,7 @@
 				android:textAppearance="@style/TextAppearance.AppCompat.Large"
 				app:layout_constraintBottom_toTopOf="@id/divider"
 				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/traseuTypeIcon"
 				app:layout_constraintTop_toTopOf="parent"
 				app:statusColor="@{ticket.active}"
 				tools:text="Mazepa" />
@@ -39,13 +48,13 @@
 				android:id="@+id/divider"
 				android:layout_width="0dp"
 				android:layout_height="1dp"
-				android:layout_marginStart="8dp"
-				android:layout_marginEnd="8dp"
-				app:layout_constraintBottom_toTopOf="@+id/status_ticket"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
+				android:layout_marginStart="16dp"
+				android:layout_marginEnd="16dp"
 				android:background="@android:color/darker_gray"
-				app:layout_constraintTop_toBottomOf="@+id/traseu_ticket"/>
+				app:layout_constraintBottom_toTopOf="@+id/status_ticket"
+				app:layout_constraintEnd_toEndOf="@+id/traseu_ticket"
+				app:layout_constraintStart_toStartOf="@+id/traseu_ticket"
+				app:layout_constraintTop_toBottomOf="@+id/traseu_ticket" />
 
 			<TextView
 				android:id="@+id/status_ticket"
@@ -53,7 +62,7 @@
 				android:layout_height="wrap_content"
 				android:textAlignment="center"
 				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintStart_toStartOf="@+id/traseu_ticket"
 				app:layout_constraintTop_toBottomOf="@+id/divider"
 				app:statusBilet="@{ticket.active}"
 				app:statusColor="@{ticket.active}"
@@ -66,19 +75,8 @@
 				app:layout_constraintBottom_toBottomOf="parent"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toBottomOf="@+id/status_ticket">
+				app:layout_constraintTop_toBottomOf="@+id/traseuTypeIcon">
 
-
-				<TextView
-					android:id="@+id/ora_ticket"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginStart="8dp"
-					android:layout_marginTop="8dp"
-					android:text="@string/ora_bilet"
-					android:textAlignment="textStart"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toTopOf="parent" />
 
 				<TextView
 					android:id="@+id/ora_value"
@@ -87,7 +85,7 @@
 					android:layout_marginStart="8dp"
 					android:layout_marginTop="8dp"
 					android:text="@{ticket.getHourMinute()}"
-					app:layout_constraintStart_toEndOf="@+id/ora_ticket"
+					app:layout_constraintStart_toEndOf="@+id/data_value"
 					app:layout_constraintTop_toTopOf="parent"
 					tools:text="test" />
 
@@ -96,10 +94,11 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
+					android:layout_marginTop="8dp"
 					android:text="@string/data_bilet"
 					android:textAlignment="textStart"
 					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/ora_ticket" />
+					app:layout_constraintTop_toTopOf="parent" />
 
 				<TextView
 					android:id="@+id/data_value"
@@ -107,28 +106,27 @@
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
 					android:text="@{ticket.getDayMonthYear()}"
+					app:layout_constraintBottom_toBottomOf="@+id/data_ticket"
 					app:layout_constraintStart_toEndOf="@+id/data_ticket"
-					app:layout_constraintTop_toBottomOf="@+id/ora_ticket"
+					app:layout_constraintTop_toTopOf="@+id/data_ticket"
 					tools:text="test" />
 
 				<TextView
 					android:id="@+id/serie_ticket"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginStart="8dp"
 					android:text="@string/serie_bilet"
 					android:textAlignment="textStart"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/data_ticket" />
+					app:layout_constraintBottom_toBottomOf="@+id/serie_value"
+					app:layout_constraintEnd_toStartOf="@+id/serie_value" />
 
 				<TextView
 					android:id="@+id/serie_value"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginStart="8dp"
 					android:text="@{String.valueOf(ticket.id)}"
-					app:layout_constraintStart_toEndOf="@+id/serie_ticket"
-					app:layout_constraintTop_toBottomOf="@+id/data_ticket"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
 					tools:text="test" />
 
 				<TextView
@@ -136,11 +134,12 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
+					android:layout_marginTop="8dp"
 					android:layout_marginBottom="8dp"
 					android:text="@string/parking_alert_message"
 					app:layout_constraintBottom_toBottomOf="parent"
 					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintTop_toBottomOf="@+id/serie_ticket" />
+					app:layout_constraintTop_toBottomOf="@+id/data_ticket" />
 
 				<CheckBox
 					android:id="@+id/checkBoxAlerta"
