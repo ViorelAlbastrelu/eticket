@@ -1,21 +1,21 @@
 package com.faciee.cti.valbastrelu.eticket.ui.parking
 
+import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import com.faciee.cti.valbastrelu.eticket.R
 import com.faciee.cti.valbastrelu.eticket.base.MapBaseFragment
-import com.faciee.cti.valbastrelu.eticket.base.SharingFragment
 import com.faciee.cti.valbastrelu.eticket.databinding.ParkingFrgTb02MapBinding
 import com.faciee.cti.valbastrelu.eticket.ui.parking.model.ParkingViewModel
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.SupportMapFragment
-import kotlinx.android.synthetic.main.parking_frg_tb02_map.*
+import com.google.android.gms.maps.model.LatLng
 
 class FrgTb02Map : MapBaseFragment<ParkingViewModel>() {
 
-	private lateinit var parcariBinding: ParkingFrgTb02MapBinding
+	private lateinit var parkingBinding: ParkingFrgTb02MapBinding
 
 	override val mapId: Int
 		get() = R.id.mapHost
@@ -23,7 +23,7 @@ class FrgTb02Map : MapBaseFragment<ParkingViewModel>() {
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
 							  savedInstanceState: Bundle?): View? {
 		super.onCreateView(inflater, container, savedInstanceState)
-		parcariBinding = ParkingFrgTb02MapBinding.inflate(layoutInflater, container, false)
+		parkingBinding = ParkingFrgTb02MapBinding.inflate(inflater, container, false)
 
 //		val description = "Strada: Domnească \nLocuri: 3/25 \nCost taxă: 1.5 RON/h"
 //		parcariBinding.title.text = "POI: Parcare Nespălata"
@@ -31,13 +31,7 @@ class FrgTb02Map : MapBaseFragment<ParkingViewModel>() {
 //		parcariBinding.pinIcon.setOnClickListener { v: View? ->
 //			parcariBinding.parkingDescription.isVisible = ! parcariBinding.parkingDescription.isVisible
 //		}
-		return parcariBinding.root
-	}
-
-	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
-		mapFragment = childFragmentManager.findFragmentById(mapId) as SupportMapFragment
-		mapFragment.getMapAsync(this)
+		return parkingBinding.root
 	}
 
 	companion object {
