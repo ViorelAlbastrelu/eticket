@@ -1,0 +1,22 @@
+<resources>
+	<!--
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=EC:70:C4:AC:A8:18:6C:E4:A6:9F:3D:1C:D6:18:71:68:2F:3A:8D:14%3Bcom.faciee.cti.valbastrelu.eticket.main
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.faciee.cti.valbastrelu.eticket.main
+
+    SHA-1 certificate fingerprint:
+    EC:70:C4:AC:A8:18:6C:E4:A6:9F:3D:1C:D6:18:71:68:2F:3A:8D:14
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+	<string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCkwjxtuSXOU5xN8K6ocrT8ENuYq9S9Yts</string>
+</resources>

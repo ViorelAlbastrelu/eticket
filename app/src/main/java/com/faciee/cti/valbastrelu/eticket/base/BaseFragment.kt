@@ -2,7 +2,11 @@ package com.faciee.cti.valbastrelu.eticket.base
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.annotation.IdRes
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +16,7 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
 
 	protected lateinit var eTicketApp: ETicketApp
 	protected lateinit var viewModel: VM
+//	protected lateinit var viewBinding: VB
 
 	override fun onAttach(context: Context) {
 		super.onAttach(context)
