@@ -11,12 +11,13 @@ import com.faciee.cti.valbastrelu.eticket.base.SharingFragment
 import com.faciee.cti.valbastrelu.eticket.databinding.BusFrag02RoutesBinding
 import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.ui.bus.vm.BusViewModel
+import com.faciee.cti.valbastrelu.eticket.ui.common.Searchable
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.RoutesAdapter
 
 /**
  * Created by valbastrelu on 09-Apr-18.
  */
-class FrgTb02Routes : SharingFragment<BusViewModel, BusViewModel>(), RouteClickListener {
+class FrgTb02Routes : SharingFragment<BusViewModel, BusViewModel>(), RouteClickListener, Searchable {
 	lateinit var routesBinding: BusFrag02RoutesBinding
 	lateinit var routesAdapter: RoutesAdapter
 
@@ -29,7 +30,6 @@ class FrgTb02Routes : SharingFragment<BusViewModel, BusViewModel>(), RouteClickL
 		routesBinding = DataBindingUtil.inflate(inflater, R.layout.bus_frag02_routes, container, false)
 		routesAdapter = RoutesAdapter(this)
 		routesBinding.listaTraseeBus.adapter = routesAdapter
-		//TODO implement filter
 		return routesBinding.root
 	}
 
@@ -37,11 +37,6 @@ class FrgTb02Routes : SharingFragment<BusViewModel, BusViewModel>(), RouteClickL
 		super.onActivityCreated(savedInstanceState)
 		initSharedViewModel(BusViewModel::class.java, BusViewModel.getFactory(eTicketApp))
 		subscribeUI()
-	}
-
-	override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-		super.onCreateOptionsMenu(menu, inflater)
-
 	}
 
 	override fun onRouteClicked(routeNumber: Int) {
@@ -52,10 +47,15 @@ class FrgTb02Routes : SharingFragment<BusViewModel, BusViewModel>(), RouteClickL
 		}
 	}
 
+	override fun onQueryChanged(query: String) {
+		routesAdapter.filter(query)
+	}
+
 	private fun subscribeUI() {
 		sharedViewModel.liveDataTrasee.observe(viewLifecycleOwner, Observer { trasee: List<Route> ->
 			routesBinding.isLoading = false
 			routesAdapter.routes = trasee
+			routesAdapter._routes = trasee
 		})
 	}
 	companion object {

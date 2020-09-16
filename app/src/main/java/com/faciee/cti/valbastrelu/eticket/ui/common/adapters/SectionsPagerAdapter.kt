@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import java.util.*
 
 
-class SectionsPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+class SectionsPagerAdapter(val fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 	private val mFragmentList: MutableList<Fragment> = ArrayList()
 	private val mFragmentTitleList: MutableList<String> = ArrayList()
 
@@ -15,6 +15,15 @@ class SectionsPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdap
 	override fun getItem(position: Int): Fragment = mFragmentList[position]
 
 	override fun getCount(): Int = mFragmentList.size
+
+	fun makeFragmentName(containerViewId: Int, id: Long): String {
+		return "android:switcher:$containerViewId:$id"
+	}
+
+	fun getFragmentForPosition(viewPagerId: Int, position: Int): Fragment? {
+		val tag = makeFragmentName(viewPagerId, getItemId(position))
+		return fragmentManager.findFragmentByTag(tag)
+	}
 
 	fun addFragment(fragment: Fragment, title: String) {
 		mFragmentList.add(fragment)

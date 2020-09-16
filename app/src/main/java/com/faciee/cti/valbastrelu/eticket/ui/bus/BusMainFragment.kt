@@ -15,12 +15,14 @@ import com.faciee.cti.valbastrelu.eticket.R
 import com.faciee.cti.valbastrelu.eticket.base.BaseFragment
 import com.faciee.cti.valbastrelu.eticket.databinding.FragmentBusMainBinding
 import com.faciee.cti.valbastrelu.eticket.ui.bus.vm.BusViewModel
+import com.faciee.cti.valbastrelu.eticket.ui.common.Searchable
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.SectionsPagerAdapter
 import com.faciee.cti.valbastrelu.eticket.ui.history.FrgTransactionHistory
 
 class BusMainFragment : BaseFragment<BusViewModel>() {
 
 	private lateinit var busBinding: FragmentBusMainBinding
+	private lateinit var sectionsPagerAdapter: SectionsPagerAdapter
 	var nfcAdapter: NfcAdapter? = null
 
 	lateinit var searchView: SearchView
@@ -34,7 +36,7 @@ class BusMainFragment : BaseFragment<BusViewModel>() {
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		busBinding = FragmentBusMainBinding.inflate(inflater, container, false)
 		initViewModel(BusViewModel::class.java, BusViewModel.getFactory(eTicketApp))
-
+		sectionsPagerAdapter = SectionsPagerAdapter(childFragmentManager)
 		nfcAdapter = NfcAdapter.getDefaultAdapter(context)
 		setupViewPager(busBinding.viewPager)
 		busBinding.tabs.setupWithViewPager(busBinding.viewPager)
@@ -51,13 +53,19 @@ class BusMainFragment : BaseFragment<BusViewModel>() {
 			searchView = it.actionView as SearchView
 			searchView.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
 
+			val searchableFragment = sectionsPagerAdapter.getFragmentForPosition(busBinding.viewPager.id, busBinding.viewPager.currentItem)
+
 			queryTextListener = object : SearchView.OnQueryTextListener {
 				override fun onQueryTextSubmit(query: String?): Boolean {
+					if (searchableFragment is Searchable)
+						query?.let { it1 -> searchableFragment.onQueryChanged(it1) }
 					Log.i(TAG, "onQueryTextSubmit: $query")
 					return true
 				}
 
 				override fun onQueryTextChange(newText: String?): Boolean {
+					if (searchableFragment is Searchable)
+						newText?.let { it1 -> searchableFragment.onQueryChanged(it1) }
 					Log.i(TAG, "onQueryTextChange: $newText")
 					return true
 				}
@@ -119,7 +127,6 @@ class BusMainFragment : BaseFragment<BusViewModel>() {
 	}
 
 	private fun setupViewPager(viewPager: ViewPager) {
-		val sectionsPagerAdapter = SectionsPagerAdapter(childFragmentManager)
 		sectionsPagerAdapter.addFragment(FrgTb01Ticket.newInstance(), getString(R.string.tab_name_ticket)) //BILETE
 		sectionsPagerAdapter.addFragment(FrgTb02Routes.newInstance(), getString(R.string.tab_name_routes)) //TRASEE
 		sectionsPagerAdapter.addFragment(FrgTransactionHistory.newInstance(), getString(R.string.tab_name_history)) //ISTORIC
