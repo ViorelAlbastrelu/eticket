@@ -1,9 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.ui.bus
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
@@ -22,6 +20,11 @@ class FrgTb02Routes : SharingFragment<BusViewModel, BusViewModel>(), RouteClickL
 	lateinit var routesBinding: BusFrag02RoutesBinding
 	lateinit var routesAdapter: RoutesAdapter
 
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setHasOptionsMenu(true)
+	}
+
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		routesBinding = DataBindingUtil.inflate(inflater, R.layout.bus_frag02_routes, container, false)
 		routesAdapter = RoutesAdapter(this)
@@ -34,6 +37,11 @@ class FrgTb02Routes : SharingFragment<BusViewModel, BusViewModel>(), RouteClickL
 		super.onActivityCreated(savedInstanceState)
 		initSharedViewModel(BusViewModel::class.java, BusViewModel.getFactory(eTicketApp))
 		subscribeUI()
+	}
+
+	override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+		super.onCreateOptionsMenu(menu, inflater)
+
 	}
 
 	override fun onRouteClicked(routeNumber: Int) {

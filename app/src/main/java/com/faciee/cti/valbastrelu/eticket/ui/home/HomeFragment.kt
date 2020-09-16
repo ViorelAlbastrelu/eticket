@@ -9,7 +9,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.faciee.cti.valbastrelu.eticket.base.BaseFragment
 import com.faciee.cti.valbastrelu.eticket.databinding.FragmentHomeBinding
 import com.faciee.cti.valbastrelu.eticket.repo.HomeRepository
-import com.faciee.cti.valbastrelu.eticket.util.DummyData
 
 class HomeFragment : BaseFragment<HomeVM>(), SwipeRefreshLayout.OnRefreshListener {
 

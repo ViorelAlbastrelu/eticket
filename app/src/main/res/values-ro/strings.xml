@@ -82,4 +82,5 @@
 	<string name="transport_type_parking">Autoturism</string>
 	<string name="transport_type_not_available">Transport indisponibil</string>
 	<string name="title_fragment_settings">Setări</string>
+	<string name="search">Căutaţi</string>
 </resources>
