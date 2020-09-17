@@ -55,7 +55,6 @@ class HomeFeedAdapter : RecyclerView.Adapter<FeedItemViewHolder<*>>() {
 			is FeedItemViewHolder.TicketFeedHolder -> holder.bind(feedItems[position] as Ticket)
 			is FeedItemViewHolder.ParkingTicketFeedHolder -> holder.bind(feedItems[position] as TicketParking)
 			is FeedItemViewHolder.RouteFeedHolder -> holder.bind(feedItems[position] as Route)
-			is FeedItemViewHolder.TripFeedHolder -> TODO()
 		}
 	}
 
