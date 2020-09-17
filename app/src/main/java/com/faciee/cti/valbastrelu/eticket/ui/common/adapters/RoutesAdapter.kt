@@ -12,22 +12,22 @@ import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.ui.bus.RouteClickListener
 import com.faciee.cti.valbastrelu.eticket.ui.common.adapters.RoutesAdapter.RouteViewHolder
 import com.faciee.cti.valbastrelu.eticket.util.RouteDiffUtil
+import java.util.ArrayList
 
 class RoutesAdapter(private val clickCallback: RouteClickListener) : RecyclerView.Adapter<RouteViewHolder>() {
 
 	var routes: List<Route> = listOf()
 		set(value) {
-			if (! value.isNullOrEmpty()) {
-				field = value
-				notifyDataSetChanged()
-			}
+			field = value
+			notifyDataSetChanged()
 		}
 
-	fun updateRoutes(newRoutes: List<Route>) {
-		val result = DiffUtil.calculateDiff(RouteDiffUtil(routes, newRoutes))
-		routes = newRoutes
-		result.dispatchUpdatesTo(this)
-	}
+	var _routes: List<Route> = listOf()
+		set(value) {
+			if (!value.isNullOrEmpty()) {
+				field = value
+			}
+		}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RouteViewHolder =
 			RouteViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_route, parent, false))
@@ -39,6 +39,23 @@ class RoutesAdapter(private val clickCallback: RouteClickListener) : RecyclerVie
 	}
 
 	override fun getItemCount(): Int = routes.size
+
+	fun filter(query: String) {
+		routes = if (query.isEmpty()) {
+			_routes
+		} else {
+			val cleanQuery = query.trim()
+			val filter = _routes.filter { it.number.toString().contains(cleanQuery, true) }
+			filter
+		}
+		notifyDataSetChanged()
+	}
+
+	fun updateRoutes(newRoutes: List<Route>) {
+		val result = DiffUtil.calculateDiff(RouteDiffUtil(routes, newRoutes))
+		routes = newRoutes
+		result.dispatchUpdatesTo(this)
+	}
 
 	inner class RouteViewHolder(val routeBinding: ItemRouteBinding) : RecyclerView.ViewHolder(routeBinding.root)
 

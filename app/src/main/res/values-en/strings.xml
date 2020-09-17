@@ -82,4 +82,5 @@
 	<string name="transport_type_parking">Car</string>
 	<string name="transport_type_not_available">Transportation unavailable</string>
 	<string name="title_fragment_settings">Settings</string>
+	<string name="search">Search</string>
 </resources>

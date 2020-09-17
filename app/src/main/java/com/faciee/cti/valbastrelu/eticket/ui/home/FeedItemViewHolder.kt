@@ -1,12 +1,7 @@
 package com.faciee.cti.valbastrelu.eticket.ui.home
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import androidx.annotation.LayoutRes
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import com.faciee.cti.valbastrelu.eticket.R
 import com.faciee.cti.valbastrelu.eticket.databinding.ItemRouteBinding
 import com.faciee.cti.valbastrelu.eticket.databinding.ItemScheduledRouteBinding
 import com.faciee.cti.valbastrelu.eticket.databinding.ItemTicketBinding
