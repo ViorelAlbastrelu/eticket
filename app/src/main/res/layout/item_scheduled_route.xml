@@ -8,6 +8,11 @@
 		<variable
 			name="route"
 			type="com.faciee.cti.valbastrelu.eticket.room.entities.Route" />
+
+		<variable
+			name="callback"
+			type="com.faciee.cti.valbastrelu.eticket.ui.bus.RouteClickListener" />
+
 	</data>
 
 	<androidx.cardview.widget.CardView
@@ -17,63 +22,82 @@
 		app:cardCornerRadius="6dp"
 		app:contentPadding="@dimen/feeditem_inside_padding">
 
-	<androidx.constraintlayout.widget.ConstraintLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
 
-		<ImageView
-			android:id="@+id/iconRouteType"
-			android:layout_width="48dp"
-			android:layout_height="48dp"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"
-			app:transportIcon="@{route.transportType.getTransportTypeIcon()}"
-			app:srcCompat="@drawable/ic_bus" />
+			<ImageView
+				android:id="@+id/iconRouteType"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/labelRouteName"
+				app:srcCompat="@drawable/ic_bus"
+				app:transportIcon="@{route.transportType.getTransportTypeIcon()}" />
 
-		<TextView
-			android:id="@+id/labelRouteName"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="16dp"
-			android:layout_marginEnd="8dp"
-			android:text="@{route.transportType.typeName}"
-			android:textAppearance="@style/TextAppearance.AppCompat.Large"
-			app:layout_constraintBottom_toTopOf="@+id/labelRouteTime"
-			app:layout_constraintEnd_toStartOf="@+id/labelRouteNumber"
-			app:layout_constraintHorizontal_bias="0.5"
-			app:layout_constraintStart_toEndOf="@+id/iconRouteType"
-			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintVertical_bias="0.0"
-			app:layout_constraintVertical_chainStyle="packed"
-			tools:text="Statie: Micro 19-Cinema Dacia" />
+			<TextView
+				android:id="@+id/labelRouteName"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="8dp"
+				android:maxLines="2"
+				android:text="@{route.transportType.typeName}"
+				android:textAppearance="@style/TextAppearance.AppCompat.Large"
+				app:layout_constraintBottom_toTopOf="@+id/labelRouteTime"
+				app:layout_constraintEnd_toStartOf="@+id/labelRouteNumber"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintVertical_bias="0.0"
+				app:layout_constraintVertical_chainStyle="packed"
+				tools:text="Statie: Micro 19-Cinema Dacia" />
 
-		<TextView
-			android:id="@+id/labelRouteNumber"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@{String.valueOf(route.number)}"
-			android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-			android:textStyle="bold"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toTopOf="parent"
-			tools:text="7" />
+			<TextView
+				android:id="@+id/labelRouteNumber"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@{String.valueOf(route.number)}"
+				android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+				android:textColor="@color/colorPrimaryDark"
+				android:textStyle="bold"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toEndOf="@+id/labelRouteName"
+				app:layout_constraintTop_toTopOf="parent"
+				tools:text="7" />
 
-		<TextView
-			android:id="@+id/labelRouteTime"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:textAppearance="@style/TextAppearance.AppCompat.Small"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="@+id/labelRouteName"
-			app:layout_constraintHorizontal_bias="0.5"
-			app:layout_constraintStart_toStartOf="@+id/labelRouteName"
-			app:layout_constraintTop_toBottomOf="@+id/labelRouteName"
-			app:time="@{route.startTime}"
-			tools:text="Sosire: 17:25" />
+			<TextView
+				android:id="@+id/labelRouteTime"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="8dp"
+				android:textAppearance="@style/TextAppearance.AppCompat.Small"
+				app:layout_constraintBottom_toTopOf="@+id/textView"
+				app:layout_constraintEnd_toEndOf="@+id/labelRouteName"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toEndOf="@+id/iconRouteType"
+				app:layout_constraintTop_toBottomOf="@+id/labelRouteName"
+				app:time="@{route.startTime}"
+				tools:text="Sosire: 17:25" />
 
-	</androidx.constraintlayout.widget.ConstraintLayout>
+			<TextView
+				android:id="@+id/labelRouteDetails"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:onClick="@{() -> callback.onRouteClicked(route.number)}"
+				android:text="@string/vezi_detalii"
+				android:textAppearance="@style/TextAppearance.AppCompat.Small"
+				android:textColor="@color/colorAccent"
+				android:textSize="12sp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="@+id/labelRouteTime"
+				app:layout_constraintStart_toStartOf="@+id/labelRouteTime"
+				app:layout_constraintTop_toBottomOf="@+id/labelRouteTime" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
 
 	</androidx.cardview.widget.CardView>
 </layout>
