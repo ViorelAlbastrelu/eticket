@@ -24,29 +24,14 @@ class FrgTb02Stations : DialogFragment() {
 
 	override fun onActivityCreated(savedInstanceState: Bundle?) {
 		super.onActivityCreated(savedInstanceState)
-		sharedBusModel = ViewModelProvider(activity !!, BusViewModel.getFactory(ETicketApp.currentETicketApp)).get(BusViewModel::class.java)
+		sharedBusModel = ViewModelProvider(requireActivity(), BusViewModel.getFactory(ETicketApp.currentETicketApp)).get(BusViewModel::class.java)
 		arguments?.let { bundle ->
 			bundle.getInt(ARG_ROUTE_NUMBER, 0).let {
-				sharedBusModel.getLiveDataStatii(it).observe(viewLifecycleOwner, Observer {
-					buildStepViewStatii(it)
+				sharedBusModel.getLiveDataStatii().observe(viewLifecycleOwner, Observer {
+//					buildStepViewStatii(it)
 				})
 			}
 		}
-	}
-
-	fun buildStepViewStatii(list: List<String?>?) { //		statiiBinding.verticalStepView
-//				.setStepsViewIndicatorComplectingPosition(list.size())
-//				.reverseDraw(false)
-//				.setStepViewTexts(list)
-//				.setLinePaddingProportion(0.40f)//indicator
-//				.setStepsViewIndicatorCompletedLineColor(ContextCompat.getColor(getContext(), android.R.color.black))//StepsViewIndicator
-//				.setStepsViewIndicatorUnCompletedLineColor(ContextCompat.getColor(getContext(), R.color.colorPrimary))//StepsViewIndicator
-//				.setStepViewComplectedTextColor(ContextCompat.getColor(getContext(), android.R.color.black))//StepsView text
-//				.setStepViewUnComplectedTextColor(ContextCompat.getColor(getContext(), R.color.colorPrimary))//StepsView text
-//				.setStepsViewIndicatorCompleteIcon(ContextCompat.getDrawable(getContext(), R.drawable.point))//StepsViewIndicator CompleteIcon
-//				.setStepsViewIndicatorDefaultIcon(ContextCompat.getDrawable(getContext(), R.drawable.point))//StepsViewIndicator DefaultIcon
-//				.setStepsViewIndicatorAttentionIcon(ContextCompat.getDrawable(getContext(), R.drawable.attention));//StepsViewIndicator AttentionIcon
-//				.setStepsViewIndicatorCompleteIcon(ContextCompat.getDrawable(getContext(), R.drawable.complted))//StepsViewIndicator CompleteIcon
 	}
 
 	companion object {

@@ -33,7 +33,8 @@ class FragmentParkingMain : BaseFragment<ParkingViewModel>() {
 		return parkingBinding.root
 	}
 
-	fun onClickFab(view: View?) { //		Snackbar.make(view, "Bilet adaugat", Snackbar.LENGTH_LONG)
+	fun onClickFab() {
+//		Snackbar.make(view, "Bilet adaugat", Snackbar.LENGTH_LONG)
 //				.setAction("Action", null).show();
 		viewModel.insertParkingTicket(TicketParking("Mazepa", true, BigDecimal(1.5), false))
 	}

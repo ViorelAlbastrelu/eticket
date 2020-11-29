@@ -49,7 +49,7 @@ class ChatbotFragment : Fragment() {
 		chatbotBinding = FragmentChatbotBinding.inflate(inflater, container, false)
 
 		//init views
-		chatbotBinding.btnSend.setOnClickListener { view: View? -> sendMessage() }
+		chatbotBinding.btnSend.setOnClickListener { sendMessage() }
 		chatbotBinding.sendMessage.imeOptions = EditorInfo.IME_ACTION_DONE
 		chatbotBinding.sendMessage.setOnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? -> sendInEditor(v, actionId, event) }
 		chatbotBinding.chatView.adapter = chatMessageAdapter
@@ -57,7 +57,8 @@ class ChatbotFragment : Fragment() {
 		return chatbotBinding.root
 	}
 
-	fun sendInEditor(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
+	@Suppress("UNUSED_PARAMETER")
+	private fun sendInEditor(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
 		var handled = false
 		if (actionId == EditorInfo.IME_ACTION_DONE) {
 			sendMessage()
@@ -103,16 +104,16 @@ class ChatbotFragment : Fragment() {
 
 			val assets = context.resources.assets
 			val jayDir = File("${context.filesDir}/$CHATBOT_NAME_ASUKA/bots/Asuka")
-			val jaydir_check = jayDir.mkdirs()
+			jayDir.mkdirs()
 			if (jayDir.exists()) { //Reading the file
 				try {
-					for (dir in assets.list("$CHATBOT_NAME_ASUKA")) {
+					assets.list("$CHATBOT_NAME_ASUKA")?.forEach forDir@{ dir ->
 						val subdir = File("${jayDir.path}/$dir")
-						val subdir_check = subdir.mkdirs()
-						for (file in assets.list("$CHATBOT_NAME_ASUKA/$dir")) {
+						subdir.mkdirs()
+						assets.list("$CHATBOT_NAME_ASUKA/$dir")?.forEach forFile@{ file ->
 							val f = File("${jayDir.path}/$dir/$file")
 							if (f.exists()) {
-								continue
+								return@forFile
 							}
 							val inputS: InputStream = assets.open("$CHATBOT_NAME_ASUKA/$dir/$file")
 							val outputS: OutputStream = FileOutputStream("${jayDir.path}/$dir/$file")

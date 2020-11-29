@@ -8,12 +8,13 @@ import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType
 import java.math.BigDecimal
 import java.text.ParseException
 import java.text.SimpleDateFormat
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 object DummyData {
 
 	private val formatterTime = SimpleDateFormat("HH:mm", Locale.ENGLISH)
-	fun loadStatiiTest(nrTraseu: Int): List<String> {
+	fun loadStatiiTest(): List<String> {
 		val listaStatii: MutableList<String> = ArrayList()
 		listaStatii.add("Micro 19-Cinema Dacia")
 		listaStatii.add("Otelarilor")
@@ -82,17 +83,21 @@ object DummyData {
 	}
 
 	fun mockTransactionsHistory(): List<Transaction> {
+		fun parseNonNullDate(pattern: String): Date{
+			return formatterDate.parse(pattern) ?: Calendar.getInstance().time
+		}
+
 		val transactions: MutableList<Transaction> = ArrayList()
 		try {
-			transactions.add(Transaction(1L, formatterDate.parse("12-JAN-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
-			transactions.add(Transaction(2L, formatterDate.parse("13-JAN-2018"), TransportType.TBUS, 2, BigDecimal(- 2.00)))
-			transactions.add(Transaction(3L, formatterDate.parse("16-JAN-2018"), TransportType.TRAM, 2, BigDecimal(- 2.00)))
-			transactions.add(Transaction(4L, formatterDate.parse("22-JAN-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
-			transactions.add(Transaction(5L, formatterDate.parse("23-JAN-2018"), TransportType.PARKING, 2, BigDecimal(- 1.00)))
-			transactions.add(Transaction(6L, formatterDate.parse("24-JAN-2018"), TransportType.NOTAVAILABLE, 2, BigDecimal(+ 15.00)))
-			transactions.add(Transaction(7L, formatterDate.parse("30-JAN-2018"), TransportType.TBUS, 2, BigDecimal(- 2.00)))
-			transactions.add(Transaction(8L, formatterDate.parse("02-FEB-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
-			transactions.add(Transaction(9L, formatterDate.parse("10-FEB-2018"), TransportType.PARKING, 2, BigDecimal(- 1.00)))
+			transactions.add(Transaction(1L, parseNonNullDate("12-JAN-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(2L, parseNonNullDate("13-JAN-2018"), TransportType.TBUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(3L, parseNonNullDate("16-JAN-2018"), TransportType.TRAM, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(4L, parseNonNullDate("22-JAN-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(5L, parseNonNullDate("23-JAN-2018"), TransportType.PARKING, 2, BigDecimal(- 1.00)))
+			transactions.add(Transaction(6L, parseNonNullDate("24-JAN-2018"), TransportType.NOTAVAILABLE, 2, BigDecimal(+ 15.00)))
+			transactions.add(Transaction(7L, parseNonNullDate("30-JAN-2018"), TransportType.TBUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(8L, parseNonNullDate("02-FEB-2018"), TransportType.BUS, 2, BigDecimal(- 2.00)))
+			transactions.add(Transaction(9L, parseNonNullDate("10-FEB-2018"), TransportType.PARKING, 2, BigDecimal(- 1.00)))
 		} catch (e: ParseException) {
 			e.printStackTrace()
 		}

@@ -12,6 +12,7 @@ import com.faciee.cti.valbastrelu.eticket.main.ETicketMain
 import com.faciee.cti.valbastrelu.eticket.ui.login.LoginActivity
 
 class SettingsFragment : PreferenceFragmentCompat() {
+	@Suppress("UNUSED_ANONYMOUS_PARAMETER")
 	override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
 		setPreferencesFromResource(R.xml.root_preferences, rootKey)
 		activity?.let { activity ->

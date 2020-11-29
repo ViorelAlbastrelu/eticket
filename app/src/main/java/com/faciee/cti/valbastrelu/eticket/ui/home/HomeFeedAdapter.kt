@@ -62,6 +62,7 @@ class HomeFeedAdapter : RecyclerView.Adapter<FeedItemViewHolder<*>>() {
 		return DataBindingUtil.inflate(LayoutInflater.from(parent.context), layout, parent, false)
 	}
 
+	@Suppress("UNUSED_VARIABLE")
 	fun <T> updateFeed(newFeedItems: List<T>) {
 		val result = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
 			override fun getOldListSize(): Int = feedItems.size

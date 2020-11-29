@@ -23,10 +23,9 @@ class ChatMessageAdapter(context: Context, data: List<ChatMessage>) : ArrayAdapt
 				else OTHER_IMAGE
 	}
 
-	override fun getView(position: Int, convertView: View, parent: ViewGroup): View {
+	override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 		var view = convertView
-		val viewType = getItemViewType(position)
-		when (viewType) {
+		when (getItemViewType(position)) {
 			MY_MESSAGE -> {
 				view = LayoutInflater.from(context).inflate(R.layout.item_message_chat_me, parent, false)
 				val textView = view.findViewById<TextView>(R.id.text)
@@ -42,8 +41,8 @@ class ChatMessageAdapter(context: Context, data: List<ChatMessage>) : ArrayAdapt
 			else -> { // convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_other_image, parent, false);
 			}
 		}
-		view.findViewById<View>(R.id.chatMessageView).setOnClickListener { Toast.makeText(context, "onClick", Toast.LENGTH_LONG).show() }
-		return view
+		view?.findViewById<View>(R.id.chatMessageView)?.setOnClickListener { Toast.makeText(context, "onClick", Toast.LENGTH_LONG).show() }
+		return view!!
 	}
 
 	companion object {

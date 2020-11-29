@@ -45,8 +45,8 @@ class BusViewModel(
 		this.activeTicket = ticketActiv
 	}
 
-	fun getLiveDataStatii(nrTraseu: Int): LiveData<List<String>> {
-		return repository.getLiveDataStatii(nrTraseu)
+	fun getLiveDataStatii(): LiveData<List<String>> {
+		return repository.getLiveDataStatii()
 	}
 
 	val liveDataTranzactii: LiveData<List<Transaction>>

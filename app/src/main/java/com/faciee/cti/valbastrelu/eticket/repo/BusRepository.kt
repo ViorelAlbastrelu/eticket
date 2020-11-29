@@ -12,7 +12,6 @@ import com.faciee.cti.valbastrelu.eticket.room.entities.Route
 import com.faciee.cti.valbastrelu.eticket.room.entities.Ticket
 import com.faciee.cti.valbastrelu.eticket.room.entities.Transaction
 import com.faciee.cti.valbastrelu.eticket.ui.common.TransportType
-import com.faciee.cti.valbastrelu.eticket.util.DummyData
 import java.math.BigDecimal
 import java.math.MathContext
 import java.math.RoundingMode
@@ -39,7 +38,7 @@ class BusRepository(roomDB: EtkRoomDB) {
 		return routesDao.getRoutesForType(type)
 	}
 
-	fun getLiveDataStatii(nrTraseu: Int): LiveData<List<String>> {
+	fun getLiveDataStatii(): LiveData<List<String>> {
 //		statiiLiveData = StatiiLiveData(nrTraseu)
 //		return statiiLiveData !!.numeStatii
 		return MutableLiveData(listOf())

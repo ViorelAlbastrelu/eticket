@@ -83,4 +83,30 @@
 	<string name="transport_type_not_available">Transport indisponible</string>
 	<string name="title_fragment_settings">Réglages</string>
 	<string name="search">Rechercher</string>
+
+	<!--Navigation-->
+	<string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+	<string name="navigation_drawer_close">Fermer le panneau de navigation</string>
+	<string name="nav_header_title">Android Studio</string>
+	<string name="nav_header_subtitle">android.studio@android.com</string>
+	<string name="nav_header_desc">Navigation header</string>
+
+	<string name="maps_API_key">AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE</string>
+
+	<!--Settings-->
+	<string name="settings_pref_key_signout" translatable="false">Déconnexion</string>
+
+	<!-- Preference Titles -->
+	<string name="messages_header">Messages</string>
+	<string name="sync_header">Synchroniser</string>
+
+	<!-- Messages Preferences -->
+	<string name="signature_title">Votre signature</string>
+	<string name="reply_title">Action de réponse par défaut</string>
+
+	<!-- Sync Preferences -->
+	<string name="sync_title">Synchroniser régulièrement les e-mails</string>
+	<string name="attachment_title">Télécharger les pièces jointes entrantes</string>
+	<string name="attachment_summary_on">Télécharger automatiquement les pièces jointes pour les e-mails entrants</string>
+	<string name="attachment_summary_off">Télécharger uniquement les pièces jointes lorsqu\'elles sont demandées manuellement</string>
 </resources>

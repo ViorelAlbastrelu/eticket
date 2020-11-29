@@ -49,18 +49,11 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name=".ui.bus.BusMainFragment"
-			android:label="@string/title_fragment_bus" />
-		<activity
 			android:name=".ui.login.LoginActivity"
 			android:label="@string/title_login"
 			android:windowSoftInputMode="stateVisible|adjustPan" />
 		<activity
 			android:name=".main.ETicketMain"
-			android:theme="@style/EticketTheme" />
-		<activity
-			android:name=".ui.parking.FragmentParkingMain"
-			android:label="@string/title_fragment_parking"
 			android:theme="@style/EticketTheme" />
 	</application>
 

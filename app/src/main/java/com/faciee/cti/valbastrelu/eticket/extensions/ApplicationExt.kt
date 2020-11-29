@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 
 fun Application.getStringResource(@StringRes resourceId: Int) =
-		this.getString(resourceId) ?: throw Exception("Resource id $resourceId not found")
+		this.getString(resourceId)
 
 fun Application.toastMessage(message: String, duration: Int) {
 	Toast.makeText(this, message, duration).show()

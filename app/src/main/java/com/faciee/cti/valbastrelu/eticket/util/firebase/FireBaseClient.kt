@@ -31,7 +31,7 @@ class FireBaseClient(private val callback: FireBaseCallback) {
 		firebaseAuth.createUserWithEmailAndPassword(email, password)
 				.addOnCompleteListener { task ->
 					if (task.isSuccessful) {
-						val user = firebaseAuth.currentUser
+						firebaseAuth.currentUser
 						callback.registeredSuccessfully()
 					} else {
 						callback.failWithError("Authentication failed")

@@ -26,6 +26,7 @@ class SplashRepository(db: EtkRoomDB) {
 		}
 	}
 
+	@Suppress("UNUSED_VARIABLE")
 	suspend fun convertToEntity(schedule: Schedule): List<Route> {
 		return withContext(IO) {
 			val busses = async { addRoutes(TransportType.BUS, schedule) }

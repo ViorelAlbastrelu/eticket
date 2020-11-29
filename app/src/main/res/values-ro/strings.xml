@@ -83,4 +83,30 @@
 	<string name="transport_type_not_available">Transport indisponibil</string>
 	<string name="title_fragment_settings">Setări</string>
 	<string name="search">Căutaţi</string>
+
+	<!--Navigation-->
+	<string name="navigation_drawer_open">Deschide sertarul de navigare</string>
+	<string name="navigation_drawer_close">Închide sertarul de navidare</string>
+	<string name="nav_header_title">Android Studio</string>
+	<string name="nav_header_subtitle">android.studio@android.com</string>
+	<string name="nav_header_desc">Navigation header</string>
+
+	<string name="maps_API_key">AIzaSyA0Kv5NXTSkHZ5SBAIvIgDu8riKlR6LOiE</string>
+
+	<!--Settings-->
+	<string name="settings_pref_key_signout" translatable="false">signout</string>
+
+	<!-- Preference Titles -->
+	<string name="messages_header">Mesaje</string>
+	<string name="sync_header">Sincronizare</string>
+
+	<!-- Messages Preferences -->
+	<string name="signature_title">Semnătura dumneavoastră</string>
+	<string name="reply_title">Acțiune implicită de răspuns</string>
+
+	<!-- Sync Preferences -->
+	<string name="sync_title">Sincronizează email periodic</string>
+	<string name="attachment_title">Descărcați atașamentele primite</string>
+	<string name="attachment_summary_on">Descărcați automat atașamente pentru e-mailurile primite</string>
+	<string name="attachment_summary_off">Descărcați atașamente numai când vi se solicită manual</string>
 </resources>

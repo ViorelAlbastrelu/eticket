@@ -9,6 +9,7 @@ import androidx.databinding.BindingAdapter
 import com.faciee.cti.valbastrelu.eticket.R
 import com.faciee.cti.valbastrelu.eticket.util.DateUtils
 import kotlinx.android.synthetic.main.parking_frg_tb02_map.view.*
+import org.joda.time.DateTime
 import java.math.BigDecimal
 import java.util.*
 
@@ -17,8 +18,9 @@ object BindingAdapters {
 	@JvmStatic
 	@BindingAdapter("shortDate")
 	fun setShortDate(view: TextView, date: Date) {
-		val monthNameShort = view.context.resources.getStringArray(R.array.month_short)[date.month]
-		view.text = view.context.getString(R.string.istoric_data, date.date, monthNameShort)
+		val dateTime: DateTime = DateTime(date)
+		val monthNameShort = view.context.resources.getStringArray(R.array.month_short)[dateTime.monthOfYear]
+		view.text = view.context.getString(R.string.istoric_data, dateTime.dayOfMonth, monthNameShort)
 	}
 
 	@JvmStatic
